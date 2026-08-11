@@ -63,7 +63,8 @@ const correlati = tutti
 				<p class="articolo__sommario">{dati.descrizione}</p>
 
 				<div class="articolo__firma meta-riga">
-					<span>di <strong>{SITO.autore.nome}</strong></span>
+					{/* Niente "di" davanti: la firma può essere una persona o la redazione. */}
+					<span><strong>{SITO.autore.nome}</strong></span>
 					<span class="meta-riga__separatore">·</span>
 					<time datetime={dataMacchina(dati.dataPubblicazione)}>
 						{dataEstesa(dati.dataPubblicazione)}
@@ -109,7 +110,7 @@ const correlati = tutti
 			<Sostegno />
 
 			<aside class="riquadro-autore">
-				<h2>Chi ha scritto questo pezzo</h2>
+				<h2>Chi firma questo pezzo</h2>
 				<p style="margin:0 0 0.6rem"><strong>{SITO.autore.nome}</strong> — {SITO.autore.ruolo}</p>
 				<p style="margin:0">{SITO.autore.bio}</p>
 				<p style="margin:0.9rem 0 0"><a href="/chi-sono">Leggi di più</a></p>

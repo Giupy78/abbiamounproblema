@@ -60,9 +60,8 @@ const immagineSocial = new URL(immagine ?? SITO.immagineCondivisione, Astro.site
 // legge come dati, non come testo. È ciò che permette di mostrare autore e
 // data sotto il risultato di ricerca.
 const autore = {
-	'@type': 'Person',
+	'@type': SITO.autore.tipo,
 	name: SITO.autore.nome,
-	jobTitle: SITO.autore.ruolo,
 	url: new URL('/chi-sono', SITO.dominio).href,
 };
 

@@ -7,25 +7,25 @@ import { SITO } from '../config';
  *
  * Per un sito di attualità è la pagina che Google usa per capire chi c'è
  * dietro i contenuti (criteri E-E-A-T: esperienza, competenza, autorevolezza,
- * affidabilità). Un sito di opinione senza un autore riconoscibile viene
- * valutato molto peggio di uno firmato.
+ * affidabilità). Una firma redazionale pesa meno di un nome e cognome reali:
+ * se un giorno vorrai firmarti, questa pagina è la prima da aggiornare.
  *
- * Sostituisci i testi segnati con "DA COMPILARE" con parole tue.
+ * Il testo è scritto al plurale, coerente con la firma "La redazione"
+ * impostata in src/config.ts. Se passi a una firma personale, va riportato
+ * al singolare.
  */
 ---
 
 <Base
-	titolo="Chi sono"
-	descrizione={`Chi scrive su ${SITO.nome}, con quale metodo vengono scelti i temi e quali regole segue questo sito nel trattare le notizie.`}
+	titolo="Chi siamo"
+	descrizione={`Chi scrive su ${SITO.nome}, con quale metodo vengono scelti i temi e quali regole segue questo sito nel trattare i problemi di cui parla.`}
 >
 	<div class="contenitore">
 		<div class="pagina-testuale">
-			<h1 class="articolo__titolo">Chi sono</h1>
+			<h1 class="articolo__titolo">Chi siamo</h1>
 
 			<div class="corpo">
-				<p>
-					Mi chiamo <strong>{SITO.autore.nome}</strong>. {SITO.autore.bio}
-				</p>
+				<p>{SITO.autore.bio}</p>
 
 				<h2>Perché questo sito</h2>
 				<p>
@@ -35,51 +35,52 @@ import { SITO } from '../config';
 				</p>
 				<p>
 					Questo sito nasce per fare il passo successivo: smontare il problema, capire da dove
-					nasce e provare a disegnare una via d'uscita applicabile. Il metodo l'ho spiegato per
-					esteso nell'<a href="/diamoci-un-metodo">articolo di apertura</a>.
+					nasce e provare a disegnare una via d'uscita applicabile. Il metodo è spiegato per esteso
+					nell'<a href="/diamoci-un-metodo">articolo di apertura</a>.
 				</p>
 
-				<h2>Come lavoro</h2>
+				<h2>Come lavoriamo</h2>
 				<p>
 					Questo sito non fa cronaca: prende un problema, lo smonta con i dati e prova a disegnare
-					una via d'uscita. Non appartengo a nessun partito, non ricevo compensi da forze
-					politiche, da aziende o da gruppi di interesse per quello che scrivo.
+					una via d'uscita. Non apparteniamo a nessun partito e non riceviamo compensi da forze
+					politiche, da aziende o da gruppi di interesse per quello che pubblichiamo.
 				</p>
 				<p>
 					<strong>Le buone idee non hanno colore politico.</strong> Una proposta si giudica da come
 					funziona, non da chi l'ha avanzata. È il motivo per cui qui una misura sensata resta
-					sensata anche quando arriva da una parte che non mi convince, e una sbagliata resta
-					sbagliata anche quando arriva da quella che preferisco. Se un giorno leggerai il
-					contrario, avrai tutto il diritto di farmelo notare.
+					sensata anche quando arriva da una parte che non ci convince, e una sbagliata resta
+					sbagliata anche quando arriva da quella che preferiamo. Se un giorno leggerai il
+					contrario, hai tutto il diritto di farcelo notare.
 				</p>
-				<p>Le regole che seguo su ogni pezzo:</p>
+				<p>Le regole che seguiamo su ogni pezzo:</p>
 				<ul>
 					<li>
-						<strong>I fatti prima della tesi.</strong> Prima ricostruisco cosa è successo, con le
-						fonti; solo dopo dico cosa ne penso, e lo dico esplicitamente.
+						<strong>I fatti prima della tesi.</strong> Prima ricostruiamo cosa è successo, con le
+						fonti; solo dopo diciamo cosa ne pensiamo, e lo diciamo esplicitamente.
 					</li>
 					<li>
 						<strong>Fonti verificabili.</strong> Dati e citazioni sono collegati alla fonte
-						originale, così puoi controllare da solo se ho letto bene.
+						originale, così puoi controllare da solo se abbiamo letto bene.
 					</li>
 					<li>
-						<strong>La posizione opposta nella sua versione migliore.</strong> Quando critico
-						un'idea la espongo come la esporrebbe chi la sostiene, non nella sua caricatura.
+						<strong>La posizione opposta nella sua versione migliore.</strong> Quando critichiamo
+						un'idea la esponiamo come la esporrebbe chi la sostiene, non nella sua caricatura.
 					</li>
 					<li>
-						<strong>Gli errori restano visibili.</strong> Se sbaglio correggo il testo e scrivo in
-						fondo all'articolo cosa ho cambiato e quando. Non riscrivo la storia in silenzio.
+						<strong>Gli errori restano visibili.</strong> Quando sbagliamo correggiamo il testo e
+						scriviamo in fondo all'articolo cosa è cambiato e quando. Non riscriviamo la storia in
+						silenzio.
 					</li>
 					<li>
-						<strong>Quello che non so, lo dico.</strong> Su molte questioni non esiste una
-						risposta netta: quando è così lo scrivo, invece di fingere certezze.
+						<strong>Quello che non sappiamo, lo diciamo.</strong> Su molte questioni non esiste una
+						risposta netta: quando è così lo scriviamo, invece di fingere certezze.
 					</li>
 				</ul>
 
 				<h2>Rettifiche e segnalazioni</h2>
 				<p>
-					Se trovi un errore, anche piccolo, scrivimi: le correzioni fondate vengono pubblicate.
-					Trovi i recapiti nella <a href="/contatti">pagina contatti</a>.
+					Se trovi un errore, anche piccolo, segnalacelo: le correzioni fondate vengono pubblicate.
+					I recapiti sono nella <a href="/contatti">pagina contatti</a>.
 				</p>
 			</div>
 		</div>

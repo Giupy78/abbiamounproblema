@@ -26,9 +26,19 @@ export const SITO = {
 	 * di un sito di attualità. Non lasciare questi campi generici.
 	 */
 	autore: {
-		nome: 'Admin',
-		ruolo: 'Autore del sito',
-		bio: 'Scrivo di economia, società e istituzioni con un metodo fisso: prima il problema con i dati alla mano, poi una proposta concreta. Qui contano le idee e il modo in cui reggono alla verifica, non chi le firma.',
+		nome: 'La redazione',
+
+		/**
+		 * Come dichiarare la firma ai motori di ricerca.
+		 * 'Organization' per una firma redazionale, 'Person' se un giorno
+		 * deciderai di firmare con nome e cognome.
+		 */
+		tipo: 'Organization',
+
+		ruolo: 'Analisi e proposte, un problema alla volta',
+
+		bio: 'Scriviamo di economia, società e istituzioni con un metodo fisso: prima il problema, con i dati alla mano, poi una proposta concreta. Qui contano le idee e il modo in cui reggono alla verifica, non chi le firma.',
+
 		/** Lascia la stringa vuota finché non hai una casella attiva. */
 		email: '',
 	},
@@ -89,7 +99,7 @@ export type Categoria = (typeof CATEGORIE)[number];
 export const MENU = [
 	{ testo: 'Home', url: '/' },
 	{ testo: 'Archivio', url: '/archivio' },
-	{ testo: 'Chi sono', url: '/chi-sono' },
+	{ testo: 'Chi siamo', url: '/chi-sono' },
 	{ testo: 'Contatti', url: '/contatti' },
 ] as const;
 
