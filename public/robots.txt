@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Il pannello di scrittura e il servizio di accesso non sono contenuti:
+# non devono comparire nei risultati di ricerca.
+Disallow: /admin
+Disallow: /api/
+
 Sitemap: https://abbiamounproblema.it/sitemap-index.xml

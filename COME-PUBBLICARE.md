@@ -1,6 +1,36 @@
 # Come si pubblica un articolo
 
-Guida pratica al sito. Non serve saper programmare: servono tre comandi, sempre gli stessi.
+Ci sono due strade. Il **pannello** non richiede di toccare file né comandi; i **comandi** servono se preferisci lavorare dal computer.
+
+---
+
+## Il pannello di scrittura (la via semplice)
+
+Indirizzo: **abbiamounproblema.it/admin**
+
+Accedi con GitHub e ti trovi un editor visuale: scrivi, formatti con i pulsanti, trascini le immagini dentro la pagina, premi **Publish**. Circa un minuto dopo l'articolo è online.
+
+Funziona da qualsiasi computer e anche dal telefono: non serve avere il progetto sul dispositivo che stai usando.
+
+**Cosa fare al primo articolo:**
+
+1. Apri `/admin` e premi *Login with GitHub*
+2. **Articoli** → **New Articolo**
+3. Compila i campi. Titolo e descrizione hanno dei limiti di lunghezza: il pannello ti avvisa se sfori
+4. Tieni **Bozza** acceso finché non è pronto, poi spegnilo
+5. **Publish**
+
+Un avvertimento che vale la pena ricordare: **non cambiare il titolo di un articolo già pubblicato** se questo modifica il suo indirizzo. I link esistenti, compresi quelli su Google, smetterebbero di funzionare.
+
+### Se il pannello non ti fa entrare
+
+Le cause sono quasi sempre queste tre:
+
+- Le variabili `GITHUB_CLIENT_ID` e `GITHUB_CLIENT_SECRET` non sono impostate nel progetto Cloudflare Pages (*Settings → Environment variables*), oppure sono state aggiunte dopo l'ultima pubblicazione: in quel caso serve un nuovo deploy perché diventino attive
+- L'indirizzo di ritorno configurato nell'applicazione GitHub non coincide con quello del sito da cui stai accedendo
+- Stai usando `abbiamounproblema.pages.dev` mentre la configurazione punta al dominio vero, o viceversa
+
+L'indirizzo di ritorno da impostare su GitHub è: `https://abbiamounproblema.it/api/callback`
 
 ---
 

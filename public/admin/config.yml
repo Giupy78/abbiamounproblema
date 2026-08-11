@@ -1,0 +1,128 @@
+# Impostazioni del pannello di scrittura (Decap CMS).
+#
+# I campi qui sotto rispecchiano esattamente la struttura degli articoli
+# definita in src/content.config.ts. Se un giorno aggiungi una categoria
+# in src/config.ts, ricordati di aggiungerla anche qui sotto, alla voce
+# "categoria": sono due elenchi separati che devono restare allineati.
+
+backend:
+  name: github
+  repo: Giupy78/abbiamounproblema
+  branch: main
+  # Indirizzo del servizio di autenticazione, che vive dentro questo stesso
+  # sito (cartella functions/api). Quando il dominio definitivo sara attivo,
+  # sostituisci la riga qui sotto con https://abbiamounproblema.it
+  base_url: https://abbiamounproblema.pages.dev
+  auth_endpoint: api/auth
+
+# Lingua dell'interfaccia del pannello.
+locale: it
+
+# Dove finiscono le immagini caricate dal pannello.
+# public_folder e il percorso scritto dentro l'articolo: "./media/foto.jpg"
+# e relativo al file dell'articolo, ed e la forma che Astro sa ottimizzare.
+media_folder: src/contenuti/articoli/media
+public_folder: ./media
+
+# Ogni salvataggio va direttamente sul sito, senza passaggi di revisione.
+publish_mode: simple
+
+# Messaggi di salvataggio in italiano nella cronologia del progetto.
+backend_commit_messages:
+  create: 'Nuovo articolo: {{slug}}'
+  update: 'Aggiornato articolo: {{slug}}'
+  delete: 'Rimosso articolo: {{slug}}'
+  uploadMedia: 'Caricata immagine: {{path}}'
+  deleteMedia: 'Rimossa immagine: {{path}}'
+
+collections:
+  - name: articoli
+    label: Articoli
+    label_singular: Articolo
+    description: 'Tutti i pezzi del sito. Finche "Bozza" resta acceso, l articolo si vede solo da te.'
+    folder: src/contenuti/articoli
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: titolo
+    slug: '{{slug}}'
+    summary: '{{titolo}}'
+    sortable_fields: [dataPubblicazione, titolo]
+
+    fields:
+      - name: titolo
+        label: 'Titolo'
+        hint: 'Da 15 a 70 caratteri. Oltre i 70, Google lo taglia nei risultati di ricerca.'
+        widget: string
+        pattern:
+          ['^.{15,70}$', 'Il titolo deve essere lungo tra 15 e 70 caratteri.']
+
+      - name: descrizione
+        label: 'Descrizione per Google'
+        hint: 'Da 70 a 170 caratteri. E il testo grigio sotto il titolo nei risultati di ricerca: decide chi clicca.'
+        widget: text
+        pattern:
+          [
+            '^[\s\S]{70,170}$',
+            'La descrizione deve essere lunga tra 70 e 170 caratteri.',
+          ]
+
+      - name: dataPubblicazione
+        label: 'Data di pubblicazione'
+        widget: datetime
+        format: 'YYYY-MM-DD'
+        date_format: 'DD/MM/YYYY'
+        time_format: false
+        picker_utc: true
+
+      - name: dataAggiornamento
+        label: 'Data di aggiornamento'
+        hint: 'Da compilare solo se stai modificando un articolo gia pubblicato.'
+        widget: datetime
+        format: 'YYYY-MM-DD'
+        date_format: 'DD/MM/YYYY'
+        time_format: false
+        picker_utc: true
+        required: false
+
+      - name: categoria
+        label: 'Categoria'
+        widget: select
+        options:
+          - 'Economia'
+          - 'Finanza personale'
+          - 'Società'
+          - 'Ambiente ed Energia'
+
+      - name: tag
+        label: 'Tag'
+        hint: 'Da 2 a 5 parole chiave, in minuscolo.'
+        widget: list
+        required: false
+
+      - name: immagine
+        label: 'Immagine di copertina'
+        hint: 'Caricane una grande, almeno 1600 pixel di larghezza: la rimpicciolisce il sito da solo.'
+        widget: image
+        required: false
+
+      - name: immagineAlt
+        label: 'Descrizione dell immagine'
+        hint: 'Obbligatoria se carichi un immagine. Descrivi cosa si vede, per chi non puo vederla.'
+        widget: string
+        required: false
+
+      - name: bozza
+        label: 'Bozza (non pubblicare)'
+        widget: boolean
+        default: true
+
+      - name: inEvidenza
+        label: 'In evidenza sulla homepage'
+        hint: 'Tienilo acceso su un solo articolo per volta.'
+        widget: boolean
+        default: false
+
+      - name: body
+        label: 'Testo dell articolo'
+        widget: markdown
