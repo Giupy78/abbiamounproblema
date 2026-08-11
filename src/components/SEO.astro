@@ -38,7 +38,17 @@ const {
 // URL canonico: dice a Google qual è l'indirizzo ufficiale di questa pagina,
 // così le eventuali varianti (con barra finale, con parametri di tracciamento)
 // non vengono contate come pagine duplicate.
-const percorso = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/+$/, '');
+//
+// In compilazione i percorsi arrivano con l'estensione del file generato
+// (/articolo.html), mentre l'indirizzo pubblico servito da Cloudflare non
+// ce l'ha (/articolo). Va tolta, altrimenti dichiariamo ai motori di
+// ricerca un indirizzo diverso da quello reale.
+const percorso =
+	Astro.url.pathname
+		.replace(/\/index\.html$/, '/')
+		.replace(/\.html$/, '')
+		.replace(/(.)\/+$/, '$1') || '/';
+
 const canonico = new URL(percorso, Astro.site).href;
 
 // Il titolo che appare nella scheda del browser e nei risultati di ricerca.
