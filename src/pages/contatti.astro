@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import { SITO } from '../config';
 
 const email = SITO.autore.email;
-const emailValida = !email.startsWith('DA COMPILARE');
+const emailValida = email.length > 0;
 ---
 
 <Base
@@ -24,10 +24,9 @@ const emailValida = !email.startsWith('DA COMPILARE');
 						</p>
 					) : (
 						<p>
-							<em>
-								Indirizzo email non ancora impostato: inseriscilo nel file
-								<code>src/config.ts</code>.
-							</em>
+							La casella di posta del sito è in fase di attivazione e sarà pubblicata su questa
+							pagina a breve. Se nel frattempo hai una segnalazione, tienila da parte: qui
+							arriverà presto un indirizzo a cui mandarla.
 						</p>
 					)
 				}

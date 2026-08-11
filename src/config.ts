@@ -16,7 +16,7 @@ export const SITO = {
 		'Analisi e opinioni sui temi che riguardano tutti: economia, società, ambiente, tecnologia. Un problema alla volta, spiegato per intero.',
 
 	/** Sottotitolo mostrato sotto il nome nell'intestazione. */
-	slogan: 'I problemi di tutti, spiegati per intero',
+	slogan: 'Dal problema alla proposta',
 
 	lingua: 'it-IT',
 
@@ -26,10 +26,11 @@ export const SITO = {
 	 * di un sito di attualità. Non lasciare questi campi generici.
 	 */
 	autore: {
-		nome: 'DA COMPILARE — Nome Cognome',
-		ruolo: 'DA COMPILARE — es. "Autore e curatore del sito"',
-		bio: 'DA COMPILARE — due o tre righe che spiegano chi scrive e perché si occupa di questi temi.',
-		email: 'DA COMPILARE — es. redazione@abbiamounproblema.it',
+		nome: 'Admin',
+		ruolo: 'Autore del sito',
+		bio: 'Scrivo di economia, società e istituzioni con un metodo fisso: prima il problema con i dati alla mano, poi una proposta concreta. Qui contano le idee e il modo in cui reggono alla verifica, non chi le firma.',
+		/** Lascia la stringa vuota finché non hai una casella attiva. */
+		email: '',
 	},
 
 	/** Lascia la stringa vuota per nascondere il link. */
