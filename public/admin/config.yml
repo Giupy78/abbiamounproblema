@@ -10,9 +10,9 @@ backend:
   repo: Giupy78/abbiamounproblema
   branch: main
   # Indirizzo del servizio di autenticazione, che vive dentro questo stesso
-  # sito (cartella functions/api). Quando il dominio definitivo sara attivo,
-  # sostituisci la riga qui sotto con https://abbiamounproblema.it
-  base_url: https://abbiamounproblema.pages.dev
+  # sito (cartella functions/api). Deve coincidere con l indirizzo da cui
+  # apri il pannello e con quello configurato nell applicazione GitHub.
+  base_url: https://abbiamounproblema.it
   auth_endpoint: api/auth
 
 # Lingua dell'interfaccia del pannello.
