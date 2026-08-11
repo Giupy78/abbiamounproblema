@@ -1,0 +1,65 @@
+---
+/**
+ * Impalcatura comune a tutte le pagine del sito.
+ * Riceve i dati SEO e li passa al componente che genera i meta tag.
+ */
+import SEO from '../components/SEO.astro';
+import Intestazione from '../components/Intestazione.astro';
+import Pie from '../components/Pie.astro';
+import { SITO } from '../config';
+import '../styles/global.css';
+
+interface Props {
+	titolo: string;
+	descrizione: string;
+	tipo?: 'website' | 'article';
+	immagine?: string;
+	dataPubblicazione?: Date;
+	dataAggiornamento?: Date;
+	categoria?: string;
+	tag?: string[];
+	noindex?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<SEO {...props} />
+
+		<script is:inline>
+			// Applica il tema salvato PRIMA che la pagina venga disegnata,
+			// altrimenti chi usa il tema scuro vedrebbe un lampo bianco a ogni
+			// caricamento. Deve restare qui, in linea e senza type="module".
+			(function () {
+				try {
+					const salvato = localStorage.getItem('tema');
+					if (salvato === 'chiaro' || salvato === 'scuro') {
+						document.documentElement.dataset.tema = salvato;
+					}
+				} catch (e) {
+					/* localStorage bloccato: si usa la preferenza di sistema */
+				}
+			})();
+		</script>
+	</head>
+
+	<body>
+		<a href="#contenuto" class="salta-al-contenuto">Salta al contenuto</a>
+
+		<Intestazione />
+
+		<main id="contenuto">
+			<slot />
+		</main>
+
+		<Pie />
+	</body>
+</html>

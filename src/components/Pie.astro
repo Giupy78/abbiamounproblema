@@ -1,0 +1,73 @@
+---
+import { SITO, CATEGORIE, MENU } from '../config';
+import { categoriaInUrl } from '../utils/articoli';
+
+const anno = new Date().getFullYear();
+
+const social = Object.entries(SITO.social).filter(([, url]) => url !== '');
+
+const nomiSocial: Record<string, string> = {
+	x: 'X',
+	facebook: 'Facebook',
+	linkedin: 'LinkedIn',
+	instagram: 'Instagram',
+};
+---
+
+<footer class="pie">
+	<div class="contenitore">
+		<div class="pie__griglia">
+			<div>
+				<h2>Il sito</h2>
+				<ul>
+					{MENU.map((voce) => <li><a href={voce.url}>{voce.testo}</a></li>)}
+					<li><a href="/privacy">Privacy e cookie</a></li>
+					<li><a href="/rss.xml">Feed RSS</a></li>
+					{
+						SITO.donazioni.url.length > 0 && (
+							<li>
+								<a href={SITO.donazioni.url} target="_blank" rel="noopener nofollow">
+									{SITO.donazioni.testoPulsante}
+								</a>
+							</li>
+						)
+					}
+				</ul>
+			</div>
+
+			<div>
+				<h2>Temi</h2>
+				<ul>
+					{
+						CATEGORIE.map((categoria) => (
+							<li>
+								<a href={`/categoria/${categoriaInUrl(categoria)}`}>{categoria}</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			{
+				social.length > 0 && (
+					<div>
+						<h2>Altrove</h2>
+						<ul>
+							{social.map(([rete, url]) => (
+								<li>
+									<a href={url} rel="me noopener" target="_blank">
+										{nomiSocial[rete] ?? rete}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				)
+			}
+		</div>
+
+		<p class="pie__chiusura">
+			© {anno} {SITO.nome} — testi di {SITO.autore.nome}. Le opinioni espresse sono personali.
+		</p>
+	</div>
+</footer>

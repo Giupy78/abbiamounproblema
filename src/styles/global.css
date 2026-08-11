@@ -1,0 +1,573 @@
+/*
+ * Stile del sito.
+ *
+ * Due scelte non ovvie, entrambe volute:
+ *
+ * 1. Nessun font caricato da Google Fonts. Usiamo i caratteri già presenti
+ *    nel dispositivo del lettore: la pagina appare istantaneamente e non
+ *    invii l'indirizzo IP dei visitatori ai server di Google (che in Europa
+ *    è stato più volte contestato dai garanti privacy).
+ *
+ * 2. Nessun rosso e nessun blu come colore identitario. In Italia sono
+ *    entrambi carichi di significato politico: un sito che vuole apparire
+ *    non schierato parte avvantaggiato con una tavolozza neutra.
+ *    L'accento è un ocra caldo, che non appartiene a nessuno.
+ */
+
+:root {
+	--sfondo: #fbfaf8;
+	--sfondo-alt: #f2efea;
+	--testo: #1c1b19;
+	--testo-tenue: #5f5b54;
+	--bordo: #dfdad2;
+	--accento: #a8721a;
+	--accento-tenue: #f5ecdc;
+	--evidenza: #ffffff;
+
+	--serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+	--sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+	--larghezza-testo: 44rem;
+	--larghezza-pagina: 72rem;
+
+	color-scheme: light;
+}
+
+:root[data-tema='scuro'] {
+	--sfondo: #161513;
+	--sfondo-alt: #201e1b;
+	--testo: #ece9e3;
+	--testo-tenue: #a29c92;
+	--bordo: #35322d;
+	--accento: #d9a441;
+	--accento-tenue: #2a241a;
+	--evidenza: #201e1b;
+
+	color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-tema='chiaro']) {
+		--sfondo: #161513;
+		--sfondo-alt: #201e1b;
+		--testo: #ece9e3;
+		--testo-tenue: #a29c92;
+		--bordo: #35322d;
+		--accento: #d9a441;
+		--accento-tenue: #2a241a;
+		--evidenza: #201e1b;
+
+		color-scheme: dark;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--sfondo);
+	color: var(--testo);
+	font-family: var(--sans);
+	font-size: 1.05rem;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: inherit;
+	text-decoration-color: var(--accento);
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	color: var(--accento);
+}
+
+/* Chi naviga da tastiera deve sempre vedere dove si trova. */
+:focus-visible {
+	outline: 2px solid var(--accento);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+/* Salta al contenuto: visibile solo quando riceve il focus da tastiera. */
+.salta-al-contenuto {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	background: var(--accento);
+	color: #fff;
+	padding: 0.6rem 1rem;
+	z-index: 100;
+}
+
+.salta-al-contenuto:focus {
+	left: 0;
+}
+
+.contenitore {
+	width: 100%;
+	max-width: var(--larghezza-pagina);
+	margin-inline: auto;
+	padding-inline: 1.25rem;
+}
+
+/* ---------- Intestazione ---------- */
+
+.intestazione {
+	border-bottom: 1px solid var(--bordo);
+	background: var(--sfondo);
+}
+
+.intestazione__interno {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding-block: 1.1rem;
+	flex-wrap: wrap;
+}
+
+.marchio {
+	text-decoration: none;
+	display: block;
+}
+
+.marchio__nome {
+	font-family: var(--serif);
+	font-size: 1.55rem;
+	font-weight: 700;
+	letter-spacing: -0.015em;
+	line-height: 1.1;
+	margin: 0;
+}
+
+.marchio__slogan {
+	font-size: 0.8rem;
+	color: var(--testo-tenue);
+	margin: 0.15rem 0 0;
+}
+
+.navigazione {
+	display: flex;
+	align-items: center;
+	gap: 1.4rem;
+	font-size: 0.95rem;
+}
+
+.navigazione a {
+	text-decoration: none;
+	color: var(--testo-tenue);
+}
+
+.navigazione a:hover,
+.navigazione a[aria-current='page'] {
+	color: var(--testo);
+}
+
+.navigazione a[aria-current='page'] {
+	box-shadow: inset 0 -2px 0 var(--accento);
+}
+
+.pulsante-tema {
+	background: none;
+	border: 1px solid var(--bordo);
+	border-radius: 999px;
+	color: var(--testo-tenue);
+	cursor: pointer;
+	font-size: 0.95rem;
+	line-height: 1;
+	padding: 0.45rem 0.6rem;
+}
+
+.pulsante-tema:hover {
+	color: var(--testo);
+	border-color: var(--accento);
+}
+
+/* ---------- Elementi ricorrenti ---------- */
+
+.etichetta-categoria {
+	display: inline-block;
+	font-family: var(--sans);
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accento);
+	background: var(--accento-tenue);
+	padding: 0.25rem 0.6rem;
+	border-radius: 999px;
+	text-decoration: none;
+}
+
+.meta-riga {
+	font-size: 0.85rem;
+	color: var(--testo-tenue);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.meta-riga__separatore {
+	opacity: 0.5;
+}
+
+/* ---------- Elenco articoli ---------- */
+
+.elenco-articoli {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 2.25rem;
+}
+
+.scheda {
+	display: grid;
+	gap: 0.6rem;
+	padding-bottom: 2.25rem;
+	border-bottom: 1px solid var(--bordo);
+}
+
+.elenco-articoli > li:last-child .scheda {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.scheda__titolo {
+	font-family: var(--serif);
+	font-size: 1.6rem;
+	line-height: 1.25;
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+
+.scheda__titolo a {
+	text-decoration: none;
+}
+
+.scheda__descrizione {
+	margin: 0;
+	color: var(--testo-tenue);
+	max-width: 42rem;
+}
+
+.scheda__copertina {
+	border-radius: 6px;
+	border: 1px solid var(--bordo);
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	width: 100%;
+}
+
+.scheda--evidenza {
+	background: var(--evidenza);
+	border: 1px solid var(--bordo);
+	border-radius: 8px;
+	padding: 1.75rem;
+	padding-bottom: 1.75rem;
+}
+
+.scheda--evidenza .scheda__titolo {
+	font-size: 2rem;
+}
+
+/* ---------- Articolo ---------- */
+
+.articolo {
+	max-width: var(--larghezza-testo);
+	margin-inline: auto;
+	padding-block: 3rem 4rem;
+}
+
+.articolo__intestazione {
+	margin-bottom: 2.5rem;
+}
+
+.articolo__titolo {
+	font-family: var(--serif);
+	font-size: clamp(2rem, 5vw, 2.9rem);
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	margin: 0.9rem 0 0.7rem;
+}
+
+.articolo__sommario {
+	font-family: var(--serif);
+	font-size: 1.25rem;
+	line-height: 1.5;
+	color: var(--testo-tenue);
+	margin: 0 0 1.4rem;
+}
+
+.articolo__firma {
+	border-top: 1px solid var(--bordo);
+	border-bottom: 1px solid var(--bordo);
+	padding-block: 0.85rem;
+}
+
+/* Il corpo del pezzo: qui conta solo la leggibilità. */
+.corpo {
+	font-family: var(--serif);
+	font-size: 1.2rem;
+	line-height: 1.75;
+}
+
+.corpo > * + * {
+	margin-top: 1.4em;
+}
+
+.corpo h2 {
+	font-size: 1.6rem;
+	line-height: 1.3;
+	letter-spacing: -0.01em;
+	margin-top: 2.6em;
+	margin-bottom: -0.4em;
+}
+
+.corpo h3 {
+	font-size: 1.3rem;
+	line-height: 1.35;
+	margin-top: 2em;
+	margin-bottom: -0.5em;
+}
+
+.corpo blockquote {
+	margin-inline: 0;
+	padding-left: 1.4rem;
+	border-left: 3px solid var(--accento);
+	color: var(--testo-tenue);
+	font-style: italic;
+}
+
+.corpo img {
+	border-radius: 6px;
+	border: 1px solid var(--bordo);
+}
+
+.corpo figcaption {
+	font-family: var(--sans);
+	font-size: 0.85rem;
+	color: var(--testo-tenue);
+	margin-top: 0.6rem;
+}
+
+.corpo code {
+	font-size: 0.9em;
+	background: var(--sfondo-alt);
+	padding: 0.15em 0.4em;
+	border-radius: 4px;
+}
+
+.corpo pre {
+	padding: 1rem 1.2rem;
+	border-radius: 6px;
+	overflow-x: auto;
+	border: 1px solid var(--bordo);
+}
+
+.corpo hr {
+	border: none;
+	border-top: 1px solid var(--bordo);
+	margin-block: 2.5em;
+}
+
+.corpo table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--sans);
+	font-size: 0.95rem;
+}
+
+.corpo th,
+.corpo td {
+	border: 1px solid var(--bordo);
+	padding: 0.6rem 0.8rem;
+	text-align: left;
+}
+
+/* ---------- Riquadro sostegno lettori ---------- */
+
+.sostegno {
+	margin-top: 3.5rem;
+	padding: 1.6rem;
+	border: 1px solid var(--accento);
+	border-radius: 8px;
+	background: var(--accento-tenue);
+	font-family: var(--sans);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.2rem;
+}
+
+.sostegno__invito {
+	margin: 0;
+	font-size: 0.95rem;
+	max-width: 26rem;
+}
+
+.sostegno__pulsante {
+	flex-shrink: 0;
+	background: var(--accento);
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.95rem;
+	padding: 0.7rem 1.3rem;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+
+.sostegno__pulsante:hover {
+	color: #fff;
+	filter: brightness(1.1);
+}
+
+/* ---------- Riquadro autore in coda all'articolo ---------- */
+
+.riquadro-autore {
+	margin-top: 3.5rem;
+	padding: 1.6rem;
+	background: var(--sfondo-alt);
+	border-radius: 8px;
+	font-family: var(--sans);
+	font-size: 0.95rem;
+}
+
+.riquadro-autore h2 {
+	font-family: var(--sans);
+	font-size: 0.75rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--testo-tenue);
+	margin: 0 0 0.6rem;
+}
+
+/* ---------- Piè di pagina ---------- */
+
+.pie {
+	border-top: 1px solid var(--bordo);
+	margin-top: 4rem;
+	padding-block: 2.5rem 3rem;
+	font-size: 0.9rem;
+	color: var(--testo-tenue);
+}
+
+.pie__griglia {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+	gap: 2rem;
+}
+
+.pie h2 {
+	font-size: 0.75rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	margin: 0 0 0.7rem;
+	color: var(--testo);
+}
+
+.pie ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 0.4rem;
+}
+
+.pie a {
+	text-decoration: none;
+}
+
+.pie__chiusura {
+	margin-top: 2.5rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid var(--bordo);
+	font-size: 0.82rem;
+}
+
+/* ---------- Pagine di elenco ---------- */
+
+.testata-pagina {
+	padding-block: 3rem 2rem;
+	border-bottom: 1px solid var(--bordo);
+	margin-bottom: 2.5rem;
+}
+
+.testata-pagina h1 {
+	font-family: var(--serif);
+	font-size: clamp(1.9rem, 4vw, 2.6rem);
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	margin: 0 0 0.5rem;
+}
+
+.testata-pagina p {
+	margin: 0;
+	color: var(--testo-tenue);
+	max-width: 42rem;
+}
+
+.pagina-testuale {
+	max-width: var(--larghezza-testo);
+	margin-inline: auto;
+	padding-block: 3rem 4rem;
+}
+
+.anno-archivio {
+	font-family: var(--serif);
+	font-size: 1.5rem;
+	margin: 3rem 0 1.2rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--bordo);
+}
+
+.anno-archivio:first-of-type {
+	margin-top: 0;
+}
+
+.elenco-compatto {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 1.1rem;
+}
+
+.elenco-compatto a {
+	text-decoration: none;
+	font-family: var(--serif);
+	font-size: 1.15rem;
+}
+
+.filtri-categoria {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-bottom: 2.5rem;
+}
+
+/* ---------- Riduzione del movimento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}

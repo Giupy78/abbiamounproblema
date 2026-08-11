@@ -1,0 +1,49 @@
+---
+import { SITO, MENU } from '../config';
+
+// Serve a evidenziare nel menu la pagina in cui ci si trova.
+const percorsoAttuale = Astro.url.pathname.replace(/\/+$/, '') || '/';
+---
+
+<header class="intestazione">
+	<div class="contenitore intestazione__interno">
+		<a href="/" class="marchio">
+			<p class="marchio__nome">{SITO.nome}</p>
+			<p class="marchio__slogan">{SITO.slogan}</p>
+		</a>
+
+		<nav class="navigazione" aria-label="Navigazione principale">
+			{
+				MENU.map((voce) => (
+					<a href={voce.url} aria-current={percorsoAttuale === voce.url ? 'page' : undefined}>
+						{voce.testo}
+					</a>
+				))
+			}
+			<button
+				class="pulsante-tema"
+				type="button"
+				data-cambia-tema
+				aria-label="Cambia tema chiaro/scuro"
+				title="Cambia tema chiaro/scuro"
+			>
+				<span aria-hidden="true">◐</span>
+			</button>
+		</nav>
+	</div>
+</header>
+
+<script>
+	// Alterna tema chiaro e scuro e ricorda la scelta.
+	// La preferenza del sistema operativo resta il valore di partenza.
+	const pulsante = document.querySelector('[data-cambia-tema]');
+
+	pulsante?.addEventListener('click', () => {
+		const sistemaScuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const attuale = document.documentElement.dataset.tema ?? (sistemaScuro ? 'scuro' : 'chiaro');
+		const nuovo = attuale === 'scuro' ? 'chiaro' : 'scuro';
+
+		document.documentElement.dataset.tema = nuovo;
+		localStorage.setItem('tema', nuovo);
+	});
+</script>

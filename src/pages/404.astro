@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { articoliPubblicati } from '../utils/articoli';
+
+const ultimi = (await articoliPubblicati()).slice(0, 5);
+---
+
+<Base
+	titolo="Pagina non trovata"
+	descrizione="La pagina che cercavi non esiste o è stata spostata. Qui trovi gli articoli più recenti e il link all'archivio completo."
+	noindex
+>
+	<div class="contenitore">
+		<div class="pagina-testuale">
+			<h1 class="articolo__titolo">Questa pagina non c'è</h1>
+			<p>
+				L'indirizzo che hai aperto non esiste, oppure l'articolo è stato spostato. Non è colpa tua.
+			</p>
+
+			{
+				ultimi.length > 0 && (
+					<>
+						<h2>Gli ultimi articoli</h2>
+						<ul class="elenco-compatto">
+							{ultimi.map((articolo) => (
+								<li>
+									<a href={`/${articolo.id}`}>{articolo.data.titolo}</a>
+								</li>
+							))}
+						</ul>
+					</>
+				)
+			}
+
+			<p style="margin-top:2rem">
+				<a href="/">Torna alla home</a> · <a href="/archivio">Vai all'archivio</a>
+			</p>
+		</div>
+	</div>
+</Base>

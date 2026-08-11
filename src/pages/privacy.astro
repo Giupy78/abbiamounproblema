@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITO } from '../config';
+
+/*
+ * ATTENZIONE — Questo è un modello di partenza, non un documento legale
+ * pronto all'uso. Descrive la configurazione attuale del sito: nessun
+ * cookie, nessun modulo di contatto, nessuno strumento pubblicitario.
+ *
+ * Se in futuro aggiungi Google Analytics, commenti, newsletter o pubblicità,
+ * questa pagina va riscritta e con ogni probabilità serve anche un banner
+ * per il consenso ai cookie. Per un sito che pubblica opinioni su temi di
+ * attualità vale la pena farla rivedere a chi se ne intende.
+ */
+const oggi = new Date().toLocaleDateString('it-IT', {
+	day: 'numeric',
+	month: 'long',
+	year: 'numeric',
+});
+---
+
+<Base
+	titolo="Privacy e cookie"
+	descrizione={`Come ${SITO.nome} tratta i dati di chi visita il sito: nessun cookie di profilazione, nessun dato personale raccolto senza che tu scriva.`}
+>
+	<div class="contenitore">
+		<div class="pagina-testuale">
+			<h1 class="articolo__titolo">Privacy e cookie</h1>
+
+			<div class="corpo">
+				<p><em>Ultimo aggiornamento: {oggi}</em></p>
+
+				<h2>In breve</h2>
+				<p>
+					Questo sito <strong>non usa cookie di profilazione</strong>, non ti segue su altri siti e
+					non vende dati a nessuno. Puoi leggere qualsiasi articolo senza lasciare informazioni
+					personali.
+				</p>
+
+				<h2>Chi tratta i dati</h2>
+				<p>
+					Titolare del trattamento: <strong>{SITO.autore.nome}</strong>. Per contatti:
+					<a href="/contatti">pagina contatti</a>.
+				</p>
+				<p>
+					DA COMPILARE — Se sei tenuto a indicare partita IVA o indirizzo, aggiungili qui.
+				</p>
+
+				<h2>Dati raccolti automaticamente</h2>
+				<p>
+					Il sito è ospitato su <strong>Cloudflare Pages</strong>. Come qualsiasi server web,
+					Cloudflare registra dati tecnici sulle richieste ricevute (indirizzo IP, tipo di
+					browser, pagina richiesta, data e ora) per far funzionare il servizio e proteggerlo
+					dagli attacchi. Sono dati trattati per un legittimo interesse alla sicurezza e
+					conservati per un periodo limitato.
+				</p>
+
+				<h2>Statistiche di visita</h2>
+				<p>
+					Se attive, le statistiche usano <strong>Cloudflare Web Analytics</strong>: uno strumento
+					che <strong>non installa cookie</strong> e non crea un identificativo del singolo
+					visitatore. Vengono conteggiate le pagine viste in forma aggregata, senza poter
+					risalire a chi le ha viste.
+				</p>
+
+				<h2>Cookie</h2>
+				<p>
+					Il sito salva una sola informazione sul tuo dispositivo, e solo se sei tu a chiederlo:
+					la <strong>preferenza tra tema chiaro e tema scuro</strong>, quando premi il pulsante
+					nell'intestazione. È memorizzata localmente nel tuo browser, non viene inviata a nessun
+					server e non serve a identificarti. Puoi cancellarla svuotando i dati del sito dalle
+					impostazioni del browser.
+				</p>
+
+				<h2>Se mi scrivi</h2>
+				<p>
+					Quando mandi un'email, il tuo indirizzo e il contenuto del messaggio restano nella
+					casella di posta e vengono usati solo per risponderti. Non finiscono in nessuna lista e
+					non vengono usati per inviarti altro.
+				</p>
+
+				<h2>Link verso altri siti</h2>
+				<p>
+					Gli articoli contengono collegamenti a fonti esterne. Una volta che apri quei siti vale
+					la loro informativa, non questa: non ho controllo su come trattano i dati.
+				</p>
+
+				<h2>I tuoi diritti</h2>
+				<p>
+					Il Regolamento europeo (GDPR) ti dà il diritto di sapere quali tuoi dati sono trattati e
+					di chiederne la correzione o la cancellazione, di opporti al trattamento e di proporre
+					reclamo al Garante per la protezione dei dati personali. Per esercitarli, scrivimi dalla
+					<a href="/contatti">pagina contatti</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</Base>

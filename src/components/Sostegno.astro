@@ -1,0 +1,23 @@
+---
+/**
+ * Riquadro per il sostegno dei lettori.
+ *
+ * Non produce nulla finché SITO.donazioni.url è vuoto: così il sito non
+ * mostra mai un pulsante che non porta da nessuna parte.
+ */
+import { SITO } from '../config';
+
+const { url, invito, testoPulsante } = SITO.donazioni;
+const attivo = url.length > 0;
+---
+
+{
+	attivo && (
+		<aside class="sostegno">
+			<p class="sostegno__invito">{invito}</p>
+			<a class="sostegno__pulsante" href={url} target="_blank" rel="noopener nofollow">
+				{testoPulsante}
+			</a>
+		</aside>
+	)
+}

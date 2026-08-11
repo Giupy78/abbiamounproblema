@@ -1,0 +1,138 @@
+---
+/**
+ * Tutti i dati che i motori di ricerca e i social leggono da una pagina.
+ *
+ * Questo componente sostituisce, da solo, ciò che su WordPress fa il plugin
+ * Yoast: titolo, descrizione, URL canonico, anteprime social e dati
+ * strutturati. Ogni pagina del sito lo usa, quindi nessuna pagina può
+ * uscire senza i suoi tag SEO.
+ */
+import { SITO } from '../config';
+
+interface Props {
+	titolo: string;
+	descrizione: string;
+	tipo?: 'website' | 'article';
+	/** Percorso dalla radice (/immagine.png) o URL assoluto. */
+	immagine?: string;
+	dataPubblicazione?: Date;
+	dataAggiornamento?: Date;
+	categoria?: string;
+	tag?: string[];
+	/** Se true, chiede ai motori di ricerca di non indicizzare la pagina. */
+	noindex?: boolean;
+}
+
+const {
+	titolo,
+	descrizione,
+	tipo = 'website',
+	immagine,
+	dataPubblicazione,
+	dataAggiornamento,
+	categoria,
+	tag = [],
+	noindex = false,
+} = Astro.props;
+
+// URL canonico: dice a Google qual è l'indirizzo ufficiale di questa pagina,
+// così le eventuali varianti (con barra finale, con parametri di tracciamento)
+// non vengono contate come pagine duplicate.
+const percorso = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/+$/, '');
+const canonico = new URL(percorso, Astro.site).href;
+
+// Il titolo che appare nella scheda del browser e nei risultati di ricerca.
+const titoloScheda = titolo === SITO.nome ? `${SITO.nome} — ${SITO.slogan}` : `${titolo} | ${SITO.nome}`;
+
+const immagineSocial = new URL(immagine ?? SITO.immagineCondivisione, Astro.site).href;
+
+// Dati strutturati: la descrizione della pagina in un formato che Google
+// legge come dati, non come testo. È ciò che permette di mostrare autore e
+// data sotto il risultato di ricerca.
+const autore = {
+	'@type': 'Person',
+	name: SITO.autore.nome,
+	jobTitle: SITO.autore.ruolo,
+	url: new URL('/chi-sono', SITO.dominio).href,
+};
+
+const datiStrutturati =
+	tipo === 'article'
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'BlogPosting',
+				headline: titolo.slice(0, 110),
+				description: descrizione,
+				image: [immagineSocial],
+				datePublished: dataPubblicazione?.toISOString(),
+				dateModified: (dataAggiornamento ?? dataPubblicazione)?.toISOString(),
+				author: autore,
+				publisher: {
+					'@type': 'Organization',
+					name: SITO.nome,
+					url: SITO.dominio,
+				},
+				mainEntityOfPage: { '@type': 'WebPage', '@id': canonico },
+				inLanguage: SITO.lingua,
+				...(categoria ? { articleSection: categoria } : {}),
+				...(tag.length ? { keywords: tag.join(', ') } : {}),
+			}
+		: {
+				'@context': 'https://schema.org',
+				'@type': 'WebSite',
+				name: SITO.nome,
+				alternateName: SITO.slogan,
+				url: SITO.dominio,
+				description: SITO.descrizione,
+				inLanguage: SITO.lingua,
+				author: autore,
+			};
+---
+
+<title>{titoloScheda}</title>
+<meta name="description" content={descrizione} />
+<link rel="canonical" href={canonico} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />}
+
+{/* Anteprima nelle condivisioni su Facebook, WhatsApp, LinkedIn, Telegram */}
+<meta property="og:type" content={tipo} />
+<meta property="og:site_name" content={SITO.nome} />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:title" content={titolo} />
+<meta property="og:description" content={descrizione} />
+<meta property="og:url" content={canonico} />
+<meta property="og:image" content={immagineSocial} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+{
+	tipo === 'article' && (
+		<>
+			<meta property="article:author" content={SITO.autore.nome} />
+			{dataPubblicazione && (
+				<meta property="article:published_time" content={dataPubblicazione.toISOString()} />
+			)}
+			{dataAggiornamento && (
+				<meta property="article:modified_time" content={dataAggiornamento.toISOString()} />
+			)}
+			{categoria && <meta property="article:section" content={categoria} />}
+			{tag.map((t) => (
+				<meta property="article:tag" content={t} />
+			))}
+		</>
+	)
+}
+
+{/* Anteprima su X / Twitter */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={titolo} />
+<meta name="twitter:description" content={descrizione} />
+<meta name="twitter:image" content={immagineSocial} />
+
+<meta name="author" content={SITO.autore.nome} />
+
+<link rel="alternate" type="application/rss+xml" title={`${SITO.nome} — Articoli`} href={new URL('/rss.xml', SITO.dominio).href} />
+
+<script type="application/ld+json" set:html={JSON.stringify(datiStrutturati)} is:inline />

@@ -1,0 +1,66 @@
+---
+import Base from '../../layouts/Base.astro';
+import SchedaArticolo from '../../components/SchedaArticolo.astro';
+import { CATEGORIE } from '../../config';
+import { articoliPubblicati, categoriaInUrl } from '../../utils/articoli';
+
+export async function getStaticPaths() {
+	const articoli = await articoliPubblicati();
+
+	// Una pagina per ogni categoria, anche se per ora è vuota: così l'indirizzo
+	// esiste già e non restituisce un errore 404 quando ci si arriva dal menu.
+	return CATEGORIE.map((categoria) => ({
+		params: { categoria: categoriaInUrl(categoria) },
+		props: {
+			categoria,
+			articoli: articoli.filter((a: any) => a.data.categoria === categoria),
+		},
+	}));
+}
+
+const { categoria, articoli } = Astro.props;
+
+const descrizioni: Record<string, string> = {
+	Economia:
+		'Salari, prezzi, tasse, lavoro: i numeri che decidono quanto resta in tasca alle persone, e chi decide quei numeri.',
+	'Finanza personale':
+		'Mutui, bollette, risparmio, pensioni: come le scelte di sistema arrivano al conto corrente di chi legge.',
+	Società:
+		'Come cambia il modo in cui viviamo insieme: famiglie, città, scuola, sanità, diseguaglianze.',
+	'Ambiente ed Energia':
+		'Clima, bollette, rinnovabili, nucleare, territorio: le scelte di oggi e il conto che arriva domani.',
+};
+
+const descrizione = descrizioni[categoria] ?? `Tutti gli articoli della sezione ${categoria}.`;
+---
+
+<Base
+	titolo={categoria}
+	descrizione={`${descrizione} Tutti gli articoli della sezione ${categoria}.`.slice(0, 170)}
+>
+	<div class="contenitore">
+		<div class="testata-pagina">
+			<h1>{categoria}</h1>
+			<p>{descrizione}</p>
+		</div>
+
+		<div style="padding-bottom: 4rem">
+			{
+				articoli.length === 0 ? (
+					<p>
+						Non c'è ancora nulla in questa sezione. <a href="/archivio">Vai all'archivio</a> per
+						vedere gli altri temi.
+					</p>
+				) : (
+					<ul class="elenco-articoli">
+						{articoli.map((articolo: any) => (
+							<li>
+								<SchedaArticolo articolo={articolo} />
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</div>
+	</div>
+</Base>

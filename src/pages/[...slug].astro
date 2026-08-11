@@ -1,0 +1,134 @@
+---
+/**
+ * Pagina di un singolo articolo.
+ *
+ * Gli articoli vivono alla radice del sito: abbiamounproblema.it/caro-affitti
+ * e non /articoli/caro-affitti. URL più corti e più leggibili.
+ * Il prezzo da pagare è che i nomi delle pagine fisse sono riservati:
+ * l'elenco è in src/config.ts, alla voce SLUG_RISERVATI.
+ */
+import { render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Sostegno from '../components/Sostegno.astro';
+import { SITO } from '../config';
+import {
+	articoliPubblicati,
+	dataEstesa,
+	dataMacchina,
+	categoriaInUrl,
+	minutiLettura,
+} from '../utils/articoli';
+
+export async function getStaticPaths() {
+	const articoli = await articoliPubblicati();
+
+	return articoli.map((articolo: any) => ({
+		params: { slug: articolo.id },
+		props: { articolo, tutti: articoli },
+	}));
+}
+
+const { articolo, tutti } = Astro.props;
+const dati = articolo.data;
+const { Content } = await render(articolo);
+
+const minuti = minutiLettura(articolo.body ?? '');
+
+// Altri pezzi dello stesso tema: tengono il lettore sul sito e creano i
+// collegamenti interni che aiutano Google a capire come è organizzato il sito.
+const correlati = tutti
+	.filter((a: any) => a.id !== articolo.id && a.data.categoria === dati.categoria)
+	.slice(0, 3);
+---
+
+<Base
+	titolo={dati.titolo}
+	descrizione={dati.descrizione}
+	tipo="article"
+	dataPubblicazione={dati.dataPubblicazione}
+	dataAggiornamento={dati.dataAggiornamento}
+	categoria={dati.categoria}
+	tag={[...dati.tag]}
+>
+	<div class="contenitore">
+		<article class="articolo">
+			<header class="articolo__intestazione">
+				<a class="etichetta-categoria" href={`/categoria/${categoriaInUrl(dati.categoria)}`}>
+					{dati.categoria}
+				</a>
+
+				<h1 class="articolo__titolo">{dati.titolo}</h1>
+
+				<p class="articolo__sommario">{dati.descrizione}</p>
+
+				<div class="articolo__firma meta-riga">
+					<span>di <strong>{SITO.autore.nome}</strong></span>
+					<span class="meta-riga__separatore">·</span>
+					<time datetime={dataMacchina(dati.dataPubblicazione)}>
+						{dataEstesa(dati.dataPubblicazione)}
+					</time>
+					{
+						dati.dataAggiornamento && (
+							<>
+								<span class="meta-riga__separatore">·</span>
+								<span>
+									aggiornato il{' '}
+									<time datetime={dataMacchina(dati.dataAggiornamento)}>
+										{dataEstesa(dati.dataAggiornamento)}
+									</time>
+								</span>
+							</>
+						)
+					}
+					<span class="meta-riga__separatore">·</span>
+					<span>{minuti} min di lettura</span>
+				</div>
+			</header>
+
+			{
+				dati.immagine && (
+					<figure style="margin: 0 0 2.5rem">
+						<Image
+							src={dati.immagine}
+							alt={dati.immagineAlt ?? ''}
+							widths={[600, 900, 1400]}
+							sizes="(max-width: 46rem) 100vw, 44rem"
+							loading="eager"
+							style="border-radius: 6px; width: 100%; height: auto"
+						/>
+						{dati.immagineAlt && <figcaption class="meta-riga">{dati.immagineAlt}</figcaption>}
+					</figure>
+				)
+			}
+
+			<div class="corpo">
+				<Content />
+			</div>
+
+			<Sostegno />
+
+			<aside class="riquadro-autore">
+				<h2>Chi ha scritto questo pezzo</h2>
+				<p style="margin:0 0 0.6rem"><strong>{SITO.autore.nome}</strong> — {SITO.autore.ruolo}</p>
+				<p style="margin:0">{SITO.autore.bio}</p>
+				<p style="margin:0.9rem 0 0"><a href="/chi-sono">Leggi di più</a></p>
+			</aside>
+
+			{
+				correlati.length > 0 && (
+					<section style="margin-top: 3.5rem">
+						<h2 class="anno-archivio">Altro su {dati.categoria}</h2>
+						<ul class="elenco-compatto">
+							{correlati.map((a: any) => (
+								<li>
+									<a href={`/${a.id}`}>{a.data.titolo}</a>
+								</li>
+							))}
+						</ul>
+					</section>
+				)
+			}
+		</article>
+	</div>
+</Base>

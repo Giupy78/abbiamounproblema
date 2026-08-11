@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import SchedaArticolo from '../components/SchedaArticolo.astro';
+import { SITO } from '../config';
+import { articoliPubblicati } from '../utils/articoli';
+
+const articoli = await articoliPubblicati();
+
+// Se un articolo è segnato "inEvidenza" va in cima, altrimenti ci va il più
+// recente. Gli altri seguono in ordine cronologico.
+const inEvidenza = articoli.find((a: any) => a.data.inEvidenza) ?? articoli[0];
+const restanti = articoli.filter((a: any) => a.id !== inEvidenza?.id).slice(0, 12);
+---
+
+<Base titolo={SITO.nome} descrizione={SITO.descrizione}>
+	<div class="contenitore">
+		{
+			articoli.length === 0 ? (
+				<div class="pagina-testuale">
+					<h1>Il sito è pronto, mancano gli articoli</h1>
+					<p>
+						Per pubblicare il primo pezzo crea un file in
+						<code>src/contenuti/articoli/</code>. Le istruzioni passo passo sono nel file
+						<code>COME-PUBBLICARE.md</code>, nella cartella principale del progetto.
+					</p>
+				</div>
+			) : (
+				<div style="padding-block: 2.5rem 4rem">
+					{inEvidenza && (
+						<div style="margin-bottom: 3rem">
+							<SchedaArticolo articolo={inEvidenza} evidenza />
+						</div>
+					)}
+
+					{restanti.length > 0 && (
+						<>
+							<h2 class="anno-archivio" style="margin-top:0">Gli altri articoli</h2>
+							<ul class="elenco-articoli">
+								{restanti.map((articolo: any) => (
+									<li>
+										<SchedaArticolo articolo={articolo} />
+									</li>
+								))}
+							</ul>
+						</>
+					)}
+
+					{articoli.length > 13 && (
+						<p style="margin-top:3rem">
+							<a href="/archivio">Vedi tutti gli articoli nell'archivio →</a>
+						</p>
+					)}
+				</div>
+			)
+		}
+	</div>
+</Base>

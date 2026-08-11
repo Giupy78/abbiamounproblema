@@ -1,0 +1,17 @@
+# Intestazioni HTTP applicate da Cloudflare Pages.
+# Questo file non fa parte di Astro: lo legge direttamente Cloudflare.
+
+/*
+  # Impedisce ad altri siti di incorniciare le tue pagine per farle passare per proprie.
+  X-Frame-Options: SAMEORIGIN
+  # Blocca il browser dall'indovinare il tipo di un file (vecchia fonte di attacchi).
+  X-Content-Type-Options: nosniff
+  # Verso siti esterni invia solo il dominio di provenienza, non l'indirizzo completo.
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Il sito non usa fotocamera, microfono e posizione: lo dichiariamo esplicitamente.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+# I file con impronta nel nome (/_astro/...) non cambiano mai:
+# il browser può tenerli in memoria per un anno.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

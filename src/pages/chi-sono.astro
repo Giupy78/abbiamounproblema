@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITO } from '../config';
+
+/*
+ * Questa pagina non è un dettaglio.
+ *
+ * Per un sito di attualità è la pagina che Google usa per capire chi c'è
+ * dietro i contenuti (criteri E-E-A-T: esperienza, competenza, autorevolezza,
+ * affidabilità). Un sito di opinione senza un autore riconoscibile viene
+ * valutato molto peggio di uno firmato.
+ *
+ * Sostituisci i testi segnati con "DA COMPILARE" con parole tue.
+ */
+---
+
+<Base
+	titolo="Chi sono"
+	descrizione={`Chi scrive su ${SITO.nome}, con quale metodo vengono scelti i temi e quali regole segue questo sito nel trattare le notizie.`}
+>
+	<div class="contenitore">
+		<div class="pagina-testuale">
+			<h1 class="articolo__titolo">Chi sono</h1>
+
+			<div class="corpo">
+				<p>
+					Mi chiamo <strong>{SITO.autore.nome}</strong>. {SITO.autore.bio}
+				</p>
+
+				<h2>Perché questo sito</h2>
+				<p>
+					DA COMPILARE — Racconta in un paragrafo perché hai aperto il sito: quale vuoto vuoi
+					riempire, cosa ti ha spinto a scrivere. È la parte che i lettori leggono davvero.
+				</p>
+
+				<h2>Come lavoro</h2>
+				<p>
+					Questo sito pubblica <strong>opinioni argomentate</strong>, non cronaca. Non appartengo
+					a nessun partito, non ricevo compensi da forze politiche, da aziende o da gruppi di
+					interesse per quello che scrivo.
+				</p>
+				<p>Le regole che seguo su ogni pezzo:</p>
+				<ul>
+					<li>
+						<strong>I fatti prima della tesi.</strong> Prima ricostruisco cosa è successo, con le
+						fonti; solo dopo dico cosa ne penso, e lo dico esplicitamente.
+					</li>
+					<li>
+						<strong>Fonti verificabili.</strong> Dati e citazioni sono collegati alla fonte
+						originale, così puoi controllare da solo se ho letto bene.
+					</li>
+					<li>
+						<strong>La posizione opposta nella sua versione migliore.</strong> Quando critico
+						un'idea la espongo come la esporrebbe chi la sostiene, non nella sua caricatura.
+					</li>
+					<li>
+						<strong>Gli errori restano visibili.</strong> Se sbaglio correggo il testo e scrivo in
+						fondo all'articolo cosa ho cambiato e quando. Non riscrivo la storia in silenzio.
+					</li>
+					<li>
+						<strong>Quello che non so, lo dico.</strong> Su molte questioni non esiste una
+						risposta netta: quando è così lo scrivo, invece di fingere certezze.
+					</li>
+				</ul>
+
+				<h2>Rettifiche e segnalazioni</h2>
+				<p>
+					Se trovi un errore, anche piccolo, scrivimi: le correzioni fondate vengono pubblicate.
+					Trovi i recapiti nella <a href="/contatti">pagina contatti</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</Base>

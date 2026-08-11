@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import { CATEGORIE } from '../config';
+import { articoliPubblicati, dataEstesa, dataMacchina, categoriaInUrl } from '../utils/articoli';
+
+const articoli = await articoliPubblicati();
+
+// Raggruppa per anno di pubblicazione, dal più recente.
+const perAnno = new Map<number, any[]>();
+for (const articolo of articoli) {
+	const anno = articolo.data.dataPubblicazione.getFullYear();
+	if (!perAnno.has(anno)) perAnno.set(anno, []);
+	perAnno.get(anno)!.push(articolo);
+}
+const anni = [...perAnno.keys()].sort((a, b) => b - a);
+---
+
+<Base
+	titolo="Archivio"
+	descrizione="Tutti gli articoli pubblicati, in ordine cronologico e divisi per anno. L'elenco completo dei temi affrontati fino a oggi."
+>
+	<div class="contenitore">
+		<div class="testata-pagina">
+			<h1>Archivio</h1>
+			<p>
+				{articoli.length}
+				{articoli.length === 1 ? 'articolo pubblicato' : 'articoli pubblicati'}, dal più recente.
+			</p>
+		</div>
+
+		<div class="filtri-categoria">
+			{
+				CATEGORIE.map((categoria) => (
+					<a class="etichetta-categoria" href={`/categoria/${categoriaInUrl(categoria)}`}>
+						{categoria}
+					</a>
+				))
+			}
+		</div>
+
+		<div style="padding-bottom: 4rem">
+			{
+				anni.map((anno) => (
+					<section>
+						<h2 class="anno-archivio">{anno}</h2>
+						<ul class="elenco-compatto">
+							{perAnno.get(anno)!.map((articolo: any) => (
+								<li>
+									<a href={`/${articolo.id}`}>{articolo.data.titolo}</a>
+									<div class="meta-riga">
+										<span>{articolo.data.categoria}</span>
+										<span class="meta-riga__separatore">·</span>
+										<time datetime={dataMacchina(articolo.data.dataPubblicazione)}>
+											{dataEstesa(articolo.data.dataPubblicazione)}
+										</time>
+									</div>
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+
+			{articoli.length === 0 && <p>Nessun articolo pubblicato per ora.</p>}
+		</div>
+	</div>
+</Base>

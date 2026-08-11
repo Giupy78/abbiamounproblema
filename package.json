@@ -1,0 +1,24 @@
+{
+  "name": "abbiamounproblema",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "dev:stop": "astro dev stop",
+    "dev:stato": "astro dev status",
+    "build": "astro build",
+    "preview": "astro preview",
+    "immagine-social": "node scripts/genera-immagine-social.mjs",
+    "controlla": "astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^7.0.5",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.2.0"
+  }
+}

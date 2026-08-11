@@ -1,0 +1,47 @@
+---
+/** Anteprima di un articolo negli elenchi (homepage, categorie). */
+import { Image } from 'astro:assets';
+import { dataEstesa, dataMacchina, categoriaInUrl } from '../utils/articoli';
+
+interface Props {
+	articolo: any;
+	/** Rende la scheda più grande, per l'articolo in cima alla homepage. */
+	evidenza?: boolean;
+}
+
+const { articolo, evidenza = false } = Astro.props;
+const dati = articolo.data;
+const url = `/${articolo.id}`;
+---
+
+<article class:list={['scheda', evidenza && 'scheda--evidenza']}>
+	{
+		dati.immagine && (
+			<a href={url} aria-hidden="true" tabindex="-1">
+				<Image
+					src={dati.immagine}
+					alt=""
+					widths={[400, 800, 1200]}
+					sizes="(max-width: 60rem) 100vw, 60rem"
+					class="scheda__copertina"
+					loading={evidenza ? 'eager' : 'lazy'}
+				/>
+			</a>
+		)
+	}
+
+	<div class="meta-riga">
+		<a class="etichetta-categoria" href={`/categoria/${categoriaInUrl(dati.categoria)}`}>
+			{dati.categoria}
+		</a>
+		<time datetime={dataMacchina(dati.dataPubblicazione)}>
+			{dataEstesa(dati.dataPubblicazione)}
+		</time>
+		{dati.bozza && <span class="meta-riga__separatore">·</span>}
+		{dati.bozza && <strong>Bozza</strong>}
+	</div>
+
+	<h2 class="scheda__titolo"><a href={url}>{dati.titolo}</a></h2>
+
+	<p class="scheda__descrizione">{dati.descrizione}</p>
+</article>

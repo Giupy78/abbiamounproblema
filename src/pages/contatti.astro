@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITO } from '../config';
+
+const email = SITO.autore.email;
+const emailValida = !email.startsWith('DA COMPILARE');
+---
+
+<Base
+	titolo="Contatti"
+	descrizione={`Come scrivere alla redazione di ${SITO.nome}: segnalazioni, richieste di rettifica, proposte di temi da approfondire e collaborazioni.`}
+>
+	<div class="contenitore">
+		<div class="pagina-testuale">
+			<h1 class="articolo__titolo">Contatti</h1>
+
+			<div class="corpo">
+				<p>Scrivimi per segnalare un errore, proporre un tema o dire che non sei d'accordo.</p>
+
+				{
+					emailValida ? (
+						<p>
+							<a href={`mailto:${email}`}>{email}</a>
+						</p>
+					) : (
+						<p>
+							<em>
+								Indirizzo email non ancora impostato: inseriscilo nel file
+								<code>src/config.ts</code>.
+							</em>
+						</p>
+					)
+				}
+
+				<h2>Richieste di rettifica</h2>
+				<p>
+					Se un articolo contiene un'informazione sbagliata che ti riguarda, scrivimi indicando
+					l'articolo, il passaggio preciso e la versione corretta dei fatti, con una fonte se ce
+					l'hai. Le rettifiche fondate vengono pubblicate in fondo all'articolo, con la data.
+				</p>
+			</div>
+		</div>
+	</div>
+</Base>
