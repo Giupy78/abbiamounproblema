@@ -9,10 +9,17 @@ export default defineConfig({
 	// sitemap.xml e feed RSS con indirizzi assoluti corretti.
 	site: 'https://abbiamounproblema.it',
 
-	// Cloudflare Pages serve le pagine senza barra finale e reindirizza
-	// /articolo/ -> /articolo. Teniamo Astro allineato a quel comportamento,
-	// altrimenti i link canonici non coincidono con gli URL reali.
+	// URL senza barra finale: /caro-affitti e non /caro-affitti/
 	trailingSlash: 'never',
+
+	// Genera "caro-affitti.html" invece di "caro-affitti/index.html".
+	//
+	// Non è un dettaglio estetico: con le cartelle, Cloudflare Pages
+	// reindirizza /caro-affitti a /caro-affitti/ con un 308, e i link
+	// canonici (che non hanno la barra) punterebbero a un indirizzo che
+	// rimanda altrove. Con i file singoli l'indirizzo servito coincide
+	// esattamente con quello dichiarato ai motori di ricerca.
+	build: { format: 'file' },
 
 	integrations: [
 		mdx(),
