@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITO, AMBITI } from '../config';
+import { propostePubblicate } from '../utils/articoli';
+
+const proposte = await propostePubblicate();
+
+// Mostriamo solo gli ambiti che hanno almeno una proposta: un titolo di
+// sezione seguito dal vuoto fa sembrare il sito incompiuto.
+const perAmbito = AMBITI.map((ambito) => ({
+	ambito,
+	elenco: proposte.filter((p: any) => p.data.ambito === ambito),
+})).filter((gruppo) => gruppo.elenco.length > 0);
+
+/** Classe CSS del riquadro di stato: colori diversi per stati diversi. */
+function classeStato(stato: string): string {
+	const mappa: Record<string, string> = {
+		Proposta: 'proposta',
+		'In discussione': 'discussione',
+		'Già applicata altrove': 'altrove',
+		Realizzata: 'realizzata',
+	};
+	return mappa[stato] ?? 'proposta';
+}
+---
+
+<Base
+	titolo="Proposte per sburocratizzare l'Italia"
+	descrizione={`Le soluzioni concrete che escono dalle analisi di ${SITO.nome}: cosa fare, quanto è difficile farlo e chi l'ha già fatto prima di noi.`}
+>
+	<div class="contenitore">
+		<div class="testata-pagina">
+			<h1>Le proposte</h1>
+			<p>
+				Gli articoli smontano i problemi. Qui restano le soluzioni: cosa fare, quanto è difficile
+				farlo, e se qualcuno da qualche parte l'ha già fatto. Questa pagina non invecchia come un
+				articolo — si aggiorna quando qualcosa si muove.
+			</p>
+		</div>
+
+		{
+			proposte.length === 0 ? (
+				<p style="padding-bottom:4rem">Nessuna proposta pubblicata per ora.</p>
+			) : (
+				<div style="padding-bottom: 4rem">
+					<p class="meta-riga" style="margin-bottom:2.5rem">
+						{proposte.length} {proposte.length === 1 ? 'proposta' : 'proposte'} in
+						{' '}
+						{perAmbito.length} {perAmbito.length === 1 ? 'ambito' : 'ambiti'}
+					</p>
+
+					{perAmbito.map((gruppo) => (
+						<section>
+							<h2 class="anno-archivio">{gruppo.ambito}</h2>
+
+							<ul class="elenco-proposte">
+								{gruppo.elenco.map((p: any) => (
+									<li>
+										<article class="proposta">
+											<div class="proposta__etichette">
+												<span class:list={['stato', `stato--${classeStato(p.data.stato)}`]}>
+													{p.data.stato}
+												</span>
+												<span class="proposta__difficolta">
+													Difficoltà: {p.data.difficolta.toLowerCase()}
+												</span>
+												{p.data.origine === 'Segnalazione di un lettore' && (
+													<span class="proposta__difficolta">Da una segnalazione</span>
+												)}
+											</div>
+
+											<h3 class="proposta__titolo">
+												<a href={`/proposte/${p.id}`}>{p.data.titolo}</a>
+											</h3>
+
+											<p class="proposta__problema">
+												<strong>Il problema:</strong> {p.data.problema}
+											</p>
+
+											<p class="proposta__descrizione">{p.data.descrizione}</p>
+										</article>
+									</li>
+								))}
+							</ul>
+						</section>
+					))}
+				</div>
+			)
+		}
+
+		<aside class="sostegno" style="margin-bottom:4rem">
+			<p class="sostegno__invito">
+				Hai un problema concreto da sottoporre, o una soluzione che hai visto funzionare?
+				Le proposte migliori nascono da chi il problema lo vive.
+			</p>
+			<a class="sostegno__pulsante" href="/contatti">Scrivici</a>
+		</aside>
+	</div>
+</Base>

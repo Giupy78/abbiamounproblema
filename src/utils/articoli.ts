@@ -18,6 +18,21 @@ export async function articoliPubblicati() {
 	);
 }
 
+/**
+ * Le proposte pubblicabili, dalla più recente.
+ * Come per gli articoli, le bozze restano visibili solo in locale.
+ */
+export async function propostePubblicate() {
+	const tutte = await getCollection('proposte', ({ data }: { data: { bozza: boolean } }) => {
+		return import.meta.env.PROD ? data.bozza === false : true;
+	});
+
+	return tutte.sort(
+		(a: ArticoloBase, b: ArticoloBase) =>
+			b.data.dataPubblicazione.valueOf() - a.data.dataPubblicazione.valueOf(),
+	);
+}
+
 type ArticoloBase = { data: { dataPubblicazione: Date } };
 
 /** Formatta una data in italiano esteso: "11 agosto 2026". */

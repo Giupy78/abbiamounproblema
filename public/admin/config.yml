@@ -133,3 +133,122 @@ collections:
       - name: body
         label: 'Testo dell articolo'
         widget: markdown
+
+  - name: proposte
+    label: Proposte
+    label_singular: Proposta
+    description: 'Le soluzioni che escono dagli articoli. Restano valide finche il problema non e risolto: aggiornale quando qualcosa si muove.'
+    folder: src/contenuti/proposte
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: titolo
+    slug: '{{slug}}'
+    summary: '{{titolo}} — {{stato}}'
+    sortable_fields: [dataPubblicazione, titolo, stato]
+
+    fields:
+      - name: titolo
+        label: 'Titolo'
+        hint: 'Da 15 a 70 caratteri. Dì cosa si propone, non quale problema risolve.'
+        widget: string
+        pattern:
+          ['^.{15,70}$', 'Il titolo deve essere lungo tra 15 e 70 caratteri.']
+
+      - name: titoloSeo
+        label: 'Titolo per Google (facoltativo)'
+        hint: 'Massimo 38 caratteri.'
+        widget: string
+        required: false
+        pattern: ['^.{0,38}$', 'Massimo 38 caratteri.']
+
+      - name: descrizione
+        label: 'Descrizione per Google'
+        hint: 'Da 70 a 170 caratteri.'
+        widget: text
+        pattern:
+          [
+            '^[\s\S]{70,170}$',
+            'La descrizione deve essere lunga tra 70 e 170 caratteri.',
+          ]
+
+      - name: problema
+        label: 'Il problema, in una frase'
+        hint: 'E la riga che il lettore legge per prima: cosa non funziona, senza girarci intorno.'
+        widget: text
+        pattern:
+          [
+            '^[\s\S]{30,220}$',
+            'Tienilo tra 30 e 220 caratteri: il resto va nel corpo della proposta.',
+          ]
+
+      - name: ambito
+        label: 'Ambito'
+        widget: select
+        options:
+          - 'Burocrazia'
+          - 'Fisco'
+          - 'Giustizia'
+          - 'Lavoro'
+          - 'Sanità'
+          - 'Scuola'
+          - 'Energia'
+          - 'Trasporti'
+
+      - name: stato
+        label: 'A che punto è'
+        hint: 'Usa "Già applicata altrove" solo se puoi linkare la norma straniera nel testo.'
+        widget: select
+        default: 'Proposta'
+        options:
+          - 'Proposta'
+          - 'In discussione'
+          - 'Già applicata altrove'
+          - 'Realizzata'
+
+      - name: difficolta
+        label: 'Difficoltà di realizzazione'
+        widget: select
+        default: 'Media'
+        options: ['Bassa', 'Media', 'Alta']
+
+      - name: origine
+        label: 'Da dove viene'
+        widget: select
+        default: 'Analisi della redazione'
+        options:
+          - 'Analisi della redazione'
+          - 'Segnalazione di un lettore'
+
+      - name: articoloCollegato
+        label: 'Articolo da cui nasce (facoltativo)'
+        hint: "Il nome del file dell articolo, senza estensione. Esempio: quanto-costa-la-burocrazia-in-italia"
+        widget: string
+        required: false
+
+      - name: dataPubblicazione
+        label: 'Data di pubblicazione'
+        widget: datetime
+        format: 'YYYY-MM-DD'
+        date_format: 'DD/MM/YYYY'
+        time_format: false
+        picker_utc: true
+
+      - name: dataAggiornamento
+        label: 'Data di aggiornamento'
+        hint: 'Da compilare quando lo stato della proposta cambia.'
+        widget: datetime
+        format: 'YYYY-MM-DD'
+        date_format: 'DD/MM/YYYY'
+        time_format: false
+        picker_utc: true
+        required: false
+
+      - name: bozza
+        label: 'Bozza (non pubblicare)'
+        widget: boolean
+        default: true
+
+      - name: body
+        label: 'La proposta, per esteso'
+        widget: markdown

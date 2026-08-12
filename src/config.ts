@@ -99,9 +99,44 @@ export const CATEGORIE = [
 
 export type Categoria = (typeof CATEGORIE)[number];
 
+/**
+ * Ambiti delle proposte, nella sezione /proposte.
+ *
+ * Sono più specifici delle categorie degli articoli: un articolo parla di
+ * economia, una proposta interviene sul fisco o sulla giustizia. Aggiungine
+ * pure, ricordandoti di allinearli in public/admin/config.yml.
+ */
+export const AMBITI = [
+	'Burocrazia',
+	'Fisco',
+	'Giustizia',
+	'Lavoro',
+	'Sanità',
+	'Scuola',
+	'Energia',
+	'Trasporti',
+] as const;
+
+/**
+ * A che punto è una proposta.
+ *
+ * "Già applicata altrove" è lo stato più prezioso: una misura che in un
+ * altro Paese funziona da anni è molto più difficile da liquidare come
+ * utopia. Usalo solo quando puoi linkare la norma straniera.
+ */
+export const STATI_PROPOSTA = [
+	'Proposta',
+	'In discussione',
+	'Già applicata altrove',
+	'Realizzata',
+] as const;
+
+export const DIFFICOLTA = ['Bassa', 'Media', 'Alta'] as const;
+
 /** Voci del menu principale. */
 export const MENU = [
 	{ testo: 'Home', url: '/' },
+	{ testo: 'Le proposte', url: '/proposte' },
 	{ testo: 'Archivio', url: '/archivio' },
 	{ testo: 'Chi siamo', url: '/chi-sono' },
 	{ testo: 'Contatti', url: '/contatti' },
@@ -115,6 +150,7 @@ export const MENU = [
 export const SLUG_RISERVATI = [
 	'archivio',
 	'categoria',
+	'proposte',
 	'chi-sono',
 	'contatti',
 	'privacy',

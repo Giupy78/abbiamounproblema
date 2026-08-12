@@ -58,6 +58,8 @@ Smettere di cercare salvatori della patria e cominciare a fare manutenzione ordi
 
 Nessuna delle tre è una rivoluzione. Sono manutenzione. Ed è precisamente questo il punto: non serve un genio, serve qualcuno che apra il cofano.
 
+Ciascuna è sviluppata per esteso, con le obiezioni e chi l'ha già applicata, nella sezione [Le proposte](/proposte).
+
 ## Ora tocca a voi
 
 Questo è solo il primo passo, e un'analisi calata dall'alto serve a poco se non parte dalle storie di chi le storture le vive.

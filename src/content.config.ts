@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { CATEGORIE } from './config';
+import { CATEGORIE, AMBITI, STATI_PROPOSTA, DIFFICOLTA } from './config';
 
 /**
  * Struttura di un articolo.
@@ -91,4 +91,57 @@ const articoli = defineCollection({
 			),
 });
 
-export const collections = { articoli };
+/**
+ * Le proposte.
+ *
+ * Un articolo diagnostica un problema; una proposta dice cosa fare.
+ * Vivono separate perché hanno vite diverse: un articolo invecchia,
+ * una proposta resta valida finché il problema non è risolto, e va
+ * aggiornata quando qualcosa si muove.
+ */
+const proposte = defineCollection({
+	loader: glob({
+		pattern: '**/*.{md,mdx}',
+		base: './src/contenuti/proposte',
+	}),
+	schema: z.object({
+		titolo: z
+			.string()
+			.min(15, 'Titolo troppo corto.')
+			.max(70, 'Titolo troppo lungo: oltre i 70 caratteri Google lo taglia.'),
+
+		titoloSeo: z
+			.string()
+			.max(38, 'Con il nome del sito in coda supererebbe i 60 caratteri.')
+			.optional(),
+
+		descrizione: z
+			.string()
+			.min(70, 'Descrizione troppo corta.')
+			.max(170, 'Descrizione troppo lunga: oltre i 170 caratteri Google la taglia.'),
+
+		/** Il guasto, in una frase. È la riga che il lettore legge per prima. */
+		problema: z
+			.string()
+			.min(30, 'Il problema va spiegato in una frase compiuta.')
+			.max(220, 'Tienilo in una frase: il resto va nel corpo della proposta.'),
+
+		ambito: z.enum(AMBITI),
+		stato: z.enum(STATI_PROPOSTA),
+		difficolta: z.enum(DIFFICOLTA),
+
+		origine: z
+			.enum(['Analisi della redazione', 'Segnalazione di un lettore'])
+			.default('Analisi della redazione'),
+
+		/** Nome del file dell'articolo da cui nasce, senza estensione. */
+		articoloCollegato: z.string().optional(),
+
+		dataPubblicazione: z.coerce.date(),
+		dataAggiornamento: z.coerce.date().optional(),
+
+		bozza: z.boolean().default(false),
+	}),
+});
+
+export const collections = { articoli, proposte };

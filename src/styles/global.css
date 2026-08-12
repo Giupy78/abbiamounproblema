@@ -227,6 +227,12 @@ a:hover {
 	line-height: 1.6;
 }
 
+.apertura__inviti {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
 .apertura__invito {
 	display: inline-block;
 	font-size: 0.95rem;
@@ -245,6 +251,18 @@ a:hover {
 .apertura__invito:hover {
 	background: var(--accento);
 	color: #fff;
+}
+
+/* Il secondo pulsante è più discreto: guida l'occhio sul primo. */
+.apertura__invito--secondario {
+	color: var(--testo-tenue);
+	border-color: var(--bordo);
+}
+
+.apertura__invito--secondario:hover {
+	background: transparent;
+	color: var(--accento);
+	border-color: var(--accento);
 }
 
 .apertura__mappa {
@@ -470,6 +488,145 @@ a:hover {
 	border: 1px solid var(--bordo);
 	padding: 0.6rem 0.8rem;
 	text-align: left;
+}
+
+/* ---------- Le proposte ---------- */
+
+.elenco-proposte {
+	list-style: none;
+	margin: 0 0 3rem;
+	padding: 0;
+	display: grid;
+	gap: 1.25rem;
+}
+
+.proposta {
+	border: 1px solid var(--bordo);
+	border-radius: 8px;
+	padding: 1.5rem;
+	background: var(--evidenza);
+	display: grid;
+	gap: 0.7rem;
+}
+
+.proposta__etichette {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.proposta__titolo {
+	font-family: var(--serif);
+	font-size: 1.4rem;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.proposta__titolo a {
+	text-decoration: none;
+}
+
+.proposta__problema,
+.proposta__descrizione {
+	margin: 0;
+	color: var(--testo-tenue);
+	font-size: 0.98rem;
+	line-height: 1.55;
+	max-width: 46rem;
+}
+
+.proposta__problema strong {
+	color: var(--testo);
+}
+
+.proposta__difficolta {
+	font-size: 0.78rem;
+	color: var(--testo-tenue);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+/* Lo stato di avanzamento: colori diversi per leggerlo a colpo d'occhio. */
+.stato {
+	display: inline-block;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	padding: 0.25rem 0.6rem;
+	border-radius: 999px;
+	border: 1px solid currentColor;
+}
+
+.stato--proposta {
+	color: var(--testo-tenue);
+}
+
+.stato--discussione {
+	color: #a8721a;
+}
+
+.stato--altrove {
+	color: #1a7a4c;
+}
+
+.stato--realizzata {
+	color: #1a7a4c;
+	background: rgba(26, 122, 76, 0.12);
+}
+
+:root[data-tema='scuro'] .stato--discussione {
+	color: #d9a441;
+}
+
+:root[data-tema='scuro'] .stato--altrove,
+:root[data-tema='scuro'] .stato--realizzata {
+	color: #3aa971;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-tema='chiaro']) .stato--discussione {
+		color: #d9a441;
+	}
+
+	:root:not([data-tema='chiaro']) .stato--altrove,
+	:root:not([data-tema='chiaro']) .stato--realizzata {
+		color: #3aa971;
+	}
+}
+
+/* Scheda riassuntiva in cima alla pagina di una proposta. */
+.scheda-proposta {
+	background: var(--sfondo-alt);
+	border-radius: 8px;
+	padding: 1.4rem;
+	margin-bottom: 1.6rem;
+	display: grid;
+	gap: 1.2rem;
+	font-family: var(--sans);
+}
+
+.scheda-proposta p {
+	margin: 0.2rem 0 0;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.scheda-proposta__voce {
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--testo-tenue);
+}
+
+.scheda-proposta__dati {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 1.2rem;
+	border-top: 1px solid var(--bordo);
+	padding-top: 1.2rem;
 }
 
 /* ---------- Riquadro sostegno lettori ---------- */

@@ -23,7 +23,12 @@ const restanti = articoli.filter((a: any) => a.id !== inEvidenza?.id).slice(0, 1
 			<div class="apertura__testo">
 				<h1 class="apertura__titolo">I problemi dell'Italia, uno alla volta</h1>
 				<p class="apertura__sommario">{SITO.descrizione}</p>
-				<a class="apertura__invito" href="/diamoci-un-metodo">Come lavoriamo</a>
+				<div class="apertura__inviti">
+					<a class="apertura__invito" href="/proposte">Le proposte</a>
+					<a class="apertura__invito apertura__invito--secondario" href="/diamoci-un-metodo">
+						Come lavoriamo
+					</a>
+				</div>
 			</div>
 
 			<div class="apertura__mappa">

@@ -1,0 +1,116 @@
+---
+import { render, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { SITO } from '../../config';
+import { propostePubblicate, dataEstesa, dataMacchina } from '../../utils/articoli';
+
+export async function getStaticPaths() {
+	const proposte = await propostePubblicate();
+
+	return proposte.map((proposta: any) => ({
+		params: { slug: proposta.id },
+		props: { proposta },
+	}));
+}
+
+const { proposta } = Astro.props;
+const dati = proposta.data;
+const { Content } = await render(proposta);
+
+// L'articolo da cui nasce la proposta, se indicato e se esiste ancora.
+const articolo = dati.articoloCollegato
+	? await getEntry('articoli', dati.articoloCollegato).catch(() => undefined)
+	: undefined;
+
+const classiStato: Record<string, string> = {
+	Proposta: 'proposta',
+	'In discussione': 'discussione',
+	'Già applicata altrove': 'altrove',
+	Realizzata: 'realizzata',
+};
+---
+
+<Base
+	titolo={dati.titoloSeo ?? dati.titolo}
+	descrizione={dati.descrizione}
+	tipo="article"
+	dataPubblicazione={dati.dataPubblicazione}
+	dataAggiornamento={dati.dataAggiornamento}
+	categoria={dati.ambito}
+>
+	<div class="contenitore">
+		<article class="articolo">
+			<header class="articolo__intestazione">
+				<div class="proposta__etichette">
+					<a class="etichetta-categoria" href="/proposte">Proposte</a>
+					<span class:list={['stato', `stato--${classiStato[dati.stato] ?? 'proposta'}`]}>
+						{dati.stato}
+					</span>
+				</div>
+
+				<h1 class="articolo__titolo">{dati.titolo}</h1>
+
+				<div class="scheda-proposta">
+					<div>
+						<span class="scheda-proposta__voce">Il problema</span>
+						<p>{dati.problema}</p>
+					</div>
+					<div class="scheda-proposta__dati">
+						<div>
+							<span class="scheda-proposta__voce">Ambito</span>
+							<p>{dati.ambito}</p>
+						</div>
+						<div>
+							<span class="scheda-proposta__voce">Difficoltà</span>
+							<p>{dati.difficolta}</p>
+						</div>
+						<div>
+							<span class="scheda-proposta__voce">Da dove viene</span>
+							<p>{dati.origine}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="articolo__firma meta-riga">
+					<strong>{SITO.autore.nome}</strong>
+					<span class="meta-riga__separatore">·</span>
+					<time datetime={dataMacchina(dati.dataPubblicazione)}>
+						{dataEstesa(dati.dataPubblicazione)}
+					</time>
+					{
+						dati.dataAggiornamento && (
+							<>
+								<span class="meta-riga__separatore">·</span>
+								<span>
+									aggiornata il{' '}
+									<time datetime={dataMacchina(dati.dataAggiornamento)}>
+										{dataEstesa(dati.dataAggiornamento)}
+									</time>
+								</span>
+							</>
+						)
+					}
+				</div>
+			</header>
+
+			<div class="corpo">
+				<Content />
+			</div>
+
+			{
+				articolo && (
+					<aside class="riquadro-autore">
+						<h2>L'analisi da cui nasce</h2>
+						<p style="margin:0">
+							<a href={`/${articolo.id}`}>{articolo.data.titolo}</a>
+						</p>
+					</aside>
+				)
+			}
+
+			<p style="margin-top:2.5rem">
+				<a href="/proposte">← Tutte le proposte</a>
+			</p>
+		</article>
+	</div>
+</Base>
