@@ -4,7 +4,7 @@ descrizione: "In Italia siamo maestri nel lamentarci, ma la lamentela non ha mai
 dataPubblicazione: 2026-08-11
 categoria: "Società"
 tag: ["metodo", "partecipazione", "riforme"]
-inEvidenza: true
+inEvidenza: false
 ---
 
 Ci sono giorni in cui guardi il telegiornale, leggi un report sull'economia, osservi una norma che blocca un'attività o ti scontri con la burocrazia di tutti i giorni, e ti viene spontaneo pensare: qui c'è qualcosa che non va.

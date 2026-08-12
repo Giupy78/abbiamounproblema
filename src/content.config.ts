@@ -26,6 +26,21 @@ const articoli = defineCollection({
 				.max(70, 'Titolo troppo lungo: oltre i 70 caratteri Google lo taglia nei risultati.'),
 
 			/**
+			 * Titolo alternativo per i motori di ricerca, facoltativo.
+			 *
+			 * Serve quando il titolo in pagina è evocativo ma poco cercato:
+			 * qui metti le parole che la gente digita davvero. Se lo lasci
+			 * vuoto viene usato il titolo normale.
+			 *
+			 * Il limite è 38 caratteri perché il sito aggiunge in coda
+			 * " | Abbiamo un problema": oltre quella soglia Google taglia.
+			 */
+			titoloSeo: z
+				.string()
+				.max(38, 'Con il nome del sito in coda supererebbe i 60 caratteri e Google lo taglierebbe.')
+				.optional(),
+
+			/**
 			 * Il testo grigio sotto il titolo nei risultati di ricerca.
 			 * Non influenza il posizionamento ma decide se la gente clicca.
 			 */

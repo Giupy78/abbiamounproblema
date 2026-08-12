@@ -57,6 +57,13 @@ collections:
         pattern:
           ['^.{15,70}$', 'Il titolo deve essere lungo tra 15 e 70 caratteri.']
 
+      - name: titoloSeo
+        label: 'Titolo per Google (facoltativo)'
+        hint: 'Massimo 38 caratteri. Da usare quando il titolo in pagina è evocativo ma poco cercato: qui metti le parole che la gente digita. Se lo lasci vuoto viene usato il titolo normale.'
+        widget: string
+        required: false
+        pattern: ['^.{0,38}$', 'Massimo 38 caratteri: il sito aggiunge in coda il proprio nome.']
+
       - name: descrizione
         label: 'Descrizione per Google'
         hint: 'Da 70 a 170 caratteri. E il testo grigio sotto il titolo nei risultati di ricerca: decide chi clicca.'

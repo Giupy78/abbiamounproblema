@@ -42,8 +42,12 @@ const correlati = tutti
 	.slice(0, 3);
 ---
 
+{/*
+	Ai motori di ricerca va il titolo alternativo, se c'è: in pagina resta
+	quello evocativo, su Google finiscono le parole che la gente digita.
+*/}
 <Base
-	titolo={dati.titolo}
+	titolo={dati.titoloSeo ?? dati.titolo}
 	descrizione={dati.descrizione}
 	tipo="article"
 	dataPubblicazione={dati.dataPubblicazione}
