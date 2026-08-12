@@ -39,8 +39,12 @@ export const SITO = {
 
 		bio: 'Scriviamo di economia, società e istituzioni con un metodo fisso: prima il problema, con i dati alla mano, poi una proposta concreta. Qui contano le idee e il modo in cui reggono alla verifica, non chi le firma.',
 
-		/** Lascia la stringa vuota finché non hai una casella attiva. */
-		email: '',
+		/**
+		 * Casella inoltrata da Cloudflare Email Routing verso la posta
+		 * di servizio del sito. Lascia la stringa vuota per nascondere
+		 * il recapito e mostrare al suo posto un messaggio di attesa.
+		 */
+		email: 'redazione@abbiamounproblema.it',
 	},
 
 	/** Lascia la stringa vuota per nascondere il link. */
