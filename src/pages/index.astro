@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SchedaArticolo from '../components/SchedaArticolo.astro';
+import CartinaItalia from '../components/CartinaItalia.astro';
 import { SITO } from '../config';
 import { articoliPubblicati } from '../utils/articoli';
 
@@ -13,19 +14,38 @@ const restanti = articoli.filter((a: any) => a.id !== inEvidenza?.id).slice(0, 1
 ---
 
 <Base titolo={SITO.nome} descrizione={SITO.descrizione}>
+	{/*
+		L'apertura porta l'unico <h1> della homepage: prima non ce n'era
+		nessuno, e per i motori di ricerca era una lacuna.
+	*/}
+	<section class="apertura">
+		<div class="contenitore apertura__interno">
+			<div class="apertura__testo">
+				<h1 class="apertura__titolo">I problemi dell'Italia, uno alla volta</h1>
+				<p class="apertura__sommario">{SITO.descrizione}</p>
+				<a class="apertura__invito" href="/diamoci-un-metodo">Come lavoriamo</a>
+			</div>
+
+			<div class="apertura__mappa">
+				<CartinaItalia />
+			</div>
+		</div>
+	</section>
+
 	<div class="contenitore">
 		{
 			articoli.length === 0 ? (
 				<div class="pagina-testuale">
-					<h1>Il sito è pronto, mancano gli articoli</h1>
+					<h2>Non ci sono ancora articoli</h2>
 					<p>
-						Per pubblicare il primo pezzo crea un file in
-						<code>src/contenuti/articoli/</code>. Le istruzioni passo passo sono nel file
-						<code>COME-PUBBLICARE.md</code>, nella cartella principale del progetto.
+						Per pubblicare il primo pezzo usa il pannello di scrittura su
+						<a href="/admin">/admin</a>, oppure crea un file in
+						<code>src/contenuti/articoli/</code>. Le istruzioni sono in
+						<code>COME-PUBBLICARE.md</code>.
 					</p>
 				</div>
 			) : (
-				<div style="padding-block: 2.5rem 4rem">
+				<div style="padding-block: 3rem 4rem">
 					{inEvidenza && (
 						<div style="margin-bottom: 3rem">
 							<SchedaArticolo articolo={inEvidenza} evidenza />

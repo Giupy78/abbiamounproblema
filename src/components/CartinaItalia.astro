@@ -1,0 +1,191 @@
+---
+/**
+ * Cartina dell'Italia a punti.
+ *
+ * La sagoma non è disegnata a mano libera: nasce da una griglia costruita
+ * su coordinate reali. Ogni riga corrisponde a una fascia di latitudine e
+ * ogni colonna a una di longitudine, quindi le proporzioni tra nord e sud,
+ * la diagonale della penisola, il golfo di Taranto, il Salento, la Sicilia
+ * e la Sardegna finiscono al posto giusto.
+ *
+ * Colonna 0 = 6,5° est · Colonna 19 = 18,7° est
+ * Riga 0 = 47,0° nord · Riga 26 = 36,6° nord
+ *
+ * Ogni riga elenca i segmenti pieni come [colonnaIniziale, colonnaFinale].
+ * Due segmenti separati sulla stessa riga producono un tratto di mare in
+ * mezzo: è così che compaiono il golfo di Taranto e il canale che separa
+ * la Sardegna dal continente.
+ */
+
+interface Props {
+	/** Descrizione per i lettori di schermo. Vuota se la cartina è puramente decorativa. */
+	titolo?: string;
+	class?: string;
+}
+
+const { titolo, class: classe } = Astro.props;
+
+const GRIGLIA: number[][][] = [
+	[[4, 9]], // Alpi centro-orientali
+	[[2, 11]],
+	[[1, 11]],
+	[[1, 11]], // pianura padana
+	[[1, 11]],
+	[[1, 11]],
+	[[1, 10]],
+	[[2, 10]], // Liguria ed Emilia-Romagna
+	[[5, 11]], // la costa tirrenica arretra: comincia la Toscana
+	[[6, 11]],
+	[[6, 12]],
+	[[7, 12]],
+	[[8, 12]],
+	[[8, 13]],
+	[
+		[3, 5],
+		[9, 14],
+	], // compare la Sardegna
+	[
+		[3, 5],
+		[10, 15],
+	],
+	[
+		[3, 5],
+		[11, 17],
+	],
+	[
+		[2, 5],
+		[12, 16],
+		[17, 18],
+	], // il golfo di Taranto stacca il Salento
+	[
+		[2, 5],
+		[14, 16],
+		[17, 18],
+	],
+	[
+		[3, 5],
+		[14, 16],
+	],
+	[[14, 16]], // Calabria
+	[[14, 15]], // la punta dello stivale
+	// Lo stretto di Messina è largo tre chilometri: a questa scala i punti
+	// si toccherebbero e la Sicilia sembrerebbe attaccata al continente.
+	// La stacchiamo di una casella, così si legge come isola.
+	[[10, 13]],
+	[[9, 14]],
+	[[9, 13]],
+	[[10, 13]],
+	[[11, 12]],
+];
+
+const COLONNE = 20;
+const PASSO = 10;
+const RAGGIO = 3.6;
+
+/**
+ * Il tricolore steso sulla cartina: tre fasce verticali, come sulla bandiera.
+ * Le colonne, non le righe: orizzontali darebbero tutt'altra bandiera.
+ */
+function banda(colonna: number): 'verde' | 'neutro' | 'rosso' {
+	if (colonna <= 6) return 'verde';
+	if (colonna <= 12) return 'neutro';
+	return 'rosso';
+}
+
+/**
+ * Variazione di trasparenza punto per punto, per l'effetto spennellato.
+ * Il calcolo è deterministico — dipende solo dalla posizione — così la
+ * cartina resta identica a ogni ricompilazione invece di cambiare da sola.
+ */
+function velatura(colonna: number, riga: number): number {
+	return 0.72 + ((colonna * 7 + riga * 13) % 6) * 0.056;
+}
+
+const punti: { x: number; y: number; banda: string; opacita: number }[] = [];
+for (const [riga, segmenti] of GRIGLIA.entries()) {
+	for (const [inizio, fine] of segmenti) {
+		for (let colonna = inizio; colonna <= fine; colonna++) {
+			punti.push({
+				x: colonna * PASSO + PASSO / 2,
+				y: riga * PASSO + PASSO / 2,
+				banda: banda(colonna),
+				opacita: Number(velatura(colonna, riga).toFixed(3)),
+			});
+		}
+	}
+}
+
+const larghezza = COLONNE * PASSO;
+const altezza = GRIGLIA.length * PASSO;
+---
+
+<svg
+	class:list={['cartina', classe]}
+	viewBox={`0 0 ${larghezza} ${altezza}`}
+	xmlns="http://www.w3.org/2000/svg"
+	role={titolo ? 'img' : 'presentation'}
+	aria-label={titolo}
+	aria-hidden={titolo ? undefined : 'true'}
+	focusable="false"
+>
+	{
+		punti.map((p) => (
+			<circle class={`punto punto--${p.banda}`} cx={p.x} cy={p.y} r={RAGGIO} opacity={p.opacita} />
+		))
+	}
+</svg>
+
+<style>
+	.cartina {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	/*
+	 * Il tricolore, adattato allo schermo.
+	 *
+	 * La fascia bianca non può essere bianca: su uno sfondo chiaro
+	 * sparirebbe. Usiamo un grigio caldo che sul tema chiaro legge come
+	 * bianco sporco e sul tema scuro diventa chiaro davvero.
+	 */
+	.punto--verde {
+		fill: #1a7a4c;
+	}
+
+	/* Non è bianco puro: su sfondo chiaro la penisola sparirebbe, e alle
+	   dimensioni ridotte del telefono si perderebbe del tutto la sagoma. */
+	.punto--neutro {
+		fill: #b3aa99;
+	}
+
+	.punto--rosso {
+		fill: #c0392b;
+	}
+
+	:global(:root[data-tema='scuro']) .punto--verde {
+		fill: #3aa971;
+	}
+
+	:global(:root[data-tema='scuro']) .punto--neutro {
+		fill: #a8a196;
+	}
+
+	:global(:root[data-tema='scuro']) .punto--rosso {
+		fill: #d9564b;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:global(:root:not([data-tema='chiaro'])) .punto--verde {
+			fill: #3aa971;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .punto--neutro {
+			fill: #a8a196;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .punto--rosso {
+			fill: #d9564b;
+		}
+	}
+</style>

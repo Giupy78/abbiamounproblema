@@ -18,12 +18,15 @@ const radice = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const configurazione = await import(`file://${radice}/src/config.ts`).catch(() => null);
 
 const NOME = configurazione?.SITO?.nome ?? 'Abbiamo un problema';
-const SLOGAN = configurazione?.SITO?.slogan ?? 'I problemi di tutti, spiegati per intero';
+const SLOGAN = configurazione?.SITO?.slogan ?? 'Dal problema alla proposta';
 const DOMINIO = 'abbiamounproblema.it';
 
+// La banda superiore riprende il tricolore della cartina in homepage.
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#161513"/>
-  <rect x="0" y="0" width="1200" height="10" fill="#d9a441"/>
+  <rect x="0" y="0" width="400" height="10" fill="#3aa971"/>
+  <rect x="400" y="0" width="400" height="10" fill="#e8e4dc"/>
+  <rect x="800" y="0" width="400" height="10" fill="#d9564b"/>
   <text x="90" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="700" fill="#ece9e3">${NOME}</text>
   <text x="90" y="368" font-family="Georgia, 'Times New Roman', serif" font-size="36" fill="#a29c92">${SLOGAN}</text>
   <rect x="90" y="430" width="72" height="4" fill="#d9a441"/>

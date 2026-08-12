@@ -13,7 +13,7 @@ export const SITO = {
 
 	/** Usata nella homepage e come meta description di default. 140-160 caratteri. */
 	descrizione:
-		'Analisi e opinioni sui temi che riguardano tutti: economia, società, ambiente, tecnologia. Un problema alla volta, spiegato per intero.',
+		'Analisi e proposte sui problemi che riguardano tutti: economia, finanza personale, società, ambiente ed energia. Un problema alla volta, fino in fondo.',
 
 	/** Sottotitolo mostrato sotto il nome nell'intestazione. */
 	slogan: 'Dal problema alla proposta',
