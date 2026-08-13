@@ -5,7 +5,7 @@ descrizione: "Dal 1998 ogni condominio è sostituto d'imposta. La fattura elettr
 dataPubblicazione: 2026-08-12
 categoria: "Economia"
 tag: ["fisco", "condominio", "burocrazia", "semplificazione"]
-inEvidenza: true
+inEvidenza: false
 ---
 
 In una palazzina di tre appartamenti non c'è nessun amministratore. Non serve: la legge lo impone solo sopra gli otto condòmini. I tre proprietari si dividono le spese, chiamano l'idraulico quando si rompe la caldaia, pagano l'impresa che pulisce le scale. Nessuno di loro ha una partita IVA, nessuno ha mai aperto un modello F24.

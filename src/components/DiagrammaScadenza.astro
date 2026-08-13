@@ -1,0 +1,202 @@
+---
+/**
+ * Come funziona una clausola di scadenza (sunset clause).
+ *
+ * Costruito con testo vero e non come immagine: resta nitido a ogni
+ * ingrandimento, si legge con i lettori di schermo, si può selezionare e
+ * tradurre, e su telefono si impila invece di costringere a scorrere di
+ * lato — che è il difetto tipico degli schemi disegnati.
+ */
+---
+
+<figure class="scadenza" role="group" aria-label="Come funziona una clausola di scadenza">
+	<ol class="scadenza__flusso">
+		<li class="scadenza__passo">
+			<span class="scadenza__numero">1</span>
+			<strong>La legge entra in vigore</strong>
+			<span>Con dentro, fin dall'inizio, la propria data di scadenza.</span>
+		</li>
+
+		<li class="scadenza__passo">
+			<span class="scadenza__numero">2</span>
+			<strong>Vale per un periodo definito</strong>
+			<span>Tre o cinque anni, stabiliti nel testo stesso.</span>
+		</li>
+
+		<li class="scadenza__passo">
+			<span class="scadenza__numero">3</span>
+			<strong>Alla scadenza si misura</strong>
+			<span>Quanto è costata, quanto ha reso, se serve ancora.</span>
+		</li>
+	</ol>
+
+	<p class="scadenza__bivio" aria-hidden="true">↓</p>
+
+	<div class="scadenza__esiti">
+		<div class="scadenza__esito scadenza__esito--resta">
+			<span class="scadenza__etichetta">Se l'utilità è dimostrata</span>
+			<strong>Il Parlamento la rinnova</strong>
+			<span>Serve un atto esplicito, con i dati alla mano.</span>
+		</div>
+
+		<div class="scadenza__esito scadenza__esito--cade">
+			<span class="scadenza__etichetta">Se nessuno la difende</span>
+			<strong>Decade da sola</strong>
+			<span>L'inerzia cancella il vincolo invece di perpetuarlo.</span>
+		</div>
+	</div>
+
+	<figcaption>
+		Il meccanismo non abolisce nulla per definizione: sposta soltanto l'onere della prova
+		dalla parte di chi vuole eliminare un obbligo a quella di chi vuole mantenerlo.
+	</figcaption>
+</figure>
+
+<style>
+	.scadenza {
+		margin: 2.5rem 0;
+		padding: 1.6rem;
+		border: 1px solid var(--bordo);
+		border-radius: 8px;
+		background: var(--sfondo-alt);
+		font-family: var(--sans);
+	}
+
+	.scadenza__flusso {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.7rem;
+	}
+
+	.scadenza__passo {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto auto;
+		column-gap: 0.9rem;
+		align-items: start;
+		background: var(--evidenza);
+		border: 1px solid var(--bordo);
+		border-radius: 6px;
+		padding: 0.85rem 1rem;
+		font-size: 0.95rem;
+		line-height: 1.45;
+	}
+
+	.scadenza__passo strong {
+		grid-column: 2;
+	}
+
+	.scadenza__passo span:last-child {
+		grid-column: 2;
+		color: var(--testo-tenue);
+	}
+
+	.scadenza__numero {
+		grid-row: 1 / span 2;
+		width: 1.7rem;
+		height: 1.7rem;
+		display: grid;
+		place-items: center;
+		border-radius: 999px;
+		background: var(--accento);
+		color: #fff;
+		font-size: 0.85rem;
+		font-weight: 700;
+	}
+
+	.scadenza__bivio {
+		text-align: center;
+		font-size: 1.5rem;
+		color: var(--testo-tenue);
+		margin: 0.6rem 0;
+		line-height: 1;
+	}
+
+	.scadenza__esiti {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		gap: 0.9rem;
+	}
+
+	.scadenza__esito {
+		display: grid;
+		gap: 0.3rem;
+		border-radius: 6px;
+		padding: 0.95rem 1rem;
+		font-size: 0.95rem;
+		line-height: 1.45;
+		border: 1px solid;
+	}
+
+	.scadenza__esito span:last-child {
+		color: var(--testo-tenue);
+	}
+
+	.scadenza__etichetta {
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+
+	.scadenza__esito--resta {
+		border-color: #1a7a4c;
+	}
+
+	.scadenza__esito--resta .scadenza__etichetta {
+		color: #1a7a4c;
+	}
+
+	.scadenza__esito--cade {
+		border-color: #c0392b;
+	}
+
+	.scadenza__esito--cade .scadenza__etichetta {
+		color: #c0392b;
+	}
+
+	.scadenza figcaption {
+		margin-top: 1.2rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--bordo);
+		font-size: 0.88rem;
+		line-height: 1.5;
+		color: var(--testo-tenue);
+	}
+
+	:global(:root[data-tema='scuro']) .scadenza__esito--resta {
+		border-color: #3aa971;
+	}
+
+	:global(:root[data-tema='scuro']) .scadenza__esito--resta .scadenza__etichetta {
+		color: #3aa971;
+	}
+
+	:global(:root[data-tema='scuro']) .scadenza__esito--cade {
+		border-color: #d9564b;
+	}
+
+	:global(:root[data-tema='scuro']) .scadenza__esito--cade .scadenza__etichetta {
+		color: #d9564b;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:global(:root:not([data-tema='chiaro'])) .scadenza__esito--resta {
+			border-color: #3aa971;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .scadenza__esito--resta .scadenza__etichetta {
+			color: #3aa971;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .scadenza__esito--cade {
+			border-color: #d9564b;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .scadenza__esito--cade .scadenza__etichetta {
+			color: #d9564b;
+		}
+	}
+</style>
