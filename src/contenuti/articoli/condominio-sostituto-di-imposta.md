@@ -65,6 +65,12 @@ Torniamo alla palazzina dei tre proprietari. Nessun amministratore, nessun comme
 
 **3. Introdurre una clausola di revisione periodica per le norme antievasione.** È la proposta che conta più delle altre due, perché il problema non è questa singola legge. Il problema è che nel nostro ordinamento nessuno ha il compito di verificare se un obbligo serve ancora. Le norme si aggiungono, non si sottraggono: ogni avanzamento tecnologico degli ultimi vent'anni ha reso superflui adempimenti rimasti comunque in vigore, perché eliminarli non è mestiere di nessuno. Una norma che impone un adempimento in funzione antievasione dovrebbe scadere dopo un numero prestabilito di anni, e restare in vigore solo se l'amministrazione dimostra, con i dati alla mano, che serve ancora.
 
-È lo stesso vuoto che avevamo incontrato parlando di [quanto ci costa la burocrazia](/quanto-costa-la-burocrazia-in-italia): non sappiamo quanto pesa un adempimento, quindi non sappiamo nemmeno quali possiamo permetterci di eliminare. Le proposte che ne nascono le trovi raccolte in [Le proposte](/proposte).
+È lo stesso vuoto che avevamo incontrato parlando di [quanto ci costa la burocrazia](/quanto-costa-la-burocrazia-in-italia): non sappiamo quanto pesa un adempimento, quindi non sappiamo nemmeno quali possiamo permetterci di eliminare.
+
+Le tre proposte sono sviluppate per esteso, con le obiezioni e i limiti di ciascuna, nella sezione [Le proposte](/proposte):
+
+- [Abrogare la ritenuta del condominio sugli appalti](/proposte/abrogare-la-ritenuta-condominiale)
+- [Un solo prelievo alla fonte, non due paralleli](/proposte/un-solo-prelievo-alla-fonte)
+- [Far scadere le norme antievasione superate](/proposte/far-scadere-le-norme-antievasione-superate)
 
 *Un problema alla volta, fino in fondo.*
