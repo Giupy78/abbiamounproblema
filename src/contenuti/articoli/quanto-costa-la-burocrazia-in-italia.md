@@ -5,7 +5,7 @@ descrizione: "Tra i 43 e gli 80 miliardi l'anno, e 313 ore per ogni piccola impr
 dataPubblicazione: 2026-08-12
 categoria: "Economia"
 tag: ["burocrazia", "pubblica amministrazione", "imprese", "riforme"]
-inEvidenza: true
+inEvidenza: false
 ---
 
 Ogni volta che un'impresa prova a innovare, un cittadino cerca di avviare un'attività o un professionista si scontra con i gangli della pubblica amministrazione, la risposta è sempre la stessa: *"Le cose qui funzionano così"*.
