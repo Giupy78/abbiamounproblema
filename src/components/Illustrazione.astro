@@ -7,6 +7,11 @@
  * dimensione. Usano i colori del tema, quindi funzionano da sole sia in
  * chiaro sia in scuro.
  *
+ * Criterio sul colore: si usa per significare, non per decorare.
+ * Rosso il problema, verde ciò che funziona o il denaro, toni caldi il
+ * fuoco. Sono gli stessi colori della cartina e delle etichette di stato,
+ * così la serie appartiene al sito invece di sembrarci incollata sopra.
+ *
  * Per aggiungerne una: disegna il caso qui sotto e aggiungi il nome
  * all'elenco ILLUSTRAZIONI in src/config.ts.
  */
@@ -19,6 +24,16 @@ interface Props {
 }
 
 const { nome, descrizione, class: classe } = Astro.props;
+
+/** Banconote che cadono nell'imbuto: posizione e inclinazione. */
+const BANCONOTE = [
+	{ x: 116, y: 8, r: -14 },
+	{ x: 186, y: 2, r: 8 },
+	{ x: 256, y: 10, r: -6 },
+	{ x: 152, y: 34, r: 6 },
+	{ x: 222, y: 32, r: -10 },
+	{ x: 292, y: 30, r: 12 },
+];
 ---
 
 <div class:list={['illustrazione', classe]}>
@@ -33,14 +48,15 @@ const { nome, descrizione, class: classe } = Astro.props;
 		{
 			nome === 'metodo' && (
 				<g>
-					{/* A sinistra il groviglio del dibattito, a destra la linea che ne esce. */}
+					{/* Il groviglio del dibattito in rosso, la via d'uscita in verde:
+					    il colore racconta da solo "dal problema alla proposta". */}
 					<path
-						class="tratto"
+						class="tratto rosso"
 						d="M40 90c0-26 34-30 34-6s-38 22-38-6 44-34 52-4-30 46-30 10 40-30 56-2-24 44-8 16 34-42 60-8"
 					/>
-					<path class="tratto tratto--accento" d="M232 96h180" />
-					<path class="tratto tratto--accento" d="M396 78l20 18-20 18" />
-					<circle class="pieno" cx="232" cy="96" r="6" />
+					<circle class="pieno rosso-pieno" cx="228" cy="96" r="7" />
+					<path class="tratto verde" d="M236 96h176" />
+					<path class="tratto verde" d="M396 78l20 18-20 18" />
 				</g>
 			)
 		}
@@ -48,22 +64,19 @@ const { nome, descrizione, class: classe } = Astro.props;
 		{
 			nome === 'imbuto' && (
 				<g>
-					{/* Sopra entra molto, sotto esce poco: l'imbuto che non scorre. */}
-					{[
-						[150, 22],
-						[200, 34],
-						[250, 20],
-						[300, 34],
-						[175, 46],
-						[225, 44],
-						[275, 46],
-						[330, 22],
-						[120, 36],
-					].map(([x, y]) => (
-						<circle class="pieno tenue" cx={x} cy={y} r="7" />
+					{/* Entra denaro in quantità, esce una monetina: il costo che
+					    la burocrazia consuma per strada. */}
+					{BANCONOTE.map((b) => (
+						<g transform={`rotate(${b.r} ${b.x + 22} ${b.y + 12})`}>
+							<rect class="banconota" x={b.x} y={b.y} width="44" height="24" rx="3" />
+							<circle class="banconota-segno" cx={b.x + 22} cy={b.y + 12} r="6" />
+						</g>
 					))}
-					<path class="tratto" d="M120 66h220l-84 46v46h-52v-46z" />
-					<circle class="pieno accento" cx="240" cy="172" r="6" />
+
+					<path class="tratto" d="M104 74h232l-90 48v34h-52v-34z" />
+
+					<circle class="pieno verde-pieno" cx="220" cy="166" r="9" />
+					<text class="euro" x="264" y="174">€</text>
 				</g>
 			)
 		}
@@ -71,15 +84,13 @@ const { nome, descrizione, class: classe } = Astro.props;
 		{
 			nome === 'pila' && (
 				<g>
-					{/* La pila che ricresce, e il gesto che la brucia. */}
+					{/* La pila che ricresce, e il gesto che la brucia.
+					    Fiamma a tre toni caldi: fuori rosso, poi ocra, dentro giallo. */}
 					<rect class="tratto" x="96" y="140" width="200" height="18" rx="3" />
 					<rect class="tratto" x="106" y="116" width="180" height="18" rx="3" />
 					<rect class="tratto" x="116" y="92" width="160" height="18" rx="3" />
 					<rect class="tratto" x="126" y="68" width="140" height="18" rx="3" />
 					<rect class="tratto" x="136" y="44" width="120" height="18" rx="3" />
-					{/* Fiamma a tre toni caldi: fuori il rosso, poi l'ocra, dentro il giallo.
-					    Sono i colori che il sito usa già altrove, quindi il disegno
-					    resta realistico senza uscire dalla tavolozza. */}
 					<path
 						class="pieno fiamma-esterna"
 						d="M348 40c20 34 40 50 40 74 0 24-18 40-40 40s-40-16-40-40c0-24 20-40 40-74z"
@@ -99,7 +110,8 @@ const { nome, descrizione, class: classe } = Astro.props;
 		{
 			nome === 'palazzina' && (
 				<g>
-					{/* Una palazzina qualunque, e il modulo che le arriva addosso. */}
+					{/* Una palazzina qualunque, e la cartella con il bollo rosso
+					    che le arriva addosso. */}
 					<path class="tratto" d="M120 158V54l70-32 70 32v104" />
 					{[
 						[146, 74],
@@ -112,11 +124,10 @@ const { nome, descrizione, class: classe } = Astro.props;
 					))}
 					<rect class="pieno accento" x="186" y="106" width="24" height="22" rx="2" />
 					<rect class="tratto" x="174" y="130" width="32" height="28" rx="2" />
-					<g>
-						<rect class="tratto riempito" x="300" y="46" width="86" height="112" rx="4" />
-						<path class="tratto" d="M318 74h50M318 94h50M318 114h32" />
-						<path class="tratto tratto--accento" d="M318 136h34" />
-					</g>
+
+					<rect class="tratto riempito" x="300" y="46" width="86" height="112" rx="4" />
+					<path class="tratto" d="M318 74h50M318 94h50M318 114h32" />
+					<text class="euro euro--rosso" x="330" y="146">€</text>
 				</g>
 			)
 		}
@@ -124,7 +135,8 @@ const { nome, descrizione, class: classe } = Astro.props;
 		{
 			nome === 'calendario' && (
 				<g>
-					{/* Il tempo che scade: la clausola di caducità. */}
+					{/* Il tempo che scade: verde finché la norma vive, rosso il giorno
+					    in cui decade da sola. */}
 					<rect class="tratto riempito" x="150" y="46" width="180" height="112" rx="6" />
 					<path class="tratto" d="M150 80h180" />
 					<path class="tratto" d="M186 32v28M294 32v28" />
@@ -135,10 +147,10 @@ const { nome, descrizione, class: classe } = Astro.props;
 						[186, 132],
 						[222, 132],
 					].map(([x, y]) => (
-						<circle class="pieno tenue" cx={x} cy={y} r="6" />
+						<circle class="pieno verde-pieno tenue" cx={x} cy={y} r="6" />
 					))}
-					<circle class="pieno accento" cx="294" cy="104" r="10" />
-					<path class="tratto tratto--accento" d="M282 132l24 24M306 132l-24 24" />
+					<circle class="pieno rosso-pieno" cx="294" cy="104" r="11" />
+					<path class="tratto rosso" d="M282 124l24 24M306 124l-24 24" />
 				</g>
 			)
 		}
@@ -168,10 +180,6 @@ const { nome, descrizione, class: classe } = Astro.props;
 		stroke-linejoin: round;
 	}
 
-	.tratto--accento {
-		stroke: var(--accento);
-	}
-
 	.riempito {
 		fill: var(--sfondo);
 	}
@@ -189,6 +197,46 @@ const { nome, descrizione, class: classe } = Astro.props;
 		fill: var(--accento);
 	}
 
+	/* --- colori che significano --- */
+
+	.rosso {
+		stroke: #c0392b;
+	}
+
+	.rosso-pieno {
+		fill: #c0392b;
+	}
+
+	.verde {
+		stroke: #1a7a4c;
+	}
+
+	.verde-pieno {
+		fill: #1a7a4c;
+	}
+
+	.banconota {
+		fill: #1a7a4c;
+		fill-opacity: 0.16;
+		stroke: #1a7a4c;
+		stroke-width: 2.5;
+	}
+
+	.banconota-segno {
+		fill: #1a7a4c;
+	}
+
+	.euro {
+		fill: #1a7a4c;
+		font-family: var(--serif);
+		font-size: 34px;
+		font-weight: 700;
+	}
+
+	.euro--rosso {
+		fill: #c0392b;
+	}
+
 	.fiamma-esterna {
 		fill: #c0392b;
 	}
@@ -201,13 +249,50 @@ const { nome, descrizione, class: classe } = Astro.props;
 		fill: #edc14a;
 	}
 
+	/* Sul fondo scuro rosso e verde vanno schiariti per restare leggibili. */
+	:global(:root[data-tema='scuro']) .rosso,
+	:global(:root[data-tema='scuro']) .fiamma-esterna {
+		stroke: #d9564b;
+	}
+
+	:global(:root[data-tema='scuro']) .rosso-pieno,
 	:global(:root[data-tema='scuro']) .fiamma-esterna {
 		fill: #d9564b;
 	}
 
+	:global(:root[data-tema='scuro']) .verde,
+	:global(:root[data-tema='scuro']) .banconota {
+		stroke: #3aa971;
+	}
+
+	:global(:root[data-tema='scuro']) .verde-pieno,
+	:global(:root[data-tema='scuro']) .banconota-segno,
+	:global(:root[data-tema='scuro']) .euro,
+	:global(:root[data-tema='scuro']) .banconota {
+		fill: #3aa971;
+	}
+
 	@media (prefers-color-scheme: dark) {
+		:global(:root:not([data-tema='chiaro'])) .rosso,
+		:global(:root:not([data-tema='chiaro'])) .fiamma-esterna {
+			stroke: #d9564b;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .rosso-pieno,
 		:global(:root:not([data-tema='chiaro'])) .fiamma-esterna {
 			fill: #d9564b;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .verde,
+		:global(:root:not([data-tema='chiaro'])) .banconota {
+			stroke: #3aa971;
+		}
+
+		:global(:root:not([data-tema='chiaro'])) .verde-pieno,
+		:global(:root:not([data-tema='chiaro'])) .banconota-segno,
+		:global(:root:not([data-tema='chiaro'])) .euro,
+		:global(:root:not([data-tema='chiaro'])) .banconota {
+			fill: #3aa971;
 		}
 	}
 </style>
