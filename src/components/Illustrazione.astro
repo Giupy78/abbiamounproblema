@@ -1,0 +1,181 @@
+---
+/**
+ * Illustrazioni di apertura degli articoli.
+ *
+ * Disegnate qui, non scaricate: nessun problema di licenza, nessuna
+ * somiglianza con altri siti, peso irrisorio e nitidezza a qualsiasi
+ * dimensione. Usano i colori del tema, quindi funzionano da sole sia in
+ * chiaro sia in scuro.
+ *
+ * Per aggiungerne una: disegna il caso qui sotto e aggiungi il nome
+ * all'elenco ILLUSTRAZIONI in src/config.ts.
+ */
+
+interface Props {
+	nome: string;
+	/** Descrizione per chi non vede l'immagine. Vuota se puramente decorativa. */
+	descrizione?: string;
+	class?: string;
+}
+
+const { nome, descrizione, class: classe } = Astro.props;
+---
+
+<div class:list={['illustrazione', classe]}>
+	<svg
+		viewBox="0 0 480 180"
+		xmlns="http://www.w3.org/2000/svg"
+		role={descrizione ? 'img' : 'presentation'}
+		aria-label={descrizione}
+		aria-hidden={descrizione ? undefined : 'true'}
+		focusable="false"
+	>
+		{
+			nome === 'metodo' && (
+				<g>
+					{/* A sinistra il groviglio del dibattito, a destra la linea che ne esce. */}
+					<path
+						class="tratto"
+						d="M40 90c0-26 34-30 34-6s-38 22-38-6 44-34 52-4-30 46-30 10 40-30 56-2-24 44-8 16 34-42 60-8"
+					/>
+					<path class="tratto tratto--accento" d="M232 96h180" />
+					<path class="tratto tratto--accento" d="M396 78l20 18-20 18" />
+					<circle class="pieno" cx="232" cy="96" r="6" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'imbuto' && (
+				<g>
+					{/* Sopra entra molto, sotto esce poco: l'imbuto che non scorre. */}
+					{[
+						[150, 22],
+						[200, 34],
+						[250, 20],
+						[300, 34],
+						[175, 46],
+						[225, 44],
+						[275, 46],
+						[330, 22],
+						[120, 36],
+					].map(([x, y]) => (
+						<circle class="pieno tenue" cx={x} cy={y} r="7" />
+					))}
+					<path class="tratto" d="M120 66h220l-84 46v46h-52v-46z" />
+					<circle class="pieno accento" cx="240" cy="172" r="6" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'pila' && (
+				<g>
+					{/* La pila che ricresce, e il gesto che la brucia. */}
+					<rect class="tratto" x="96" y="140" width="200" height="18" rx="3" />
+					<rect class="tratto" x="106" y="116" width="180" height="18" rx="3" />
+					<rect class="tratto" x="116" y="92" width="160" height="18" rx="3" />
+					<rect class="tratto" x="126" y="68" width="140" height="18" rx="3" />
+					<rect class="tratto" x="136" y="44" width="120" height="18" rx="3" />
+					<path
+						class="pieno accento"
+						d="M348 40c20 34 40 50 40 74 0 24-18 40-40 40s-40-16-40-40c0-24 20-40 40-74z"
+					/>
+					<path class="pieno riempito" d="M348 96c9 15 17 22 17 33 0 11-8 18-17 18s-17-7-17-18c0-11 8-18 17-33z" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'palazzina' && (
+				<g>
+					{/* Una palazzina qualunque, e il modulo che le arriva addosso. */}
+					<path class="tratto" d="M120 158V54l70-32 70 32v104" />
+					{[
+						[146, 74],
+						[186, 74],
+						[226, 74],
+						[146, 106],
+						[226, 106],
+					].map(([x, y]) => (
+						<rect class="tratto" x={x} y={y} width="24" height="22" rx="2" />
+					))}
+					<rect class="pieno accento" x="186" y="106" width="24" height="22" rx="2" />
+					<rect class="tratto" x="174" y="130" width="32" height="28" rx="2" />
+					<g>
+						<rect class="tratto riempito" x="300" y="46" width="86" height="112" rx="4" />
+						<path class="tratto" d="M318 74h50M318 94h50M318 114h32" />
+						<path class="tratto tratto--accento" d="M318 136h34" />
+					</g>
+				</g>
+			)
+		}
+
+		{
+			nome === 'calendario' && (
+				<g>
+					{/* Il tempo che scade: la clausola di caducità. */}
+					<rect class="tratto riempito" x="150" y="46" width="180" height="112" rx="6" />
+					<path class="tratto" d="M150 80h180" />
+					<path class="tratto" d="M186 32v28M294 32v28" />
+					{[
+						[186, 104],
+						[222, 104],
+						[258, 104],
+						[186, 132],
+						[222, 132],
+					].map(([x, y]) => (
+						<circle class="pieno tenue" cx={x} cy={y} r="6" />
+					))}
+					<circle class="pieno accento" cx="294" cy="104" r="10" />
+					<path class="tratto tratto--accento" d="M282 132l24 24M306 132l-24 24" />
+				</g>
+			)
+		}
+	</svg>
+</div>
+
+<style>
+	.illustrazione {
+		background: var(--sfondo-alt);
+		border: 1px solid var(--bordo);
+		border-radius: 8px;
+		padding: 0.5rem;
+		color: var(--testo-tenue);
+	}
+
+	.illustrazione svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.tratto {
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 3;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	.tratto--accento {
+		stroke: var(--accento);
+	}
+
+	.riempito {
+		fill: var(--sfondo);
+	}
+
+	.pieno {
+		fill: currentColor;
+		stroke: none;
+	}
+
+	.tenue {
+		opacity: 0.45;
+	}
+
+	.accento {
+		fill: var(--accento);
+	}
+</style>

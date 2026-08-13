@@ -384,6 +384,10 @@ a:hover {
 	padding-block: 3rem 4rem;
 }
 
+.articolo__apertura {
+	margin-bottom: 2rem;
+}
+
 .articolo__intestazione {
 	margin-bottom: 2.5rem;
 }

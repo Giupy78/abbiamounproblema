@@ -133,6 +133,19 @@ export const STATI_PROPOSTA = [
 
 export const DIFFICOLTA = ['Bassa', 'Media', 'Alta'] as const;
 
+/**
+ * Illustrazioni disponibili per l'apertura degli articoli.
+ * Sono disegnate in src/components/Illustrazione.astro: per aggiungerne
+ * una, disegnala lì e poi scrivi qui il suo nome.
+ */
+export const ILLUSTRAZIONI = [
+	'metodo',
+	'imbuto',
+	'pila',
+	'palazzina',
+	'calendario',
+] as const;
+
 /** Voci del menu principale. */
 export const MENU = [
 	{ testo: 'Home', url: '/' },

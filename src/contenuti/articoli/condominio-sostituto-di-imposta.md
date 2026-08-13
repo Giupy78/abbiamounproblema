@@ -5,6 +5,7 @@ descrizione: "Dal 1998 ogni condominio è sostituto d'imposta. La fattura elettr
 dataPubblicazione: 2026-08-12
 categoria: "Economia"
 tag: ["fisco", "condominio", "burocrazia", "semplificazione"]
+illustrazione: "palazzina"
 inEvidenza: false
 ---
 

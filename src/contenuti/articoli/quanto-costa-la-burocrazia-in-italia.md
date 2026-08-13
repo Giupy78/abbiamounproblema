@@ -5,6 +5,7 @@ descrizione: "Tra i 43 e gli 80 miliardi l'anno, e 313 ore per ogni piccola impr
 dataPubblicazione: 2026-08-12
 categoria: "Economia"
 tag: ["burocrazia", "pubblica amministrazione", "imprese", "riforme"]
+illustrazione: "imbuto"
 inEvidenza: false
 ---
 

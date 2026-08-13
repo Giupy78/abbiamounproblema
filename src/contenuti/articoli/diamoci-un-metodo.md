@@ -4,6 +4,7 @@ descrizione: "In Italia siamo maestri nel lamentarci, ma la lamentela non ha mai
 dataPubblicazione: 2026-08-11
 categoria: "Società"
 tag: ["metodo", "partecipazione", "riforme"]
+illustrazione: "metodo"
 inEvidenza: false
 ---
 

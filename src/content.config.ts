@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { CATEGORIE, AMBITI, STATI_PROPOSTA, DIFFICOLTA } from './config';
+import { CATEGORIE, AMBITI, STATI_PROPOSTA, DIFFICOLTA, ILLUSTRAZIONI } from './config';
 
 /**
  * Struttura di un articolo.
@@ -61,6 +61,13 @@ const articoli = defineCollection({
 			categoria: z.enum(CATEGORIE),
 
 			tag: z.array(z.string()).default([]),
+
+			/**
+			 * Illustrazione di apertura, disegnata dal sito. Alternativa leggera
+			 * alla fotografia: nessuna licenza da procurarsi, nessun peso e
+			 * nitidezza a ogni dimensione.
+			 */
+			illustrazione: z.enum(ILLUSTRAZIONI).optional(),
 
 			/**
 			 * Percorso dell'immagine di copertina, relativo al file dell'articolo.
