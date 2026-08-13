@@ -77,11 +77,21 @@ const { nome, descrizione, class: classe } = Astro.props;
 					<rect class="tratto" x="116" y="92" width="160" height="18" rx="3" />
 					<rect class="tratto" x="126" y="68" width="140" height="18" rx="3" />
 					<rect class="tratto" x="136" y="44" width="120" height="18" rx="3" />
+					{/* Fiamma a tre toni caldi: fuori il rosso, poi l'ocra, dentro il giallo.
+					    Sono i colori che il sito usa già altrove, quindi il disegno
+					    resta realistico senza uscire dalla tavolozza. */}
 					<path
-						class="pieno accento"
+						class="pieno fiamma-esterna"
 						d="M348 40c20 34 40 50 40 74 0 24-18 40-40 40s-40-16-40-40c0-24 20-40 40-74z"
 					/>
-					<path class="pieno riempito" d="M348 96c9 15 17 22 17 33 0 11-8 18-17 18s-17-7-17-18c0-11 8-18 17-33z" />
+					<path
+						class="pieno fiamma-media"
+						d="M348 74c13 23 26 33 26 49 0 16-12 26-26 26s-26-10-26-26c0-16 13-26 26-49z"
+					/>
+					<path
+						class="pieno fiamma-interna"
+						d="M348 108c7 12 13 18 13 27 0 9-6 14-13 14s-13-5-13-14c0-9 6-15 13-27z"
+					/>
 				</g>
 			)
 		}
@@ -177,5 +187,27 @@ const { nome, descrizione, class: classe } = Astro.props;
 
 	.accento {
 		fill: var(--accento);
+	}
+
+	.fiamma-esterna {
+		fill: #c0392b;
+	}
+
+	.fiamma-media {
+		fill: #d98324;
+	}
+
+	.fiamma-interna {
+		fill: #edc14a;
+	}
+
+	:global(:root[data-tema='scuro']) .fiamma-esterna {
+		fill: #d9564b;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:global(:root:not([data-tema='chiaro'])) .fiamma-esterna {
+			fill: #d9564b;
+		}
 	}
 </style>
