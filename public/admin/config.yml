@@ -195,6 +195,8 @@ collections:
           - 'Scuola'
           - 'Energia'
           - 'Trasporti'
+          - 'Istituzioni'
+          - 'Ambiente'
 
       - name: stato
         label: 'A che punto è'

@@ -116,6 +116,8 @@ export const AMBITI = [
 	'Scuola',
 	'Energia',
 	'Trasporti',
+	'Istituzioni',
+	'Ambiente',
 ] as const;
 
 /**

@@ -115,6 +115,12 @@ Resta comunque una differenza di sostanza. Da noi un cittadino ha il potere di r
 
 **5. Un seguito obbligatorio per le iniziative dei cittadini.** Quando un milione di firme raggiunge la soglia, la Commissione dovrebbe essere tenuta a presentare una proposta legislativa oppure a spiegare in aula, davanti al Parlamento europeo, perché non intende farlo. Oggi può cavarsela con una comunicazione. Una su centodiciannove è il tasso di successo di uno strumento che non funziona.
 
+Le tre più concrete sono sviluppate per esteso, con le obiezioni e i limiti di ciascuna, nella sezione [Le proposte](/proposte):
+
+- [Pubblicare tutti i progetti di atti europei](/proposte/pubblicare-tutti-i-progetti-di-atti-europei)
+- [Registrare come vota ogni governo a Bruxelles](/proposte/registrare-come-vota-ogni-governo-a-bruxelles)
+- [Dare un seguito vero alle iniziative dei cittadini](/proposte/dare-un-seguito-vero-alle-iniziative-dei-cittadini)
+
 - - -
 
 La domanda del titolo aveva una risposta più noiosa di quella che si sente al bar, e più preoccupante. Non decide un potere occulto: decidono comitati legittimi, con procedure legittime, dentro una catena così lunga che alla fine **nessuno è più responsabile di niente davanti a nessuno**.
