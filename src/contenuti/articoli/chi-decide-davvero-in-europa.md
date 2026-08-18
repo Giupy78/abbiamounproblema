@@ -23,7 +23,9 @@ Chi dice che l'Europa è governata da burocrati non eletti che decidono senza al
 
 **I commissari non sono intoccabili.** Il presidente della Commissione è eletto dal Parlamento europeo. I singoli commissari passano per audizioni pubbliche e per un voto d'insieme. E il Parlamento può sfiduciare l'intera Commissione: nel 1999 quella guidata da Jacques Santer si dimise in blocco prima di un voto che con ogni probabilità avrebbe perso.
 
-Se apri un articolo scrivendo "nessuno li può fermare", il primo lettore informato ti smonta con queste tre righe. E avrà ragione.
+Chi ripete che a Bruxelles "nessuno li può fermare" sta descrivendo un'Europa che non esiste. Il potere di fermarli è previsto, ed è stato usato.
+
+Il che rende la domanda più interessante, non meno: se i contrappesi ci sono, perché la sensazione di non contare nulla è così diffusa, e così trasversale?
 
 ## Il piano di sotto
 
