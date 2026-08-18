@@ -75,6 +75,13 @@ Sono aziende che non falliscono perché sono inefficienti. Falliscono perché il
 
 **4. Trattare le materie prime critiche come una questione di sicurezza.** Approvvigionamento diversificato, capacità di raffinazione europea, riciclo obbligatorio delle batterie a fine vita. Senza questo, la transizione è un cambio di padrone.
 
+Tutte e quattro sono sviluppate per esteso, con le obiezioni e i limiti di ciascuna, nella sezione [Le proposte](/proposte):
+
+- [Estendere il CBAM ai prodotti finiti](/proposte/estendere-il-cbam-ai-prodotti-finiti)
+- [Contare le emissioni sul ciclo di vita](/proposte/contare-le-emissioni-sul-ciclo-di-vita)
+- [Fissare l'obiettivo e non cambiarlo più](/proposte/fissare-l-obiettivo-e-non-cambiarlo-piu)
+- [Trattare le materie prime critiche come sicurezza](/proposte/materie-prime-critiche-come-questione-di-sicurezza)
+
 ## Quello che non sappiamo
 
 Va detto, perché è la parte che di solito viene taciuta: **non esiste un conto affidabile del saldo netto.** Nessuno ha misurato con precisione quante emissioni l'Europa ha davvero ridotto e quante ne ha semplicemente spostate. Le stime esistono, divergono, e dipendono pesantemente dalle assunzioni di chi le produce.
