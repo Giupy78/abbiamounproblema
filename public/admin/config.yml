@@ -100,6 +100,7 @@ collections:
           - 'Finanza personale'
           - 'Società'
           - 'Ambiente ed Energia'
+          - 'Istituzioni'
 
       - name: tag
         label: 'Tag'

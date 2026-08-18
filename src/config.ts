@@ -95,6 +95,7 @@ export const CATEGORIE = [
 	'Finanza personale',
 	'Società',
 	'Ambiente ed Energia',
+	'Istituzioni',
 ] as const;
 
 export type Categoria = (typeof CATEGORIE)[number];

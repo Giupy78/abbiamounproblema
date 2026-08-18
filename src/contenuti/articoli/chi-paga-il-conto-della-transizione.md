@@ -5,7 +5,7 @@ descrizione: "L'Europa produce il 6,3% delle emissioni mondiali e ne sostiene un
 dataPubblicazione: 2026-08-13
 categoria: "Ambiente ed Energia"
 tag: ["transizione", "industria", "energia", "automotive"]
-inEvidenza: true
+inEvidenza: false
 ---
 
 Un'azienda che chiude a Bologna e riapre a Chongqing non ha ridotto le emissioni del pianeta. Ha cambiato indirizzo al problema, e nel farlo ha lasciato per strada duecento posti di lavoro.
