@@ -63,6 +63,22 @@ C'è poi il modo in cui le leggi europee vengono chiuse: i **triloghi**, riunion
 
 Anche su questo la Mediatrice europea ha condotto un'indagine strategica, conclusa nel 2016 con una serie di proposte e seguita da una verifica nel 2018.
 
+## E i cittadini, cosa possono fare
+
+Qui sta la differenza più concreta, e riguarda ciò che accade **dopo** che una decisione è stata presa.
+
+La Costituzione italiana dà due strumenti. L'**iniziativa popolare** (articolo 71): cinquantamila firme per proporre una legge, che però il Parlamento non è obbligato a discutere — e quasi nessuna arriva mai in aula. E il **referendum abrogativo** (articolo 75): cinquecentomila firme per cancellare una legge già in vigore.
+
+Il secondo è lo strumento che pesa davvero. Ed è quello che in Europa non esiste.
+
+A livello europeo c'è l'**Iniziativa dei cittadini europei**: un milione di firme raccolte in almeno sette Paesi obbligano la Commissione a rispondere. A rispondere, non a legiferare.
+
+Quanto funzioni lo dicono le cifre. Da quando lo strumento è stato istituito sono state registrate **119 iniziative**. **Undici** hanno raggiunto il milione di firme. **Una** è diventata legge europea: Right2Water, da cui è nata la revisione della direttiva sull'acqua potabile. Una su centodiciannove.
+
+Va però detto anche il rovescio, perché il confronto sia onesto. Il nostro referendum ha limiti che si tende a dimenticare: il **quorum del cinquanta per cento più uno** lo ha reso inutilizzabile per anni interi, e l'articolo 75 esclude espressamente le leggi di autorizzazione a ratificare trattati internazionali. Significa che **i vincoli derivanti dai trattati europei non sono abrogabili per referendum nemmeno in Italia.**
+
+Resta comunque una differenza di sostanza. Da noi un cittadino ha il potere di rimettere in discussione una legge già approvata. In Europa, una volta che la regola è adottata, l'unico strumento disponibile è chiedere alla Commissione di cambiare idea.
+
 ## L'obiezione seria, che va detta
 
 *"Ma questo succede identico in Italia."*
@@ -90,6 +106,8 @@ Non è assenza di democrazia. È **responsabilità diluita fino a diventare irri
 **3. Verbali pubblici dei triloghi**, con le posizioni iniziali delle tre istituzioni e il testo di arrivo. Non la diretta streaming: gli atti, dopo.
 
 **4. Iniziativa legislativa al Parlamento europeo.** Oggi l'unico organo eletto direttamente dai cittadini è anche l'unico che non può proporre una legge. È un'anomalia che nessun ordinamento nazionale conosce.
+
+**5. Un seguito obbligatorio per le iniziative dei cittadini.** Quando un milione di firme raggiunge la soglia, la Commissione dovrebbe essere tenuta a presentare una proposta legislativa oppure a spiegare in aula, davanti al Parlamento europeo, perché non intende farlo. Oggi può cavarsela con una comunicazione. Una su centodiciannove è il tasso di successo di uno strumento che non funziona.
 
 ---
 
