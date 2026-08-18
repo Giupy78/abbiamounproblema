@@ -1,14 +1,20 @@
 ---
-titolo: "Chi decide davvero in Europa"
-titoloSeo: "Come si decide davvero in Europa"
-descrizione: "Nel 2023 la Commissione ha adottato 1.916 atti di esecuzione. Settantatré sono passati da una consultazione pubblica. Il problema non è chi viene eletto."
+titolo: Chi decide davvero in Europa
+titoloSeo: Come si decide davvero in Europa
+descrizione: Nel 2023 la Commissione ha adottato 1.916 atti di esecuzione.
+  Settantatré sono passati da una consultazione pubblica. Il problema non è chi
+  viene eletto.
 dataPubblicazione: 2026-08-18
-categoria: "Istituzioni"
-tag: ["europa", "trasparenza", "democrazia", "burocrazia"]
-illustrazione: "catena"
+categoria: Istituzioni
+tag:
+  - europa
+  - trasparenza
+  - democrazia
+  - burocrazia
+bozza: false
 inEvidenza: true
+illustrazione: catena
 ---
-
 Nel 2023 l'Unione europea ha adottato **1.916 atti di esecuzione**. Sono regole vincolanti: stabiliscono cosa deve contenere un'etichetta, quali sostanze un'azienda può usare, come si compila una dichiarazione doganale. Toccano il lavoro di centinaia di migliaia di imprese.
 
 Di quei 1.916, **73 sono stati pubblicati per una consultazione pubblica**. Il 3,8%.
@@ -63,22 +69,6 @@ C'è poi il modo in cui le leggi europee vengono chiuse: i **triloghi**, riunion
 
 Anche su questo la Mediatrice europea ha condotto un'indagine strategica, conclusa nel 2016 con una serie di proposte e seguita da una verifica nel 2018.
 
-## E i cittadini, cosa possono fare
-
-Qui sta la differenza più concreta, e riguarda ciò che accade **dopo** che una decisione è stata presa.
-
-La Costituzione italiana dà due strumenti. L'**iniziativa popolare** (articolo 71): cinquantamila firme per proporre una legge, che però il Parlamento non è obbligato a discutere — e quasi nessuna arriva mai in aula. E il **referendum abrogativo** (articolo 75): cinquecentomila firme per cancellare una legge già in vigore.
-
-Il secondo è lo strumento che pesa davvero. Ed è quello che in Europa non esiste.
-
-A livello europeo c'è l'**Iniziativa dei cittadini europei**: un milione di firme raccolte in almeno sette Paesi obbligano la Commissione a rispondere. A rispondere, non a legiferare.
-
-Quanto funzioni lo dicono le cifre. Da quando lo strumento è stato istituito sono state registrate **119 iniziative**. **Undici** hanno raggiunto il milione di firme. **Una** è diventata legge europea: Right2Water, da cui è nata la revisione della direttiva sull'acqua potabile. Una su centodiciannove.
-
-Va però detto anche il rovescio, perché il confronto sia onesto. Il nostro referendum ha limiti che si tende a dimenticare: il **quorum del cinquanta per cento più uno** lo ha reso inutilizzabile per anni interi, e l'articolo 75 esclude espressamente le leggi di autorizzazione a ratificare trattati internazionali. Significa che **i vincoli derivanti dai trattati europei non sono abrogabili per referendum nemmeno in Italia.**
-
-Resta comunque una differenza di sostanza. Da noi un cittadino ha il potere di rimettere in discussione una legge già approvata. In Europa, una volta che la regola è adottata, l'unico strumento disponibile è chiedere alla Commissione di cambiare idea.
-
 ## L'obiezione seria, che va detta
 
 *"Ma questo succede identico in Italia."*
@@ -97,6 +87,22 @@ In Europa la catena esiste ma ha troppi anelli: un comitato di esperti nazionali
 
 Non è assenza di democrazia. È **responsabilità diluita fino a diventare irrintracciabile** — che è esattamente il problema incontrato con [l'obbligo del condominio che nessuno ha il compito di abrogare](/condominio-sostituto-di-imposta) e con [le leggi che nessuno conta](/troppe-leggi-come-tagliarle).
 
+## E i cittadini, cosa possono fare
+
+Qui sta la differenza più concreta, e riguarda ciò che accade **dopo** che una decisione è stata presa.
+
+La Costituzione italiana dà due strumenti. L'**iniziativa popolare** (articolo 71): cinquantamila firme per proporre una legge, che però il Parlamento non è obbligato a discutere — e quasi nessuna arriva mai in aula. E il **referendum abrogativo** (articolo 75): cinquecentomila firme per cancellare una legge già in vigore.
+
+Il secondo è lo strumento che pesa davvero. Ed è quello che in Europa non esiste.
+
+A livello europeo c'è l'**Iniziativa dei cittadini europei**: un milione di firme raccolte in almeno sette Paesi obbligano la Commissione a rispondere. A rispondere, non a legiferare.
+
+Quanto funzioni lo dicono le cifre. Da quando lo strumento è stato istituito sono state registrate **119 iniziative**. **Undici** hanno raggiunto il milione di firme. **Una** è diventata legge europea: Right2Water, da cui è nata la revisione della direttiva sull'acqua potabile. Una su centodiciannove.
+
+Va però detto anche il rovescio, perché il confronto sia onesto. Il nostro referendum ha limiti che si tende a dimenticare: il **quorum del cinquanta per cento più uno** lo ha reso inutilizzabile per anni interi, e l'articolo 75 esclude espressamente le leggi di autorizzazione a ratificare trattati internazionali. Significa che **i vincoli derivanti dai trattati europei non sono abrogabili per referendum nemmeno in Italia.**
+
+Resta comunque una differenza di sostanza. Da noi un cittadino ha il potere di rimettere in discussione una legge già approvata. In Europa, una volta che la regola è adottata, l'unico strumento disponibile è chiedere alla Commissione di cambiare idea.
+
 ## Cosa proporrei
 
 **1. Pubblicare tutti i progetti di atti di esecuzione**, non il 4%. Se 73 consultazioni sono state possibili, non esiste una ragione tecnica per cui non possano essere 1.916.
@@ -109,7 +115,7 @@ Non è assenza di democrazia. È **responsabilità diluita fino a diventare irri
 
 **5. Un seguito obbligatorio per le iniziative dei cittadini.** Quando un milione di firme raggiunge la soglia, la Commissione dovrebbe essere tenuta a presentare una proposta legislativa oppure a spiegare in aula, davanti al Parlamento europeo, perché non intende farlo. Oggi può cavarsela con una comunicazione. Una su centodiciannove è il tasso di successo di uno strumento che non funziona.
 
----
+- - -
 
 La domanda del titolo aveva una risposta più noiosa di quella che si sente al bar, e più preoccupante. Non decide un potere occulto: decidono comitati legittimi, con procedure legittime, dentro una catena così lunga che alla fine **nessuno è più responsabile di niente davanti a nessuno**.
 
