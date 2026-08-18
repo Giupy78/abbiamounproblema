@@ -145,6 +145,8 @@ export const ILLUSTRAZIONI = [
 	'pila',
 	'palazzina',
 	'calendario',
+	'bilancia',
+	'catena',
 ] as const;
 
 /** Voci del menu principale. */

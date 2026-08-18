@@ -133,6 +133,61 @@ const BANCONOTE = [
 		}
 
 		{
+			nome === 'bilancia' && (
+				<g>
+					{/* Il costo su un piatto, il risultato sull'altro: la bilancia
+					    pende dalla parte di chi paga. */}
+					<path class="tratto" d="M240 40v112" />
+					<path class="tratto" d="M204 158h72l-12-14h-48z" />
+					<circle class="pieno accento" cx="240" cy="36" r="7" />
+
+					{/* Trave inclinata: a sinistra scende, a destra sale. */}
+					<path class="tratto" d="M124 74l232-24" />
+
+					{/* Piatto sinistro: il costo, che pesa */}
+					<path class="tratto" d="M124 74v22" />
+					<path class="tratto" d="M86 96h76l-16 30H102z" />
+					<text class="euro euro--piatto" x="111" y="122">€</text>
+
+					{/* Piatto destro: il risultato climatico, che pesa molto meno */}
+					<path class="tratto" d="M356 50v22" />
+					<path class="tratto" d="M318 72h76l-16 30h-44z" />
+					<path
+						class="pieno tenue"
+						d="M333 96c-5 0-9-4-9-9s4-9 9-9c1-6 6-10 12-10 5 0 9 3 11 7 1-1 3-1 4-1 5 0 9 4 9 9s-4 9-9 9z"
+					/>
+				</g>
+			)
+		}
+
+		{
+			nome === 'catena' && (
+				<g>
+					{/* Ogni anello e legittimo. Ma piu la catena si allunga, meno
+					    il segnale arriva — fino a spezzarsi. */}
+					{[
+						{ x: 78, o: 1 },
+						{ x: 140, o: 0.82 },
+						{ x: 202, o: 0.64 },
+						{ x: 264, o: 0.46 },
+						{ x: 326, o: 0.3 },
+					].map((a) => (
+						<ellipse class="tratto" cx={a.x} cy="90" rx="38" ry="22" opacity={a.o} />
+					))}
+
+					{/* L'ultimo anello non tiene piu */}
+					<ellipse
+						class="tratto rosso anello-rotto"
+						cx="392"
+						cy="90"
+						rx="38"
+						ry="22"
+					/>
+				</g>
+			)
+		}
+
+		{
 			nome === 'calendario' && (
 				<g>
 					{/* Il tempo che scade: verde finché la norma vive, rosso il giorno
@@ -235,6 +290,17 @@ const BANCONOTE = [
 
 	.euro--rosso {
 		fill: #c0392b;
+	}
+
+	/* Dentro il piatto della bilancia serve piu piccolo, altrimenti sborda. */
+	.euro--piatto {
+		font-size: 27px;
+	}
+
+	/* L'anello interrotto: il tratteggio racconta la rottura senza
+	   bisogno di disegnare due archi separati. */
+	.anello-rotto {
+		stroke-dasharray: 26 18;
 	}
 
 	.fiamma-esterna {

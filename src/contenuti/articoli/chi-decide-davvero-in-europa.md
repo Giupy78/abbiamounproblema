@@ -5,6 +5,7 @@ descrizione: "Nel 2023 la Commissione ha adottato 1.916 atti di esecuzione. Sett
 dataPubblicazione: 2026-08-18
 categoria: "Istituzioni"
 tag: ["europa", "trasparenza", "democrazia", "burocrazia"]
+illustrazione: "catena"
 inEvidenza: true
 ---
 
