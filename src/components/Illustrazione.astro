@@ -190,24 +190,132 @@ const BANCONOTE = [
 		{
 			nome === 'crepa' && (
 				<g>
-					{/* L'epicentro a sinistra, le onde d'urto che si allontanano,
-					    la crepa che si allarga verso destra fino a spezzarsi
-					    in frammenti: la stessa scossa, letta come frattura. */}
-					{[16, 28, 40].map((r, i) => (
-						<circle class="tratto tenue" cx="96" cy="92" r={r} opacity={1 - i * 0.3} />
+					{/*
+					 * La scossa che parte da Wall Street e arriva a Roma.
+					 * A sinistra i grattacieli fitti con l'epicentro, in mezzo le
+					 * onde d'urto e il grafico che precipita, a destra il Colosseo
+					 * col profilo mozzato. Il terreno spaccato attraversa tutto.
+					 *
+					 * Le sfumature hanno id con prefisso "crepa-" per non entrare
+					 * in conflitto se un giorno due illustrazioni finiscono nella
+					 * stessa pagina.
+					 */}
+					<defs>
+						<linearGradient id="crepa-cielo" x1="0" y1="0" x2="1" y2="0">
+							<stop offset="0%" stop-color="#c0392b" stop-opacity="0.20" />
+							<stop offset="50%" stop-color="#d98324" stop-opacity="0.07" />
+							<stop offset="100%" stop-color="#c0392b" stop-opacity="0.13" />
+						</linearGradient>
+						<linearGradient id="crepa-pal" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0%" stop-color="#5f5b54" />
+							<stop offset="100%" stop-color="#35322d" />
+						</linearGradient>
+					</defs>
+
+					<rect x="0" y="0" width="480" height="180" fill="url(#crepa-cielo)" />
+
+					{[0, 1, 2, 3, 4].map((i) => (
+						<path
+							d={`M${186 + i * 26} 70 Q ${198 + i * 30} 120 ${186 + i * 26} 170`}
+							fill="none"
+							stroke="#c0392b"
+							stroke-width={2.4 - i * 0.4}
+							opacity={0.3 - i * 0.052}
+						/>
 					))}
-					<circle class="pieno rosso-pieno" cx="96" cy="92" r="5" />
 
 					<path
-						class="pieno rosso-pieno"
-						d="M132 88 L162 76 L188 96 L214 78 L240 100 L268 82 L294 104 L324 80 L352 98 L382 84 L412 92
-						   L406 100 L376 92 L348 106 L318 88 L290 112 L262 90 L236 108 L210 86 L184 104 L158 84 L128 96 Z"
+						d="M190 28 L224 40 L252 24 L288 52 L322 38 L358 70 L396 56 L436 94"
+						fill="none"
+						stroke="#c0392b"
+						stroke-width="3.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
 					/>
+					<circle class="pieno rosso-pieno" cx="436" cy="94" r="5" />
 
-					{/* Tre schegge, dove la crepa finisce per rompersi. */}
-					<circle class="pieno rosso-pieno" cx="428" cy="86" r="4" opacity="0.85" />
-					<circle class="pieno rosso-pieno" cx="440" cy="100" r="3" opacity="0.6" />
-					<circle class="pieno rosso-pieno" cx="422" cy="106" r="2.5" opacity="0.45" />
+					{[
+						{ x: 22, w: 20, h: 82 },
+						{ x: 46, w: 16, h: 58 },
+						{ x: 66, w: 24, h: 100 },
+						{ x: 94, w: 17, h: 70 },
+						{ x: 115, w: 22, h: 88 },
+					].map((b) => (
+						<g>
+							<rect x={b.x} y={152 - b.h} width={b.w} height={b.h} fill="url(#crepa-pal)" />
+							{Array.from({ length: Math.floor(b.h / 15) }, (_, r) =>
+								Array.from({ length: Math.max(1, Math.floor(b.w / 9)) }, (_, c) => (
+									<rect
+										x={b.x + 4 + c * 9}
+										y={152 - b.h + 8 + r * 15}
+										width="3.5"
+										height="5"
+										fill="#edc14a"
+										opacity={(r * 7 + c * 3) % 5 > 2 ? 0.6 : 0.14}
+									/>
+								)),
+							)}
+						</g>
+					))}
+
+					{[10, 20, 32].map((r, i) => (
+						<circle
+							cx="78"
+							cy="42"
+							r={r}
+							fill="none"
+							stroke="#c0392b"
+							stroke-width="2.5"
+							opacity={0.72 - i * 0.22}
+						/>
+					))}
+					<circle class="pieno rosso-pieno" cx="78" cy="42" r="5" />
+
+					<g transform="translate(396 152)">
+						<path d="M-62 0 L-62 -58 Q-62 -74 -40 -77 L-4 -77 L-4 0 Z" fill="url(#crepa-pal)" />
+						<path d="M-4 -77 L-4 -44 L12 -44 L12 0 L-4 0 Z" fill="url(#crepa-pal)" />
+						<path d="M12 -44 Q36 -42 46 -28 L52 0 L12 0 Z" fill="url(#crepa-pal)" />
+
+						{[-56, -42, -28, -14].map((ax) => (
+							<g>
+								<path
+									d={`M${ax} -8 L${ax} -24 Q${ax + 6} -31 ${ax + 12} -24 L${ax + 12} -8 Z`}
+									fill="#35322d"
+									opacity="0.62"
+								/>
+								<path
+									d={`M${ax} -32 L${ax} -46 Q${ax + 6} -53 ${ax + 12} -46 L${ax + 12} -32 Z`}
+									fill="#35322d"
+									opacity="0.5"
+								/>
+								<path
+									d={`M${ax} -54 L${ax} -66 Q${ax + 6} -72 ${ax + 12} -66 L${ax + 12} -54 Z`}
+									fill="#35322d"
+									opacity="0.38"
+								/>
+							</g>
+						))}
+
+						{[16, 30].map((ax) => (
+							<path
+								d={`M${ax} -8 L${ax} -24 Q${ax + 6} -31 ${ax + 12} -24 L${ax + 12} -8 Z`}
+								fill="#35322d"
+								opacity="0.5"
+							/>
+						))}
+					</g>
+
+					<path
+						d="M0 152 L118 152 L148 160 L180 150 L212 164 L246 152 L284 166 L320 153 L358 167 L396 154 L434 165 L480 154 L480 180 L0 180 Z"
+						fill="#35322d"
+					/>
+					<path
+						d="M118 152 L148 160 L180 150 L212 164 L246 152 L284 166 L320 153 L358 167 L396 154 L434 165"
+						fill="none"
+						stroke="#c0392b"
+						stroke-width="2.5"
+						opacity="0.75"
+					/>
 				</g>
 			)
 		}
