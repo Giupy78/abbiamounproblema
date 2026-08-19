@@ -118,9 +118,25 @@ collections:
         widget: list
         required: false
 
+      - name: illustrazione
+        label: 'Illustrazione di apertura'
+        hint: 'Il disegno che compare in cima all articolo. Sono disegnati su misura per il sito: nessuna foto da cercare, nessuna licenza.'
+        widget: select
+        required: false
+        options:
+          - { label: 'Nessuna', value: '' }
+          - { label: 'Metodo — groviglio che diventa freccia', value: 'metodo' }
+          - { label: 'Imbuto — soldi che entrano, spiccioli che escono', value: 'imbuto' }
+          - { label: 'Pila — carte che bruciano', value: 'pila' }
+          - { label: 'Palazzina — condominio e cartella fiscale', value: 'palazzina' }
+          - { label: 'Calendario — norma che scade', value: 'calendario' }
+          - { label: 'Bilancia — costo da una parte, risultato dall altra', value: 'bilancia' }
+          - { label: 'Catena — anelli che sbiadiscono e si spezzano', value: 'catena' }
+          - { label: 'Crepa — scossa da Wall Street a Roma', value: 'crepa' }
+
       - name: immagine
-        label: 'Immagine di copertina'
-        hint: 'Caricane una grande, almeno 1600 pixel di larghezza: la rimpicciolisce il sito da solo.'
+        label: 'Immagine di copertina (facoltativa)'
+        hint: 'Solo se vuoi una fotografia al posto del disegno. Caricane una grande, almeno 1600 pixel: la rimpicciolisce il sito da solo.'
         widget: image
         required: false
 

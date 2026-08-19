@@ -11,5 +11,298 @@
 	<body>
 		<!-- Decap CMS: il pannello di scrittura. Legge le impostazioni da config.yml. -->
 		<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+		<script>
+			/*
+			 * Anteprima degli articoli dentro il pannello.
+			 *
+			 * Senza queste istruzioni Decap mostra un riquadro grezzo che non
+			 * assomiglia al sito. Qui ricostruiamo l'aspetto reale: stessi
+			 * caratteri, stessi colori, stessa gerarchia dei titoli.
+			 *
+			 * I colori sono ricopiati da src/styles/global.css. Se un giorno
+			 * cambi la tavolozza del sito, ricordati di aggiornarli anche qui:
+			 * sono due file separati che non si parlano.
+			 */
+
+			var SFONDO = '#fbfaf8';
+			var SFONDO_ALT = '#f2efea';
+			var TESTO = '#1c1b19';
+			var TESTO_TENUE = '#5f5b54';
+			var BORDO = '#dfdad2';
+			var ACCENTO = '#a8721a';
+			var SERIF = "'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif";
+			var SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif";
+
+			/* Miniature delle illustrazioni: una riga descrittiva basta a far
+			   capire quale disegno comparira', senza duplicare qui tutto il
+			   codice SVG del componente Astro. */
+			var ILLUSTRAZIONI = {
+				metodo: 'Groviglio rosso che diventa freccia verde',
+				imbuto: 'Banconote che entrano, una monetina che esce',
+				pila: 'Pila di carte con fiamma a tre toni',
+				palazzina: 'Palazzina con simbolo dell euro rosso',
+				calendario: 'Calendario con data barrata in rosso',
+				bilancia: 'Bilancia sbilanciata: euro contro nuvola',
+				catena: 'Anelli che sbiadiscono fino a spezzarsi',
+				crepa: 'Grattacieli, onde d urto, Colosseo mozzato',
+			};
+
+			/* Decap espone h (creazione elementi) e createClass come globali. */
+			var h = window.h;
+			var createClass = window.createClass;
+
+			var AnteprimaArticolo = createClass({
+				render: function () {
+					var d = this.props.entry.getIn(['data']);
+					var titolo = d.get('titolo') || '(senza titolo)';
+					var descrizione = d.get('descrizione') || '';
+					var categoria = d.get('categoria') || '';
+					var illustrazione = d.get('illustrazione');
+					var bozza = d.get('bozza');
+
+					var blocchi = [];
+
+					if (bozza) {
+						blocchi.push(
+							h(
+								'div',
+								{
+									key: 'bozza',
+									style: {
+										background: '#fdf0ee',
+										border: '1px solid #c0392b',
+										color: '#c0392b',
+										borderRadius: '6px',
+										padding: '8px 14px',
+										marginBottom: '18px',
+										fontFamily: SANS,
+										fontSize: '12px',
+										fontWeight: '600',
+										letterSpacing: '0.05em',
+										textTransform: 'uppercase',
+									},
+								},
+								'Bozza — non visibile sul sito',
+							),
+						);
+					}
+
+					if (illustrazione && ILLUSTRAZIONI[illustrazione]) {
+						blocchi.push(
+							h(
+								'div',
+								{
+									key: 'ill',
+									style: {
+										background: SFONDO_ALT,
+										border: '1px dashed ' + BORDO,
+										borderRadius: '8px',
+										padding: '20px',
+										marginBottom: '24px',
+										textAlign: 'center',
+										fontFamily: SANS,
+										fontSize: '13px',
+										color: TESTO_TENUE,
+									},
+								},
+								'Illustrazione: ' + ILLUSTRAZIONI[illustrazione],
+							),
+						);
+					}
+
+					if (categoria) {
+						blocchi.push(
+							h(
+								'span',
+								{
+									key: 'cat',
+									style: {
+										display: 'inline-block',
+										fontFamily: SANS,
+										fontSize: '11px',
+										fontWeight: '600',
+										letterSpacing: '0.08em',
+										textTransform: 'uppercase',
+										color: ACCENTO,
+										background: '#f5ecdc',
+										padding: '4px 10px',
+										borderRadius: '999px',
+										marginBottom: '14px',
+									},
+								},
+								categoria,
+							),
+						);
+					}
+
+					blocchi.push(
+						h(
+							'h1',
+							{
+								key: 'tit',
+								style: {
+									fontFamily: SERIF,
+									fontSize: '38px',
+									lineHeight: '1.15',
+									letterSpacing: '-0.02em',
+									color: TESTO,
+									margin: '8px 0 14px',
+								},
+							},
+							titolo,
+						),
+					);
+
+					if (descrizione) {
+						blocchi.push(
+							h(
+								'p',
+								{
+									key: 'som',
+									style: {
+										fontFamily: SERIF,
+										fontSize: '19px',
+										lineHeight: '1.5',
+										color: TESTO_TENUE,
+										margin: '0 0 22px',
+									},
+								},
+								descrizione,
+							),
+						);
+					}
+
+					blocchi.push(
+						h('div', {
+							key: 'riga',
+							style: { borderTop: '1px solid ' + BORDO, marginBottom: '26px' },
+						}),
+					);
+
+					blocchi.push(
+						h(
+							'div',
+							{
+								key: 'corpo',
+								className: 'corpo-anteprima',
+								style: {
+									fontFamily: SERIF,
+									fontSize: '18px',
+									lineHeight: '1.75',
+									color: TESTO,
+								},
+							},
+							this.props.widgetFor('body'),
+						),
+					);
+
+					return h(
+						'div',
+						{
+							style: {
+								background: SFONDO,
+								padding: '38px 44px 60px',
+								maxWidth: '760px',
+								margin: '0 auto',
+							},
+						},
+						blocchi,
+					);
+				},
+			});
+
+			CMS.registerPreviewTemplate('articoli', AnteprimaArticolo);
+
+			/* Le proposte hanno campi diversi: mostriamo il problema in evidenza,
+			   che e' la riga che il lettore legge per prima. */
+			var AnteprimaProposta = createClass({
+				render: function () {
+					var d = this.props.entry.getIn(['data']);
+					var stato = d.get('stato') || '';
+					var ambito = d.get('ambito') || '';
+					var difficolta = d.get('difficolta') || '';
+
+					return h(
+						'div',
+						{
+							style: {
+								background: SFONDO,
+								padding: '38px 44px 60px',
+								maxWidth: '760px',
+								margin: '0 auto',
+							},
+						},
+						[
+							h(
+								'div',
+								{
+									key: 'meta',
+									style: {
+										fontFamily: SANS,
+										fontSize: '12px',
+										color: TESTO_TENUE,
+										marginBottom: '14px',
+										letterSpacing: '0.05em',
+										textTransform: 'uppercase',
+									},
+								},
+								[ambito, stato, difficolta ? 'Difficolta: ' + difficolta : '']
+									.filter(Boolean)
+									.join('  ·  '),
+							),
+							h(
+								'h1',
+								{
+									key: 'tit',
+									style: {
+										fontFamily: SERIF,
+										fontSize: '34px',
+										lineHeight: '1.2',
+										color: TESTO,
+										margin: '0 0 16px',
+									},
+								},
+								d.get('titolo') || '(senza titolo)',
+							),
+							d.get('problema')
+								? h(
+										'p',
+										{
+											key: 'prob',
+											style: {
+												fontFamily: SANS,
+												fontSize: '15px',
+												lineHeight: '1.55',
+												color: TESTO_TENUE,
+												background: SFONDO_ALT,
+												borderLeft: '3px solid ' + ACCENTO,
+												padding: '12px 16px',
+												margin: '0 0 24px',
+											},
+										},
+										'Il problema: ' + d.get('problema'),
+									)
+								: null,
+							h(
+								'div',
+								{
+									key: 'corpo',
+									style: {
+										fontFamily: SERIF,
+										fontSize: '18px',
+										lineHeight: '1.75',
+										color: TESTO,
+									},
+								},
+								this.props.widgetFor('body'),
+							),
+						],
+					);
+				},
+			});
+
+			CMS.registerPreviewTemplate('proposte', AnteprimaProposta);
+		</script>
 	</body>
 </html>
