@@ -5,6 +5,7 @@ dataPubblicazione: 2026-08-11
 categoria: "Società"
 tag: ["metodo", "partecipazione", "riforme"]
 illustrazione: "metodo"
+bozza: false
 inEvidenza: false
 ---
 

@@ -46,7 +46,9 @@ collections:
     format: yaml-frontmatter
     identifier_field: titolo
     slug: '{{slug}}'
-    summary: '{{titolo}}'
+    # Il filtro ternary trasforma il vero/falso in parole leggibili,
+    # cosi nell'elenco si distingue a colpo d'occhio cosa e ancora bozza.
+    summary: "{{titolo}}  ·  {{bozza | ternary('BOZZA','pubblicato')}}"
     sortable_fields: [dataPubblicazione, titolo]
 
     # Pulsanti di filtro sopra l elenco: mostrano solo le bozze o solo
@@ -171,7 +173,7 @@ collections:
     format: yaml-frontmatter
     identifier_field: titolo
     slug: '{{slug}}'
-    summary: '{{titolo}} — {{stato}}'
+    summary: "{{titolo}}  ·  {{stato}}  ·  {{bozza | ternary('BOZZA','pubblicata')}}"
     sortable_fields: [dataPubblicazione, titolo, stato]
 
     view_filters:

@@ -6,6 +6,7 @@ dataPubblicazione: 2026-08-12
 categoria: "Economia"
 tag: ["fisco", "condominio", "burocrazia", "semplificazione"]
 illustrazione: "palazzina"
+bozza: false
 inEvidenza: false
 ---
 

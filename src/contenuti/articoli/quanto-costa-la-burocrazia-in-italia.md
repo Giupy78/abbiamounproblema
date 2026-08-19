@@ -6,6 +6,7 @@ dataPubblicazione: 2026-08-12
 categoria: "Economia"
 tag: ["burocrazia", "pubblica amministrazione", "imprese", "riforme"]
 illustrazione: "imbuto"
+bozza: false
 inEvidenza: false
 ---
 

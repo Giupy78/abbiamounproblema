@@ -6,6 +6,7 @@ dataPubblicazione: 2026-08-13
 categoria: "Ambiente ed Energia"
 tag: ["transizione", "industria", "energia", "automotive"]
 illustrazione: "bilancia"
+bozza: false
 inEvidenza: false
 ---
 
