@@ -1,0 +1,123 @@
+---
+/**
+ * Anteprima degli articoli, bozze comprese.
+ *
+ * Serve a rispondere a una domanda legittima: come viene un pezzo prima
+ * di pubblicarlo? Questa pagina genera l'articolo esattamente come sara'
+ * online — stessa impaginazione, stessa illustrazione, stessi caratteri —
+ * ma esiste anche per le bozze.
+ *
+ * Perche' e' sicura da tenere online:
+ * - e' marcata noindex, quindi non finisce nei risultati di ricerca
+ * - e' esclusa dalla sitemap in astro.config.mjs
+ * - e' esclusa dai crawler in robots.txt
+ * - non e' collegata da nessuna pagina del sito: ci arriva solo chi
+ *   conosce l'indirizzo esatto
+ *
+ * Non e' una pagina segreta e non va usata per contenuti riservati: chi
+ * indovina l'indirizzo la vede. Serve a te per rileggere, non a proteggere.
+ */
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Illustrazione from '../../components/Illustrazione.astro';
+import { SITO } from '../../config';
+import { dataEstesa, dataMacchina, minutiLettura } from '../../utils/articoli';
+
+export async function getStaticPaths() {
+	// Qui prendiamo TUTTI gli articoli, bozze incluse: e' il punto.
+	const articoli = await getCollection('articoli');
+
+	return articoli.map((articolo: any) => ({
+		params: { slug: articolo.id },
+		props: { articolo },
+	}));
+}
+
+const { articolo } = Astro.props;
+const dati = articolo.data;
+const { Content } = await render(articolo);
+const minuti = minutiLettura(articolo.body ?? '');
+---
+
+<Base titolo={`Anteprima — ${dati.titolo}`} descrizione={dati.descrizione} noindex>
+	<div class="contenitore">
+		<div class="avviso-anteprima">
+			<strong>Anteprima</strong>
+			{
+				dati.bozza
+					? ' — questo articolo è una bozza e non è visibile sul sito.'
+					: ' — questo articolo è già pubblicato.'
+			}
+			{
+				!dati.bozza && (
+					<>
+						{' '}
+						<a href={`/${articolo.id}`}>Vai alla pagina vera</a>.
+					</>
+				)
+			}
+		</div>
+
+		<article class="articolo">
+			{dati.illustrazione && <Illustrazione nome={dati.illustrazione} class="articolo__apertura" />}
+
+			<header class="articolo__intestazione">
+				<span class="etichetta-categoria">{dati.categoria}</span>
+
+				<h1 class="articolo__titolo">{dati.titolo}</h1>
+
+				<p class="articolo__sommario">{dati.descrizione}</p>
+
+				<div class="articolo__firma meta-riga">
+					<span><strong>{SITO.autore.nome}</strong></span>
+					<span class="meta-riga__separatore">·</span>
+					<time datetime={dataMacchina(dati.dataPubblicazione)}>
+						{dataEstesa(dati.dataPubblicazione)}
+					</time>
+					<span class="meta-riga__separatore">·</span>
+					<span>{minuti} min di lettura</span>
+				</div>
+			</header>
+
+			{
+				dati.immagine && (
+					<figure style="margin: 0 0 2.5rem">
+						<Image
+							src={dati.immagine}
+							alt={dati.immagineAlt ?? ''}
+							widths={[600, 900, 1400]}
+							sizes="(max-width: 46rem) 100vw, 44rem"
+							loading="eager"
+							style="border-radius: 6px; width: 100%; height: auto"
+						/>
+						{dati.immagineAlt && <figcaption class="meta-riga">{dati.immagineAlt}</figcaption>}
+					</figure>
+				)
+			}
+
+			<div class="corpo">
+				<Content />
+			</div>
+
+			<aside class="riquadro-autore">
+				<h2>Chi firma questo pezzo</h2>
+				<p style="margin:0 0 0.6rem"><strong>{SITO.autore.nome}</strong> — {SITO.autore.ruolo}</p>
+				<p style="margin:0">{SITO.autore.bio}</p>
+			</aside>
+		</article>
+	</div>
+</Base>
+
+<style>
+	.avviso-anteprima {
+		margin: 2rem 0 0;
+		padding: 0.9rem 1.2rem;
+		border: 1px solid var(--accento);
+		border-radius: 6px;
+		background: var(--accento-tenue);
+		font-family: var(--sans);
+		font-size: 0.95rem;
+		color: var(--testo);
+	}
+</style>

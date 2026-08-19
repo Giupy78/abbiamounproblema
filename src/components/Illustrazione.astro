@@ -258,18 +258,21 @@ const BANCONOTE = [
 						</g>
 					))}
 
-					{[10, 20, 32].map((r, i) => (
-						<circle
-							cx="78"
-							cy="42"
-							r={r}
+					{/*
+					 * Epicentro alla base della citta', non in cielo: una scossa
+					 * nasce da terra. Le onde sono semicerchi che si aprono verso
+					 * l'alto, cosi si legge la propagazione invece di un bersaglio.
+					 */}
+					{[16, 30, 46, 62].map((r, i) => (
+						<path
+							d={`M${78 - r} 152 A ${r} ${r} 0 0 1 ${78 + r} 152`}
 							fill="none"
 							stroke="#c0392b"
 							stroke-width="2.5"
-							opacity={0.72 - i * 0.22}
+							opacity={0.6 - i * 0.13}
 						/>
 					))}
-					<circle class="pieno rosso-pieno" cx="78" cy="42" r="5" />
+					<circle class="pieno rosso-pieno" cx="78" cy="152" r="5.5" />
 
 					<g transform="translate(396 152)">
 						<path d="M-62 0 L-62 -58 Q-62 -74 -40 -77 L-4 -77 L-4 0 Z" fill="url(#crepa-pal)" />

@@ -5,5 +5,6 @@ Allow: /
 # non devono comparire nei risultati di ricerca.
 Disallow: /admin
 Disallow: /api/
+Disallow: /anteprima/
 
 Sitemap: https://abbiamounproblema.it/sitemap-index.xml

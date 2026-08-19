@@ -170,6 +170,7 @@ export const SLUG_RISERVATI = [
 	'archivio',
 	'categoria',
 	'proposte',
+	'anteprima',
 	'chi-sono',
 	'contatti',
 	'privacy',

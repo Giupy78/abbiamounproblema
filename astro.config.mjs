@@ -24,8 +24,8 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		sitemap({
-			// La pagina 404 non deve finire nella sitemap.
-			filter: (page) => !page.includes('/404'),
+			// Fuori dalla sitemap: la 404 e le anteprime delle bozze.
+			filter: (page) => !page.includes('/404') && !page.includes('/anteprima/'),
 		}),
 	],
 
