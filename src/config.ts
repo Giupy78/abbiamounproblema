@@ -149,6 +149,7 @@ export const ILLUSTRAZIONI = [
 	'calendario',
 	'bilancia',
 	'catena',
+	'crepa',
 ] as const;
 
 /** Voci del menu principale. */

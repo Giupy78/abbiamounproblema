@@ -5,6 +5,7 @@ descrizione: "Il Pil italiano crollò del 5% nel 2009, il peggior dato dal 1971.
 dataPubblicazione: 2026-08-19
 categoria: "Economia"
 tag: ["crisi finanziaria", "debito pubblico", "spread", "eurozona"]
+illustrazione: "crepa"
 bozza: true
 ---
 

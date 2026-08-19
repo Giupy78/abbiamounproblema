@@ -188,6 +188,31 @@ const BANCONOTE = [
 		}
 
 		{
+			nome === 'crepa' && (
+				<g>
+					{/* L'epicentro a sinistra, le onde d'urto che si allontanano,
+					    la crepa che si allarga verso destra fino a spezzarsi
+					    in frammenti: la stessa scossa, letta come frattura. */}
+					{[16, 28, 40].map((r, i) => (
+						<circle class="tratto tenue" cx="96" cy="92" r={r} opacity={1 - i * 0.3} />
+					))}
+					<circle class="pieno rosso-pieno" cx="96" cy="92" r="5" />
+
+					<path
+						class="pieno rosso-pieno"
+						d="M132 88 L162 76 L188 96 L214 78 L240 100 L268 82 L294 104 L324 80 L352 98 L382 84 L412 92
+						   L406 100 L376 92 L348 106 L318 88 L290 112 L262 90 L236 108 L210 86 L184 104 L158 84 L128 96 Z"
+					/>
+
+					{/* Tre schegge, dove la crepa finisce per rompersi. */}
+					<circle class="pieno rosso-pieno" cx="428" cy="86" r="4" opacity="0.85" />
+					<circle class="pieno rosso-pieno" cx="440" cy="100" r="3" opacity="0.6" />
+					<circle class="pieno rosso-pieno" cx="422" cy="106" r="2.5" opacity="0.45" />
+				</g>
+			)
+		}
+
+		{
 			nome === 'calendario' && (
 				<g>
 					{/* Il tempo che scade: verde finché la norma vive, rosso il giorno
