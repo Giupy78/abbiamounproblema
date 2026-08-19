@@ -49,6 +49,16 @@ collections:
     summary: '{{titolo}}'
     sortable_fields: [dataPubblicazione, titolo]
 
+    # Pulsanti di filtro sopra l elenco: mostrano solo le bozze o solo
+    # i pubblicati, senza cambiare come funziona il salvataggio.
+    view_filters:
+      - label: 'Solo bozze'
+        field: bozza
+        pattern: true
+      - label: 'Solo pubblicati'
+        field: bozza
+        pattern: false
+
     fields:
       - name: titolo
         label: 'Titolo'
@@ -147,6 +157,14 @@ collections:
     slug: '{{slug}}'
     summary: '{{titolo}} — {{stato}}'
     sortable_fields: [dataPubblicazione, titolo, stato]
+
+    view_filters:
+      - label: 'Solo bozze'
+        field: bozza
+        pattern: true
+      - label: 'Solo pubblicate'
+        field: bozza
+        pattern: false
 
     fields:
       - name: titolo
