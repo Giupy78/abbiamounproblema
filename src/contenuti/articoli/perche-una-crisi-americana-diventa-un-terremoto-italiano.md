@@ -59,6 +59,40 @@ Quando lo spread sale, il costo a cui le banche italiane si finanziano sui merca
 
 Il terremoto a Wall Street o a Francoforte arriva fino al mutuo di chi vive a Bari o a Bergamo attraverso una catena di trasmissione precisa, non attraverso la magia dei mercati.
 
+## E oggi?
+
+Tutto quello che abbiamo raccontato è storia. La domanda scomoda è se quei canali siano ancora aperti — e la risposta breve è sì, con una differenza di scenario.
+
+Le valutazioni delle borse americane sono su livelli storicamente estremi. L'indicatore più citato per misurarlo, il rapporto tra capitalizzazione azionaria e prodotto interno lordo, viaggia oggi attorno ai massimi mai registrati, ben oltre il picco della bolla tecnologica del 2000.
+
+Ma va detto subito ciò che di solito viene taciuto: **quel numero non è uno solo.** A seconda della fonte e del metodo di calcolo, la stessa grandezza viene indicata tra il 230% e il 250%, e alcune elaborazioni arrivano molto più in alto. E l'indicatore ha critiche note e serie: non tiene conto del fatto che le grandi imprese americane ricavano oggi una quota importante del fatturato all'estero, né dei margini di profitto strutturalmente più alti rispetto ai decenni passati.
+
+È lo stesso problema che abbiamo incontrato con [il costo della burocrazia](/quanto-costa-la-burocrazia-in-italia) e con [il numero delle leggi italiane](/troppe-leggi-come-tagliarle): quando la misura non è condivisa, il dibattito si sposta dai fatti alle interpretazioni.
+
+### Il 23 giugno, e cosa insegna
+
+C'è però un episodio recente che vale più di qualsiasi indicatore, perché mostra il meccanismo invece di prevederlo.
+
+Il **23 giugno 2026** la borsa di Seul è crollata di circa il 10% in una sola seduta, facendo scattare per due volte le interruzioni automatiche delle contrattazioni. Samsung e SK Hynix hanno perso circa il 12%, e il contraccolpo è arrivato fino ai produttori di memorie americani ([CNBC](https://www.cnbc.com/2026/07/02/samsung-sk-hynix-shares-slide-kospi-tech-selloff-nasdaq.html)).
+
+La lettura più diffusa è stata: la bolla dell'intelligenza artificiale comincia a incrinarsi.
+
+La causa reale è più precisa, e più istruttiva. A innescare il crollo è stato lo smontaggio forzato di **sedici fondi a leva costruiti su singoli titoli** — Samsung e SK Hynix — prodotti lanciati poche settimane prima, a fine maggio, arrivati a circa quattordicimila miliardi di won. Il **92% di quel denaro era di piccoli risparmiatori**.
+
+Non è stata una bolla che scoppia. È stato **un meccanismo di leva che si inceppa**: un prodotto finanziario che moltiplica i movimenti e che, quando il titolo scende, obbliga a vendere altro titolo, alimentando la discesa che avrebbe dovuto cavalcare.
+
+È esattamente la tesi di questo articolo, in miniatura e in tempo reale. **I mercati non si trasmettono per contagio misterioso: si trasmettono attraverso catene che si possono nominare, contare e, volendo, regolare.**
+
+### Cosa guardare, invece di prevedere
+
+Questo articolo non prevede nessun crollo, e chi lo fa sta indovinando: la storia dei mercati è piena di previsioni corrette con anni di anticipo, cioè sbagliate.
+
+Quello che si può dire è dove guardare, se una scossa dovesse partire. I tre canali del 2008 sono ancora al loro posto: **il commercio**, perché l'Italia vive di export e una frenata mondiale ferma le fabbriche a prescindere da cosa abbiano in bilancio; **il credito**, perché il mercato interbancario continua a essere il primo a irrigidirsi; **la fiducia**, perché lo spread reagisce ancora prima e più dei fondamentali.
+
+E resta il nodo di fondo, quello strutturale: **il debito pubblico alto**. Finché le banche italiane terranno in portafoglio una quota importante di titoli di Stato, ogni salto dello spread continuerà a colpire i loro bilanci proprio quando l'economia avrebbe più bisogno di credito.
+
+Rispetto al 2011 c'è però una differenza reale: la Banca Centrale Europea oggi dispone di strumenti anti-contagio che allora non aveva. Restano però attivabili in emergenza e su base discrezionale — il che è meglio di niente, ma non è una rete di sicurezza dichiarata in anticipo.
+
 ## Cosa si potrebbe fare
 
 Non è la parte più sviluppata di questo pezzo — merita un approfondimento a parte — ma tre direzioni emergono già chiare dai meccanismi appena visti.
