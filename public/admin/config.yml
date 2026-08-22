@@ -149,7 +149,8 @@ collections:
         required: false
 
       - name: bozza
-        label: 'Bozza (non pubblicare)'
+        label: 'Bozza — tienilo acceso finche non e pronto'
+        hint: 'Acceso: l articolo NON e sul sito, lo vedi solo tu. Spento: va online al primo salvataggio. Il pulsante verde in alto salva soltanto, non pubblica.'
         widget: boolean
         default: true
 
@@ -284,7 +285,8 @@ collections:
         required: false
 
       - name: bozza
-        label: 'Bozza (non pubblicare)'
+        label: 'Bozza — tienilo acceso finche non e pronto'
+        hint: 'Acceso: l articolo NON e sul sito, lo vedi solo tu. Spento: va online al primo salvataggio. Il pulsante verde in alto salva soltanto, non pubblica.'
         widget: boolean
         default: true
 
