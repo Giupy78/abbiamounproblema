@@ -1,12 +1,19 @@
 ---
-titolo: "Perché una crisi americana diventa un terremoto in Italia"
-titoloSeo: "Perché l'Italia trema per gli USA"
-descrizione: "Il Pil italiano crollò del 5% nel 2009, il peggior dato dal 1971. Non per i titoli tossici delle banche americane, che le nostre banche avevano pochi."
+titolo: Perché una crisi americana diventa un terremoto in Italia
+titoloSeo: Perché l'Italia trema per gli USA
+descrizione: Il Pil italiano crollò del 5% nel 2009, il peggior dato dal 1971.
+  Non per i titoli tossici delle banche americane, che le nostre banche avevano
+  pochi.
 dataPubblicazione: 2026-08-19
-categoria: "Economia"
-tag: ["crisi finanziaria", "debito pubblico", "spread", "eurozona"]
-illustrazione: "crepa"
-bozza: true
+categoria: Economia
+tag:
+  - crisi finanziaria
+  - debito pubblico
+  - spread
+  - eurozona
+illustrazione: crepa
+bozza: false
+inEvidenza: true
 ---
 
 Il 15 settembre 2008 Lehman Brothers, la quarta banca d'affari americana, dichiara fallimento a New York. L'anno dopo, il Pil italiano crolla del **5%** — il dato peggiore dal 1971, da quando esistono le serie storiche Istat.
