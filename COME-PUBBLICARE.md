@@ -105,7 +105,7 @@ Da qui in poi fa tutto Cloudflare: se ne accorge da solo, ricostruisce il sito e
 
 **1.** Vai in `src/contenuti/articoli/`.
 
-**2.** Copia il file `_modello-articolo.md` e rinominalo. Il nome del file diventa l'indirizzo della pagina:
+**2.** Copia un articolo esistente e rinominalo, così ti porti dietro l'intestazione già compilata. Il nome del file diventa l'indirizzo della pagina:
 
 | Nome del file | Indirizzo online |
 |---|---|
