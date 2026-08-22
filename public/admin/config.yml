@@ -234,6 +234,7 @@ collections:
           - 'Trasporti'
           - 'Istituzioni'
           - 'Ambiente'
+          - 'Conti pubblici'
 
       - name: stato
         label: 'A che punto è'

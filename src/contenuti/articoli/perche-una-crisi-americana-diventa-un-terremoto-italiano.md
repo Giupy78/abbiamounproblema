@@ -110,4 +110,10 @@ Non è la parte più sviluppata di questo pezzo — merita un approfondimento a 
 
 **Rendere permanenti e trasparenti gli strumenti anti-contagio della BCE**, invece di lasciarli attivabili solo in emergenza e su base discrezionale: se il 2011 insegna qualcosa, è che una parte dello spread non dipendeva dai conti italiani ma dall'assenza di una rete di sicurezza dichiarata in anticipo.
 
+Tutte e tre sono sviluppate per esteso, con le obiezioni e i limiti di ciascuna, nella sezione [Le proposte](/proposte):
+
+- [Un ancoraggio pluriennale per il debito pubblico](/proposte/un-ancoraggio-pluriennale-per-il-debito)
+- [Allargare la platea di chi detiene il debito italiano](/proposte/allargare-chi-detiene-il-debito-italiano)
+- [Rendere permanente la rete anti-contagio della BCE](/proposte/rendere-permanente-la-rete-anti-contagio-della-bce)
+
 *Un problema alla volta, fino in fondo.*
