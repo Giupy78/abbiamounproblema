@@ -2,6 +2,7 @@
 	"voci": [
 		{ "testo": "Home", "url": "/" },
 		{ "testo": "Le proposte", "url": "/proposte" },
+		{ "testo": "I meccanismi", "url": "/meccanismi" },
 		{ "testo": "Archivio", "url": "/archivio" },
 		{ "testo": "Chi siamo", "url": "/chi-sono" },
 		{ "testo": "Contatti", "url": "/contatti" }
