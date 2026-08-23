@@ -43,6 +43,16 @@ const SPORTELLI = [44, 128, 212, 296, 380];
  * famiglia tipo). Le voci si impilano dal basso: materia energia, trasporto,
  * oneri, imposte. Nel 2022 gli oneri valgono zero e la barra sparisce da sola.
  */
+/**
+ * Tre generazioni sempre meno numerose. L'ultima riga è quella delle
+ * potenziali madri già nate: il dato che nessuna politica può più cambiare.
+ */
+const GENERAZIONI = [
+	{ quanti: 11, y: 52, futura: false },
+	{ quanti: 8, y: 98, futura: false },
+	{ quanti: 5, y: 144, futura: true },
+];
+
 const BOLLETTE = [
 	{
 		x: 140,
@@ -350,6 +360,32 @@ const BOLLETTE = [
 						stroke-width="2.5"
 						opacity="0.75"
 					/>
+				</g>
+			)
+		}
+
+		{
+			nome === 'generazioni' && (
+				<g>
+					{/* Tre generazioni, ognuna meno numerosa della precedente.
+					    L'ultima è in colore pieno: è quella già nata, il numero
+					    che nessuna politica di oggi può più cambiare. */}
+					{GENERAZIONI.map(({ quanti, y, futura }) => {
+						const passo = 30;
+						const primo = 240 - ((quanti - 1) * passo) / 2;
+						return (
+							<g>
+								{Array.from({ length: quanti }, (_, i) => (
+									<circle
+										class={futura ? 'pieno accento' : 'tratto'}
+										cx={primo + i * passo}
+										cy={y}
+										r="9"
+									/>
+								))}
+							</g>
+						);
+					})}
 				</g>
 			)
 		}

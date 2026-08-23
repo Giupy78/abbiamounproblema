@@ -138,6 +138,7 @@ collections:
           - { label: 'Sportelli — saracinesche abbassate, una sola aperta', value: 'sportelli' }
           - { label: 'Risparmi — due pile uguali, una sola misurata', value: 'risparmi' }
           - { label: 'Bolletta — due barre a confronto, gli oneri spariscono', value: 'bolletta' }
+          - { label: 'Generazioni — tre file sempre meno numerose', value: 'generazioni' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'
