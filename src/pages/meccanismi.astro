@@ -26,19 +26,17 @@ const perSlug = new Map(articoli.map((a) => [a.id.replace(/\.mdx?$/, ''), a]));
 
 const MECCANISMI = [
 	{
-		titolo: 'Il numero che smonta lo slogan',
+		ruolo: 'La causa',
+		titolo: 'La decisione che nessuno ha preso',
 		sintesi:
-			"Su quasi ogni tema circola una frase che tutti ripetono e che il dato ufficiale contraddice. Non perché qualcuno menta: perché la frase è nata prima del dato, e nessuno è tornato a controllarla.",
-		slug: [
-			'pensioni-la-domanda-vera-e-quando-smetti',
-			'le-madri-del-2045-sono-gia-nate',
-			'perche-una-crisi-americana-diventa-un-terremoto-italiano',
-		],
+			'Quasi nulla di quello che non funziona è stato deliberato da qualcuno. È l’effetto collaterale di regole scritte per altri motivi, in un sistema dove approvare una norma richiede una decisione e toglierla non la richiede a nessuno.',
+		slug: ['troppe-leggi-come-tagliarle', 'chi-decide-davvero-in-europa'],
 	},
 	{
+		ruolo: 'L’effetto',
 		titolo: 'Il costo spostato, non eliminato',
 		sintesi:
-			'Un costo che sparisce da una riga quasi sempre ricompare da un’altra parte, a carico di qualcuno che non lo vede. Sparire dal punto in cui si guardava non significa essere stato tolto a nessuno.',
+			'Quando nessuno rivede la regola, il costo non sparisce: si sposta. Cambia riga di bilancio, cambia chi lo paga, e soprattutto smette di essere visibile. Sparire dal punto in cui si guardava non significa essere stato tolto a nessuno.',
 		slug: [
 			'condominio-sostituto-di-imposta',
 			'quanto-costa-la-burocrazia-in-italia',
@@ -46,10 +44,15 @@ const MECCANISMI = [
 		],
 	},
 	{
-		titolo: 'La decisione che nessuno ha preso',
+		ruolo: 'La conseguenza',
+		titolo: 'Il dibattito guarda la cosa sbagliata',
 		sintesi:
-			'È lo schema che troviamo più spesso, ed è il più difficile da correggere. Quasi nulla di quello che non funziona è stato deliberato da qualcuno: è l’effetto collaterale di regole scritte per altri motivi, che nessuno ha il compito di rivedere.',
-		slug: ['troppe-leggi-come-tagliarle', 'chi-decide-davvero-in-europa'],
+			'A quel punto la discussione pubblica si concentra sull’unico pezzo rimasto visibile — che non è quello che determina il risultato. È il motivo per cui su quasi ogni tema circola una frase che tutti ripetono e che il dato ufficiale contraddice.',
+		slug: [
+			'pensioni-la-domanda-vera-e-quando-smetti',
+			'le-madri-del-2045-sono-gia-nate',
+			'perche-una-crisi-americana-diventa-un-terremoto-italiano',
+		],
 	},
 ];
 
@@ -84,20 +87,32 @@ const meccanismi = MECCANISMI.map((m) => ({
 					una cosa che non ci aspettavamo.
 				</p>
 				<p>
-					<strong>Gli stessi tre schemi tornano quasi ogni volta.</strong> Non è una teoria che
-					avevamo prima di cominciare: è quello che è rimasto sul tavolo dopo aver verificato i
-					dati, un articolo dopo l'altro. Riconoscerli serve a chi legge più di qualsiasi
-					opinione, perché la prossima volta che una notizia somiglia a una di queste, si sa già
-					dove guardare.
+					<strong>Torna sempre la stessa sequenza.</strong> Non sono tre schemi separati: sono tre
+					stadi di una sola catena, dove ognuno produce quello dopo.
+				</p>
+
+				<p class="catena">
+					<span>Nessuno decide</span>
+					<span aria-hidden="true">→</span>
+					<span>il costo si sposta</span>
+					<span aria-hidden="true">→</span>
+					<span>si discute della cosa sbagliata</span>
+				</p>
+
+				<p>
+					Non è una teoria che avevamo prima di cominciare: è quello che è rimasto sul tavolo dopo
+					aver verificato i dati, un articolo dopo l'altro. Alcuni pezzi illuminano un solo
+					stadio; i più utili li mostrano tutti e tre di fila.
 				</p>
 
 				{
 					meccanismi.map((m, i) => (
 						<section class="meccanismo">
-							<h2>
+							<p class="meccanismo__ruolo">
 								<span class="meccanismo__numero">{i + 1}</span>
-								{m.titolo}
-							</h2>
+								{m.ruolo}
+							</p>
+							<h2>{m.titolo}</h2>
 							<p>{m.sintesi}</p>
 							{m.articoli.length > 0 && (
 								<ul class="meccanismo__elenco">
@@ -111,6 +126,22 @@ const meccanismi = MECCANISMI.map((m) => ({
 						</section>
 					))
 				}
+
+				<h2>La catena intera, in un pezzo solo</h2>
+				<p>
+					Il caso più chiaro è quello delle <a href="/pensioni-la-domanda-vera-e-quando-smetti"
+						>pensioni</a
+					>. Nel 1995 il passaggio al calcolo contributivo ha reso il sistema capace di
+					aggiustarsi da solo, ma <strong>il baratto non è mai stato discusso apertamente</strong>
+					per quello che era. L'aggiustamento si scarica sugli assegni di chi andrà in pensione fra
+					vent'anni: <strong>il costo si è spostato</strong> su persone che allora non votavano.
+					E oggi si litiga fra «il sistema salta» e «i giovani non avranno la pensione»,
+					<strong>due frasi che i dati ufficiali smentiscono entrambe</strong>.
+				</p>
+				<p>
+					Tre stadi, un solo argomento. Quando un tema si presenta così, di solito vuol dire che
+					vale la pena scriverci sopra.
+				</p>
 
 				<h2>Perché li scriviamo qui</h2>
 				<p>
@@ -137,16 +168,47 @@ const meccanismi = MECCANISMI.map((m) => ({
 	}
 
 	.meccanismo h2 {
+		margin-top: 0.15rem;
+	}
+
+	/* Etichetta dello stadio: dice a che punto della catena siamo. */
+	.meccanismo__ruolo {
 		display: flex;
 		align-items: baseline;
-		gap: 0.6rem;
+		gap: 0.5rem;
+		margin: 0;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--testo-tenue);
 	}
 
 	.meccanismo__numero {
 		flex: none;
-		font-size: 0.78em;
 		color: var(--accento);
+		font-weight: 700;
 		font-variant-numeric: tabular-nums;
+	}
+
+	/* La sequenza in testa alla pagina: si legge in un colpo d'occhio. */
+	.catena {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 0.75rem;
+		padding: 1rem 1.15rem;
+		border: 1px solid var(--bordo);
+		border-radius: 8px;
+		background: var(--sfondo-alt);
+		font-family: var(--serif);
+	}
+
+	.catena span:nth-child(odd) {
+		font-weight: 600;
+	}
+
+	.catena span:nth-child(even) {
+		color: var(--accento);
 	}
 
 	.meccanismo__elenco {
