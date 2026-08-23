@@ -735,6 +735,18 @@ a:hover {
 	font-size: 0.82rem;
 }
 
+/* Avvertenza sull'uso dell'IA: dichiarata in ogni pagina, sotto il copyright. */
+.pie__avvertenza {
+	margin-top: 0.6rem;
+	max-width: 62ch;
+	font-size: 0.78rem;
+	color: var(--testo-tenue);
+}
+
+.pie__avvertenza a {
+	text-decoration: underline;
+}
+
 /* ---------- Pagine di elenco ---------- */
 
 .testata-pagina {
