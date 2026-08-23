@@ -175,6 +175,31 @@ Correggere in chiaro invece che in silenzio è la scelta che, alla lunga, distin
 
 ---
 
+## Cambiare il menu del sito
+
+Dal pannello: **Impostazioni → Menu del sito**.
+
+Puoi rinominare le voci, cambiare dove portano, trascinarle per riordinarle, aggiungerne e toglierne. Le modifiche valgono sia per la barra in alto sia per l'elenco in fondo alla pagina: sono la stessa cosa.
+
+Due regole che il pannello fa rispettare da solo:
+
+- **il testo di una voce sta in 24 caratteri**, altrimenti la barra va a capo
+- **l'indirizzo comincia con `/` e non finisce con `/`**: si scrive `/archivio`, non `archivio/`
+
+Se sbagli, la pubblicazione si ferma e ti dice quale voce e quale campo correggere. Il sito online resta quello di prima finché non è a posto.
+
+---
+
+## Modificare le pagine che non sono articoli
+
+Alcune pagine non sono articoli e non compaiono nell'elenco Articoli: sono in **Impostazioni**, ciascuna con il proprio nome.
+
+Funzionano come un articolo — scrivi, salvi, il sito si aggiorna — ma hanno campi propri, perché la loro struttura è fissa. Anche qui il flag **Tienila in bozza** decide se sono visibili: acceso, la pagina esiste ma la raggiungi solo tu digitando l'indirizzo; spento, diventa pubblica.
+
+> **Attenzione:** togliere la bozza a una pagina non la mette nel menu. Sono due passaggi distinti, e il secondo si fa in *Impostazioni → Menu del sito*.
+
+---
+
 ## Aggiungere una categoria
 
 Aprila `src/config.ts`, aggiungi il nome all'elenco `CATEGORIE`, salva. La pagina della nuova categoria, il link nel menu a piè di pagina e la sitemap si aggiornano da soli.

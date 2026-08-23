@@ -1,5 +1,6 @@
 ---
-import { SITO, MENU } from '../config';
+import { SITO } from '../config';
+import { MENU } from '../utils/dati';
 
 // Serve a evidenziare nel menu la pagina in cui ci si trova.
 const percorsoAttuale = Astro.url.pathname.replace(/\/+$/, '') || '/';

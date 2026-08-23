@@ -2,75 +2,56 @@
 /**
  * I meccanismi ricorrenti.
  *
- * Non è un elenco di articoli — per quello c'è l'archivio. È la mappa di
- * come questo sito legge le cose: gli stessi tre schemi tornano in vicende
- * che sembrano non avere niente in comune.
+ * Il testo di questa pagina NON si modifica qui: sta in src/dati/meccanismi.json
+ * ed è modificabile dal pannello, in Impostazioni → Pagina "I meccanismi".
+ * Qui c'è solo l'impaginazione.
  *
- * Gli articoli non sono scritti a mano qui dentro: vengono letti dalla
- * collezione tramite lo slug, così un titolo che cambia non lascia un link
+ * Gli articoli elencati sotto ogni stadio vengono letti dalla collezione
+ * tramite il nome del file, così un titolo che cambia non lascia un link
  * rotto e una bozza compare da sola il giorno in cui la pubblichi.
- *
- * >>> PER PUBBLICARE QUESTA PAGINA: <<<
- *   1. metti BOZZA = false qui sotto
- *   2. aggiungi { testo: 'I meccanismi', url: '/meccanismi' } al MENU in src/config.ts
- *   3. togli '/meccanismi' dal filtro della sitemap in astro.config.mjs
  */
 import Base from '../layouts/Base.astro';
 import { articoliPubblicati } from '../utils/articoli';
-
-/** Finché è true la pagina è noindex, fuori dal menu e fuori dalla sitemap. */
-const BOZZA = true;
+import { MECCANISMI } from '../utils/dati';
+import { rendiMarkdown, rendiMarkdownInLinea } from '../utils/markdown';
 
 const articoli = await articoliPubblicati();
 const perSlug = new Map(articoli.map((a) => [a.id.replace(/\.mdx?$/, ''), a]));
 
-const MECCANISMI = [
-	{
-		ruolo: 'La causa',
-		titolo: 'La decisione che nessuno ha preso',
-		sintesi:
-			'Quasi nulla di quello che non funziona è stato deliberato da qualcuno. È l’effetto collaterale di regole scritte per altri motivi, in un sistema dove approvare una norma richiede una decisione e toglierla non la richiede a nessuno.',
-		slug: ['troppe-leggi-come-tagliarle', 'chi-decide-davvero-in-europa'],
-	},
-	{
-		ruolo: 'L’effetto',
-		titolo: 'Il costo spostato, non eliminato',
-		sintesi:
-			'Quando nessuno rivede la regola, il costo non sparisce: si sposta. Cambia riga di bilancio, cambia chi lo paga, e soprattutto smette di essere visibile. Sparire dal punto in cui si guardava non significa essere stato tolto a nessuno.',
-		slug: [
-			'condominio-sostituto-di-imposta',
-			'quanto-costa-la-burocrazia-in-italia',
-			'chi-paga-il-conto-della-transizione',
-		],
-	},
-	{
-		ruolo: 'La conseguenza',
-		titolo: 'Il dibattito guarda la cosa sbagliata',
-		sintesi:
-			'A quel punto la discussione pubblica si concentra sull’unico pezzo rimasto visibile — che non è quello che determina il risultato. È il motivo per cui su quasi ogni tema circola una frase che tutti ripetono e che il dato ufficiale contraddice.',
-		slug: [
-			'pensioni-la-domanda-vera-e-quando-smetti',
-			'le-madri-del-2045-sono-gia-nate',
-			'perche-una-crisi-americana-diventa-un-terremoto-italiano',
-		],
-	},
-];
+const apertura = await rendiMarkdown(MECCANISMI.apertura);
+const dopoCatena = await rendiMarkdown(MECCANISMI.dopoCatena);
+const domandeIntro = await rendiMarkdown(MECCANISMI.domandeIntro);
+const chiusura = await rendiMarkdown(MECCANISMI.chiusura);
 
-const meccanismi = MECCANISMI.map((m) => ({
-	...m,
-	articoli: m.slug.map((s) => perSlug.get(s)).filter(Boolean),
-}));
+const stadi = await Promise.all(
+	MECCANISMI.stadi.map(async (s) => ({
+		...s,
+		sintesiHtml: await rendiMarkdown(s.sintesi),
+		articoli: s.articoli.map((slug) => perSlug.get(slug)).filter(Boolean),
+	}))
+);
+
+const sezioni = await Promise.all(
+	MECCANISMI.sezioni.map(async (s) => ({ titolo: s.titolo, html: await rendiMarkdown(s.testo) }))
+);
+
+const domande = await Promise.all(
+	MECCANISMI.domande.map(async (d) => ({
+		domandaHtml: await rendiMarkdownInLinea(d.domanda),
+		notaHtml: await rendiMarkdownInLinea(d.nota),
+	}))
+);
 ---
 
 <Base
-	titolo="I meccanismi che tornano"
-	descrizione="Tre schemi ricorrenti che compaiono in vicende diverse fra loro: il dato che contraddice lo slogan, il costo spostato invece che eliminato, la decisione che nessuno ha preso."
-	noindex={BOZZA}
+	titolo={MECCANISMI.titolo}
+	descrizione={MECCANISMI.descrizione}
+	noindex={MECCANISMI.bozza}
 >
 	<div class="contenitore">
 		<div class="pagina-testuale">
 			{
-				BOZZA && (
+				MECCANISMI.bozza && (
 					<div class="avviso-anteprima">
 						<strong>Anteprima</strong> — questa pagina è una bozza: non è nel menu e non è
 						visibile ai motori di ricerca.
@@ -78,45 +59,36 @@ const meccanismi = MECCANISMI.map((m) => ({
 				)
 			}
 
-			<h1 class="articolo__titolo">I meccanismi che tornano</h1>
+			<h1 class="articolo__titolo">{MECCANISMI.titolo}</h1>
 
 			<div class="corpo">
-				<p>
-					Questo sito prende un problema alla volta, e i problemi sembrano non avere niente in
-					comune: le bollette, il debito, le nascite, le pensioni. Scrivendoli però è venuta fuori
-					una cosa che non ci aspettavamo.
-				</p>
-				<p>
-					<strong>Torna sempre la stessa sequenza.</strong> Non sono tre schemi separati: sono tre
-					stadi di una sola catena, dove ognuno produce quello dopo.
-				</p>
+				<Fragment set:html={apertura} />
 
 				<p class="catena">
-					<span>Nessuno decide</span>
-					<span aria-hidden="true">→</span>
-					<span>il costo si sposta</span>
-					<span aria-hidden="true">→</span>
-					<span>si discute della cosa sbagliata</span>
+					{
+						MECCANISMI.catena.map((passo, i) => (
+							<>
+								{i > 0 && <span aria-hidden="true">→</span>}
+								<span>{passo}</span>
+							</>
+						))
+					}
 				</p>
 
-				<p>
-					Non è una teoria che avevamo prima di cominciare: è quello che è rimasto sul tavolo dopo
-					aver verificato i dati, un articolo dopo l'altro. Alcuni pezzi illuminano un solo
-					stadio; i più utili li mostrano tutti e tre di fila.
-				</p>
+				<Fragment set:html={dopoCatena} />
 
 				{
-					meccanismi.map((m, i) => (
+					stadi.map((s, i) => (
 						<section class="meccanismo">
 							<p class="meccanismo__ruolo">
 								<span class="meccanismo__numero">{i + 1}</span>
-								{m.ruolo}
+								{s.ruolo}
 							</p>
-							<h2>{m.titolo}</h2>
-							<p>{m.sintesi}</p>
-							{m.articoli.length > 0 && (
+							<h2>{s.titolo}</h2>
+							<Fragment set:html={s.sintesiHtml} />
+							{s.articoli.length > 0 && (
 								<ul class="meccanismo__elenco">
-									{m.articoli.map((a: any) => (
+									{s.articoli.map((a: any) => (
 										<li>
 											<a href={`/${a.id.replace(/\.mdx?$/, '')}`}>{a.data.titolo}</a>
 										</li>
@@ -127,89 +99,33 @@ const meccanismi = MECCANISMI.map((m) => ({
 					))
 				}
 
-				<h2>La catena intera, in un pezzo solo</h2>
-				<p>
-					Il caso più chiaro è quello delle <a href="/pensioni-la-domanda-vera-e-quando-smetti"
-						>pensioni</a
-					>. Nel 1995 il passaggio al calcolo contributivo ha reso il sistema capace di
-					aggiustarsi da solo, ma <strong>il baratto non è mai stato discusso apertamente</strong>
-					per quello che era. L'aggiustamento si scarica sugli assegni di chi andrà in pensione fra
-					vent'anni: <strong>il costo si è spostato</strong> su persone che allora non votavano.
-					E oggi si litiga fra «il sistema salta» e «i giovani non avranno la pensione»,
-					<strong>due frasi che i dati ufficiali smentiscono entrambe</strong>.
-				</p>
-				<p>
-					Tre stadi, un solo argomento. Quando un tema si presenta così, di solito vuol dire che
-					vale la pena scriverci sopra.
-				</p>
+				{
+					sezioni.map((s) => (
+						<>
+							<h2>{s.titolo}</h2>
+							<Fragment set:html={s.html} />
+						</>
+					))
+				}
 
-				<h2>Dove la catena non arriva</h2>
-				<p>
-					Una lente che spiega tutto non spiega niente. È il rischio di una pagina come questa:
-					una volta che hai tre schemi in testa li ritrovi ovunque, e senza accorgertene smetti di
-					verificare — cominci a far entrare i fatti nello schema invece del contrario.
-				</p>
-				<p>
-					Il modo più semplice per tenerlo sotto controllo è saper indicare i casi in cui la
-					catena <em>non</em> funziona. Ce n'è uno chiarissimo fra i nostri articoli: le
-					<a href="/le-madri-del-2045-sono-gia-nate">nascite che calano</a>. Lì non c'è nessuna
-					regola rimasta in vigore troppo a lungo, e non c'è nessun costo spostato su qualcun
-					altro. C'è un fatto demografico — le potenziali madri sono meno di prima — che nessuna
-					decisione ha prodotto e nessuna decisione può annullare. Regge solo il terzo stadio,
-					quello sul dibattito.
-				</p>
-				<p>
-					<strong>Se un giorno non sapremo più dire dove uno schema non si applica</strong>, vorrà
-					dire che abbiamo smesso di verificare e abbiamo cominciato a far tornare i conti.
-				</p>
+				{
+					domande.length > 0 && (
+						<>
+							<h2>{MECCANISMI.domandeTitolo}</h2>
+							<Fragment set:html={domandeIntro} />
+							<ol class="domande">
+								{domande.map((d) => (
+									<li>
+										<strong set:html={d.domandaHtml} />
+										{d.notaHtml && <Fragment set:html={` ${d.notaHtml}`} />}
+									</li>
+								))}
+							</ol>
+						</>
+					)
+				}
 
-				<h2>Perché non portano da nessuna parte, politicamente</h2>
-				<p>
-					Un costo spostato è un costo spostato che l'abbia spostato una maggioranza o un'altra, e
-					una regola che nessuno rivede non ha colore: il tetto di spesa sanitario è sopravvissuto
-					a governi di ogni tipo senza che nessuno lo toccasse.
-				</p>
-				<p>
-					È il motivo per cui questi schemi ci sembrano più utili delle opinioni. Un'opinione
-					invecchia con chi governa; <strong>un meccanismo resta lì e continua a funzionare</strong>.
-					E mentre funziona produce sempre le stesse due cose: <strong
-						>burocrazia e costi che finiscono addosso ai cittadini</strong
-					> — moduli da compilare, ore perse, soldi che qualcuno paga senza sapere per cosa. Non sono
-					un effetto collaterale spiacevole, sono <em>il modo</em> in cui il meccanismo si manifesta:
-					è lì che va a finire il conto di ogni regola che nessuno ha rivisto.
-				</p>
-				<p>
-					Quel conto qualche volta si riesce persino a misurare, ed è quello che abbiamo provato a
-					fare con <a href="/quanto-costa-la-burocrazia-in-italia">il costo della burocrazia</a>.
-				</p>
-
-				<h2>Le tre domande</h2>
-				<p>
-					Riconoscere la catena serve a qualcosa di concreto: davanti a una notizia mai vista
-					prima, dà <strong>tre domande da farsi prima di prendere posizione</strong>. Una per
-					ogni stadio.
-				</p>
-				<ol class="domande">
-					<li>
-						<strong>Chi l'ha deciso, e quand'è stata rivista l'ultima volta?</strong>
-						Se non si trova nessuno che l'abbia scelto, quasi sempre è una regola vecchia rimasta
-						accesa.
-					</li>
-					<li>
-						<strong>Quel costo è stato tolto o solo spostato? E su chi?</strong>
-						Una voce che va a zero raramente sparisce: cambia riga, cambia chi paga, e smette di
-						vedersi.
-					</li>
-					<li>
-						<strong>Il numero che tutti ripetono, qualcuno l'ha aperto?</strong>
-						Spesso la cifra esiste davvero ma misura un'altra cosa, o è vecchia di tre anni.
-					</li>
-				</ol>
-				<p>
-					Non danno la risposta, e non servono a decidere chi ha ragione. Servono a <strong
-						>non prendere per buona la prima versione</strong
-					> — che è poi tutto quello che questo sito prova a fare, un problema alla volta.
-				</p>
+				<Fragment set:html={chiusura} />
 			</div>
 		</div>
 	</div>
@@ -241,6 +157,15 @@ const meccanismi = MECCANISMI.map((m) => ({
 		color: var(--accento);
 		font-weight: 700;
 		font-variant-numeric: tabular-nums;
+	}
+
+	.meccanismo__elenco {
+		margin-top: 0.75rem;
+		padding-left: 1.1rem;
+	}
+
+	.meccanismo__elenco li {
+		margin-bottom: 0.35rem;
 	}
 
 	/* Le tre domande: numerate in accento, una per stadio della catena. */
@@ -278,14 +203,5 @@ const meccanismi = MECCANISMI.map((m) => ({
 
 	.catena span:nth-child(even) {
 		color: var(--accento);
-	}
-
-	.meccanismo__elenco {
-		margin-top: 0.75rem;
-		padding-left: 1.1rem;
-	}
-
-	.meccanismo__elenco li {
-		margin-bottom: 0.35rem;
 	}
 </style>

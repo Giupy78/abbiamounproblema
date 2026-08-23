@@ -161,14 +161,11 @@ export const ILLUSTRAZIONI = [
 	'tetto',
 ] as const;
 
-/** Voci del menu principale. */
-export const MENU = [
-	{ testo: 'Home', url: '/' },
-	{ testo: 'Le proposte', url: '/proposte' },
-	{ testo: 'Archivio', url: '/archivio' },
-	{ testo: 'Chi siamo', url: '/chi-sono' },
-	{ testo: 'Contatti', url: '/contatti' },
-] as const;
+/**
+ * Il menu principale non sta più qui: è in src/dati/menu.json, così puoi
+ * cambiarlo dal pannello senza toccare il codice. Lo legge src/utils/dati.ts,
+ * che lo controlla prima di usarlo.
+ */
 
 /**
  * Indirizzi già occupati dalle pagine fisse del sito.

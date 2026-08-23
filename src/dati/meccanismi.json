@@ -1,0 +1,67 @@
+{
+	"bozza": true,
+	"titolo": "I meccanismi che tornano",
+	"descrizione": "Tre schemi che tornano in vicende molto diverse: la decisione che nessuno ha preso, il costo spostato invece che eliminato, il dibattito che sbaglia bersaglio.",
+	"apertura": "Questo sito prende un problema alla volta, e i problemi sembrano non avere niente in comune: le bollette, il debito, le nascite, le pensioni. Scrivendoli però è venuta fuori una cosa che non ci aspettavamo.\n\n**Torna sempre la stessa sequenza.** Non sono tre schemi separati: sono tre stadi di una sola catena, dove ognuno produce quello dopo.",
+	"catena": ["Nessuno decide", "il costo si sposta", "si discute della cosa sbagliata"],
+	"dopoCatena": "Non è una teoria che avevamo prima di cominciare: è quello che è rimasto sul tavolo dopo aver verificato i dati, un articolo dopo l'altro. Alcuni pezzi illuminano un solo stadio; i più utili li mostrano tutti e tre di fila.",
+	"stadi": [
+		{
+			"ruolo": "La causa",
+			"titolo": "La decisione che nessuno ha preso",
+			"sintesi": "Quasi nulla di quello che non funziona è stato deliberato da qualcuno. È l'effetto collaterale di regole scritte per altri motivi, in un sistema dove approvare una norma richiede una decisione e toglierla non la richiede a nessuno.",
+			"articoli": ["troppe-leggi-come-tagliarle", "chi-decide-davvero-in-europa"]
+		},
+		{
+			"ruolo": "L'effetto",
+			"titolo": "Il costo spostato, non eliminato",
+			"sintesi": "Quando nessuno rivede la regola, il costo non sparisce: si sposta. Cambia riga di bilancio, cambia chi lo paga, e soprattutto smette di essere visibile. Sparire dal punto in cui si guardava non significa essere stato tolto a nessuno.",
+			"articoli": [
+				"condominio-sostituto-di-imposta",
+				"quanto-costa-la-burocrazia-in-italia",
+				"chi-paga-il-conto-della-transizione"
+			]
+		},
+		{
+			"ruolo": "La conseguenza",
+			"titolo": "Il dibattito guarda la cosa sbagliata",
+			"sintesi": "A quel punto la discussione pubblica si concentra sull'unico pezzo rimasto visibile — che non è quello che determina il risultato. È il motivo per cui su quasi ogni tema circola una frase che tutti ripetono e che il dato ufficiale contraddice.",
+			"articoli": [
+				"pensioni-la-domanda-vera-e-quando-smetti",
+				"le-madri-del-2045-sono-gia-nate",
+				"perche-una-crisi-americana-diventa-un-terremoto-italiano"
+			]
+		}
+	],
+	"sezioni": [
+		{
+			"titolo": "La catena intera, in un pezzo solo",
+			"testo": "Il caso più chiaro è quello delle [pensioni](/pensioni-la-domanda-vera-e-quando-smetti). Nel 1995 il passaggio al calcolo contributivo ha reso il sistema capace di aggiustarsi da solo, ma **il baratto non è mai stato discusso apertamente** per quello che era. L'aggiustamento si scarica sugli assegni di chi andrà in pensione fra vent'anni: **il costo si è spostato** su persone che allora non votavano. E oggi si litiga fra «il sistema salta» e «i giovani non avranno la pensione», **due frasi che i dati ufficiali smentiscono entrambe**.\n\nTre stadi, un solo argomento. Quando un tema si presenta così, di solito vuol dire che vale la pena scriverci sopra."
+		},
+		{
+			"titolo": "Dove la catena non arriva",
+			"testo": "Una lente che spiega tutto non spiega niente. È il rischio di una pagina come questa: una volta che hai tre schemi in testa li ritrovi ovunque, e senza accorgertene smetti di verificare — cominci a far entrare i fatti nello schema invece del contrario.\n\nIl modo più semplice per tenerlo sotto controllo è saper indicare i casi in cui la catena *non* funziona. Ce n'è uno chiarissimo fra i nostri articoli: le [nascite che calano](/le-madri-del-2045-sono-gia-nate). Lì non c'è nessuna regola rimasta in vigore troppo a lungo, e non c'è nessun costo spostato su qualcun altro. C'è un fatto demografico — le potenziali madri sono meno di prima — che nessuna decisione ha prodotto e nessuna decisione può annullare. Regge solo il terzo stadio, quello sul dibattito.\n\n**Se un giorno non sapremo più dire dove uno schema non si applica**, vorrà dire che abbiamo smesso di verificare e abbiamo cominciato a far tornare i conti."
+		},
+		{
+			"titolo": "Perché non portano da nessuna parte, politicamente",
+			"testo": "Un costo spostato è un costo spostato che l'abbia spostato una maggioranza o un'altra, e una regola che nessuno rivede non ha colore: il tetto di spesa sanitario è sopravvissuto a governi di ogni tipo senza che nessuno lo toccasse.\n\nÈ il motivo per cui questi schemi ci sembrano più utili delle opinioni. Un'opinione invecchia con chi governa; **un meccanismo resta lì e continua a funzionare**. E mentre funziona produce sempre le stesse due cose: **burocrazia e costi che finiscono addosso ai cittadini** — moduli da compilare, ore perse, soldi che qualcuno paga senza sapere per cosa. Non sono un effetto collaterale spiacevole, sono *il modo* in cui il meccanismo si manifesta: è lì che va a finire il conto di ogni regola che nessuno ha rivisto.\n\nQuel conto qualche volta si riesce persino a misurare, ed è quello che abbiamo provato a fare con [il costo della burocrazia](/quanto-costa-la-burocrazia-in-italia)."
+		}
+	],
+	"domandeTitolo": "Le tre domande",
+	"domandeIntro": "Riconoscere la catena serve a qualcosa di concreto: davanti a una notizia mai vista prima, dà **tre domande da farsi prima di prendere posizione**. Una per ogni stadio.",
+	"domande": [
+		{
+			"domanda": "Chi l'ha deciso, e quand'è stata rivista l'ultima volta?",
+			"nota": "Se non si trova nessuno che l'abbia scelto, quasi sempre è una regola vecchia rimasta accesa."
+		},
+		{
+			"domanda": "Quel costo è stato tolto o solo spostato? E su chi?",
+			"nota": "Una voce che va a zero raramente sparisce: cambia riga, cambia chi paga, e smette di vedersi."
+		},
+		{
+			"domanda": "Il numero che tutti ripetono, qualcuno l'ha aperto?",
+			"nota": "Spesso la cifra esiste davvero ma misura un'altra cosa, o è vecchia di tre anni."
+		}
+	],
+	"chiusura": "Non danno la risposta, e non servono a decidere chi ha ragione. Servono a **non prendere per buona la prima versione** — che è poi tutto quello che questo sito prova a fare, un problema alla volta."
+}

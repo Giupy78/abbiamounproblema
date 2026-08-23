@@ -36,6 +36,116 @@ backend_commit_messages:
   deleteMedia: 'Rimossa immagine: {{path}}'
 
 collections:
+  # ---------------------------------------------------------------
+  # Impostazioni: il menu e le pagine fisse.
+  #
+  # A differenza di Articoli e Proposte, qui non si creano documenti
+  # nuovi: si modificano quelli che esistono. Ogni salvataggio fa
+  # ripartire la pubblicazione del sito, come per un articolo.
+  # ---------------------------------------------------------------
+  - name: impostazioni
+    label: Impostazioni
+    description: 'Il menu in cima al sito e le pagine che non sono articoli.'
+    files:
+      - name: menu
+        label: 'Menu del sito'
+        file: src/dati/menu.json
+        description: >-
+          Le voci che compaiono in alto e in fondo a ogni pagina.
+          Trascinale per cambiarne l ordine.
+        fields:
+          - name: voci
+            label: 'Voci del menu'
+            widget: list
+            label_singular: 'voce'
+            summary: '{{fields.testo}}  →  {{fields.url}}'
+            min: 1
+            max: 8
+            fields:
+              - name: testo
+                label: 'Come si legge'
+                widget: string
+                hint: 'Il testo che vede chi naviga. Corto: la barra ha poco spazio.'
+                pattern: ['^.{1,24}$', 'Massimo 24 caratteri']
+              - name: url
+                label: 'Dove porta'
+                widget: string
+                hint: >-
+                  Indirizzo interno, con la barra davanti e senza barra finale:
+                  /archivio, /proposte, /chi-sono. La home e solo /
+                pattern:
+                  ['^/($|[a-z0-9-]+(/[a-z0-9-]+)*$)', 'Deve cominciare con / e non finire con /']
+
+      - name: meccanismi
+        label: 'Pagina: I meccanismi'
+        file: src/dati/meccanismi.json
+        description: >-
+          La pagina che spiega i tre schemi ricorrenti. Finche "Tienila in
+          bozza" resta acceso non e nel menu e non e visibile su Google.
+        fields:
+          - name: bozza
+            label: 'Tienila in bozza'
+            widget: boolean
+            default: true
+            hint: >-
+              Acceso: la pagina esiste ma la vedi solo tu andando all indirizzo.
+              Spento: diventa pubblica. Ricordati di aggiungerla anche al menu.
+          - name: titolo
+            label: 'Titolo della pagina'
+            widget: string
+          - name: descrizione
+            label: 'Descrizione per Google'
+            widget: text
+            hint: 'Fra 70 e 170 caratteri: e il testo che appare nei risultati di ricerca.'
+          - name: apertura
+            label: 'Testo di apertura'
+            widget: markdown
+          - name: catena
+            label: 'La sequenza in evidenza'
+            widget: list
+            label_singular: 'passaggio'
+            field: { name: passo, label: Passaggio, widget: string }
+            hint: 'I passaggi del riquadro in alto, collegati dalle frecce.'
+          - name: dopoCatena
+            label: 'Testo sotto la sequenza'
+            widget: markdown
+          - name: stadi
+            label: 'Gli stadi della catena'
+            widget: list
+            label_singular: 'stadio'
+            summary: '{{fields.ruolo}} — {{fields.titolo}}'
+            fields:
+              - { name: ruolo, label: 'Ruolo nella catena', widget: string, hint: 'Esempio: La causa' }
+              - { name: titolo, label: 'Titolo dello stadio', widget: string }
+              - { name: sintesi, label: 'Spiegazione', widget: markdown }
+              - name: articoli
+                label: 'Articoli che lo mostrano'
+                widget: list
+                label_singular: 'articolo'
+                field: { name: slug, label: 'Nome del file', widget: string }
+                hint: >-
+                  Il nome del file dell articolo senza estensione, cioe l ultimo
+                  pezzo del suo indirizzo. Le bozze non compaiono finche non le pubblichi.
+          - name: sezioni
+            label: 'Sezioni di approfondimento'
+            widget: list
+            label_singular: 'sezione'
+            summary: '{{fields.titolo}}'
+            fields:
+              - { name: titolo, label: Titolo, widget: string }
+              - { name: testo, label: Testo, widget: markdown }
+          - { name: domandeTitolo, label: 'Titolo delle domande', widget: string }
+          - { name: domandeIntro, label: 'Introduzione alle domande', widget: markdown }
+          - name: domande
+            label: 'Le domande finali'
+            widget: list
+            label_singular: 'domanda'
+            summary: '{{fields.domanda}}'
+            fields:
+              - { name: domanda, label: Domanda, widget: string }
+              - { name: nota, label: 'Nota sotto la domanda', widget: string }
+          - { name: chiusura, label: 'Testo di chiusura', widget: markdown }
+
   - name: articoli
     label: Articoli
     label_singular: Articolo
