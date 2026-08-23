@@ -81,6 +81,22 @@ Il superamento è però subordinato alla definizione del fabbisogno triennale di
 
 È il tipo di esito che su questo sito ricorre con una frequenza sospetta: una norma che abolisce un vincolo, un decreto attuativo che non arriva, e il vincolo che continua a funzionare come prima mentre tutti lo danno per rimosso.
 
+## Una norma sopravvissuta al problema per cui era nata
+
+Vale la pena fermarsi un momento su come ci siamo arrivati, perché non è una storia sulla sanità: è la stessa che abbiamo raccontato parlando di [quante leggi si accumulano senza che nessuno le tolga](/troppe-leggi-come-tagliarle).
+
+Il tetto del 2004 **non era una cattiva norma**. Nasceva davanti a un problema reale e grave: disavanzi regionali fuori controllo, con alcune regioni che spendevano ben oltre quanto ricevevano. Mettere un limite alla voce di spesa più grande e più difficile da riportare indietro era una risposta difendibile.
+
+Il punto è che quella risposta è rimasta agganciata alla fotografia di un anno — il 2004 — mentre tutto il resto cambiava: la popolazione invecchiava, la domanda di prestazioni cresceva, i disavanzi che avevano motivato il limite venivano in larga parte riassorbiti dai piani di rientro. Nel 2019 la base è stata spostata al 2018. Nel 2024 il limite è stato formalmente superato. **Vent'anni.**
+
+E la domanda che conta non è perché ci siano voluti vent'anni, ma **chi avrebbe dovuto accorgersene**. La risposta è: nessuno in particolare. Non esiste un momento in cui qualcuno debba dire se una norma serve ancora. Una legge, una volta approvata, resta in vigore per inerzia, e l'inerzia non ha bisogno di motivazioni.
+
+C'è anche una spiegazione più prosaica, ed è di incentivi. **Abolire un vincolo di spesa ha un costo politico immediato e un beneficio diffuso e lontano**: chi firma si prende la responsabilità di aver riaperto un rubinetto, mentre chi ne beneficia è un pronto soccorso di cui nessuno saprà mai il nome. Lasciare la norma dov'è, invece, non costa niente a nessuno — se non a chi paga il doppio ogni notte.
+
+È esattamente il motivo per cui, in quell'articolo, la proposta più utile non era abrogare questa o quella legge ma cambiare il valore predefinito: **[far scadere le norme invece di lasciarle in vigore per sempre](/proposte/far-scadere-le-norme-antievasione-superate)**. Se il tetto del 2004 avesse avuto una data di scadenza a cinque anni, nel 2009 qualcuno avrebbe dovuto decidere se rinnovarlo — e magari lo avrebbe rinnovato, ma per iscritto e sapendo cosa stava facendo.
+
+Nessuno ha mai dovuto deciderlo.
+
 E anche a tetto effettivamente rimosso, resterebbe il resto. Le borse di specializzazione in medicina d'urgenza e anestesia vanno deserte da anni. **Un medico su quattro ha oggi più di 65 anni**, e le uscite dei prossimi anni non hanno un ricambio pronto. Un'azienda sanitaria libera di assumere si troverebbe comunque davanti un problema che nessuna delibera risolve: non ci sono abbastanza candidati.
 
 ## Cosa resta
@@ -91,4 +107,6 @@ Non c'è un privato che divora la sanità pubblica: quella quota è ferma al ven
 
 C'è qualcosa di più banale e più difficile da correggere. **Un vincolo di bilancio scritto per contenere i costi ha reso più conveniente l'opzione che costa il doppio**, perché il limite guardava una voce contabile invece del risultato. Nessuno l'ha voluto, nessuno l'ha deciso, e per vent'anni nessuno l'ha corretto.
 
-La domanda che vale la pena portarsi dietro non è quanto costa un medico a gettone. È perché un sistema che deve risparmiare finisca per scegliere, ogni notte, la strada più cara che ha.
+Il che riporta alla stessa conclusione a cui arriviamo ogni volta che guardiamo da vicino una regola italiana che non funziona: il problema quasi mai è la norma sbagliata approvata da qualcuno. È **la norma giusta rimasta in vigore troppo a lungo**, in un sistema in cui scriverne una nuova richiede una decisione e toglierne una vecchia non la richiede a nessuno.
+
+La domanda che vale la pena portarsi dietro non è quanto costa un medico a gettone. È perché un sistema che deve risparmiare finisca per scegliere, ogni notte, la strada più cara che ha — e perché nessuno, per vent'anni, abbia avuto il compito di chiedersi se quella regola servisse ancora.
