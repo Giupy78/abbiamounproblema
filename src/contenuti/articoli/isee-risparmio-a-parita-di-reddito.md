@@ -1,7 +1,7 @@
 ---
 titolo: "A parità di reddito, l'ISEE dipende da dove tieni i risparmi"
 titoloSeo: "ISEE: conta dove tieni i risparmi"
-descrizione: "Stesso reddito, stessi risparmi, ISEE diverso di quasi tremila euro. Dipende solo dallo strumento in cui i soldi sono depositati, e la regola è scritta."
+descrizione: "Quattro famiglie, stesso reddito, stessa cifra messa da parte. Quattro ISEE diversi. Chi ha speso tutto e chi ha comprato titoli di Stato ha lo stesso indicatore."
 dataPubblicazione: 2026-08-23
 categoria: Finanza personale
 tag:
@@ -13,13 +13,22 @@ illustrazione: risparmi
 bozza: true
 ---
 
-Prendiamo due famiglie identiche. Tre persone, stesso reddito: 30.000 euro. Stessa casa, stesso lavoro, stessa città. Tutte e due hanno messo da parte **40.000 euro** negli anni.
+Prendiamo quattro famiglie identiche. Tre persone, **stesso reddito: 30.000 euro**, stesso lavoro, stessa casa di abitazione, stessa città. Negli stessi anni ciascuna si è trovata fra le mani **40.000 euro** in più, e ne ha fatto una cosa diversa.
 
-La prima li tiene su un conto deposito in banca. La seconda li ha usati per comprare BTP.
+La prima li ha lasciati su un conto deposito. La seconda ha comprato BTP. La terza ha comprato una piccola seconda casa. La quarta li ha spesi: viaggi, una macchina nuova, ristoranti. Oggi non ha niente da parte.
 
-L'ISEE della prima è di circa **17.600 euro**. Quello della seconda, **14.700**: quasi tremila euro in meno, esattamente lo stesso importo che avrebbe una famiglia identica **senza un euro di risparmi**.
+Ecco l'ISEE di ciascuna.
 
-Nessuna delle due ha fatto niente di irregolare. La differenza è scritta nelle regole, ed è il punto da cui vale la pena partire — non per lamentarsene, ma perché racconta una cosa precisa su come lo Stato ha deciso di guardare il patrimonio delle persone.
+| Cosa ne ha fatto | ISEE |
+|---|---|
+| Ha speso tutto | **14.706** |
+| Titoli di Stato | **14.706** |
+| Conto deposito in banca | **17.647** |
+| Seconda casa | **18.627** |
+
+Vale la pena rileggere le prime due righe. **Chi ha speso quarantamila euro in vacanze e chi li ha prestati allo Stato hanno esattamente lo stesso ISEE.** Chi li ha messi in banca ne ha quasi tremila in più. Chi ha comprato un immobile, quasi quattromila.
+
+Nessuna delle quattro ha fatto niente di irregolare, e nessuna ha un euro di reddito in più delle altre. La differenza è scritta nelle regole — ed è il punto da cui vale la pena partire, non per lamentarsene, ma perché racconta una cosa precisa su come lo Stato ha deciso di guardare il patrimonio delle persone.
 
 ## Come funziona davvero il calcolo
 
@@ -36,6 +45,20 @@ Sul patrimonio mobiliare — conti correnti, depositi, titoli, fondi — c'è un
 Rifacciamo il conto della famiglia con il conto deposito. Franchigia: 10.000. Patrimonio che conta: 30.000. Il venti per cento fa 6.000, che si sommano al reddito: 36.000. Diviso 2,04, l'ISEE è 17.647 euro.
 
 La famiglia con i BTP, invece, ha patrimonio mobiliare pari a zero. Non perché non abbia i soldi: perché quello strumento **non si conta**.
+
+E la famiglia che ha speso tutto? Patrimonio zero anche lei, per la ragione più semplice del mondo: non ha più niente. ISEE 14.706, identico a chi ha quarantamila euro in titoli di Stato.
+
+## La seconda casa non ha nessuna franchigia
+
+Il caso della terza famiglia merita un paragrafo a parte, perché la regola sugli immobili funziona in modo diverso da quella sui soldi.
+
+Il patrimonio immobiliare si calcola sul **valore ai fini IMU**, dal quale si sottrae l'eventuale debito residuo del mutuo. La franchigia prevista dall'articolo 5 riguarda però soltanto la **casa di abitazione**: se il suo valore resta sotto la soglia non conta nulla, e se la supera conta solo per **due terzi della parte eccedente**.
+
+Su tutto il resto — seconde case, box, terreni — non c'è franchigia né sconto di alcun tipo. Il valore entra per intero.
+
+Così la famiglia con la seconda casa da 40.000 euro di valore IMU si vede sommare al reddito il venti per cento pieno, cioè 8.000 euro: ISE 38.000, ISEE **18.627**. Duemila euro in più della famiglia che quei 40.000 li ha tenuti in banca, quasi quattromila in più di chi li ha spesi o prestati allo Stato.
+
+Vale la pena aggiungere che qui i 40.000 euro sono il valore catastale rivalutato, non il prezzo pagato: una casa che vale 40.000 euro ai fini IMU sul mercato ne vale parecchi di più. Il conto reale, per chi compra un immobile da mettere a reddito, è quindi in genere più pesante di quello dell'esempio.
 
 ## Perché contare il patrimonio è giusto
 
@@ -94,6 +117,8 @@ Esiste l'ISEE corrente proprio per aggiornare i dati, e dal 2021 permette di agg
 Messo insieme, il quadro è questo: un indicatore che fa bene a guardare il patrimonio, ma che negli ultimi due anni è stato modificato tre volte in direzioni diverse, senza che nessuna delle tre modifiche fosse una revisione della formula.
 
 Il risultato non è che l'ISEE «punisce chi risparmia» — sarebbe uno slogan comodo e impreciso, visto che una parte dei risparmi oggi non si conta affatto. Il risultato è più scomodo da riassumere: **l'ISEE ha smesso di misurare quanto una famiglia possiede e ha cominciato a misurare in che forma lo possiede.**
+
+Con una conseguenza che nessuno ha mai dichiarato come obiettivo: **chi ha consumato tutto è trattato esattamente come chi non ha mai avuto niente.** Non è un'accusa a chi spende, ed è in parte inevitabile — un patrimonio che non c'è più non si può contare. Ma è utile saperlo, perché un indicatore che ignora del tutto ciò che è stato consumato e pesa in modo diverso ciò che è stato messo da parte non sta misurando il benessere di una famiglia: sta misurando le sue scelte.
 
 E la forma, a differenza dell'importo, si può scegliere solo se si hanno abbastanza soldi da scegliere.
 
