@@ -327,6 +327,34 @@ const SPORTELLI = [44, 128, 212, 296, 380];
 		}
 
 		{
+			nome === 'risparmi' && (
+				<g>
+					{/* Due risparmi identici: quello di sinistra viene misurato,
+					    quello di destra no. Stessa somma, peso diverso. */}
+					{[170, 340].map((cx, i) => {
+						const misurato = i === 0;
+						return (
+							<g>
+								{/* Disegnate dal basso: ogni moneta copre l'arco posteriore
+								    di quella sotto, così la pila non sembra una molla. */}
+								{[152, 139, 126, 113, 100, 87, 74].map((cy) => (
+									<ellipse class="tratto riempito" cx={cx} cy={cy} rx="38" ry="10" />
+								))}
+								{misurato && (
+									/* Staffa di misura: solo questa pila entra nel conteggio */
+									<path class="tratto rosso" d={`M${cx - 58} 62h-8v102h8`} />
+								)}
+							</g>
+						);
+					})}
+
+					{/* Riga di terra comune: le due pile poggiano sullo stesso piano */}
+					<path class="tratto" d="M120 164h270" />
+				</g>
+			)
+		}
+
+		{
 			nome === 'sportelli' && (
 				<g>
 					{/* Quattro saracinesche abbassate e una sola ancora accesa:

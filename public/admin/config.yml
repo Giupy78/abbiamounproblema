@@ -136,6 +136,7 @@ collections:
           - { label: 'Catena — anelli che sbiadiscono e si spezzano', value: 'catena' }
           - { label: 'Crepa — scossa da Wall Street a Roma', value: 'crepa' }
           - { label: 'Sportelli — saracinesche abbassate, una sola aperta', value: 'sportelli' }
+          - { label: 'Risparmi — due pile uguali, una sola misurata', value: 'risparmi' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'
@@ -237,6 +238,7 @@ collections:
           - 'Ambiente'
           - 'Conti pubblici'
           - 'Credito e risparmio'
+          - 'Welfare'
 
       - name: stato
         label: 'A che punto è'
