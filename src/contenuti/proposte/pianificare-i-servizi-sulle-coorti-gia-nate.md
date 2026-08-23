@@ -9,7 +9,7 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "le-madri-del-2045-sono-gia-nate"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 C'è un vantaggio nascosto nel problema descritto nell'[articolo da cui nasce questa proposta](/le-madri-del-2045-sono-gia-nate): la demografia è lentissima, e quindi **prevedibile con una precisione che nessun altro dato pubblico possiede**.
@@ -30,7 +30,7 @@ Eppure la rete scolastica, i posti negli asili, il numero di pediatri di libera 
 
 *"Pubblicare in anticipo la chiusura di una scuola significa condannarla: le famiglie si spostano prima e la profezia si autoavvera."*
 
-È un rischio reale e va riconosciuto. In un paese piccolo la scuola è spesso l'ultimo servizio che tiene insieme una comunità, e annunciarne la fine può accelerarla — vale qui la stessa dinamica descritta a proposito degli [sportelli bancari che chiudono](/proposte/preavviso-prima-di-chiudere-l-ultimo-sportello).
+È un rischio reale e va riconosciuto. In un paese piccolo la scuola è spesso l'ultimo servizio che tiene insieme una comunità, e annunciarne la fine può accelerarla. È la stessa dinamica che si osserva quando chiude l'ultimo sportello bancario di un comune: la chiusura non è solo la conseguenza dello spopolamento, ne diventa anche una causa.
 
 Ma il confronto non è con uno scenario in cui la scuola resta aperta: è con uno in cui chiude comunque, senza che nessuno abbia potuto prepararsi. La differenza tra sapere e non sapere non sta nell'esito, sta in **chi ha il tempo di reagire** — il comune che può cercare un accorpamento sensato invece di subirne uno deciso altrove, e le famiglie che possono organizzarsi con mesi di anticipo invece che a luglio.
 

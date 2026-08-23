@@ -10,7 +10,7 @@ tag:
   - conti pubblici
   - lavoro
 illustrazione: pensione
-bozza: true
+bozza: false
 ---
 
 Sulle pensioni italiane circolano due frasi, e sono entrambe sbagliate.

@@ -9,7 +9,7 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "pensioni-la-domanda-vera-e-quando-smetti"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 Nel sistema contributivo esiste una relazione fissa: **anticipare l'uscita abbassa l'assegno, posticiparla lo alza**. Non è una conseguenza politica, è il funzionamento del coefficiente di trasformazione.

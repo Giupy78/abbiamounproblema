@@ -9,7 +9,7 @@ difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "le-madri-del-2045-sono-gia-nate"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 Un figlio è una decisione che impegna vent'anni. Le misure pensate per sostenerla vengono riscritte, rinominate o rimodulate quasi a ogni legge di bilancio.
@@ -20,7 +20,7 @@ Un figlio è una decisione che impegna vent'anni. Le misure pensate per sostener
 
 **Un blocco pluriennale dei parametri**, non degli importi complessivi: importo per figlio, soglie, maggiorazioni e criteri di accesso restano fermi per un periodo definito — dieci anni è l'ordine di grandezza coerente con la decisione che si vuole sostenere.
 
-**Un adeguamento automatico all'inflazione** dentro quel periodo, così che «fermo» non significhi «eroso»: è lo stesso principio della proposta sulla [franchigia ISEE mai adeguata dal 2013](/proposte/agganciare-all-inflazione-la-franchigia-sui-risparmi).
+**Un adeguamento automatico all'inflazione** dentro quel periodo, così che «fermo» non significhi «eroso». È la differenza fra una soglia che resta stabile e una che si restringe ogni anno senza che nessuno abbia deliberato di restringerla — il destino di quasi tutti gli importi scritti una volta e mai più toccati.
 
 **Una regola esplicita per le modifiche**: si può cambiare in meglio in qualsiasi momento, in peggio solo con un preavviso lungo, che non tocchi chi ha già preso la decisione contando sulle regole precedenti.
 

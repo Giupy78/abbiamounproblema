@@ -9,7 +9,7 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "pensioni-la-domanda-vera-e-quando-smetti"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 Nel sistema contributivo la pensione dipende da tutto quello che si è versato in carriera. Un anno di buco a trent'anni non si recupera più con l'ultimo stipendio alto, come accadeva nel retributivo: resta un buco, e si vede quarant'anni dopo.

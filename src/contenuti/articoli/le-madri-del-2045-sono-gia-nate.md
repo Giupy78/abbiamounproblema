@@ -10,7 +10,7 @@ tag:
   - demografia
   - famiglia
 illustrazione: generazioni
-bozza: true
+bozza: false
 ---
 
 Nel 2024 in Italia sono nati **369.944 bambini**, il 2,6% in meno dell'anno prima: quasi diecimila culle vuote in dodici mesi. Il numero medio di figli per donna è sceso a **1,18**, il minimo da quando esistono le rilevazioni. I dati provvisori dei primi sette mesi del 2025 indicano un ulteriore calo del **6,3%** ([Istat, 21 ottobre 2025](https://www.istat.it/wp-content/uploads/2025/10/Natalita-e-fecondita-della-popolazione-residente_Anno-2024.pdf)).

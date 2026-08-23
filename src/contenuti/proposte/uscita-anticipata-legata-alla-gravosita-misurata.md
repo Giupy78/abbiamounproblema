@@ -9,7 +9,7 @@ difficolta: "Alta"
 origine: "Analisi della redazione"
 articoloCollegato: "pensioni-la-domanda-vera-e-quando-smetti"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 Il sistema contributivo ha una proprietà chiara: **più tardi si smette, più alta è la pensione**. Come mostra l'[articolo da cui nasce questa proposta](/pensioni-la-domanda-vera-e-quando-smetti), un lavoratore dipendente che nel 2070 uscisse a 70 anni e 2 mesi otterrebbe il 67,6% dell'ultima retribuzione, contro il 58,4% di chi esce a 67 anni e 5 mesi.
