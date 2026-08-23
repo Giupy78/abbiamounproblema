@@ -37,6 +37,34 @@ const BANCONOTE = [
 
 /** Ascisse dei cinque sportelli in fila: l'ultimo è quello rimasto aperto. */
 const SPORTELLI = [44, 128, 212, 296, 380];
+
+/**
+ * Le due bollette a confronto, in centesimi di euro per kWh (dati ARERA,
+ * famiglia tipo). Le voci si impilano dal basso: materia energia, trasporto,
+ * oneri, imposte. Nel 2022 gli oneri valgono zero e la barra sparisce da sola.
+ */
+const BOLLETTE = [
+	{
+		x: 140,
+		anno: '2021',
+		voci: [
+			{ valore: 9.94, classe: 'fascia accento' },
+			{ valore: 4.01, classe: 'fascia tenue' },
+			{ valore: 4.18, classe: 'fascia rosso-pieno' },
+			{ valore: 2.7, classe: 'fascia tenue' },
+		],
+	},
+	{
+		x: 264,
+		anno: '2022',
+		voci: [
+			{ valore: 55.36, classe: 'fascia accento' },
+			{ valore: 3.85, classe: 'fascia tenue' },
+			{ valore: 0, classe: 'fascia rosso-pieno' },
+			{ valore: 6.8, classe: 'fascia tenue' },
+		],
+	},
+];
 ---
 
 <div class:list={['illustrazione', classe]}>
@@ -327,6 +355,38 @@ const SPORTELLI = [44, 128, 212, 296, 380];
 		}
 
 		{
+			nome === 'bolletta' && (
+				<g>
+					{/* Due bollette a confronto, in scala reale sui dati ARERA.
+					    Nella seconda la fascia rossa degli oneri non c'è più,
+					    e proprio per questo si vede quanto poco contasse. */}
+					{BOLLETTE.map(({ x, anno, voci }) => {
+						let base = 160;
+						return (
+							<g>
+								{voci.map(({ valore, classe }) => {
+									const alto = valore * 2.12;
+									base -= alto;
+									return (
+										alto > 0 && (
+											<rect class={classe} x={x} y={base} width="76" height={alto} />
+										)
+									);
+								})}
+								<text class="etichetta-anno" x={x + 38} y={178}>
+									{anno}
+								</text>
+							</g>
+						);
+					})}
+
+					{/* Piano di appoggio comune: le due barre partono da qui */}
+					<path class="tratto" d="M120 161h240" />
+				</g>
+			)
+		}
+
+		{
 			nome === 'risparmi' && (
 				<g>
 					{/* Due risparmi identici: quello di sinistra viene misurato,
@@ -467,10 +527,26 @@ const SPORTELLI = [44, 128, 212, 296, 380];
 		opacity: 0.45;
 	}
 
+	/* Fasce impilate della bolletta: il filetto di separazione evita che due
+	   voci contigue dello stesso colore sembrino una sola. */
+	.fascia {
+		fill: currentColor;
+		stroke: var(--sfondo-alt);
+		stroke-width: 1.5;
+	}
+
 	/* Lamiera della saracinesca: più leggera del contorno, così a dimensioni
 	   ridotte legge come una superficie e non come tre travi. */
 	.sottile {
 		stroke-width: 2;
+	}
+
+	/* Anno sotto le barre della bolletta. */
+	.etichetta-anno {
+		fill: currentColor;
+		font-family: var(--serif);
+		font-size: 14px;
+		text-anchor: middle;
 	}
 
 	/* Euro sull'insegna: piccolo, verde come il denaro altrove nella serie. */

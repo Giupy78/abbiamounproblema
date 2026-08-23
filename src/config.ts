@@ -155,6 +155,7 @@ export const ILLUSTRAZIONI = [
 	'crepa',
 	'sportelli',
 	'risparmi',
+	'bolletta',
 ] as const;
 
 /** Voci del menu principale. */
