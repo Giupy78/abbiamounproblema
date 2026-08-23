@@ -374,6 +374,32 @@ const BOLLETTE = [
 		}
 
 		{
+			nome === 'tetto' && (
+				<g>
+					{/* Il tetto di spesa sul personale: assunzioni e straordinari ci
+					    sbattono contro, la fornitura esterna gli gira intorno.
+					    La via praticabile è anche quella che costa il doppio. */}
+					<path class="tratto tetto-linea" d="M96 62h224" />
+
+					{/* Le due strade bloccate */}
+					{[152, 232].map((x) => (
+						<g>
+							<path class="tratto rosso" d={`M${x} 152V70`} />
+							<path class="tratto rosso" d={`M${x - 13} 83l13-13 13 13`} />
+						</g>
+					))}
+
+					{/* La terza: esce di lato, supera il tetto e prosegue */}
+					<path
+						class="tratto accento-tratto"
+						d="M300 152h64c14 0 22-10 22-24V44"
+					/>
+					<path class="tratto accento-tratto" d="M373 57l13-13 13 13" />
+				</g>
+			)
+		}
+
+		{
 			nome === 'pensione' && (
 				<g>
 					{/* Due ultimi stipendi identici (il riquadro) e la quota che
@@ -615,6 +641,16 @@ const BOLLETTE = [
 	   ridotte legge come una superficie e non come tre travi. */
 	.sottile {
 		stroke-width: 2;
+	}
+
+	/* Il tetto di spesa: più spesso del tratto normale, è un muro. */
+	.tetto-linea {
+		stroke-width: 6;
+	}
+
+	/* La strada che aggira il vincolo: praticabile, e infatti la si prende. */
+	.accento-tratto {
+		stroke: var(--accento);
 	}
 
 	/* Anno sotto le barre della bolletta. */
