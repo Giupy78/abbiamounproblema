@@ -39,6 +39,15 @@ const BANCONOTE = [
 const SPORTELLI = [44, 128, 212, 296, 380];
 
 /**
+ * Tasso di sostituzione lordo al 2070 per il dipendente privato, secondo la
+ * Ragioneria generale dello Stato: cambia solo l'età a cui si smette.
+ */
+const PENSIONI = [
+	{ x: 132, quota: 0.584, eta: '67 anni' },
+	{ x: 256, quota: 0.676, eta: '70 anni' },
+];
+
+/**
  * Tre generazioni sempre meno numerose. L'ultima riga è quella delle
  * potenziali madri già nate: il dato che nessuna politica può più cambiare.
  */
@@ -360,6 +369,32 @@ const BOLLETTE = [
 						stroke-width="2.5"
 						opacity="0.75"
 					/>
+				</g>
+			)
+		}
+
+		{
+			nome === 'pensione' && (
+				<g>
+					{/* Due ultimi stipendi identici (il riquadro) e la quota che
+					    diventa pensione. Cambia solo l'età a cui si smette.
+					    Valori RGS, tasso di sostituzione lordo al 2070. */}
+					{PENSIONI.map(({ x, quota, eta }) => {
+						const alto = 118 * quota;
+						return (
+							<g>
+								<rect class="tratto riempito" x={x} y={26} width={92} height={118} rx="3" />
+								<rect class="pieno accento" x={x} y={144 - alto} width={92} height={alto} />
+								<rect class="tratto" x={x} y={26} width={92} height={118} rx="3" />
+								<text class="etichetta-anno" x={x + 46} y={50}>
+									{Math.round(quota * 100)}%
+								</text>
+								<text class="etichetta-anno" x={x + 46} y={166}>
+									{eta}
+								</text>
+							</g>
+						);
+					})}
 				</g>
 			)
 		}

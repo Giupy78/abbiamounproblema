@@ -157,6 +157,7 @@ export const ILLUSTRAZIONI = [
 	'risparmi',
 	'bolletta',
 	'generazioni',
+	'pensione',
 ] as const;
 
 /** Voci del menu principale. */

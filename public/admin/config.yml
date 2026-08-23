@@ -139,6 +139,7 @@ collections:
           - { label: 'Risparmi — due pile uguali, una sola misurata', value: 'risparmi' }
           - { label: 'Bolletta — due barre a confronto, gli oneri spariscono', value: 'bolletta' }
           - { label: 'Generazioni — tre file sempre meno numerose', value: 'generazioni' }
+          - { label: 'Pensione — stessa busta paga, quota diversa', value: 'pensione' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'
