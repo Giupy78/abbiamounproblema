@@ -39,11 +39,6 @@ const BANCONOTE = [
 const SPORTELLI = [44, 128, 212, 296, 380];
 
 /**
- * Le due bollette a confronto, in centesimi di euro per kWh (dati ARERA,
- * famiglia tipo). Le voci si impilano dal basso: materia energia, trasporto,
- * oneri, imposte. Nel 2022 gli oneri valgono zero e la barra sparisce da sola.
- */
-/**
  * Tre generazioni sempre meno numerose. L'ultima riga è quella delle
  * potenziali madri già nate: il dato che nessuna politica può più cambiare.
  */
@@ -53,6 +48,11 @@ const GENERAZIONI = [
 	{ quanti: 5, y: 144, futura: true },
 ];
 
+/**
+ * Le due bollette a confronto, in centesimi di euro per kWh (dati ARERA,
+ * famiglia tipo). Le voci si impilano dal basso: materia energia, trasporto,
+ * oneri, imposte. Nel 2022 gli oneri valgono zero e la barra sparisce da sola.
+ */
 const BOLLETTE = [
 	{
 		x: 140,
@@ -436,6 +436,11 @@ const BOLLETTE = [
 								{[152, 139, 126, 113, 100, 87, 74].map((cy) => (
 									<ellipse class="tratto riempito" cx={cx} cy={cy} rx="38" ry="10" />
 								))}
+
+								{/* Euro sulla faccia in cima: senza, la pila legge come piatti */}
+								<text class="euro-piccolo" x={cx} y={79}>
+									€
+								</text>
 								{misurato && (
 									/* Staffa di misura: solo questa pila entra nel conteggio */
 									<path class="tratto rosso" d={`M${cx - 58} 62h-8v102h8`} />
@@ -467,7 +472,7 @@ const BOLLETTE = [
 
 								{/* L'insegna con l'euro: senza, la fila legge come garage */}
 								<rect class="tratto" x={x + 6} y={52} width={44} height={19} rx="2" />
-								<text class="euro-insegna" x={x + 28} y={67}>
+								<text class="euro-piccolo" x={x + 28} y={67}>
 									€
 								</text>
 
@@ -585,8 +590,9 @@ const BOLLETTE = [
 		text-anchor: middle;
 	}
 
-	/* Euro sull'insegna: piccolo, verde come il denaro altrove nella serie. */
-	.euro-insegna {
+	/* Euro piccolo, verde come il denaro altrove nella serie: sull'insegna
+	   degli sportelli e sulla faccia delle monete. */
+	.euro-piccolo {
 		fill: #1a7a4c;
 		font-family: var(--serif);
 		font-size: 15px;
