@@ -34,6 +34,9 @@ const BANCONOTE = [
 	{ x: 222, y: 32, r: -10 },
 	{ x: 292, y: 30, r: 12 },
 ];
+
+/** Ascisse dei cinque sportelli in fila: l'ultimo è quello rimasto aperto. */
+const SPORTELLI = [44, 128, 212, 296, 380];
 ---
 
 <div class:list={['illustrazione', classe]}>
@@ -324,6 +327,58 @@ const BANCONOTE = [
 		}
 
 		{
+			nome === 'sportelli' && (
+				<g>
+					{/* Quattro saracinesche abbassate e una sola ancora accesa:
+					    quando le reti di riserva si riducono a una, la tenuta del
+					    sistema dipende tutta da quella. */}
+					{SPORTELLI.map((x, i) => {
+						const aperto = i === SPORTELLI.length - 1;
+						return (
+							<g class:list={[!aperto && 'tenue']}>
+								{/* Cornicione e corpo dell'edificio */}
+								<path class="tratto" d={`M${x - 4} 42H${x + 60}`} />
+								<path class="tratto" d={`M${x} 42v116M${x + 56} 42v116`} />
+								<path class="tratto" d={`M${x - 7} 158H${x + 63}`} />
+
+								{/* L'insegna con l'euro: senza, la fila legge come garage */}
+								<rect class="tratto" x={x + 6} y={52} width={44} height={19} rx="2" />
+								<text class="euro-insegna" x={x + 28} y={67}>
+									€
+								</text>
+
+								{aperto ? (
+									/* L'unico rimasto: vano aperto e illuminato, senza
+									   soglia in basso, così non legge come una porta chiusa. */
+									<path
+										class="pieno accento"
+										d={`M${x + 9} 158V96q0-14 19-14t19 14v62z`}
+									/>
+								) : (
+									/* Saracinesca abbassata: telaio chiaro e lamiera ondulata */
+									<>
+										<rect
+											class="tratto riempito"
+											x={x + 9}
+											y={84}
+											width={38}
+											height={74}
+											rx="2"
+										/>
+										<path
+											class="tratto sottile"
+											d={`M${x + 9} 98H${x + 47}M${x + 9} 112H${x + 47}M${x + 9} 126H${x + 47}M${x + 9} 140H${x + 47}`}
+										/>
+									</>
+								)}
+							</g>
+						);
+					})}
+				</g>
+			)
+		}
+
+		{
 			nome === 'calendario' && (
 				<g>
 					{/* Il tempo che scade: verde finché la norma vive, rosso il giorno
@@ -382,6 +437,21 @@ const BANCONOTE = [
 
 	.tenue {
 		opacity: 0.45;
+	}
+
+	/* Lamiera della saracinesca: più leggera del contorno, così a dimensioni
+	   ridotte legge come una superficie e non come tre travi. */
+	.sottile {
+		stroke-width: 2;
+	}
+
+	/* Euro sull'insegna: piccolo, verde come il denaro altrove nella serie. */
+	.euro-insegna {
+		fill: #1a7a4c;
+		font-family: var(--serif);
+		font-size: 15px;
+		font-weight: 700;
+		text-anchor: middle;
 	}
 
 	.accento {

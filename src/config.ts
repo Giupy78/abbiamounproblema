@@ -119,6 +119,7 @@ export const AMBITI = [
 	'Istituzioni',
 	'Ambiente',
 	'Conti pubblici',
+	'Credito e risparmio',
 ] as const;
 
 /**
@@ -151,6 +152,7 @@ export const ILLUSTRAZIONI = [
 	'bilancia',
 	'catena',
 	'crepa',
+	'sportelli',
 ] as const;
 
 /** Voci del menu principale. */

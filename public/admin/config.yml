@@ -135,6 +135,7 @@ collections:
           - { label: 'Bilancia — costo da una parte, risultato dall altra', value: 'bilancia' }
           - { label: 'Catena — anelli che sbiadiscono e si spezzano', value: 'catena' }
           - { label: 'Crepa — scossa da Wall Street a Roma', value: 'crepa' }
+          - { label: 'Sportelli — saracinesche abbassate, una sola aperta', value: 'sportelli' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'
@@ -235,6 +236,7 @@ collections:
           - 'Istituzioni'
           - 'Ambiente'
           - 'Conti pubblici'
+          - 'Credito e risparmio'
 
       - name: stato
         label: 'A che punto è'
