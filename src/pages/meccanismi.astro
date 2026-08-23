@@ -181,8 +181,34 @@ const meccanismi = MECCANISMI.map((m) => ({
 				<p>
 					Quel conto qualche volta si riesce persino a misurare, ed è quello che abbiamo provato a
 					fare con <a href="/quanto-costa-la-burocrazia-in-italia">il costo della burocrazia</a>.
-					Chi riconosce il meccanismo ha qualcosa in mano anche la prossima volta — e la prossima
-					volta arriva sempre.
+				</p>
+
+				<h2>Le tre domande</h2>
+				<p>
+					Riconoscere la catena serve a qualcosa di concreto: davanti a una notizia mai vista
+					prima, dà <strong>tre domande da farsi prima di prendere posizione</strong>. Una per
+					ogni stadio.
+				</p>
+				<ol class="domande">
+					<li>
+						<strong>Chi l'ha deciso, e quand'è stata rivista l'ultima volta?</strong>
+						Se non si trova nessuno che l'abbia scelto, quasi sempre è una regola vecchia rimasta
+						accesa.
+					</li>
+					<li>
+						<strong>Quel costo è stato tolto o solo spostato? E su chi?</strong>
+						Una voce che va a zero raramente sparisce: cambia riga, cambia chi paga, e smette di
+						vedersi.
+					</li>
+					<li>
+						<strong>Il numero che tutti ripetono, qualcuno l'ha aperto?</strong>
+						Spesso la cifra esiste davvero ma misura un'altra cosa, o è vecchia di tre anni.
+					</li>
+				</ol>
+				<p>
+					Non danno la risposta, e non servono a decidere chi ha ragione. Servono a <strong
+						>non prendere per buona la prima versione</strong
+					> — che è poi tutto quello che questo sito prova a fare, un problema alla volta.
 				</p>
 			</div>
 		</div>
@@ -215,6 +241,22 @@ const meccanismi = MECCANISMI.map((m) => ({
 		color: var(--accento);
 		font-weight: 700;
 		font-variant-numeric: tabular-nums;
+	}
+
+	/* Le tre domande: numerate in accento, una per stadio della catena. */
+	.domande {
+		margin: 1.25rem 0;
+		padding-left: 1.6rem;
+	}
+
+	.domande li {
+		margin-bottom: 0.9rem;
+		padding-left: 0.25rem;
+	}
+
+	.domande li::marker {
+		color: var(--accento);
+		font-weight: 700;
 	}
 
 	/* La sequenza in testa alla pagina: si legge in un colpo d'occhio. */
