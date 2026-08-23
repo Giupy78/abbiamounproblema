@@ -25,7 +25,11 @@ export default defineConfig({
 		mdx(),
 		sitemap({
 			// Fuori dalla sitemap: la 404 e le anteprime delle bozze.
-			filter: (page) => !page.includes('/404') && !page.includes('/anteprima/'),
+			// '/meccanismi' e' ancora una bozza: togli l'esclusione quando la pubblichi.
+			filter: (page) =>
+				!page.includes('/404') &&
+				!page.includes('/anteprima/') &&
+				!page.includes('/meccanismi'),
 		}),
 	],
 

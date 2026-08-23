@@ -1,0 +1,160 @@
+---
+/**
+ * I meccanismi ricorrenti.
+ *
+ * Non è un elenco di articoli — per quello c'è l'archivio. È la mappa di
+ * come questo sito legge le cose: gli stessi tre schemi tornano in vicende
+ * che sembrano non avere niente in comune.
+ *
+ * Gli articoli non sono scritti a mano qui dentro: vengono letti dalla
+ * collezione tramite lo slug, così un titolo che cambia non lascia un link
+ * rotto e una bozza compare da sola il giorno in cui la pubblichi.
+ *
+ * >>> PER PUBBLICARE QUESTA PAGINA: <<<
+ *   1. metti BOZZA = false qui sotto
+ *   2. aggiungi { testo: 'I meccanismi', url: '/meccanismi' } al MENU in src/config.ts
+ *   3. togli '/meccanismi' dal filtro della sitemap in astro.config.mjs
+ */
+import Base from '../layouts/Base.astro';
+import { articoliPubblicati } from '../utils/articoli';
+
+/** Finché è true la pagina è noindex, fuori dal menu e fuori dalla sitemap. */
+const BOZZA = true;
+
+const articoli = await articoliPubblicati();
+const perSlug = new Map(articoli.map((a) => [a.id.replace(/\.mdx?$/, ''), a]));
+
+const MECCANISMI = [
+	{
+		titolo: 'Il numero che smonta lo slogan',
+		sintesi:
+			"Su quasi ogni tema circola una frase che tutti ripetono e che il dato ufficiale contraddice. Non perché qualcuno menta: perché la frase è nata prima del dato, e nessuno è tornato a controllarla.",
+		slug: [
+			'pensioni-la-domanda-vera-e-quando-smetti',
+			'le-madri-del-2045-sono-gia-nate',
+			'perche-una-crisi-americana-diventa-un-terremoto-italiano',
+		],
+	},
+	{
+		titolo: 'Il costo spostato, non eliminato',
+		sintesi:
+			'Un costo che sparisce da una riga quasi sempre ricompare da un’altra parte, a carico di qualcuno che non lo vede. Sparire dal punto in cui si guardava non significa essere stato tolto a nessuno.',
+		slug: [
+			'condominio-sostituto-di-imposta',
+			'quanto-costa-la-burocrazia-in-italia',
+			'chi-paga-il-conto-della-transizione',
+		],
+	},
+	{
+		titolo: 'La decisione che nessuno ha preso',
+		sintesi:
+			'È lo schema che troviamo più spesso, ed è il più difficile da correggere. Quasi nulla di quello che non funziona è stato deliberato da qualcuno: è l’effetto collaterale di regole scritte per altri motivi, che nessuno ha il compito di rivedere.',
+		slug: ['troppe-leggi-come-tagliarle', 'chi-decide-davvero-in-europa'],
+	},
+];
+
+const meccanismi = MECCANISMI.map((m) => ({
+	...m,
+	articoli: m.slug.map((s) => perSlug.get(s)).filter(Boolean),
+}));
+---
+
+<Base
+	titolo="I meccanismi che tornano"
+	descrizione="Tre schemi ricorrenti che compaiono in vicende diverse fra loro: il dato che contraddice lo slogan, il costo spostato invece che eliminato, la decisione che nessuno ha preso."
+	noindex={BOZZA}
+>
+	<div class="contenitore">
+		<div class="pagina-testuale">
+			{
+				BOZZA && (
+					<div class="avviso-anteprima">
+						<strong>Anteprima</strong> — questa pagina è una bozza: non è nel menu e non è
+						visibile ai motori di ricerca.
+					</div>
+				)
+			}
+
+			<h1 class="articolo__titolo">I meccanismi che tornano</h1>
+
+			<div class="corpo">
+				<p>
+					Questo sito prende un problema alla volta, e i problemi sembrano non avere niente in
+					comune: le bollette, il debito, le nascite, le pensioni. Scrivendoli però è venuta fuori
+					una cosa che non ci aspettavamo.
+				</p>
+				<p>
+					<strong>Gli stessi tre schemi tornano quasi ogni volta.</strong> Non è una teoria che
+					avevamo prima di cominciare: è quello che è rimasto sul tavolo dopo aver verificato i
+					dati, un articolo dopo l'altro. Riconoscerli serve a chi legge più di qualsiasi
+					opinione, perché la prossima volta che una notizia somiglia a una di queste, si sa già
+					dove guardare.
+				</p>
+
+				{
+					meccanismi.map((m, i) => (
+						<section class="meccanismo">
+							<h2>
+								<span class="meccanismo__numero">{i + 1}</span>
+								{m.titolo}
+							</h2>
+							<p>{m.sintesi}</p>
+							{m.articoli.length > 0 && (
+								<ul class="meccanismo__elenco">
+									{m.articoli.map((a: any) => (
+										<li>
+											<a href={`/${a.id.replace(/\.mdx?$/, '')}`}>{a.data.titolo}</a>
+										</li>
+									))}
+								</ul>
+							)}
+						</section>
+					))
+				}
+
+				<h2>Perché li scriviamo qui</h2>
+				<p>
+					Perché rendono verificabile una cosa che di solito resta implicita: <strong
+						>il metro con cui giudichiamo</strong
+					>. Se un giorno un articolo di questo sito userà uno di questi schemi dove non c'entra
+					niente, pur di far tornare il ragionamento, adesso hai il modo per accorgertene e per
+					<a href="/contatti">dircelo</a>.
+				</p>
+				<p>
+					Nessuno dei tre porta a una conclusione politica. Un costo spostato è un costo spostato
+					che sia stato spostato da una maggioranza o da un'altra, e una regola che nessuno rivede
+					non ha colore. È il motivo per cui questi schemi ci sembrano più utili delle opinioni:
+					restano veri anche quando cambia chi governa.
+				</p>
+			</div>
+		</div>
+	</div>
+</Base>
+
+<style>
+	.meccanismo {
+		margin-top: 2.75rem;
+	}
+
+	.meccanismo h2 {
+		display: flex;
+		align-items: baseline;
+		gap: 0.6rem;
+	}
+
+	.meccanismo__numero {
+		flex: none;
+		font-size: 0.78em;
+		color: var(--accento);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.meccanismo__elenco {
+		margin-top: 0.75rem;
+		padding-left: 1.1rem;
+	}
+
+	.meccanismo__elenco li {
+		margin-bottom: 0.35rem;
+	}
+</style>
