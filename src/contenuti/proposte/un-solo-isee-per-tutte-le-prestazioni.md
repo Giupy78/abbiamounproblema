@@ -9,7 +9,7 @@ difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "isee-risparmio-a-parita-di-reddito"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 L'ISEE nasce nel 2013 con uno scopo dichiarato: sostituire criteri diversi da ente a ente con **un solo indicatore**, definito come livello essenziale delle prestazioni.

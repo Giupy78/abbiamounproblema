@@ -9,7 +9,7 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "isee-risparmio-a-parita-di-reddito"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 L'articolo 5 del DPCM 159/2013 fissa la franchigia sul patrimonio mobiliare in **6.000 euro, più 2.000 per ogni componente oltre il primo, fino a un massimo di 10.000**. Sono le cifre scritte nel 2013 e sono ancora quelle.

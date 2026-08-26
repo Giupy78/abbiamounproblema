@@ -9,7 +9,7 @@ difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "isee-risparmio-a-parita-di-reddito"
 dataPubblicazione: 2026-08-23
-bozza: true
+bozza: false
 ---
 
 Dal 3 aprile 2025 titoli di Stato, buoni fruttiferi postali e libretti di risparmio postale sono esclusi dal patrimonio mobiliare ISEE **fino a 50.000 euro per nucleo familiare**.
