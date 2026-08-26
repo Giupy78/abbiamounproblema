@@ -1,7 +1,9 @@
 ---
-titolo: "A parità di reddito, l'ISEE dipende da dove tieni i risparmi"
+titolo: A parità di reddito, l'ISEE dipende da dove tieni i risparmi
 titoloSeo: "ISEE: conta dove tieni i risparmi"
-descrizione: "Quattro famiglie, stesso reddito, stessa cifra messa da parte. Quattro ISEE diversi. Chi ha speso tutto e chi ha comprato titoli di Stato ha lo stesso indicatore."
+descrizione: Quattro famiglie, stesso reddito, stessa cifra messa da parte.
+  Quattro ISEE diversi. Chi ha speso tutto e chi ha comprato titoli di Stato ha
+  lo stesso indicatore.
 dataPubblicazione: 2026-08-23
 categoria: Finanza personale
 tag:
@@ -10,7 +12,8 @@ tag:
   - welfare
   - titoli di Stato
 illustrazione: risparmi
-bozza: true
+bozza: false
+inEvidenza: true
 ---
 
 Prendiamo quattro famiglie identiche. Tre persone, **stesso reddito: 30.000 euro**, stesso lavoro, stessa casa di abitazione, stessa città. Negli stessi anni ciascuna si è trovata fra le mani **40.000 euro** in più, e ne ha fatto una cosa diversa.
