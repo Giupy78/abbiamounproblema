@@ -110,3 +110,13 @@ C'è qualcosa di più banale e più difficile da correggere. **Un vincolo di bil
 Il che riporta alla stessa conclusione a cui arriviamo ogni volta che guardiamo da vicino una regola italiana che non funziona: il problema quasi mai è la norma sbagliata approvata da qualcuno. È **la norma giusta rimasta in vigore troppo a lungo**, in un sistema in cui scriverne una nuova richiede una decisione e toglierne una vecchia non la richiede a nessuno.
 
 La domanda che vale la pena portarsi dietro non è quanto costa un medico a gettone. È perché un sistema che deve risparmiare finisca per scegliere, ogni notte, la strada più cara che ha — e perché nessuno, per vent'anni, abbia avuto il compito di chiedersi se quella regola servisse ancora.
+
+## Le proposte che nascono da qui
+
+**[Un tetto sul costo, non sulla voce contabile](/proposte/un-tetto-sul-costo-non-sulla-voce-contabile)** — se il limite conta insieme chi assumi e chi compri, l'incentivo a pagare il doppio sparisce da solo. Senza un euro di budget in più.
+
+**[Se il decreto attuativo non arriva, la norma scatta lo stesso](/proposte/se-il-decreto-attuativo-non-arriva-la-norma-scatta)** — il tetto è stato abolito nel 2024 e continua a funzionare, perché manca il provvedimento che doveva renderlo operativo.
+
+**[Pubblicare quanto costa un'ora comprata da fuori](/proposte/pubblicare-quanto-costa-un-ora-comprata-da-fuori)** — si discute da anni di uno spreco senza che esista una rilevazione ufficiale di quanto costa.
+
+Nessuna delle tre chiede più soldi per la sanità, che è la richiesta su cui la discussione si arena ogni volta. Chiedono che i soldi che già ci sono smettano di essere spinti verso la strada più cara.
