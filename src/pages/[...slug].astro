@@ -11,6 +11,7 @@ import { render } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Sostegno from '../components/Sostegno.astro';
+import Notifiche from '../components/Notifiche.astro';
 import Illustrazione from '../components/Illustrazione.astro';
 import { SITO } from '../config';
 import {
@@ -115,6 +116,8 @@ const correlati = tutti
 			</div>
 
 			<Sostegno />
+
+			<Notifiche />
 
 			<aside class="riquadro-autore">
 				<h2>Chi firma questo pezzo</h2>

@@ -1,0 +1,164 @@
+---
+/**
+ * Invito a ricevere le notifiche dei nuovi articoli.
+ *
+ * Compare in fondo agli articoli, mai all'apertura del sito: chiedere il
+ * permesso a chi e' appena arrivato e' il modo piu' sicuro per farselo
+ * negare, e una volta negato il browser non lo richiede piu'. Qui la
+ * finestra del browser si apre solo dopo che il lettore ha premuto,
+ * cioe' quando ha gia' letto qualcosa e sa se gli interessa.
+ *
+ * Non produce nulla finche' manca la chiave pubblica: come il riquadro
+ * delle donazioni, il sito non mostra mai un pulsante che non funziona.
+ */
+const chiavePubblica = import.meta.env.PUBLIC_CHIAVE_NOTIFICHE ?? '';
+const attivo = chiavePubblica.length > 0;
+---
+
+{
+	attivo && (
+		<aside class="notifiche" data-chiave={chiavePubblica} hidden>
+			<p class="notifiche__invito">
+				<strong>Vuoi sapere quando esce un articolo nuovo?</strong>
+				Il sito puo' avvisarti con una notifica. Niente email, nessun dato che ci lasci: puoi
+				disattivarla quando vuoi dalle impostazioni del browser.
+			</p>
+			<button class="notifiche__pulsante" type="button">Avvisami</button>
+			<p class="notifiche__esito" role="status" />
+		</aside>
+	)
+}
+
+<script>
+	const riquadro = document.querySelector<HTMLElement>('.notifiche');
+
+	if (riquadro) {
+		const pulsante = riquadro.querySelector<HTMLButtonElement>('.notifiche__pulsante')!;
+		const esito = riquadro.querySelector<HTMLParagraphElement>('.notifiche__esito')!;
+		const chiave = riquadro.dataset.chiave!;
+
+		const supportato =
+			'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+
+		/**
+		 * La chiave viaggia in base64 per il web, ma il browser la vuole in byte.
+		 */
+		function chiaveInByte(base64: string): Uint8Array {
+			const completa = (base64 + '='.repeat((4 - (base64.length % 4)) % 4))
+				.replace(/-/g, '+')
+				.replace(/_/g, '/');
+			const grezzi = atob(completa);
+			return Uint8Array.from([...grezzi].map((c) => c.charCodeAt(0)));
+		}
+
+		function mostra(messaggio: string, chiudi = false) {
+			esito.textContent = messaggio;
+			if (chiudi) pulsante.hidden = true;
+		}
+
+		async function giaIscritto(): Promise<boolean> {
+			const registrazione = await navigator.serviceWorker.getRegistration();
+			if (!registrazione) return false;
+			return (await registrazione.pushManager.getSubscription()) !== null;
+		}
+
+		// Il riquadro resta nascosto se il browser non se la cava, se il permesso
+		// e' gia' stato negato (richiederlo e' inutile) o se e' gia' tutto fatto.
+		(async () => {
+			if (!supportato || Notification.permission === 'denied') return;
+
+			if (Notification.permission === 'granted' && (await giaIscritto())) {
+				riquadro.hidden = false;
+				mostra('Sei gia iscritto: ti avviseremo al prossimo articolo.', true);
+				return;
+			}
+
+			riquadro.hidden = false;
+		})();
+
+		pulsante.addEventListener('click', async () => {
+			pulsante.disabled = true;
+			mostra('Un attimo...');
+
+			try {
+				const permesso = await Notification.requestPermission();
+
+				if (permesso !== 'granted') {
+					mostra('Nessun problema: non ti manderemo notifiche.', true);
+					return;
+				}
+
+				const registrazione = await navigator.serviceWorker.register('/sw.js');
+				await navigator.serviceWorker.ready;
+
+				const iscrizione =
+					(await registrazione.pushManager.getSubscription()) ??
+					(await registrazione.pushManager.subscribe({
+						// Obbligatorio: il browser accetta solo notifiche che
+						// mostrano davvero un avviso, mai invii silenziosi.
+						userVisibleOnly: true,
+						applicationServerKey: chiaveInByte(chiave),
+					}));
+
+				const risposta = await fetch('/api/iscrizione', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(iscrizione),
+				});
+
+				if (!risposta.ok) throw new Error('registrazione non riuscita');
+
+				mostra('Fatto: ti avviseremo quando esce un articolo nuovo.', true);
+			} catch {
+				mostra('Non ha funzionato. Riprova piu tardi.');
+				pulsante.disabled = false;
+			}
+		});
+	}
+</script>
+
+<style>
+	.notifiche {
+		margin-top: 3rem;
+		padding: 1.5rem;
+		border: 1px solid var(--bordo);
+		border-radius: 8px;
+		background: var(--sfondo-alt);
+	}
+
+	.notifiche__invito {
+		margin: 0 0 1rem;
+		font-size: 0.95rem;
+		line-height: 1.55;
+	}
+
+	.notifiche__pulsante {
+		padding: 0.6rem 1.4rem;
+		border: 1px solid var(--accento);
+		border-radius: 6px;
+		background: var(--accento);
+		color: var(--sfondo);
+		font-family: inherit;
+		font-size: 0.95rem;
+		cursor: pointer;
+	}
+
+	.notifiche__pulsante:hover:not(:disabled) {
+		opacity: 0.9;
+	}
+
+	.notifiche__pulsante:disabled {
+		opacity: 0.6;
+		cursor: default;
+	}
+
+	.notifiche__esito:empty {
+		display: none;
+	}
+
+	.notifiche__esito {
+		margin: 0.85rem 0 0;
+		font-size: 0.9rem;
+		color: var(--testo-tenue);
+	}
+</style>
