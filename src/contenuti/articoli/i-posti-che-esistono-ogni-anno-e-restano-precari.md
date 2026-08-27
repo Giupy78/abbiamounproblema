@@ -123,6 +123,22 @@ La differenza sembra sottile e non lo è. Nel primo caso ci sarebbe una graduato
 
 Ed è un conflitto che esiste solo perché il posto è provvisorio. Su una cattedra di ruolo non si porrebbe: il docente resterebbe e basta.
 
+## Quello che una sentenza può fare, e quello che non può
+
+Su questo sito ci imbattiamo spesso in [norme scritte per un motivo e rimaste in vigore molto oltre quel motivo](/troppe-leggi-come-tagliarle). Questa vicenda però è un caso limite, e vale la pena capire perché.
+
+Negli altri casi che abbiamo raccontato — il tetto di spesa sanitario del 2004, la franchigia ISEE ferma dal 2013 — **nessuno aveva mai dichiarato che quelle regole fossero sbagliate.** Sono rimaste in piedi per inerzia, e l'inerzia non ha bisogno di motivazioni.
+
+Qui è successo l'opposto. Nel 2010 **la Corte costituzionale ha detto, nel modo più netto che il nostro ordinamento conosca, che quella norma violava la Costituzione.** Non un'opinione, non una critica: una dichiarazione di illegittimità.
+
+E sedici anni dopo il problema è più grande di allora.
+
+Il motivo non è che la sentenza sia stata ignorata: è stata applicata, e le deroghe sono tornate. Il punto è un altro, e riguarda i limiti di cosa può fare una sentenza. **La Corte costituzionale può togliere una norma. Non può scriverne una nuova.**
+
+Ha rimosso il tetto e ha restituito la valvola d'emergenza. Ricostruire il modo in cui si contano e si classificano i posti di sostegno — cioè la parte che avrebbe reso stabile quello che è stabile — non era compito suo: era del Parlamento, e nessuno l'ha fatto.
+
+Così l'annullamento ha lasciato un vuoto, il vuoto è stato riempito dall'unico strumento disponibile, e **quello strumento provvisorio è diventato la struttura**. Non c'è nessuna sentenza da eseguire: c'è una legge da riscrivere, e non ha scadenza.
+
 ## Cosa resta
 
 Rimessi in fila, i pezzi raccontano una storia precisa.
@@ -132,5 +148,7 @@ Nel 2007 si mette un tetto per risparmiare. Nel 2010 la Corte costituzionale lo 
 Nessuno ha mai deciso che decine di migliaia di posti dovessero restare provvisori per sempre. È il risultato di una norma di bilancio, di una sentenza che l'ha corretta a metà, e di quindici anni in cui nessuno ha rimesso mano alla classificazione.
 
 Sopra ci si è aggiunta nel 2020 una macchina per gestire la coda — le GPS — e nel 2024 una regola per proteggere la continuità, che entra in conflitto con la coda perché nessuno ha stabilito quale delle due venga prima.
+
+Nel frattempo il conto lo pagano due categorie di persone che non hanno deciso niente: **i docenti che ogni settembre ricominciano da zero, e i bambini che sei volte su dieci si ritrovano davanti una persona nuova.**
 
 **La domanda utile non è perché non assumono i precari. È perché un posto che c'è ogni anno da quindici anni continui a chiamarsi provvisorio.**
