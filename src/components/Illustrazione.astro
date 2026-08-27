@@ -374,6 +374,35 @@ const BOLLETTE = [
 		}
 
 		{
+			nome === 'provvisorio' && (
+				<g>
+					{/* Lo stesso posto, identico, cinque anni di fila — e sempre
+					    disegnato tratteggiato, cioe' provvisorio. Un posto che
+					    torna uguale ogni settembre non e' un'eccezione. */}
+					{[56, 134, 212, 290, 368].map((x, i) => (
+						<g>
+							<rect
+								class="tratto tratteggiato"
+								x={x}
+								y={46}
+								width={56}
+								height={56}
+								rx="3"
+							/>
+							<text class="etichetta-anno" x={x + 28} y={126}>
+								{2021 + i}
+							</text>
+						</g>
+					))}
+
+					{/* Il tempo che passa sotto, sempre uguale */}
+					<path class="tratto" d="M44 152h384" />
+					<path class="tratto" d="M416 142l12 10-12 10" />
+				</g>
+			)
+		}
+
+		{
 			nome === 'tetto' && (
 				<g>
 					{/* Il tetto di spesa sul personale: assunzioni e straordinari ci
@@ -641,6 +670,12 @@ const BOLLETTE = [
 	   ridotte legge come una superficie e non come tre travi. */
 	.sottile {
 		stroke-width: 2;
+	}
+
+	/* Tratteggio: quello che il sistema chiama provvisorio. */
+	.tratteggiato {
+		stroke: var(--accento);
+		stroke-dasharray: 7 6;
 	}
 
 	/* Il tetto di spesa: più spesso del tratto normale, è un muro. */

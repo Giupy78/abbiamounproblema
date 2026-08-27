@@ -159,6 +159,7 @@ export const ILLUSTRAZIONI = [
 	'generazioni',
 	'pensione',
 	'tetto',
+	'provvisorio',
 ] as const;
 
 /**

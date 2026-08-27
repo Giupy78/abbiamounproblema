@@ -251,6 +251,7 @@ collections:
           - { label: 'Generazioni — tre file sempre meno numerose', value: 'generazioni' }
           - { label: 'Pensione — stessa busta paga, quota diversa', value: 'pensione' }
           - { label: 'Tetto — due strade bloccate, una lo aggira', value: 'tetto' }
+          - { label: 'Provvisorio — lo stesso posto tratteggiato ogni anno', value: 'provvisorio' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'
