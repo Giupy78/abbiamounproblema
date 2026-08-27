@@ -79,6 +79,43 @@ Le preferenze hanno un costo documentato e ben noto: spingono i candidati a fars
 
 Esistono però sistemi che ci provano — collegi uninominali dove si vota una persona, primarie regolate per legge, preferenze con tetti di spesa verificabili — e ciascuno sposta il problema invece di eliminarlo. Il punto è che **quella discussione, in Italia, non è mai stata fatta apertamente**: la forma della scheda è sempre stata l'esito di trattative su altro.
 
+## E i soldi? La seconda decisione, presa a parte
+
+Qui manca un pezzo, ed è quello che tiene insieme tutto il resto.
+
+Nel 1991 gli italiani tolsero le preferenze plurime **perché rendevano le campagne costose e dipendenti da chi le finanziava**. Ma allora il finanziamento dei partiti era in larga parte pubblico.
+
+Due anni dopo, il **18 aprile 1993**, un secondo referendum abolì proprio quello: **90,3% di sì**, nello stesso clima di sfiducia seguito a Tangentopoli. Stesso scandalo, stessa reazione, decisione opposta e simmetrica.
+
+Il finanziamento pubblico rientrò poi dalla finestra sotto forma di **rimborsi elettorali**, finché il decreto-legge 149 del 2013 non lo abolì in via definitiva, con un'uscita graduale completata nel 2017.
+
+Oggi la situazione è questa ([Osservatorio CPI, Università Cattolica](https://osservatoriocpi.unicatt.it/ocpi-pubblicazioni-il-finanziamento-dei-partiti-politici)):
+
+| Fonte | Importo |
+|---|---|
+| Due per mille (2023) | circa **24 milioni** |
+| Donazioni private, primi dieci partiti (2022) | quasi **86 milioni** |
+
+**Il denaro privato vale oggi più del triplo di quello che i cittadini destinano volontariamente con la dichiarazione dei redditi.**
+
+Non è un'anomalia nascosta: è il sistema che è stato scelto, ed è largamente più trasparente di quello del 1991. Le donazioni hanno un tetto di **100.000 euro l'anno per donatore**, godono di una detrazione del 26% fino a 30.000, e devono comparire in bilanci certificati e sottoposti a controllo.
+
+Il punto è un altro, ed è quello che dà ragione alla tua domanda: **le due decisioni furono prese separatamente, per lo stesso motivo, e nessuna delle due tenne conto dell'altra.** Le campagne elettorali costano comunque. La fonte pubblica è stata chiusa. Il denaro, necessariamente, viene da un'altra parte.
+
+## A chi deve il seggio chi viene eletto
+
+Messe insieme le due storie — quella della scheda e quella dei soldi — si arriva alla domanda che le tiene entrambe, ed è la più scomoda.
+
+**Il sistema elettorale non elimina la dipendenza di chi viene eletto. Decide verso chi.**
+
+**Con le preferenze**, il candidato deve costruirsi una campagna personale, spesso contro i compagni di partito. Ha bisogno di risorse proprie, e dipende da chi gliele procura. È il problema che l'Italia ha conosciuto negli anni Ottanta e che nel 1991 ha votato per ridurre.
+
+**Con le liste bloccate**, il candidato non ha bisogno di una campagna personale: gli serve essere collocato in alto nella lista. Non dipende da chi finanzia, dipende **da chi compila l'elenco**.
+
+In nessuno dei due casi la risposta alla domanda «a chi deve il seggio?» è *soltanto all'elettore*.
+
+Chi oggi chiede il ritorno delle preferenze sta proponendo di spostare quella dipendenza dal partito al finanziatore. Chi difende le liste bloccate sta facendo l'opposto. **Sono due risposte diverse alla stessa domanda, e nessuna delle due la risolve** — perché il costo delle campagne, che è la variabile che tiene in piedi il problema, non è mai stato affrontato da nessuna delle riforme di cui abbiamo parlato.
+
 ## Cosa resta
 
 Su questo tema circolano due frasi, ed entrambe sono sbagliate.
@@ -89,4 +126,6 @@ Su questo tema circolano due frasi, ed entrambe sono sbagliate.
 
 Quello che è vero è più scomodo di entrambe: **il potere di scegliere la persona si è ridotto per gradi, ogni grado è stato legittimo, e il risultato complessivo non è mai stato messo ai voti.**
 
-La domanda utile non è chi ci abbia tolto qualcosa. È perché, in ventisei anni e con due sentenze della Corte costituzionale di mezzo, nessuno abbia mai dovuto rispondere a una domanda semplice: **quanto deve contare l'elettore nella scelta del suo rappresentante, e chi l'ha deciso?**
+E lo stesso vale per i soldi. Nel 1991 e nel 1993 gli italiani hanno votato due volte, con maggioranze enormi, contro lo stesso male: campagne troppo care e partiti che si finanziavano male. Hanno tolto le preferenze plurime e hanno tolto il finanziamento pubblico. **Nessuno dei due voti ha toccato la ragione per cui il problema esisteva**, cioè quanto costa farsi eleggere.
+
+La domanda utile non è chi ci abbia tolto qualcosa. È perché, in trentacinque anni, due referendum vinti col 95% e col 90%, e due sentenze della Corte costituzionale, nessuno abbia mai dovuto rispondere a due domande semplici e collegate: **quanto deve contare l'elettore nella scelta del suo rappresentante, e a chi deve quel rappresentante il proprio seggio?**
