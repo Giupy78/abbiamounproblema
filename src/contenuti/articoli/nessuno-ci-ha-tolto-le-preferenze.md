@@ -102,6 +102,36 @@ Non è un'anomalia nascosta: è il sistema che è stato scelto, ed è largamente
 
 Il punto è un altro, ed è quello che dà ragione alla tua domanda: **le due decisioni furono prese separatamente, per lo stesso motivo, e nessuna delle due tenne conto dell'altra.** Le campagne elettorali costano comunque. La fonte pubblica è stata chiusa. Il denaro, necessariamente, viene da un'altra parte.
 
+## Ma quanto costa una campagna elettorale?
+
+È la domanda che tiene in piedi tutto il ragionamento, e ha una risposta parziale.
+
+Un tetto esiste, e lo fissa la **legge 515 del 1993**. Ogni candidato non può spendere più di una cifra così calcolata: **52.000 euro fissi per collegio, più un centesimo di euro per ogni cittadino residente** nel collegio in cui si presenta. Gli importi vengono rivalutati periodicamente con decreto del Ministro dell'interno sulla base degli indici Istat.
+
+Per farsi un'idea: in un collegio da quattrocentomila residenti il tetto sta poco sopra i **56.000 euro** per un singolo candidato.
+
+Esiste anche il controllo. Ogni candidato — **compresi i non eletti** — deve depositare un rendiconto, sottoscritto da lui e controfirmato dal mandatario che ne certifica la veridicità. A verificarlo è il **Collegio regionale di garanzia elettorale**, presso la Corte d'appello.
+
+Quindi la risposta alla domanda «quanto costa» è: **c'è un limite, ed è pubblico**. Quello che manca è l'altra metà.
+
+Nessuno raccoglie e pubblica, in forma leggibile e confrontabile, **quanto è stato effettivamente speso**. I rendiconti esistono, sono depositati e sono controllati uno per uno, ma restano documenti sparsi presso venti collegi regionali. Non esiste un numero aggregato che dica quanto è costata una tornata elettorale, chi ha speso di più, e da dove sono arrivati i soldi.
+
+È un caso che su questo sito abbiamo già incontrato più volte: **il dato esiste, la raccolta anche, e manca solo il passaggio che lo renderebbe utile a qualcuno.**
+
+## Si può tornare indietro dopo due referendum?
+
+Domanda legittima, e la risposta è diversa per le due cose — il che è la parte che quasi nessuno sa.
+
+**Sulle preferenze non c'è nessun vincolo.** Il referendum del 1991 non abolì le preferenze: abolì **la preferenza plurima**, lasciandone una. Le preferenze sono sparite dodici anni dopo, con una legge ordinaria — il Porcellum — e non sono tornate con quelle successive.
+
+Ne segue una conseguenza che vale la pena mettere per iscritto: **per reintrodurre le preferenze basta una legge ordinaria.** Nessun referendum lo impedisce, nessuna sentenza lo vieta. L'ostacolo è politico, non giuridico.
+
+**Sul finanziamento pubblico il vincolo invece esiste.** Il referendum del 1993 abolì proprio quello, e la Corte costituzionale ha stabilito che il legislatore non può far «rivivere» una disciplina cancellata dal voto popolare: è il divieto di **ripristino formale o sostanziale** della normativa abrogata per referendum, affermato con la sentenza 468 del 1990 e applicato per la prima volta come motivo di illegittimità con la sentenza 199 del 2012.
+
+Non è però un divieto eterno né assoluto. Il legislatore può correggere, modificare e integrare la disciplina rimasta, e col mutare delle circostanze può tornare a intervenire. È esattamente lo spazio in cui, dopo il 1993, sono passati i **rimborsi elettorali**: molto contestati come aggiramento del voto popolare, mai dichiarati illegittimi.
+
+Il che porta a una conclusione poco comoda per entrambe le tifoserie: **la strada per cambiare c'è, ed è una legge ordinaria.** Il referendum non ha chiuso la porta. Semplicemente, in trentacinque anni, nessuna maggioranza ha voluto aprirla.
+
 ## A chi deve il seggio chi viene eletto
 
 Messe insieme le due storie — quella della scheda e quella dei soldi — si arriva alla domanda che le tiene entrambe, ed è la più scomoda.
