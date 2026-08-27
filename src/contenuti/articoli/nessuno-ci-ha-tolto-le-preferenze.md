@@ -159,3 +159,15 @@ Quello che è vero è più scomodo di entrambe: **il potere di scegliere la pers
 E lo stesso vale per i soldi. Nel 1991 e nel 1993 gli italiani hanno votato due volte, con maggioranze enormi, contro lo stesso male: campagne troppo care e partiti che si finanziavano male. Hanno tolto le preferenze plurime e hanno tolto il finanziamento pubblico. **Nessuno dei due voti ha toccato la ragione per cui il problema esisteva**, cioè quanto costa farsi eleggere.
 
 La domanda utile non è chi ci abbia tolto qualcosa. È perché, in trentacinque anni, due referendum vinti col 95% e col 90%, e due sentenze della Corte costituzionale, nessuno abbia mai dovuto rispondere a due domande semplici e collegate: **quanto deve contare l'elettore nella scelta del suo rappresentante, e a chi deve quel rappresentante il proprio seggio?**
+
+## Le proposte che nascono da qui
+
+Sono in ordine di difficoltà crescente, e la prima è la condizione delle altre due.
+
+**[Pubblicare quanto costano davvero le campagne](/proposte/pubblicare-quanto-costano-davvero-le-campagne)** — i rendiconti esistono, sono obbligatori e vengono controllati uno per uno. Restano sparsi in venti collegi regionali, e nessuno li somma. È l'unica proposta di tutto il sito che non incontra **nessun** ostacolo giuridico.
+
+**[Restituire la scelta della persona, ma insieme al controllo dei costi](/proposte/restituire-la-scelta-della-persona-con-i-costi-sotto-controllo)** — per rimettere le preferenze basta una legge ordinaria. Farlo da solo, però, significherebbe scambiare la dipendenza dal partito con quella da chi paga la campagna: le due metà devono arrivare nello stesso provvedimento.
+
+**[Regole pubbliche per decidere l'ordine dei candidati](/proposte/regole-pubbliche-per-comporre-le-liste)** — finché le liste restano bloccate, il seggio lo assegna la posizione nell'elenco. Un partito può anche stabilire che a deciderla sia il segretario da solo: deve però averlo scritto, e chi vota deve poterlo sapere.
+
+Nessuna delle tre stabilisce quale sia il sistema elettorale giusto, che è una scelta politica e non tecnica. Chiedono che le tre cose che oggi restano implicite — **quanto costa farsi eleggere, chi sceglie il nome, e con quali regole** — smettano di esserlo.
