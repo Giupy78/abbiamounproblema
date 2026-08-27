@@ -10,7 +10,7 @@ tag:
   - GPS
   - sostegno
 illustrazione: provvisorio
-bozza: true
+bozza: false
 ---
 
 Ogni estate torna la stessa domanda, e sembra retorica: **perché non assumono i precari della scuola?** Le cattedre sono scoperte, i docenti in graduatoria ci sono, gli alunni pure.
@@ -152,3 +152,13 @@ Sopra ci si è aggiunta nel 2020 una macchina per gestire la coda — le GPS —
 Nel frattempo il conto lo pagano due categorie di persone che non hanno deciso niente: **i docenti che ogni settembre ricominciano da zero, e i bambini che sei volte su dieci si ritrovano davanti una persona nuova.**
 
 **La domanda utile non è perché non assumono i precari. È perché un posto che c'è ogni anno da quindici anni continui a chiamarsi provvisorio.**
+
+## Le proposte che nascono da qui
+
+**[Un posto confermato per anni smette di chiamarsi provvisorio](/proposte/un-posto-confermato-per-anni-diventa-stabile)** — se una cattedra viene autorizzata tre anni di fila, la prova che serve stabilmente c'è già: manca la regola che ne prenda atto, e che lo faccia da sola.
+
+**[Dire quale viene prima fra continuità e graduatoria](/proposte/dire-quale-viene-prima-fra-continuita-e-graduatoria)** — due criteri giusti che agiscono sugli stessi posti senza che nessuno abbia scritto il loro rapporto. Chi concorre ha diritto di sapere prima su quanti posti sta concorrendo.
+
+**[Un seguito obbligatorio dopo una norma dichiarata illegittima](/proposte/un-seguito-obbligatorio-dopo-una-norma-annullata)** — non obbligare il Parlamento a legiferare in un certo modo, ma a pronunciarsi: oggi decidere che non serve nulla e non decidere affatto sono indistinguibili.
+
+Nessuna delle tre promette di assumere tutti, che è la promessa con cui questo tema si chiude ogni estate senza spostare niente. Chiedono che un posto stabile venga chiamato stabile, che due regole legittime sappiano quale viene prima, e che dopo una sentenza qualcuno debba dire cosa intende fare.
