@@ -1,7 +1,9 @@
 ---
-titolo: "I posti che esistono ogni anno e per legge restano precari"
+titolo: SCUOLA - I posti che esistono ogni anno e per legge restano precari
 titoloSeo: "Precari scuola: i posti in deroga"
-descrizione: "Sul sostegno esistono decine di migliaia di posti autorizzati ogni anno che la legge vieta di assegnare stabilmente. Il precariato non è una dimenticanza."
+descrizione: Sul sostegno esistono decine di migliaia di posti autorizzati ogni
+  anno che la legge vieta di assegnare stabilmente. Il precariato non è una
+  dimenticanza.
 dataPubblicazione: 2026-08-24
 categoria: Società
 tag:
@@ -11,6 +13,7 @@ tag:
   - sostegno
 illustrazione: provvisorio
 bozza: false
+inEvidenza: true
 ---
 
 Ogni estate torna la stessa domanda, e sembra retorica: **perché non assumono i precari della scuola?** Le cattedre sono scoperte, i docenti in graduatoria ci sono, gli alunni pure.
