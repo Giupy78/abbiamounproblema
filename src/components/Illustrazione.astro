@@ -39,6 +39,16 @@ const BANCONOTE = [
 const SPORTELLI = [44, 128, 212, 296, 380];
 
 /**
+ * Le tre schede: nel 1991 due righe su cui scrivere un nome, nel 2005
+ * nessuno spazio, nel 2017 i nomi stampati — si leggono, non si riordinano.
+ */
+const SCHEDE = [
+	{ x: 42, anno: '1991', righe: [82, 82], fisse: [] },
+	{ x: 185, anno: '2005', righe: [], fisse: [] },
+	{ x: 328, anno: '2017', righe: [], fisse: [0, 0, 0] },
+];
+
+/**
  * Tasso di sostituzione lordo al 2070 per il dipendente privato, secondo la
  * Ragioneria generale dello Stato: cambia solo l'età a cui si smette.
  */
@@ -369,6 +379,42 @@ const BOLLETTE = [
 						stroke-width="2.5"
 						opacity="0.75"
 					/>
+				</g>
+			)
+		}
+
+		{
+			nome === 'scheda' && (
+				<g>
+					{/* Tre schede in ventisei anni. Il simbolo del partito resta
+					    identico; lo spazio in cui l'elettore scrive un nome si
+					    riduce, poi sparisce, poi torna come elenco che si puo'
+					    leggere ma non riordinare. */}
+					{SCHEDE.map(({ x, anno, righe, fisse }) => (
+						<g>
+							<rect class="tratto riempito" x={x} y={26} width="110" height="102" rx="3" />
+
+							{/* Il simbolo: uguale in tutte e tre */}
+							<rect class="tratto" x={x + 14} y={40} width="26" height="26" rx="2" />
+
+							{/* Lo spazio della preferenza: quello che cambia */}
+							{righe.map((larghezza, i) => (
+								<path
+									class="tratto accento-tratto"
+									d={`M${x + 14} ${84 + i * 16}h${larghezza}`}
+								/>
+							))}
+
+							{/* Nomi stampati: si leggono, non si scelgono */}
+							{fisse.map((_, i) => (
+								<path class="tratto tenue sottile" d={`M${x + 14} ${84 + i * 14}h56`} />
+							))}
+
+							<text class="etichetta-anno" x={x + 55} y={150}>
+								{anno}
+							</text>
+						</g>
+					))}
 				</g>
 			)
 		}
