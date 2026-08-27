@@ -18,7 +18,10 @@ Funziona da qualsiasi computer e anche dal telefono: non serve avere il progetto
 2. **Articoli** → **New Articolo**
 3. Compila i campi. Titolo e descrizione hanno dei limiti di lunghezza: il pannello ti avvisa se sfori
 4. Tieni **Bozza** acceso finché non è pronto, poi spegnilo
-5. **Publish**
+5. **Aggiorna la data di pubblicazione a oggi** — vedi qui sotto
+6. **Publish**
+
+> **La data va sistemata al momento giusto.** `Data di pubblicazione` è il giorno in cui l'articolo diventa pubblico, non quello in cui hai cominciato a scriverlo. Se un pezzo resta in bozza qualche giorno, la data scritta all'inizio diventa sbagliata: l'articolo risulterebbe uscito prima di esistere. Quando spegni **Bozza**, rimetti la data di oggi.
 
 Un avvertimento che vale la pena ricordare: **non cambiare il titolo di un articolo già pubblicato** se questo modifica il suo indirizzo. I link esistenti, compresi quelli su Google, smetterebbero di funzionare.
 

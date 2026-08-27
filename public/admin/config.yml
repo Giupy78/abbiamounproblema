@@ -202,6 +202,10 @@ collections:
         format: 'YYYY-MM-DD'
         date_format: 'DD/MM/YYYY'
         time_format: false
+        hint: >-
+          Il giorno in cui l articolo diventa pubblico, non quello in cui hai
+          cominciato a scriverlo. Se lo tieni in bozza per qualche giorno,
+          ricordati di aggiornarla quando spegni Bozza.
         picker_utc: true
 
       - name: dataAggiornamento
@@ -393,6 +397,10 @@ collections:
         format: 'YYYY-MM-DD'
         date_format: 'DD/MM/YYYY'
         time_format: false
+        hint: >-
+          Il giorno in cui l articolo diventa pubblico, non quello in cui hai
+          cominciato a scriverlo. Se lo tieni in bozza per qualche giorno,
+          ricordati di aggiornarla quando spegni Bozza.
         picker_utc: true
 
       - name: dataAggiornamento

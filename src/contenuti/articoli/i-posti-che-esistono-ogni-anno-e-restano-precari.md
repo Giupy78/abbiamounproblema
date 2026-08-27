@@ -4,7 +4,7 @@ titoloSeo: "Precari scuola: i posti in deroga"
 descrizione: Sul sostegno esistono decine di migliaia di posti autorizzati ogni
   anno che la legge vieta di assegnare stabilmente. Il precariato non è una
   dimenticanza.
-dataPubblicazione: 2026-08-24
+dataPubblicazione: 2026-08-27
 categoria: Società
 tag:
   - scuola

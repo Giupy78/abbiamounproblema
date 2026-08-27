@@ -4,7 +4,7 @@ titoloSeo: Perché l'Italia trema per gli USA
 descrizione: Il Pil italiano crollò del 5% nel 2009, il peggior dato dal 1971.
   Non per i titoli tossici delle banche americane, che le nostre banche avevano
   pochi.
-dataPubblicazione: 2026-08-19
+dataPubblicazione: 2026-08-23
 categoria: Economia
 tag:
   - crisi finanziaria

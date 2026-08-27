@@ -4,7 +4,7 @@ titoloSeo: "ISEE: conta dove tieni i risparmi"
 descrizione: Quattro famiglie, stesso reddito, stessa cifra messa da parte.
   Quattro ISEE diversi. Chi ha speso tutto e chi ha comprato titoli di Stato ha
   lo stesso indicatore.
-dataPubblicazione: 2026-08-23
+dataPubblicazione: 2026-08-26
 categoria: Finanza personale
 tag:
   - ISEE

@@ -2,7 +2,7 @@
 titolo: "Chi paga il conto della transizione ecologica"
 titoloSeo: "Il costo della transizione europea"
 descrizione: "L'Europa produce il 6,3% delle emissioni mondiali e ne sostiene una quota sproporzionata del costo industriale. Il problema non è l'obiettivo: è la contabilità."
-dataPubblicazione: 2026-08-13
+dataPubblicazione: 2026-08-16
 categoria: "Ambiente ed Energia"
 tag: ["transizione", "industria", "energia", "automotive"]
 illustrazione: "bilancia"

@@ -2,7 +2,7 @@
 titolo: "Il condominio esattore"
 titoloSeo: "Condominio sostituto d'imposta"
 descrizione: "Dal 1998 ogni condominio è sostituto d'imposta. La fattura elettronica ha superato la ragione che creò quell'obbligo. L'obbligo però è rimasto, e le sanzioni pure."
-dataPubblicazione: 2026-08-12
+dataPubblicazione: 2026-08-13
 categoria: "Economia"
 tag: ["fisco", "condominio", "burocrazia", "semplificazione"]
 illustrazione: "palazzina"
