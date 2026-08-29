@@ -13,7 +13,7 @@ tag:
   - titoli di Stato
 illustrazione: risparmi
 bozza: false
-inEvidenza: true
+inEvidenza: false
 ---
 
 Prendiamo quattro famiglie identiche. Tre persone, **stesso reddito: 30.000 euro**, stesso lavoro, stessa casa di abitazione, stessa città. Negli stessi anni ciascuna si è trovata fra le mani **40.000 euro** in più, e ne ha fatto una cosa diversa.

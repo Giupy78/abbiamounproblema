@@ -4,7 +4,7 @@ titoloSeo: Oneri azzerati, bolletta triplicata
 descrizione: Tra fine 2021 e inizio 2023 gli oneri di sistema sono stati portati
   a zero per cinque trimestri. Nello stesso periodo la bolletta è più che
   triplicata.
-dataPubblicazione: 2026-08-23
+dataPubblicazione: 2026-08-29
 categoria: Ambiente ed Energia
 tag:
   - bollette
@@ -13,7 +13,7 @@ tag:
   - ARERA
 illustrazione: bolletta
 bozza: false
-inEvidenza: true
+inEvidenza: false
 ---
 
 Quando arriva una bolletta della luce alta, la spiegazione che si sente più spesso è sempre la stessa: **paghiamo troppi oneri e troppe tasse.** È la voce che tutti additano, quella che sembra aggiunta dallo Stato sopra il costo vero dell'energia.

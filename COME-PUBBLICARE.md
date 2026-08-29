@@ -23,6 +23,8 @@ Funziona da qualsiasi computer e anche dal telefono: non serve avere il progetto
 
 > **La data va sistemata al momento giusto.** `Data di pubblicazione` è il giorno in cui l'articolo diventa pubblico, non quello in cui hai cominciato a scriverlo. Se un pezzo resta in bozza qualche giorno, la data scritta all'inizio diventa sbagliata: l'articolo risulterebbe uscito prima di esistere. Quando spegni **Bozza**, rimetti la data di oggi.
 
+> **Chi va in cima alla homepage si decide da solo.** In apertura c'è sempre l'articolo con la data di pubblicazione più recente: se la data è giusta, non devi fare nient'altro. L'interruttore *In evidenza* serve soltanto all'eccezione — tenere su un pezzo più vecchio — e vale **su un articolo per volta**: se lo accendi su due, la pubblicazione si ferma e ti dice quali sono, invece di scegliere per conto suo.
+
 Un avvertimento che vale la pena ricordare: **non cambiare il titolo di un articolo già pubblicato** se questo modifica il suo indirizzo. I link esistenti, compresi quelli su Google, smetterebbero di funzionare.
 
 ### Se il pannello non ti fa entrare
@@ -140,7 +142,7 @@ Regole per il nome: solo minuscole, numeri e trattini. Niente spazi, niente acce
 | `immagine` | no | `"./nome-foto.jpg"`, nella stessa cartella |
 | `immagineAlt` | se c'è l'immagine | descrizione di cosa si vede |
 | `bozza` | no | `true` = non pubblicato |
-| `inEvidenza` | no | `true` = in cima alla homepage |
+| `inEvidenza` | no | `true` solo per trattenere in cima un pezzo più vecchio |
 
 I limiti di lunghezza vengono verificati alla compilazione: se sfori, `npm run build` si ferma e ti dice quale articolo correggere.
 

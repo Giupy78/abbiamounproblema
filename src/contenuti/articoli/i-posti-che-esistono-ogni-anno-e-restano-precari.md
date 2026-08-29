@@ -13,7 +13,7 @@ tag:
   - sostegno
 illustrazione: provvisorio
 bozza: false
-inEvidenza: true
+inEvidenza: false
 ---
 
 Ogni estate torna la stessa domanda, e sembra retorica: **perché non assumono i precari della scuola?** Le cattedre sono scoperte, i docenti in graduatoria ci sono, gli alunni pure.

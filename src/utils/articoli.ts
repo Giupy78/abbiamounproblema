@@ -19,6 +19,33 @@ export async function articoliPubblicati() {
 }
 
 /**
+ * L'articolo che apre la homepage.
+ *
+ * Di norma è il più recente: pubblicare un pezzo basta a portarlo in cima,
+ * senza doversi ricordare di nessun interruttore. "In evidenza" serve solo
+ * all'eccezione — trattenere in apertura un pezzo più vecchio — e per questo
+ * può essere acceso su un articolo soltanto: due articoli in evidenza sono
+ * due intenzioni in conflitto, e la compilazione si ferma invece di
+ * sceglierne uno per conto proprio.
+ */
+export function articoloInPrimoPiano<T extends Evidenziabile>(articoli: T[]): T | undefined {
+	const evidenziati = articoli.filter((a) => a.data.inEvidenza);
+
+	if (evidenziati.length > 1) {
+		const elenco = evidenziati.map((a) => `  · ${a.id}`).join('\n');
+		throw new Error(
+			`Ci sono ${evidenziati.length} articoli con "In evidenza" acceso, ma la homepage ne apre uno solo:\n\n${elenco}\n\n` +
+				`Spegni l'interruttore su tutti tranne quello che vuoi in cima. Se lo spegni su tutti, ` +
+				`in apertura va da sola la pubblicazione più recente: è quasi sempre quello che serve.`,
+		);
+	}
+
+	return evidenziati[0] ?? articoli[0];
+}
+
+type Evidenziabile = { id: string; data: { inEvidenza?: boolean } };
+
+/**
  * Le proposte pubblicabili, dalla più recente.
  * Come per gli articoli, le bozze restano visibili solo in locale.
  */

@@ -3,14 +3,16 @@ import Base from '../layouts/Base.astro';
 import SchedaArticolo from '../components/SchedaArticolo.astro';
 import CartinaItalia from '../components/CartinaItalia.astro';
 import { SITO } from '../config';
-import { articoliPubblicati } from '../utils/articoli';
+import { articoliPubblicati, articoloInPrimoPiano } from '../utils/articoli';
 
 const articoli = await articoliPubblicati();
 
-// Se un articolo è segnato "inEvidenza" va in cima, altrimenti ci va il più
-// recente. Gli altri seguono in ordine cronologico.
-const inEvidenza = articoli.find((a: any) => a.data.inEvidenza) ?? articoli[0];
-const restanti = articoli.filter((a: any) => a.id !== inEvidenza?.id).slice(0, 12);
+// In apertura va l'articolo più recente: pubblicarlo basta, non c'è niente da
+// ricordarsi. "In evidenza" serve solo a trattenere in cima un pezzo più
+// vecchio, e vale su un articolo per volta — se sono due la compilazione si
+// ferma. Gli altri seguono in ordine cronologico.
+const apertura = articoloInPrimoPiano(articoli);
+const restanti = articoli.filter((a: any) => a.id !== apertura?.id).slice(0, 12);
 ---
 
 <Base titolo={SITO.nome} descrizione={SITO.descrizione}>
@@ -51,9 +53,9 @@ const restanti = articoli.filter((a: any) => a.id !== inEvidenza?.id).slice(0, 1
 				</div>
 			) : (
 				<div style="padding-block: 3rem 4rem">
-					{inEvidenza && (
+					{apertura && (
 						<div style="margin-bottom: 3rem">
-							<SchedaArticolo articolo={inEvidenza} evidenza />
+							<SchedaArticolo articolo={apertura} evidenza />
 						</div>
 					)}
 

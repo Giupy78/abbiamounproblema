@@ -272,13 +272,22 @@ collections:
 
       - name: bozza
         label: 'Bozza — tienilo acceso finche non e pronto'
-        hint: 'Acceso: l articolo NON e sul sito, lo vedi solo tu. Spento: va online al primo salvataggio. Il pulsante verde in alto salva soltanto, non pubblica.'
+        hint: >-
+          Acceso: l articolo NON e sul sito, lo vedi solo tu. Spento: va online
+          al primo salvataggio. Il pulsante verde in alto salva soltanto, non
+          pubblica. PRIMA DI SPEGNERLO risali alla Data di pubblicazione e
+          rimetti quella di oggi: e il giorno in cui il pezzo esce, non quello
+          in cui hai cominciato a scriverlo.
         widget: boolean
         default: true
 
       - name: inEvidenza
-        label: 'In evidenza sulla homepage'
-        hint: 'Tienilo acceso su un solo articolo per volta.'
+        label: 'Tienilo in apertura anche quando non e il piu recente'
+        hint: >-
+          Quasi sempre non serve: in cima alla homepage va da sola la
+          pubblicazione piu recente. Accendilo solo per trattenere in apertura
+          un pezzo piu vecchio, e su un articolo per volta: con due accesi la
+          pubblicazione si ferma e ti dice quali sono.
         widget: boolean
         default: false
 

@@ -12,7 +12,7 @@ tag:
   - democrazia
   - burocrazia
 bozza: false
-inEvidenza: true
+inEvidenza: false
 illustrazione: catena
 ---
 Nel 2023 l'Unione europea ha adottato **1.916 atti di esecuzione**. Sono regole vincolanti: stabiliscono cosa deve contenere un'etichetta, quali sostanze un'azienda può usare, come si compila una dichiarazione doganale. Toccano il lavoro di centinaia di migliaia di imprese.

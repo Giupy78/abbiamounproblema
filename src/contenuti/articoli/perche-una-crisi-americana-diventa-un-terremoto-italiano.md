@@ -13,7 +13,7 @@ tag:
   - eurozona
 illustrazione: crepa
 bozza: false
-inEvidenza: true
+inEvidenza: false
 ---
 
 Il 15 settembre 2008 Lehman Brothers, la quarta banca d'affari americana, dichiara fallimento a New York. L'anno dopo, il Pil italiano crolla del **5%** — il dato peggiore dal 1971, da quando esistono le serie storiche Istat.
