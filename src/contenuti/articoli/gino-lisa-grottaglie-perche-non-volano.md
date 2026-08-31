@@ -23,7 +23,9 @@ Il problema non è che manchino le opere. È che **nessuno ha mai dovuto decider
 
 ## Foggia: il numero annunciato e il numero pubblicato
 
-Sull'allungamento della pista del Gino Lisa si è discusso per anni, e il numero ripetuto in ogni annuncio è sempre stato lo stesso: **duemila metri**. Sta nei progetti, nelle delibere, nei titoli.
+Sull'allungamento della pista del Gino Lisa si è discusso per anni, e il numero ripetuto in ogni annuncio è sempre stato lo stesso: **duemila metri**.
+
+Non era uno slogan: era l'obiettivo formale dell'opera. La valutazione di impatto ambientale [conclusa nel giugno 2015](https://va.mite.gov.it/it-IT/Oggetti/Info/600) ha per oggetto il «prolungamento della pista di volo RWY 15/33 nella direzione Nord della testata 15 **fino a raggiungere i 2000 metri di lunghezza pavimentata**». Sta scritto così nell'intestazione della procedura ministeriale.
 
 La pista che poi è stata realizzata ne misura **1.735**.
 
@@ -34,6 +36,8 @@ Non è una stima e non è una polemica: è scritto nello [studio di impatto ambi
 Lo stesso documento riporta le **distanze dichiarate** pubblicate in AIP Italia (AD 2 LIBF 1-4), che sono i metri di cui un aereo dispone davvero: **TORA 1.735** metri per la corsa di decollo, TODA 1.795, e una distanza di atterraggio che scende a **1.621** in una delle due direzioni. Partendo dall'intersezione con la via di rullaggio B, la corsa disponibile si riduce a 1.498.
 
 Lo scalo resta classificato ICAO codice 3: la classe delle piste sotto i 1.800 metri. Esattamente dove stava prima che se ne parlasse.
+
+C'è un altro atto che merita una riga, e va letto per quello che dice e non per quello che sembra. La verifica di ottemperanza alle prescrizioni di quel decreto del 2015 si è chiusa il **16 marzo 2021 con esito «parzialmente ottemperata»** (determinazione MATTM_DEC_2021-0000079, parere CTVIA n. 198). Riguarda le prescrizioni ambientali, non i metri di pista: non è la prova che l'opera sia incompiuta. È però l'ultimo momento in cui quel progetto risulta ripreso in mano da qualcuno, e da allora la distanza fra i duemila metri autorizzati e i 1.735 pubblicati non è più stata oggetto di un atto.
 
 La differenza fra 2.000 e 1.735 sembra un dettaglio tecnico. Non lo è, perché cade esattamente sopra una soglia commerciale.
 
