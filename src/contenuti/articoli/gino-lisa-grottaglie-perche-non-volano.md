@@ -1,7 +1,7 @@
 ---
-titolo: "La pista è lunga 2.000 metri. L'aereo ne può usare 1.735"
+titolo: "Annunciati duemila metri di pista. Ne sono stati fatti 1.735"
 titoloSeo: "Gli aeroporti pugliesi che non volano"
-descrizione: "A Foggia la pista costruita è più lunga di quella che un aereo può usare. A Grottaglie il terminal è pronto e chiuso. In nessuno dei due casi qualcuno ha deciso."
+descrizione: "A Foggia la pista annunciata era di duemila metri, quella pubblicata in AIP ne misura 1.735. A Grottaglie il terminal è pronto e chiuso. Nessuno ha deciso."
 dataPubblicazione: 2026-08-31
 categoria: Istituzioni
 tag:
@@ -21,13 +21,19 @@ La spiegazione che circola di solito è che al Sud le infrastrutture non si fann
 
 Il problema non è che manchino le opere. È che **nessuno ha mai dovuto decidere a cosa servissero**.
 
-## Foggia: il numero che si annuncia e il numero che decide
+## Foggia: il numero annunciato e il numero pubblicato
 
-Sull'allungamento della pista del Gino Lisa si è discusso per anni, e il numero ripetuto in ogni annuncio è sempre stato lo stesso: **duemila metri**. È un numero vero. La pista costruita è quella.
+Sull'allungamento della pista del Gino Lisa si è discusso per anni, e il numero ripetuto in ogni annuncio è sempre stato lo stesso: **duemila metri**. Sta nei progetti, nelle delibere, nei titoli.
 
-Solo che non è il numero che conta.
+La pista che poi è stata realizzata ne misura **1.735**.
 
-Quello che decide se un aereo può decollare non è la lunghezza della pavimentazione, è la **TORA** — *take-off run available*, i metri effettivamente disponibili per la corsa di decollo, al netto delle aree di sicurezza a inizio e fine pista. A Foggia [i dati aeronautici pubblicati](https://aeronauticalinformation.it/index.php/2022/08/07/aeroporti-di-taranto-e-foggia/) indicano una **TORA di 1.735 metri** e una distanza disponibile all'atterraggio di 1.621. Lo scalo è classificato ICAO 3C: la classe delle piste comprese fra 1.200 e 1.800 metri.
+Non è una stima e non è una polemica: è scritto nello [studio di impatto ambientale del masterplan dello scalo](https://va.mite.gov.it/File/Documento/1217470), depositato al Ministero e consultabile da chiunque sul [portale delle valutazioni ambientali](https://va.mite.gov.it/it-IT/Oggetti/Info/11447). Il documento descrive la configurazione «desunta dall'analisi dei dati AIP aggiornati ad Aprile 2022», cioè dalla pubblicazione aeronautica ufficiale, e a pagina 24 dice:
+
+> La pista, RWY 15/33, ha lunghezza pari a 1.735 metri ed una larghezza di 47 metri, oltre due fasce laterali antipolvere "shoulder" di 5 metri ciascuna.
+
+Lo stesso documento riporta le **distanze dichiarate** pubblicate in AIP Italia (AD 2 LIBF 1-4), che sono i metri di cui un aereo dispone davvero: **TORA 1.735** metri per la corsa di decollo, TODA 1.795, e una distanza di atterraggio che scende a **1.621** in una delle due direzioni. Partendo dall'intersezione con la via di rullaggio B, la corsa disponibile si riduce a 1.498.
+
+Lo scalo resta classificato ICAO codice 3: la classe delle piste sotto i 1.800 metri. Esattamente dove stava prima che se ne parlasse.
 
 La differenza fra 2.000 e 1.735 sembra un dettaglio tecnico. Non lo è, perché cade esattamente sopra una soglia commerciale.
 
@@ -107,7 +113,7 @@ Per anni il dibattito su questi due aeroporti si è concentrato su due oggetti: 
 
 Nel frattempo:
 
-- la pista di Foggia è stata allungata, e il numero che decide — 1.735 — non è quasi mai stato pronunciato;
+- la pista di Foggia è stata allungata, ma fino a 1.735 metri e non ai duemila annunciati, e questa differenza non è quasi mai stata pronunciata;
 - il terminal di Grottaglie è stato ristrutturato ed è chiuso, in attesa di politiche nazionali che il Piano stesso dà per non ancora definite.
 
 Le opere si sono fatte. La decisione no. E quando manca la decisione, l'opera non è un punto d'arrivo: è **un oggetto in attesa di sapere a cosa serve**, che intanto costa manutenzione.
@@ -120,8 +126,8 @@ Il Piano assegna a Foggia un ruolo «a supporto dei flussi turistici anche di ca
 
 È una buona notizia, ed è giusto registrarla. Ma vale la pena notare cosa è cambiato e cosa no.
 
-È cambiata **la classificazione**. Non è cambiata **la TORA**.
+È cambiata **la classificazione**. Non è cambiata **la pista**.
 
-Un aeroporto promosso a interesse nazionale con 1.735 metri utilizzabili resta un aeroporto su cui un 737 non decolla a pieno carico. L'etichetta si è aggiornata; il numero che decide è rimasto dov'era, e continua a non comparire in nessun comunicato.
+Un aeroporto promosso a interesse nazionale con 1.735 metri di corsa disponibile resta un aeroporto su cui un 737 non decolla a pieno carico. L'etichetta si è aggiornata; il numero che decide è rimasto dov'era, e continua a non comparire in nessun comunicato.
 
 È forse la lezione più utile di tutta la vicenda, e non riguarda solo la Puglia: **quando il dibattito si sposta sulle etichette, il vincolo fisico non si accorge di niente e resta esattamente dov'è.**

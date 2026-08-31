@@ -51,10 +51,10 @@ const SCHEDE = [
 /**
  * Tre lunghezze sulla stessa scala, in metri di pista.
  *
- * La prima è quella che un aereo ha davvero a disposizione per decollare a
- * Foggia (TORA); la seconda è la pista costruita, il numero che si annuncia;
- * la terza è quella che serve a un jet di linea a pieno carico. Solo la
- * prima decide qualcosa, ed è la più corta delle tre.
+ * La prima è la pista di Foggia come pubblicata in AIP, che coincide con la
+ * corsa disponibile al decollo; la seconda è quella annunciata per anni; la
+ * terza quella che serve a un jet di linea a pieno carico. Solo la prima
+ * esiste, ed è la più corta delle tre.
  */
 const PISTE = [
 	{ metri: '1.735', larghezza: 256, y: 38, classe: 'pieno accento' },
@@ -492,9 +492,9 @@ const BOLLETTE = [
 			nome === 'pista' && (
 				<g>
 					{/* Le tre lunghezze, tutte dallo stesso punto di partenza: la
-					    testata della pista. La riga verticale segna dove finiscono
-					    i metri utilizzabili — le altre due barre la superano,
-					    l'aereo no. Il numero piu' corto e' l'unico che decide. */}
+					    testata della pista. La riga verticale segna dove la pista
+					    finisce davvero — le altre due barre la superano, l'aereo
+					    no. Il numero piu' corto e' l'unico che esiste. */}
 					{PISTE.map(({ metri, larghezza, y, classe }) => (
 						<g>
 							<text class="etichetta-anno" x={66} y={y + 18}>

@@ -1,8 +1,8 @@
 ---
 titolo: "Negli annunci sulle piste si scrivano i metri utilizzabili"
 titoloSeo: "I metri che un aereo può usare"
-descrizione: "Foggia annuncia duemila metri di pista, ma un aereo ne ha 1.735 per decollare. È il secondo numero a decidere quali compagnie possono operare."
-problema: "Le comunicazioni pubbliche sulle opere aeroportuali citano la lunghezza costruita, che non determina nulla, e omettono quella operativa, che determina tutto."
+descrizione: "A Foggia si sono annunciati duemila metri di pista e ne sono stati realizzati 1.735. La differenza si scopre solo aprendo i documenti aeronautici."
+problema: "Le comunicazioni pubbliche sulle opere aeroportuali citano i metri del progetto e non le distanze dichiarate che risultano a lavori finiti, cioè le uniche che decidono chi può volare."
 ambito: "Trasporti"
 stato: "Proposta"
 difficolta: "Bassa"
@@ -12,17 +12,17 @@ dataPubblicazione: 2026-08-31
 bozza: true
 ---
 
-Sull'allungamento della pista del Gino Lisa il numero ripetuto in ogni annuncio è duemila metri. È corretto: la pavimentazione è quella.
+Sull'allungamento della pista del Gino Lisa il numero ripetuto in ogni annuncio è stato duemila metri. La pista realizzata ne misura **1.735**, e la corsa disponibile al decollo è la stessa cifra.
 
-Il numero che decide se un Boeing 737-800 può decollare a pieno carico è però un altro, e a Foggia vale **1.735 metri**: la TORA, i metri effettivamente disponibili per la corsa di decollo. Sta nei documenti aeronautici, non nei comunicati.
+Per saperlo bisogna aprire lo studio di impatto ambientale del masterplan, cercare le distanze dichiarate pubblicate in AIP e confrontarle con quelle del progetto. Nessun comunicato ha mai messo i due numeri sulla stessa riga.
 
-Chi legge un annuncio con dentro un solo numero non ha modo di sapere che quel numero non è quello operativo. E quindi non ha modo di prevedere che, a lavori finiti, le compagnie low cost non arriveranno.
+Chi legge un annuncio non ha modo di accorgersi della differenza. E quindi non ha modo di prevedere che, a lavori finiti, le compagnie low cost non arriveranno.
 
 ## Cosa cambierebbe
 
-Ogni comunicazione pubblica su un intervento che riguarda una pista — delibera, comunicato, presentazione, conferenza stampa — riporta accanto alla lunghezza costruita anche **TORA e LDA risultanti a fine lavori**, e la categoria ICAO che ne consegue.
+Ogni comunicazione pubblica su un intervento che riguarda una pista — delibera, comunicato, presentazione, conferenza stampa — riporta accanto ai metri di progetto anche **TORA e LDA previste a fine lavori**, e la categoria ICAO che ne consegue. A collaudo avvenuto, gli stessi tre dati vengono ripubblicati nella versione effettiva.
 
-Sono tre dati che il progetto già contiene. Non c'è nulla da calcolare: c'è solo da non ometterli.
+Sono numeri che il progetto già contiene e che l'AIP pubblica comunque. Non c'è nulla da calcolare: c'è solo da metterli accanto a quello che si è promesso.
 
 ## Perché conta più di quanto sembri
 
