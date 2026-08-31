@@ -49,6 +49,20 @@ const SCHEDE = [
 ];
 
 /**
+ * Tre lunghezze sulla stessa scala, in metri di pista.
+ *
+ * La prima è quella che un aereo ha davvero a disposizione per decollare a
+ * Foggia (TORA); la seconda è la pista costruita, il numero che si annuncia;
+ * la terza è quella che serve a un jet di linea a pieno carico. Solo la
+ * prima decide qualcosa, ed è la più corta delle tre.
+ */
+const PISTE = [
+	{ metri: '1.735', larghezza: 256, y: 38, classe: 'pieno accento' },
+	{ metri: '2.000', larghezza: 295, y: 84, classe: 'tratto riempito' },
+	{ metri: '2.200', larghezza: 324, y: 130, classe: 'tratto rosso' },
+];
+
+/**
  * Tasso di sostituzione lordo al 2070 per il dipendente privato, secondo la
  * Ragioneria generale dello Stato: cambia solo l'età a cui si smette.
  */
@@ -470,6 +484,28 @@ const BOLLETTE = [
 						d="M300 152h64c14 0 22-10 22-24V44"
 					/>
 					<path class="tratto accento-tratto" d="M373 57l13-13 13 13" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'pista' && (
+				<g>
+					{/* Le tre lunghezze, tutte dallo stesso punto di partenza: la
+					    testata della pista. La riga verticale segna dove finiscono
+					    i metri utilizzabili — le altre due barre la superano,
+					    l'aereo no. Il numero piu' corto e' l'unico che decide. */}
+					{PISTE.map(({ metri, larghezza, y, classe }) => (
+						<g>
+							<text class="etichetta-anno" x={66} y={y + 18}>
+								{metri}
+							</text>
+							<rect class={classe} x={120} y={y} width={larghezza} height={26} rx="2" />
+						</g>
+					))}
+
+					{/* Il limite operativo: i metri che l'aereo ha sotto le ruote */}
+					<path class="tratto accento-tratto" d="M376 26V166" />
 				</g>
 			)
 		}
