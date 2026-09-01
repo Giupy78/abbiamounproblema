@@ -1,7 +1,9 @@
 ---
-titolo: "Il 44% dei comuni non ha una banca. Il problema non è quello"
+titolo: Il 44% dei comuni non ha una banca. Il problema non è quello
 titoloSeo: "Comuni senza banca: il vero problema"
-descrizione: "Il 44% dei comuni italiani non ha uno sportello bancario. Per la Banca d'Italia l'accesso ai servizi finanziari è però migliorato. Hanno ragione tutti e due."
+descrizione: Il 44% dei comuni italiani non ha uno sportello bancario. Per la
+  Banca d'Italia l'accesso ai servizi finanziari è però migliorato. Hanno
+  ragione tutti e due.
 dataPubblicazione: 2026-08-23
 categoria: Finanza personale
 tag:
@@ -10,7 +12,8 @@ tag:
   - piccoli comuni
   - divario digitale
 illustrazione: sportelli
-bozza: true
+bozza: false
+inEvidenza: false
 ---
 
 Alla fine del 2025 in Italia restavano **19.140 sportelli bancari**: 516 in meno in un anno, il 2,6% della rete. I comuni senza nemmeno una banca erano **3.457, il 44% del totale**, settantacinque più dell'anno prima. Sommando chi vive in un comune già senza sportelli e chi ne ha ancora uno solo, si arriva a **11,5 milioni di persone** ([Osservatorio della Fondazione Fiba di First Cisl](https://www.firstcisl.it/2026/01/desertificazione-bancaria-chiusi-altri-516-sportelli-nel-2025-iccrea-prima-per-presenza-sui-territori/), su dati Banca d'Italia e Istat, 30 gennaio 2026).
