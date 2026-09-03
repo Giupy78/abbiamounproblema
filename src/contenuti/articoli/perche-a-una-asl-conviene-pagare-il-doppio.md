@@ -1,7 +1,9 @@
 ---
-titolo: "Perché a un'ASL conviene pagare un medico il doppio"
+titolo: Perché a un'ASL conviene pagare un medico il doppio
 titoloSeo: "Medici gettonisti: perché conviene"
-descrizione: "Un'azienda sanitaria non può assumere né pagare straordinari oltre un tetto fissato sulla spesa del 2004. Comprare le stesse ore da una cooperativa, invece, sì."
+descrizione: Un'azienda sanitaria non può assumere né pagare straordinari oltre
+  un tetto fissato sulla spesa del 2004. Comprare le stesse ore da una
+  cooperativa, invece, sì.
 dataPubblicazione: 2026-08-23
 categoria: Società
 tag:
@@ -10,7 +12,8 @@ tag:
   - spesa pubblica
   - pronto soccorso
 illustrazione: tetto
-bozza: true
+bozza: false
+inEvidenza: false
 ---
 
 Un ospedale deve coprire il turno di notte in pronto soccorso. Mancano medici. Il direttore generale ha tre strade.
