@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "oneri-di-sistema-azzerati-bolletta-triplicata"
-dataPubblicazione: 2026-08-23
-bozza: true
+dataPubblicazione: 2026-08-29
+bozza: false
 ---
 
 Nel 2022 la voce «oneri di sistema» in bolletta valeva **zero**. Nello stesso anno quegli oneri sono costati **9,015 miliardi di euro** al bilancio dello Stato, come ricostruisce il dossier del Servizio bilancio della Camera citato nell'[articolo da cui nasce questa proposta](/oneri-di-sistema-azzerati-bolletta-triplicata).

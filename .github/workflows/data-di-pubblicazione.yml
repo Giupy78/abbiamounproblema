@@ -1,0 +1,46 @@
+name: Data di pubblicazione
+
+# Quando un contenuto passa da bozza a pubblicato, gli rimette la data di
+# oggi. Serve perche' la data si scrive quando si comincia a scrivere e
+# nessuno si ricorda di aggiornarla al momento di pubblicare.
+#
+# Gira solo sui contenuti e solo per le persone: i commit fatti da questa
+# stessa azione non la riattivano, altrimenti si rincorrerebbe da sola.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/contenuti/**'
+
+permissions:
+  contents: write
+
+jobs:
+  sistema-le-date:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica il progetto con la storia
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepara Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Rimetti la data al giorno di pubblicazione
+        id: date
+        run: node scripts/data-di-pubblicazione.mjs ${{ github.event.before }} ${{ github.sha }}
+
+      - name: Salva la correzione
+        if: steps.date.outputs.sistemati
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/contenuti
+          git commit -m 'Data di pubblicazione rimessa al giorno di uscita'
+          git push

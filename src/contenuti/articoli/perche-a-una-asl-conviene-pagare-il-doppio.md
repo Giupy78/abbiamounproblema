@@ -4,7 +4,7 @@ titoloSeo: "Medici gettonisti: perché conviene"
 descrizione: Un'azienda sanitaria non può assumere né pagare straordinari oltre
   un tetto fissato sulla spesa del 2004. Comprare le stesse ore da una
   cooperativa, invece, sì.
-dataPubblicazione: 2026-08-23
+dataPubblicazione: 2026-09-03
 categoria: Società
 tag:
   - sanità

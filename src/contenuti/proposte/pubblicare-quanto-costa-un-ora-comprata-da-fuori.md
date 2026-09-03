@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "perche-a-una-asl-conviene-pagare-il-doppio"
-dataPubblicazione: 2026-08-24
-bozza: true
+dataPubblicazione: 2026-09-03
+bozza: false
 ---
 
 Quanto costa davvero un turno comprato da una cooperativa? La risposta che circola — fra i 90 e i 100 euro l'ora, «almeno il doppio» di un dipendente esperto — viene da ricostruzioni giornalistiche, e lo dice apertamente chi la riporta.

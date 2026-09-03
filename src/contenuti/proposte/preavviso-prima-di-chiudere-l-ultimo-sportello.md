@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "comuni-senza-banca-desertificazione-sportelli"
-dataPubblicazione: 2026-08-23
-bozza: true
+dataPubblicazione: 2026-09-01
+bozza: false
 ---
 
 C'è una differenza che le procedure attuali non registrano: **chiudere una filiale in una città che ne ha altre trenta non è la stessa operazione che chiudere l'unica di un paese.**

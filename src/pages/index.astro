@@ -4,6 +4,11 @@ import SchedaArticolo from '../components/SchedaArticolo.astro';
 import CartinaItalia from '../components/CartinaItalia.astro';
 import { SITO } from '../config';
 import { articoliPubblicati, articoloInPrimoPiano } from '../utils/articoli';
+import { verificaCollegamenti } from '../utils/collegamenti';
+
+// Ferma la pubblicazione se un articolo online rimanda a una proposta
+// rimasta in bozza: meglio un sito fermo che un link rotto.
+await verificaCollegamenti();
 
 const articoli = await articoliPubblicati();
 

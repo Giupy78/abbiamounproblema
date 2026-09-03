@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "perche-a-una-asl-conviene-pagare-il-doppio"
-dataPubblicazione: 2026-08-24
-bozza: true
+dataPubblicazione: 2026-09-03
+bozza: false
 ---
 
 Il tetto di spesa sanitario si applica a chi è in busta paga. Un medico che arriva da una cooperativa è una fornitura di servizi, finisce fra i consumi intermedi, e lì il tetto non c'è.

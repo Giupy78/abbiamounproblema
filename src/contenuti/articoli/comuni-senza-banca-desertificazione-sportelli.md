@@ -4,7 +4,7 @@ titoloSeo: "Comuni senza banca: il vero problema"
 descrizione: Il 44% dei comuni italiani non ha uno sportello bancario. Per la
   Banca d'Italia l'accesso ai servizi finanziari è però migliorato. Hanno
   ragione tutti e due.
-dataPubblicazione: 2026-08-23
+dataPubblicazione: 2026-09-01
 categoria: Finanza personale
 tag:
   - banche

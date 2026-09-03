@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "oneri-di-sistema-azzerati-bolletta-triplicata"
-dataPubblicazione: 2026-08-23
-bozza: true
+dataPubblicazione: 2026-08-29
+bozza: false
 ---
 
 La componente **ASOS** degli oneri di sistema finanzia il sostegno alle rinnovabili e alla cogenerazione. In buona parte è il conto di incentivi riconosciuti per vent'anni a impianti entrati in funzione soprattutto fra il 2005 e il 2013, quando il fotovoltaico costava molte volte quello che costa oggi.

@@ -203,9 +203,9 @@ collections:
         date_format: 'DD/MM/YYYY'
         time_format: false
         hint: >-
-          Il giorno in cui l articolo diventa pubblico, non quello in cui hai
-          cominciato a scriverlo. Se lo tieni in bozza per qualche giorno,
-          ricordati di aggiornarla quando spegni Bozza.
+          Il giorno in cui diventa pubblico, non quello in cui hai cominciato a
+          scriverlo. Non serve aggiornarla a mano: quando spegni Bozza viene
+          rimessa da sola al giorno di oggi.
         picker_utc: true
 
       - name: dataAggiornamento
@@ -276,9 +276,8 @@ collections:
         hint: >-
           Acceso: l articolo NON e sul sito, lo vedi solo tu. Spento: va online
           al primo salvataggio. Il pulsante verde in alto salva soltanto, non
-          pubblica. PRIMA DI SPEGNERLO risali alla Data di pubblicazione e
-          rimetti quella di oggi: e il giorno in cui il pezzo esce, non quello
-          in cui hai cominciato a scriverlo.
+          pubblica. Della data non ti devi occupare: quando lo spegni viene
+          rimessa da sola al giorno di oggi.
         widget: boolean
         default: true
 
@@ -408,9 +407,9 @@ collections:
         date_format: 'DD/MM/YYYY'
         time_format: false
         hint: >-
-          Il giorno in cui l articolo diventa pubblico, non quello in cui hai
-          cominciato a scriverlo. Se lo tieni in bozza per qualche giorno,
-          ricordati di aggiornarla quando spegni Bozza.
+          Il giorno in cui diventa pubblico, non quello in cui hai cominciato a
+          scriverlo. Non serve aggiornarla a mano: quando spegni Bozza viene
+          rimessa da sola al giorno di oggi.
         picker_utc: true
 
       - name: dataAggiornamento

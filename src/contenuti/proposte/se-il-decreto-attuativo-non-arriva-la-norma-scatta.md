@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "perche-a-una-asl-conviene-pagare-il-doppio"
-dataPubblicazione: 2026-08-24
-bozza: true
+dataPubblicazione: 2026-09-03
+bozza: false
 ---
 
 Nel 2024 il decreto sulle liste di attesa ha stabilito il superamento del tetto di spesa per il personale sanitario a partire dal 2025. Sulla carta il problema descritto nell'[articolo da cui nasce questa proposta](/perche-a-una-asl-conviene-pagare-il-doppio) finiva lì.

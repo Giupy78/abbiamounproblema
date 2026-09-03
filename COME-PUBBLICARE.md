@@ -18,10 +18,9 @@ Funziona da qualsiasi computer e anche dal telefono: non serve avere il progetto
 2. **Articoli** → **New Articolo**
 3. Compila i campi. Titolo e descrizione hanno dei limiti di lunghezza: il pannello ti avvisa se sfori
 4. Tieni **Bozza** acceso finché non è pronto, poi spegnilo
-5. **Aggiorna la data di pubblicazione a oggi** — vedi qui sotto
-6. **Publish**
+5. **Publish**
 
-> **La data va sistemata al momento giusto.** `Data di pubblicazione` è il giorno in cui l'articolo diventa pubblico, non quello in cui hai cominciato a scriverlo. Se un pezzo resta in bozza qualche giorno, la data scritta all'inizio diventa sbagliata: l'articolo risulterebbe uscito prima di esistere. Quando spegni **Bozza**, rimetti la data di oggi.
+> **Della data non ti devi più occupare.** `Data di pubblicazione` è il giorno in cui l'articolo diventa pubblico, non quello in cui hai cominciato a scriverlo — e se un pezzo resta in bozza qualche giorno quella scritta all'inizio diventa sbagliata. Adesso la corregge da sola: quando spegni **Bozza** e pubblichi, un'automazione su GitHub rimette la data di oggi e salva la correzione. La vedi comparire nel pannello dopo un minuto o due. Se vuoi una data diversa da oggi, scrivila **dopo** aver pubblicato: da quel momento nessuno la tocca più.
 
 > **Chi va in cima alla homepage si decide da solo.** In apertura c'è sempre l'articolo con la data di pubblicazione più recente: se la data è giusta, non devi fare nient'altro. L'interruttore *In evidenza* serve soltanto all'eccezione — tenere su un pezzo più vecchio — e vale **su un articolo per volta**: se lo accendi su due, la pubblicazione si ferma e ti dice quali sono, invece di scegliere per conto suo.
 

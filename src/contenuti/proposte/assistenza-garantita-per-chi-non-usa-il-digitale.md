@@ -8,8 +8,8 @@ stato: "In discussione"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "comuni-senza-banca-desertificazione-sportelli"
-dataPubblicazione: 2026-08-23
-bozza: true
+dataPubblicazione: 2026-09-01
+bozza: false
 ---
 
 Il sistema italiano ha assorbito la chiusura di oltre quattordicimila sportelli senza un peggioramento nell'accesso delle famiglie ai servizi finanziari. Lo certifica la Banca d'Italia, e l'[articolo di riferimento](/comuni-senza-banca-desertificazione-sportelli) parte proprio da lì.

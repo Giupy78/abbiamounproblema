@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "comuni-senza-banca-desertificazione-sportelli"
-dataPubblicazione: 2026-08-23
-bozza: true
+dataPubblicazione: 2026-09-01
+bozza: false
 ---
 
 Il dato da cui parte questa proposta è nella nota della Banca d'Italia citata nell'[articolo di riferimento](/comuni-senza-banca-desertificazione-sportelli): **oltre il 60% delle chiusure di sportelli è riconducibile ai processi di consolidamento del settore**, cioè alle fusioni tra istituti e alla successiva razionalizzazione delle reti.
