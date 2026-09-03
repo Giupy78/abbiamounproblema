@@ -40,10 +40,22 @@ function leggiBozza(testo) {
 	return riga ? riga[1] === 'true' : null;
 }
 
+/** La data di pubblicazione scritta nel frontmatter. Null se assente. */
+function leggiData(testo) {
+	const riga = testo.match(/^dataPubblicazione:\s*(\S+)\s*$/m);
+	return riga ? riga[1] : null;
+}
+
 /** Il contenuto di un file a un certo commit, o null se allora non c'era. */
 function contenutoAl(commit, file) {
 	try {
-		return git('show', `${commit}:${file}`);
+		// stderr silenziato: per un file nuovo git protesta, ma qui il
+		// fallimento è una risposta legittima, non un guasto.
+		return execFileSync('git', ['show', `${commit}:${file}`], {
+			encoding: 'utf8',
+			stdio: ['ignore', 'pipe', 'ignore'],
+			maxBuffer: 64 * 1024 * 1024,
+		});
 	} catch {
 		return null;
 	}
@@ -79,15 +91,26 @@ for (const file of modificati) {
 	if (leggiBozza(adesso) !== false) continue;
 
 	const prima = contenutoAl(commitPrima, file);
-	const eraBozza = prima === null ? true : leggiBozza(prima) !== false;
-	if (!eraBozza) continue;
 
-	const dataAttuale = adesso.match(/^dataPubblicazione:\s*(\S+)\s*$/m);
-	if (!dataAttuale) continue;
-	if (dataAttuale[1] === data) continue;
+	// File nuovo: la data l'ha appena scritta chi lo ha creato, quindi è
+	// quella che voleva. Non c'è niente da correggere.
+	if (prima === null) continue;
+	if (leggiBozza(prima) === false) continue;
+
+	const dataPrima = leggiData(prima);
+	const dataAdesso = leggiData(adesso);
+	if (!dataAdesso) continue;
+
+	// Se la data è stata cambiata in questo stesso push, è stata una
+	// scelta: si può voler pubblicare un pezzo con la data del giorno in
+	// cui esce l'articolo a cui è collegato, non con quella di oggi.
+	// L'automazione serve a chi la data se l'è dimenticata, non a chi
+	// l'ha appena decisa.
+	if (dataPrima !== dataAdesso) continue;
+	if (dataAdesso === data) continue;
 
 	writeFileSync(file, adesso.replace(/^dataPubblicazione:.*$/m, `dataPubblicazione: ${data}`));
-	sistemati.push(`${file}: ${dataAttuale[1]} → ${data}`);
+	sistemati.push(`${file}: ${dataAdesso} → ${data}`);
 }
 
 if (sistemati.length === 0) {

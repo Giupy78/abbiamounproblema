@@ -20,7 +20,9 @@ Funziona da qualsiasi computer e anche dal telefono: non serve avere il progetto
 4. Tieni **Bozza** acceso finché non è pronto, poi spegnilo
 5. **Publish**
 
-> **Della data non ti devi più occupare.** `Data di pubblicazione` è il giorno in cui l'articolo diventa pubblico, non quello in cui hai cominciato a scriverlo — e se un pezzo resta in bozza qualche giorno quella scritta all'inizio diventa sbagliata. Adesso la corregge da sola: quando spegni **Bozza** e pubblichi, un'automazione su GitHub rimette la data di oggi e salva la correzione. La vedi comparire nel pannello dopo un minuto o due. Se vuoi una data diversa da oggi, scrivila **dopo** aver pubblicato: da quel momento nessuno la tocca più.
+> **Della data non ti devi più occupare.** `Data di pubblicazione` è il giorno in cui l'articolo diventa pubblico, non quello in cui hai cominciato a scriverlo — e se un pezzo resta in bozza qualche giorno quella scritta all'inizio diventa sbagliata. Adesso la corregge da sola: quando spegni **Bozza** e pubblichi, un'automazione su GitHub rimette la data di oggi e salva la correzione. La vedi comparire nel pannello dopo un minuto o due.
+>
+> Interviene solo se la data l'hai lasciata com'era, cioè solo quando te ne sei dimenticato. **Se la cambi tu mentre pubblichi, quella che hai scritto resta**: serve per i casi in cui una data diversa da oggi è voluta, per esempio una proposta che deve uscire con la data dell'articolo a cui è collegata.
 
 > **Chi va in cima alla homepage si decide da solo.** In apertura c'è sempre l'articolo con la data di pubblicazione più recente: se la data è giusta, non devi fare nient'altro. L'interruttore *In evidenza* serve soltanto all'eccezione — tenere su un pezzo più vecchio — e vale **su un articolo per volta**: se lo accendi su due, la pubblicazione si ferma e ti dice quali sono, invece di scegliere per conto suo.
 
