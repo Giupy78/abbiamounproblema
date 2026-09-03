@@ -8,7 +8,7 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "comuni-senza-banca-desertificazione-sportelli"
-dataPubblicazione: 2026-09-01
+dataPubblicazione: 2026-09-03
 bozza: false
 ---
 

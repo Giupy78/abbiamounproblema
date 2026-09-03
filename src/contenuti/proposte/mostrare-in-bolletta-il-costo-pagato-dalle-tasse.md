@@ -8,7 +8,7 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "oneri-di-sistema-azzerati-bolletta-triplicata"
-dataPubblicazione: 2026-08-29
+dataPubblicazione: 2026-09-03
 bozza: false
 ---
 
