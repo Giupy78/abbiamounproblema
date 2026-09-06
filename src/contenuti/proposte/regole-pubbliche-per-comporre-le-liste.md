@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Alta"
 origine: "Analisi della redazione"
 articoloCollegato: "nessuno-ci-ha-tolto-le-preferenze"
-dataPubblicazione: 2026-08-27
-bozza: true
+dataPubblicazione: 2026-09-06
+bozza: false
 ---
 
 Con le liste bloccate il seggio non lo assegna il numero di voti che prende una persona: lo assegna **la posizione che quella persona occupa nell'elenco**, decisa prima che la scheda venga stampata.

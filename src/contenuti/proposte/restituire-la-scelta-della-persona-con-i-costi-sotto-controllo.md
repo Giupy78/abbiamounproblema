@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "nessuno-ci-ha-tolto-le-preferenze"
-dataPubblicazione: 2026-08-27
-bozza: true
+dataPubblicazione: 2026-09-06
+bozza: false
 ---
 
 Come ricostruisce l'[articolo da cui nasce questa proposta](/nessuno-ci-ha-tolto-le-preferenze), il referendum del 1991 non abolì le preferenze: abolì quella **plurima**. La scelta della persona è sparita nel 2005, con una legge ordinaria.

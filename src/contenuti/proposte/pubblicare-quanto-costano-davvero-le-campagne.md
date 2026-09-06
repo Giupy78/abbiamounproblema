@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "nessuno-ci-ha-tolto-le-preferenze"
-dataPubblicazione: 2026-08-27
-bozza: true
+dataPubblicazione: 2026-09-06
+bozza: false
 ---
 
 La legge 515 del 1993 fissa un tetto alle spese di ciascun candidato e impone a tutti — **anche a chi non viene eletto** — di depositare un rendiconto controfirmato dal mandatario. A verificarlo è il Collegio regionale di garanzia elettorale presso la Corte d'appello.
