@@ -1,48 +1,79 @@
 import { getCollection } from 'astro:content';
+import { CATEGORIE } from '../config';
+import { MECCANISMI } from './dati';
+import { categoriaInUrl } from './articoli';
 
 /**
- * Controlla che nessun articolo pubblicato rimandi a una proposta che sul
+ * Controlla che nessun contenuto pubblicato rimandi a una pagina che sul
  * sito online non esiste.
  *
- * È il difetto che è già capitato tre volte: si pubblica l'articolo dal
- * pannello e ci si dimentica delle proposte collegate, che restano in
- * bozza. In locale non si vede niente, perché in sviluppo le bozze sono
- * visibili; online quei link portano a una pagina 404, e li trova il
- * lettore prima di noi.
+ * È il difetto che è già capitato tre volte: si pubblica un pezzo dal
+ * pannello e ci si dimentica di quello a cui rimanda, che resta in bozza.
+ * In locale non si vede niente, perché in sviluppo le bozze sono visibili;
+ * online quei link portano a una pagina 404, e li trova il lettore prima
+ * di noi.
  *
- * Per questo il controllo vale solo in produzione: in sviluppo la bozza
- * c'è davvero e il link funziona.
+ * Guarda i collegamenti fra articoli, quelli verso le proposte e quelli
+ * verso le pagine fisse: sono tutte cose che possono essere in bozza.
+ * Vale solo in produzione, perché in sviluppo la bozza c'è davvero.
  */
 let giaVerificato = false;
+
+/** Pagine che esistono sempre, indipendentemente dai contenuti. */
+const PAGINE_FISSE = new Set([
+	'/',
+	'/proposte',
+	'/archivio',
+	'/chi-sono',
+	'/contatti',
+	'/privacy',
+]);
 
 export async function verificaCollegamenti() {
 	if (giaVerificato || !import.meta.env.PROD) return;
 	giaVerificato = true;
 
-	const articoli = await getCollection(
-		'articoli',
-		({ data }: { data: { bozza: boolean } }) => data.bozza === false,
-	);
-	const proposte = await getCollection('proposte');
+	const articoli = (await getCollection('articoli')) as any[];
+	const proposte = (await getCollection('proposte')) as any[];
 
-	const pubblicate = new Set(
-		proposte.filter((p: any) => p.data.bozza === false).map((p: any) => p.id),
-	);
-	const inBozza = new Set(proposte.filter((p: any) => p.data.bozza).map((p: any) => p.id));
+	// Tutto ciò a cui un link può puntare senza rompersi.
+	const valide = new Set<string>(PAGINE_FISSE);
+	for (const categoria of CATEGORIE) valide.add(`/categoria/${categoriaInUrl(categoria)}`);
+	if (!MECCANISMI.bozza) valide.add('/meccanismi');
+
+	// E tutto ciò che esiste ma è ancora nascosto: serve a distinguere
+	// "l'hai lasciato in bozza" da "questo indirizzo non esiste proprio",
+	// che sono due errori con due rimedi diversi.
+	const inBozza = new Set<string>();
+	if (MECCANISMI.bozza) inBozza.add('/meccanismi');
+
+	for (const articolo of articoli) {
+		(articolo.data.bozza ? inBozza : valide).add(`/${articolo.id}`);
+	}
+	for (const proposta of proposte) {
+		(proposta.data.bozza ? inBozza : valide).add(`/proposte/${proposta.id}`);
+	}
 
 	const rotti: string[] = [];
+	const pubblicati = [
+		...articoli.filter((a) => !a.data.bozza).map((a) => ({ dove: a.id, testo: a.body })),
+		...proposte
+			.filter((p) => !p.data.bozza)
+			.map((p) => ({ dove: `proposte/${p.id}`, testo: p.body })),
+	];
 
-	for (const articolo of articoli as any[]) {
-		const collegamenti: string[] = articolo.body?.match(/\/proposte\/[a-z0-9-]+/g) ?? [];
+	for (const { dove, testo } of pubblicati) {
+		const trovati: string[] = testo?.match(/\]\(\/[^)\s]*\)/g) ?? [];
 
-		for (const collegamento of new Set(collegamenti)) {
-			const slug = collegamento.replace('/proposte/', '');
-			if (pubblicate.has(slug)) continue;
+		for (const grezzo of new Set(trovati)) {
+			// Da "](/percorso#ancora)" a "/percorso".
+			const meta = grezzo.slice(2, -1).split('#')[0]!.replace(/\/$/, '') || '/';
+			if (valide.has(meta)) continue;
 
 			rotti.push(
-				inBozza.has(slug)
-					? `  · "${articolo.id}" rimanda a "${slug}", che è ancora in bozza`
-					: `  · "${articolo.id}" rimanda a "${slug}", che non esiste`,
+				inBozza.has(meta)
+					? `  · "${dove}" rimanda a "${meta}", che è ancora in bozza`
+					: `  · "${dove}" rimanda a "${meta}", che non esiste`,
 			);
 		}
 	}
@@ -51,8 +82,8 @@ export async function verificaCollegamenti() {
 		throw new Error(
 			`Ci sono ${rotti.length} collegamenti che online porterebbero a una pagina inesistente:\n\n` +
 				`${rotti.join('\n')}\n\n` +
-				`Se la proposta è in bozza, pubblicala: nel pannello aprila e spegni l'interruttore Bozza. ` +
-				`Se invece il link è sbagliato, correggilo nell'articolo.\n` +
+				`Se la pagina è in bozza, pubblicala: nel pannello aprila e spegni l'interruttore Bozza. ` +
+				`Se invece il link è sbagliato, correggilo.\n` +
 				`Finché non è a posto il sito online resta quello di prima, così nessuno trova un link rotto.`,
 		);
 	}
