@@ -1,8 +1,10 @@
 ---
-titolo: "Nessuno ci ha tolto le preferenze. Le abbiamo perse in tre passaggi"
-titoloSeo: "Perché non possiamo dare preferenze"
-descrizione: "Le liste bloccate non sono incostituzionali, e la prima riduzione delle preferenze la votammo noi con un referendum. È un diritto eroso in tre tappe."
-dataPubblicazione: 2026-08-27
+titolo: Nessuno ci ha tolto le preferenze. Le abbiamo perse in tre passaggi
+titoloSeo: Perché non possiamo dare preferenze
+descrizione: Le liste bloccate non sono incostituzionali, e la prima riduzione
+  delle preferenze la votammo noi con un referendum. È un diritto eroso in tre
+  tappe.
+dataPubblicazione: 2026-09-06
 categoria: Istituzioni
 tag:
   - legge elettorale
@@ -10,7 +12,8 @@ tag:
   - liste bloccate
   - rappresentanza
 illustrazione: scheda
-bozza: true
+bozza: false
+inEvidenza: true
 ---
 
 C'è una frase che si sente a ogni tornata elettorale: **«tanto i parlamentari li scelgono i partiti, non noi».**
