@@ -181,6 +181,7 @@ export const SLUG_RISERVATI = [
 	'proposte',
 	'anteprima',
 	'meccanismi',
+	'tassi',
 	'chi-sono',
 	'contatti',
 	'privacy',

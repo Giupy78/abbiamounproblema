@@ -1,0 +1,447 @@
+---
+/**
+ * I tassi, aggiornati.
+ *
+ * I numeri arrivano dal portale dati della BCE. Qui vengono presi al
+ * momento della compilazione, così finiscono dentro l'HTML e la pagina si
+ * legge anche senza JavaScript; poi, online, lo script chiede a
+ * /api/tassi l'ultimo dato disponibile e aggiorna quello che serve.
+ *
+ * Sull'Euribor: le medie mensili le pubblica la BCE ed è lecito
+ * riprenderle. Il dato giornaliero no — è di proprietà dell'EMMI e
+ * ridistribuirlo richiede un abbonamento — per questo la scadenza
+ * giornaliera qui è l'€STR, il tasso che la BCE calcola da sé.
+ */
+import Base from '../layouts/Base.astro';
+import { leggiTassi, ultimo, percentuale } from '../utils/tassi';
+
+const tassi = await leggiTassi();
+const { serie } = tassi;
+
+const ester = ultimo(serie.ester);
+const bce = ultimo(serie.bce);
+const decennale = ultimo(serie.decennale);
+
+const SCADENZE = [
+	{ nome: '1 mese', chiave: 'euribor1m' as const },
+	{ nome: '3 mesi', chiave: 'euribor3m' as const },
+	{ nome: '6 mesi', chiave: 'euribor6m' as const },
+	{ nome: '12 mesi', chiave: 'euribor12m' as const },
+];
+
+const euribor = SCADENZE.map(({ nome, chiave }) => {
+	const osservazioni = serie[chiave] ?? [];
+	const adesso = ultimo(osservazioni);
+	const unAnnoFa = osservazioni[osservazioni.length - 13];
+	return {
+		nome,
+		chiave,
+		valore: adesso?.v,
+		mese: adesso?.d,
+		variazione: adesso && unAnnoFa ? adesso.v - unAnnoFa.v : undefined,
+	};
+});
+
+/** "2026-08" diventa "agosto 2026"; "2026-09-07" diventa "7 settembre 2026". */
+function meseEsteso(periodo?: string): string {
+	if (!periodo) return '—';
+	const pezzi = periodo.split('-').map(Number);
+	const data = new Date(Date.UTC(pezzi[0]!, (pezzi[1] ?? 1) - 1, pezzi[2] ?? 1));
+	return data.toLocaleDateString('it-IT', {
+		day: pezzi.length > 2 ? 'numeric' : undefined,
+		month: 'long',
+		year: 'numeric',
+		timeZone: 'UTC',
+	});
+}
+---
+
+<Base
+	titolo="I tassi, aggiornati"
+	descrizione="Tasso BCE, €STR, Euribor per scadenza e rendimento decennale dell'area euro. Numeri presi dal portale dati della Banca centrale europea."
+>
+	<div class="contenitore">
+		<div class="testata-pagina">
+			<h1>I tassi, aggiornati</h1>
+			<p class="testata-pagina__sommario">
+				Quanto costa il denaro, secondo i dati della Banca centrale europea. Servono a
+				leggere gli articoli su inflazione e mutui senza doversi fidare di quello che
+				dice qualcun altro.
+			</p>
+		</div>
+
+		{
+			Object.keys(serie).length === 0 ? (
+				<p class="avviso-tassi">
+					Il portale dati della BCE non ha risposto durante l'ultimo aggiornamento.
+					Ricarica fra qualche minuto.
+				</p>
+			) : (
+				<>
+					<section class="blocco-tassi">
+						<h2>Oggi</h2>
+						<div class="griglia-tassi">
+							<div class="cifra">
+								<span class="cifra__valore">{percentuale(bce?.v)}</span>
+								<span class="cifra__nome">Tasso sui depositi BCE</span>
+								<span class="cifra__nota">
+									È il tasso che decide il Consiglio direttivo. Al {meseEsteso(bce?.d)}.
+								</span>
+							</div>
+							<div class="cifra">
+								<span class="cifra__valore">{percentuale(ester?.v, 3)}</span>
+								<span class="cifra__nome">€STR</span>
+								<span class="cifra__nota">
+									Quanto le banche si prestano davvero, giorno per giorno. Al{' '}
+									{meseEsteso(ester?.d)}.
+								</span>
+							</div>
+							<div class="cifra">
+								<span class="cifra__valore">{percentuale(decennale?.v)}</span>
+								<span class="cifra__nome">Decennale area euro</span>
+								<span class="cifra__nota">
+									Curva dei titoli con rating AAA, scadenza 10 anni. Al{' '}
+									{meseEsteso(decennale?.d)}.
+								</span>
+							</div>
+						</div>
+					</section>
+
+					<section class="blocco-tassi">
+						<h2>Euribor per scadenza</h2>
+						<p class="blocco-tassi__intro">
+							Media del mese di {meseEsteso(euribor[1]?.mese)}. Se la scadenza lunga
+							costa più di quella corta, il mercato si aspetta che i tassi salgano:
+							la differenza fra i 12 mesi e il mese è la previsione, scritta in un
+                            numero.
+						</p>
+
+						<div class="tabella-avvolgente">
+							<table class="tabella-tassi">
+								<thead>
+									<tr>
+										<th>Scadenza</th>
+										<th>Tasso</th>
+										<th>Rispetto a un anno fa</th>
+									</tr>
+								</thead>
+								<tbody>
+									{euribor.map(({ nome, valore, variazione }) => (
+										<tr>
+											<td>{nome}</td>
+											<td class="numero">{percentuale(valore, 3)}</td>
+											<td class="numero">
+												{variazione === undefined
+													? '—'
+													: `${variazione >= 0 ? '+' : '−'}${Math.abs(variazione)
+															.toFixed(2)
+															.replace('.', ',')} punti`}
+											</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+
+						<div class="grafico" data-grafico="curva">
+							<svg viewBox="0 0 480 200" role="img" aria-label="Euribor per scadenza" />
+						</div>
+					</section>
+
+					<section class="blocco-tassi">
+						<h2>Come ci siamo arrivati</h2>
+						<p class="blocco-tassi__intro">
+							Il tasso deciso dalla BCE e quello a cui le banche si prestano
+							effettivamente, negli ultimi due anni.
+						</p>
+						<div class="grafico" data-grafico="storia">
+							<svg viewBox="0 0 480 220" role="img" aria-label="Tasso BCE ed €STR" />
+						</div>
+						<p class="legenda">
+							<span class="legenda__voce legenda__voce--accento">Tasso BCE</span>
+							<span class="legenda__voce legenda__voce--tenue">€STR</span>
+						</p>
+					</section>
+				</>
+			)
+		}
+
+		<section class="blocco-tassi nota-fonti">
+			<h2>Da dove vengono questi numeri</h2>
+			<p>
+				Tutti dal <a href="https://data.ecb.europa.eu/">portale dati della Banca
+				centrale europea</a>, ripresi automaticamente e aggiornati più volte al giorno.
+				Nessun passaggio a mano, quindi nessun errore di trascrizione — ma anche
+				nessuna garanzia: se la BCE cambia una serie, qui lo vedi come un trattino.
+			</p>
+			<p>
+				<strong>Sull'Euribor giornaliero e sull'Eurirs.</strong> Non sono qui, e non è
+				una dimenticanza. L'Euribor è calcolato dall'EMMI e l'Eurirs deriva dagli ICE
+				Swap Rate: ripubblicare il dato giornaliero su un sito aperto richiede un
+				contratto di licenza con chi lo produce. Le medie mensili dell'Euribor,
+				invece, la BCE le pubblica come statistica ed è lecito riprenderle. Per il
+				dato di giornata la pagina usa l'<strong>€STR</strong>, che la BCE calcola da
+				sé sulle operazioni reali e distribuisce liberamente.
+			</p>
+		</section>
+	</div>
+</Base>
+
+<script is:inline define:vars={{ inizialiJSON: JSON.stringify(tassi) }}>
+	(() => {
+		const COLORE_ACCENTO = 'var(--accento)';
+
+		function disegnaLinee(svg, gruppi) {
+			const punti = gruppi.flatMap((g) => g.dati);
+			if (punti.length < 2) return;
+
+			const valori = punti.map((p) => p.v);
+			const minimo = Math.min(...valori);
+			const massimo = Math.max(...valori);
+			const spazio = (massimo - minimo) || 1;
+			const [larghezza, altezza] = svg.getAttribute('viewBox').split(' ').slice(2).map(Number);
+			const margine = { alto: 16, basso: 28, sinistra: 44, destra: 12 };
+
+			const x = (i, n) =>
+				margine.sinistra +
+				(i / Math.max(1, n - 1)) * (larghezza - margine.sinistra - margine.destra);
+			const y = (v) =>
+				altezza -
+				margine.basso -
+				((v - minimo + spazio * 0.1) / (spazio * 1.2)) * (altezza - margine.alto - margine.basso);
+
+			let contenuto = '';
+
+			// Tre riferimenti orizzontali, per dare una scala all'occhio.
+			for (let i = 0; i <= 2; i++) {
+				const valore = minimo + (spazio * i) / 2;
+				const yy = y(valore);
+				contenuto += `<line x1="${margine.sinistra}" y1="${yy}" x2="${larghezza - margine.destra}" y2="${yy}" stroke="currentColor" stroke-width="0.5" opacity="0.18"/>`;
+				contenuto += `<text x="${margine.sinistra - 8}" y="${yy + 4}" text-anchor="end" font-size="11" fill="currentColor" opacity="0.6">${valore.toFixed(2).replace('.', ',')}</text>`;
+			}
+
+			for (const gruppo of gruppi) {
+				if (gruppo.dati.length < 2) continue;
+				const d = gruppo.dati
+					.map((p, i) => `${i === 0 ? 'M' : 'L'}${x(i, gruppo.dati.length).toFixed(1)} ${y(p.v).toFixed(1)}`)
+					.join(' ');
+				contenuto += `<path d="${d}" fill="none" stroke="${gruppo.colore}" stroke-width="${gruppo.spessore || 2}" stroke-linejoin="round" opacity="${gruppo.opacita || 1}"/>`;
+			}
+
+			// Le etichette agli estremi: bastano due date per orientarsi.
+			const primo = gruppi[0].dati[0];
+			const ultimo = gruppi[0].dati[gruppi[0].dati.length - 1];
+			contenuto += `<text x="${margine.sinistra}" y="${altezza - 8}" font-size="11" fill="currentColor" opacity="0.6">${primo.d}</text>`;
+			contenuto += `<text x="${larghezza - margine.destra}" y="${altezza - 8}" text-anchor="end" font-size="11" fill="currentColor" opacity="0.6">${ultimo.d}</text>`;
+
+			svg.innerHTML = contenuto;
+		}
+
+		function disegnaCurva(svg, valori) {
+			const presenti = valori.filter((v) => v.valore !== undefined && v.valore !== null);
+			if (presenti.length < 2) return;
+
+			const numeri = presenti.map((v) => v.valore);
+			const minimo = Math.min(...numeri);
+			const massimo = Math.max(...numeri);
+			const spazio = (massimo - minimo) || 1;
+			const [larghezza, altezza] = svg.getAttribute('viewBox').split(' ').slice(2).map(Number);
+			const margine = { alto: 24, basso: 36, sinistra: 44, destra: 16 };
+
+			const x = (i) =>
+				margine.sinistra +
+				(i / Math.max(1, presenti.length - 1)) * (larghezza - margine.sinistra - margine.destra);
+			const y = (v) =>
+				altezza -
+				margine.basso -
+				((v - minimo + spazio * 0.25) / (spazio * 1.5)) * (altezza - margine.alto - margine.basso);
+
+			let contenuto = '';
+			const d = presenti
+				.map((p, i) => `${i === 0 ? 'M' : 'L'}${x(i).toFixed(1)} ${y(p.valore).toFixed(1)}`)
+				.join(' ');
+			contenuto += `<path d="${d}" fill="none" stroke="${COLORE_ACCENTO}" stroke-width="2"/>`;
+
+			presenti.forEach((p, i) => {
+				contenuto += `<circle cx="${x(i).toFixed(1)}" cy="${y(p.valore).toFixed(1)}" r="3.5" fill="${COLORE_ACCENTO}"/>`;
+				contenuto += `<text x="${x(i).toFixed(1)}" y="${(y(p.valore) - 12).toFixed(1)}" text-anchor="middle" font-size="12" fill="currentColor">${p.valore.toFixed(2).replace('.', ',')}</text>`;
+				contenuto += `<text x="${x(i).toFixed(1)}" y="${altezza - 10}" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.6">${p.nome}</text>`;
+			});
+
+			svg.innerHTML = contenuto;
+		}
+
+		function disegnaTutto(tassi) {
+			const serie = tassi.serie || {};
+
+			const curva = document.querySelector('[data-grafico="curva"] svg');
+			if (curva) {
+				disegnaCurva(curva, [
+					{ nome: '1m', valore: coda(serie.euribor1m) },
+					{ nome: '3m', valore: coda(serie.euribor3m) },
+					{ nome: '6m', valore: coda(serie.euribor6m) },
+					{ nome: '12m', valore: coda(serie.euribor12m) },
+				]);
+			}
+
+			const storia = document.querySelector('[data-grafico="storia"] svg');
+			if (storia && serie.bce) {
+				const gruppi = [{ dati: serie.bce.slice(-520), colore: COLORE_ACCENTO, spessore: 2 }];
+				if (serie.ester) {
+					gruppi.push({
+						dati: serie.ester.slice(-260),
+						colore: 'currentColor',
+						spessore: 1.2,
+						opacita: 0.45,
+					});
+				}
+				disegnaLinee(storia, gruppi);
+			}
+		}
+
+		const coda = (s) => (s && s.length ? s[s.length - 1].v : undefined);
+
+		let attuali;
+		try {
+			attuali = JSON.parse(inizialiJSON);
+		} catch {
+			attuali = { serie: {} };
+		}
+		disegnaTutto(attuali);
+
+		// Online i numeri li rinfresca la funzione; in sviluppo non esiste e
+		// va bene così, restano quelli presi alla compilazione.
+		fetch('/api/tassi')
+			.then((r) => (r.ok ? r.json() : null))
+			.then((freschi) => {
+				if (freschi && freschi.serie) disegnaTutto(freschi);
+			})
+			.catch(() => {});
+	})();
+</script>
+
+<style>
+	.blocco-tassi {
+		margin-block: 3rem;
+	}
+
+	.blocco-tassi h2 {
+		margin-bottom: 0.5rem;
+	}
+
+	.blocco-tassi__intro {
+		max-width: 62ch;
+		opacity: 0.85;
+	}
+
+	.griglia-tassi {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.cifra {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		padding: 1.2rem 1.3rem;
+		border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+		border-radius: 4px;
+	}
+
+	.cifra__valore {
+		font-size: 2.1rem;
+		font-weight: 600;
+		line-height: 1.1;
+		color: var(--accento);
+	}
+
+	.cifra__nome {
+		font-weight: 600;
+	}
+
+	.cifra__nota {
+		font-size: 0.88rem;
+		opacity: 0.72;
+	}
+
+	.tabella-avvolgente {
+		overflow-x: auto;
+		margin-top: 1.5rem;
+	}
+
+	.tabella-tassi {
+		width: 100%;
+		border-collapse: collapse;
+		min-width: 380px;
+	}
+
+	.tabella-tassi th,
+	.tabella-tassi td {
+		text-align: left;
+		padding: 0.6rem 0.8rem;
+		border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+	}
+
+	.tabella-tassi th {
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		opacity: 0.7;
+	}
+
+	.tabella-tassi .numero {
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* Senza un tetto alla larghezza il disegno si gonfia con lo schermo:
+	   il rapporto del viewBox lo farebbe alto mezzo metro su un monitor
+	   grande, con le etichette ingigantite insieme a lui. */
+	.grafico {
+		margin-top: 1.8rem;
+		max-width: 620px;
+		color: var(--testo, currentColor);
+	}
+
+	.grafico svg {
+		width: 100%;
+		height: auto;
+		overflow: visible;
+	}
+
+	.legenda {
+		display: flex;
+		gap: 1.5rem;
+		font-size: 0.88rem;
+		margin-top: 0.6rem;
+	}
+
+	.legenda__voce::before {
+		content: '';
+		display: inline-block;
+		width: 18px;
+		height: 2px;
+		vertical-align: middle;
+		margin-right: 0.45rem;
+	}
+
+	.legenda__voce--accento::before {
+		background: var(--accento);
+	}
+
+	.legenda__voce--tenue::before {
+		background: currentColor;
+		opacity: 0.45;
+	}
+
+	.nota-fonti p {
+		max-width: 68ch;
+	}
+
+	.avviso-tassi {
+		padding: 1.2rem;
+		border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+		border-radius: 4px;
+	}
+</style>
