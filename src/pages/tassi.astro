@@ -22,6 +22,17 @@ const ester = ultimo(serie.ester);
 const bce = ultimo(serie.bce);
 const decennale = ultimo(serie.decennale);
 
+/**
+ * Una decisione presa ma non ancora in vigore.
+ *
+ * La BCE annuncia di giovedì e applica il mercoledì successivo. In quei
+ * giorni il dato ufficiale è ancora quello vecchio mentre i giornali
+ * titolano il nuovo, e la pagina sembrerebbe ferma. Questo avviso copre
+ * la finestra e si toglie da solo appena il portale pubblica il valore
+ * nuovo: se resta qui dimenticato non fa danno, smette di comparire.
+ */
+const DECISO = { valore: 2.5, dal: '16 settembre 2026', quando: '10 settembre' };
+
 const SCADENZE = [
 	{ nome: '1 mese', chiave: 'euribor1m' as const },
 	{ nome: '3 mesi', chiave: 'euribor3m' as const },
@@ -87,6 +98,12 @@ function meseEsteso(periodo?: string): string {
 								<span class="cifra__nota">
 									È il tasso che decide il Consiglio direttivo. Al {meseEsteso(bce?.d)}.
 								</span>
+								{bce !== undefined && bce.v < DECISO.valore && (
+									<span class="cifra__deciso" data-deciso={DECISO.valore}>
+										Il {DECISO.quando} è stato deciso il rialzo al{' '}
+										{percentuale(DECISO.valore)}, in vigore dal {DECISO.dal}.
+									</span>
+								)}
 							</div>
 							<div class="cifra">
 								<span class="cifra__valore">{percentuale(ester?.v, 3)}</span>
@@ -314,7 +331,17 @@ function meseEsteso(periodo?: string): string {
 		fetch('/api/tassi')
 			.then((r) => (r.ok ? r.json() : null))
 			.then((freschi) => {
-				if (freschi && freschi.serie) disegnaTutto(freschi);
+				if (!freschi || !freschi.serie) return;
+				disegnaTutto(freschi);
+
+				// L'avviso sulla decisione non ancora in vigore sparisce nel
+				// momento in cui il dato ufficiale la recepisce, senza che
+				// nessuno debba ricordarsi di toglierlo.
+				const avviso = document.querySelector('[data-deciso]');
+				const vigente = coda(freschi.serie.bce);
+				if (avviso && vigente !== undefined && vigente >= Number(avviso.dataset.deciso)) {
+					avviso.remove();
+				}
 			})
 			.catch(() => {});
 	})();
@@ -364,6 +391,14 @@ function meseEsteso(periodo?: string): string {
 	.cifra__nota {
 		font-size: 0.88rem;
 		opacity: 0.72;
+	}
+
+	.cifra__deciso {
+		font-size: 0.88rem;
+		margin-top: 0.4rem;
+		padding-top: 0.5rem;
+		border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+		color: var(--accento);
 	}
 
 	.tabella-avvolgente {

@@ -3,6 +3,7 @@ titolo: "L'inflazione di oggi è energia. I tassi non fanno energia"
 titoloSeo: "Tassi BCE e inflazione da energia"
 descrizione: "Giovedì la BCE dovrebbe alzare i tassi. L'inflazione di agosto è al 3,3%, ma l'energia corre al 14,3% e i servizi rallentano. Cosa può e cosa non può il costo del denaro."
 dataPubblicazione: 2026-09-08
+dataAggiornamento: 2026-09-10
 categoria: Economia
 tag:
   - BCE
@@ -13,11 +14,11 @@ illustrazione: bilancia
 bozza: false
 ---
 
-Giovedì 10 settembre il Consiglio direttivo della BCE si riunisce, e [tutti i 65 economisti interpellati da Reuters](https://www.soldionline.it/notizie/macroeconomia/tassi-bce-previsioni-riunione-settembre-2026-ing) si aspettano la stessa cosa: tasso sui depositi dal 2,25% al 2,50%.
+Il 10 settembre 2026 il Consiglio direttivo della BCE ha alzato i tassi di 25 punti base. Il tasso sui depositi passa dal 2,25% al **2,50%**, quello sulle operazioni di rifinanziamento principali al 2,65%, quello marginale al 2,90%: [con effetto dal 16 settembre](https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260910~314e508016.it.html). Era esattamente ciò che si aspettavano tutti i 65 economisti interpellati da Reuters.
 
-Non sarebbe il primo rialzo. Il primo è già stato il **17 giugno 2026**, quando il tasso è risalito dal 2,00% al 2,25% — la fine di un ciclo di tagli che durava dal giugno 2024, quando si partiva dal 3,75%. La direzione è cambiata tre mesi fa; giovedì è la conferma.
+Non è il primo rialzo. Il primo è stato il **17 giugno 2026**, quando il tasso è risalito dal 2,00% al 2,25% — la fine di un ciclo di tagli che durava dal giugno 2024, quando si partiva dal 3,75%. La direzione è cambiata a giugno; settembre è la conferma.
 
-Prima di chiedersi quanto saliranno, però, conviene guardare **contro cosa** stanno salendo. Perché è lì che il ragionamento si fa interessante, e non è dove lo mette il dibattito.
+Prima di chiedersi quanto saliranno ancora, però, conviene guardare **contro cosa** stanno salendo. Perché è lì che il ragionamento si fa interessante, e non è dove lo mette il dibattito.
 
 ## Di cosa è fatta l'inflazione di agosto
 
@@ -91,12 +92,31 @@ Tradotto: se hai un mutuo variabile, buona parte dell'aumento **l'hai già preso
 
 Ecco perché su questo sito ora c'è [una pagina con i tassi aggiornati](/tassi): non per fare finanza, ma perché **il numero che decide la tua rata è pubblico**, e non è quello di cui parlano i titoli.
 
+## La BCE si aspetta il secondo giro, e lo ha messo per iscritto
+
+Insieme alla decisione del 10 settembre sono uscite le nuove proiezioni degli esperti della BCE, e contengono la risposta più interessante di tutta la vicenda. Sono due righe, e vanno lette insieme.
+
+| | 2026 | 2027 | 2028 |
+|---|---|---|---|
+| Inflazione complessiva | 3,0% | 2,5% | 2,1% |
+| Inflazione **di fondo** | 2,5% | **2,6%** | 2,3% |
+
+La prima riga scende, ed è la riga dell'energia che si sgonfia. La seconda **sale**: l'inflazione di fondo — quella che toglie energia e alimentari freschi, cioè quella che misura se il rincaro ha attecchito nel resto dei prezzi — è data in aumento dal 2,5% al 2,6% nel 2027.
+
+Detto altrimenti: **la BCE mette nel proprio scenario di base il contagio che dice di voler prevenire.** Non lo teme soltanto, lo prevede. È l'argomento più solido a favore del rialzo, molto più solido dei dati di agosto, e ha il pregio di essere scritto nero su bianco invece che affidato a una dichiarazione.
+
+Resta il punto da cui siamo partiti, che non cambia: se anche il secondo giro arrivasse, il rincaro dell'energia che lo ha innescato non lo ferma nessun tasso. Il rialzo agisce sul contagio, non sul contagiato.
+
 ## Che cosa guardare da qui in avanti
 
-Non «di quanto alzano». Quello lo sapremo giovedì e conta poco.
+Non «di quanto hanno alzato». Quello è già successo e conta poco.
 
-Guarda **la componente servizi** dell'inflazione, mese per mese. Finché scende, l'energia sta rincarando senza contagiare il resto, e il rialzo dei tassi è un'assicurazione contro un rischio che non si sta avverando. Se comincia a salire, allora il secondo giro è partito davvero e la BCE avrà avuto ragione a muoversi prima.
+Guarda **la componente servizi** dell'inflazione, mese per mese, e confrontala con quella proiezione del 2,6%. Se i servizi continuano a rallentare come ad agosto, la BCE avrà stretto contro un contagio che non è arrivato. Se risalgono, la proiezione era giusta e il rialzo pure. È una previsione verificabile con una data e un numero: raro, e vale la pena tenerla d'occhio.
 
 E guarda **la distanza fra l'Euribor a 12 mesi e il tasso BCE**. Finché è larga, il mercato si aspetta altri rialzi. Il giorno in cui si stringe, la fine del ciclo è vicina — e lo saprai da lì, non da un comunicato.
 
-Sono due numeri, pubblicati da istituzioni pubbliche, che chiunque può controllare. Valgono più di qualunque previsione, compresa quella di chi scrive.
+Sono numeri pubblicati da istituzioni pubbliche, che chiunque può controllare. Valgono più di qualunque previsione, compresa quella di chi scrive.
+
+---
+
+*Aggiornamento del 10 settembre 2026: l'articolo era uscito due giorni prima della riunione e ne descriveva l'attesa. Ora riporta la decisione presa — rialzo di 25 punti base con effetto dal 16 settembre — e le proiezioni pubblicate insieme a essa, che sono la parte più informativa. L'analisi non è cambiata.*
