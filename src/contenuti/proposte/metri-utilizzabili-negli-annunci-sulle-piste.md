@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "gino-lisa-grottaglie-perche-non-volano"
-dataPubblicazione: 2026-08-31
-bozza: true
+dataPubblicazione: 2026-09-11
+bozza: false
 ---
 
 Sull'allungamento della pista del Gino Lisa il numero ripetuto in ogni annuncio è stato duemila metri. La pista realizzata ne misura **1.735**, e la corsa disponibile al decollo è la stessa cifra.

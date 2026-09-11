@@ -2,7 +2,7 @@
 titolo: "Annunciati duemila metri di pista. Ne sono stati fatti 1.735"
 titoloSeo: "Gli aeroporti pugliesi che non volano"
 descrizione: "A Foggia la pista annunciata era di duemila metri, quella pubblicata in AIP ne misura 1.735. A Grottaglie il terminal è pronto e chiuso. Nessuno ha deciso."
-dataPubblicazione: 2026-08-31
+dataPubblicazione: 2026-09-11
 categoria: Istituzioni
 tag:
   - aeroporti
@@ -10,7 +10,7 @@ tag:
   - infrastrutture
   - Piano nazionale aeroporti
 illustrazione: pista
-bozza: true
+bozza: false
 ---
 
 Nel 2025 gli aeroporti pugliesi hanno superato per la prima volta gli **11,5 milioni di passeggeri**. Quasi tutti sono passati da due scali: Bari ne ha fatti 7.977.881, Brindisi 3.444.438.
@@ -121,6 +121,16 @@ Nel frattempo:
 - il terminal di Grottaglie è stato ristrutturato ed è chiuso, in attesa di politiche nazionali che il Piano stesso dà per non ancora definite.
 
 Le opere si sono fatte. La decisione no. E quando manca la decisione, l'opera non è un punto d'arrivo: è **un oggetto in attesa di sapere a cosa serve**, che intanto costa manutenzione.
+
+## Tre cose che si potrebbero fare
+
+Nessuna delle tre risponde alla domanda «questi aeroporti devono esistere», che è una scelta politica. Tutte e tre riguardano il fatto che, qualunque sia la risposta, oggi **non c'è nessuno tenuto a darla**.
+
+**1.** [Ogni ruolo assegnato a un aeroporto porti una data di verifica](/proposte/ruoli-aeroportuali-con-data-di-verifica). Un ruolo che nessuna scadenza obbliga a rivedere non viene mai messo alla prova: alla scadenza qualcuno deve firmare se le condizioni si sono verificate o no.
+
+**2.** [Negli annunci sulle piste si scrivano i metri utilizzabili](/proposte/metri-utilizzabili-negli-annunci-sulle-piste), non solo quelli di progetto. Costa zero e sposta la verifica dal dopo al prima.
+
+**3.** [Oneri di servizio pubblico dove il mercato non ci arriva](/proposte/oneri-di-servizio-pubblico-dove-il-mercato-non-arriva) — con un limite serio, dichiarato apertamente: a Foggia non risolve il vincolo fisico, e a Grottaglie richiede prima quella decisione che nessuno è obbligato a prendere.
 
 ## L'ultima notizia, e perché non cambia niente
 

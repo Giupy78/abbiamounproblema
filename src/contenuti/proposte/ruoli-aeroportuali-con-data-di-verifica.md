@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "gino-lisa-grottaglie-perche-non-volano"
-dataPubblicazione: 2026-08-31
-bozza: true
+dataPubblicazione: 2026-09-11
+bozza: false
 ---
 
 Il Piano nazionale degli aeroporti 2026-2035 assegna a Taranto-Grottaglie una funzione cargo e di primo spazioporto italiano. Sui voli suborbitali precisa che lo sviluppo potrà avvenire «previa definizione delle politiche nazionali in materia».

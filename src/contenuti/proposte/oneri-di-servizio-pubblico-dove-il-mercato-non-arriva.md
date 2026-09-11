@@ -8,8 +8,8 @@ stato: "Già applicata altrove"
 difficolta: "Alta"
 origine: "Analisi della redazione"
 articoloCollegato: "gino-lisa-grottaglie-perche-non-volano"
-dataPubblicazione: 2026-08-31
-bozza: true
+dataPubblicazione: 2026-09-11
+bozza: false
 ---
 
 Quando una rotta serve a un territorio ma non sta in piedi da sola, il diritto europeo prevede uno strumento preciso: gli **oneri di servizio pubblico**, disciplinati dal regolamento (CE) 1008/2008. L'amministrazione definisce frequenze, orari e tariffe massime, mette a gara la rotta e compensa il vettore che la opera.
