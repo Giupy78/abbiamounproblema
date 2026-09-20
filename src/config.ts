@@ -189,3 +189,15 @@ export const SLUG_RISERVATI = [
 	'rss.xml',
 	'sitemap-index.xml',
 ] as const;
+
+/** Trasforma "Società" in "societa", per usarlo negli indirizzi delle pagine. */
+export function categoriaInUrl(categoria: string): string {
+	return categoria
+		.toLowerCase()
+		.normalize('NFD')
+		// Toglie gli accenti: dopo normalize() sono caratteri separati
+		// nell'intervallo Unicode U+0300–U+036F.
+		.replace(/[̀-ͯ]/g, '')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+}

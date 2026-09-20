@@ -1,5 +1,12 @@
 import { getCollection } from 'astro:content';
 
+/*
+ * `categoriaInUrl` vive in config.ts perche' serve anche ad astro.config.mjs,
+ * che gira prima che `astro:content` esista. Qui la ri-esportiamo: i file che
+ * la importavano da questo modulo continuano a funzionare.
+ */
+export { categoriaInUrl } from '../config';
+
 /**
  * Restituisce gli articoli pubblicabili, dal più recente al più vecchio.
  *
@@ -85,14 +92,3 @@ export function minutiLettura(testo: string): number {
 	return Math.max(1, Math.round(parole / 200));
 }
 
-/** Trasforma "Società" in "societa", per usarlo negli indirizzi delle pagine. */
-export function categoriaInUrl(categoria: string): string {
-	return categoria
-		.toLowerCase()
-		.normalize('NFD')
-		// Toglie gli accenti: dopo normalize() sono caratteri separati
-		// nell'intervallo Unicode U+0300–U+036F.
-		.replace(/[̀-ͯ]/g, '')
-		.replace(/[^a-z0-9]+/g, '-')
-		.replace(/^-+|-+$/g, '');
-}

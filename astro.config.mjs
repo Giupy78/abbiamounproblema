@@ -2,6 +2,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import { mappaLastmod } from './src/utils/lastmod';
+
+// Letta una volta sola all'avvio, non per ognuno dei 75 URL della sitemap.
+const LASTMOD = mappaLastmod();
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,6 +30,11 @@ export default defineConfig({
 		sitemap({
 			// Fuori dalla sitemap: la 404 e le anteprime delle bozze.
 			filter: (page) => !page.includes('/404') && !page.includes('/anteprima/'),
+			// La data vera di ogni pagina: vedi src/utils/lastmod.ts
+			serialize(voce) {
+				const quando = LASTMOD.get(new URL(voce.url).pathname);
+				return quando ? { ...voce, lastmod: quando } : voce;
+			},
 		}),
 	],
 
