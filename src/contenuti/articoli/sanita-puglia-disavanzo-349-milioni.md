@@ -2,7 +2,7 @@
 titolo: "Il disavanzo della sanità pugliese e i 253 milioni pagati altrove"
 titoloSeo: "Sanità in Puglia: il disavanzo"
 descrizione: "Nel 2025 la sanità pugliese ha perso 349 milioni. La Regione paga 253 milioni per chi si cura altrove, eppure i servizi misurati sono sopra la soglia."
-dataPubblicazione: 2026-09-13
+dataPubblicazione: 2026-09-20
 categoria: Società
 tag:
   - sanità
@@ -10,7 +10,7 @@ tag:
   - mobilità sanitaria
   - addizionale Irpef
 illustrazione: imbuto
-bozza: true
+bozza: false
 ---
 
 A giugno del 2026 chi vive in Puglia e guadagna più di 15.000 euro l'anno ha scoperto di dover pagare più addizionale regionale Irpef. Il motivo è scritto nel decreto che l'ha stabilita: coprire il disavanzo del servizio sanitario regionale del 2025.

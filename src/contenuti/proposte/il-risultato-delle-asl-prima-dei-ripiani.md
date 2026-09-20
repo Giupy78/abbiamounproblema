@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "sanita-puglia-disavanzo-349-milioni"
-dataPubblicazione: 2026-09-13
-bozza: true
+dataPubblicazione: 2026-09-20
+bozza: false
 ---
 
 Nel giudizio di parificazione del rendiconto 2025, la Corte dei conti ha scritto che la perdita della sanità pugliese — **349,10 milioni**, contro gli 84,38 del 2024 — dipende anche dalla **mancata erogazione di contributi in conto esercizio**, perché la Regione non ha disposto alcun trasferimento in corso d'anno. Il risultato 2025, aggiunge la Corte, **«riflette integralmente l'andamento della gestione, in assenza di interventi finanziari straordinari»**.

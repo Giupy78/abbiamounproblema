@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "sanita-puglia-disavanzo-349-milioni"
-dataPubblicazione: 2026-09-13
-bozza: true
+dataPubblicazione: 2026-09-20
+bozza: false
 ---
 
 Secondo la Corte dei conti, nel 2025 la spesa farmaceutica della Puglia è cresciuta del **5,82%**, da 1.652 a 1.748 milioni di euro. La sua incidenza sul fondo sanitario è arrivata al **19,56%**, **ben oltre il limite massimo del 15,30%** fissato dalla normativa statale.

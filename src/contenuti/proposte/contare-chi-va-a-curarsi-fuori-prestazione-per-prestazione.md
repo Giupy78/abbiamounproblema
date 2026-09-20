@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "sanita-puglia-disavanzo-349-milioni"
-dataPubblicazione: 2026-09-13
-bozza: true
+dataPubblicazione: 2026-09-20
+bozza: false
 ---
 
 Quando un residente in Puglia si cura in un'altra regione, la prestazione la paga la Puglia. Il saldo fra chi arriva e chi parte è negativo per **253,2 milioni di euro**.
