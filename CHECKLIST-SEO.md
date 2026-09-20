@@ -66,15 +66,15 @@ Restano le cose che dipendono da come scrivi. Sono queste.
 - [ ] **Dice qualcosa che non trovi identico altrove.** È il fattore che pesa più di tutti gli altri messi insieme.
 - [ ] **Niente parole chiave ripetute a forza.** Google lo riconosce e penalizza dal 2011. Scrivi in italiano normale.
 - [ ] **Le fonti dei dati sono citate e verificabili.**
-- [ ] **La data di aggiornamento è compilata** se hai modificato un pezzo già pubblicato.
+- [ ] **La data di aggiornamento è compilata** se hai modificato un pezzo già pubblicato. Non è solo cosmetica: è il campo da cui esce il `lastmod` in sitemap, cioè quello che dice a Google di ripassare. Vedi `src/utils/lastmod.ts`.
 
 ---
 
 ## Dopo la pubblicazione, una volta sola
 
-- [ ] Registra il sito su **[Google Search Console](https://search.google.com/search-console)** e invia `https://abbiamounproblema.it/sitemap-index.xml`. È gratuito, e ti fa vedere per quali ricerche le persone ti trovano davvero.
-- [ ] Stessa cosa su **[Bing Webmaster Tools](https://www.bing.com/webmasters)** — Bing alimenta anche altri motori di ricerca.
-- [ ] Attiva **Cloudflare Web Analytics** dal pannello Cloudflare: statistiche senza cookie, che ti evitano metà del banner privacy.
+- [x] Registra il sito su **[Google Search Console](https://search.google.com/search-console)** e invia `https://abbiamounproblema.it/sitemap-index.xml`. È gratuito, e ti fa vedere per quali ricerche le persone ti trovano davvero.
+- [ ] Stessa cosa su **[Bing Webmaster Tools](https://www.bing.com/webmasters)** — Bing alimenta anche altri motori di ricerca. Le proprietà si importano da Search Console, non serve rifare la verifica.
+- [ ] Attiva **Cloudflare Web Analytics**: statistiche senza cookie, che ti evitano metà del banner privacy. Prendi il token dal pannello Cloudflare e impostalo come `PUBLIC_CF_BEACON_TOKEN` fra le variabili del progetto — vedi `src/components/Analitiche.astro`. Non attivare *anche* l'inserimento automatico dal pannello: conterebbe ogni visita due volte.
 - [ ] Controlla l'anteprima social incollando un link in una chat con te stesso su WhatsApp.
 
 ---
