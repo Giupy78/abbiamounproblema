@@ -13,7 +13,7 @@ tag:
   - rappresentanza
 illustrazione: scheda
 bozza: false
-inEvidenza: true
+inEvidenza: false
 ---
 
 C'è una frase che si sente a ogni tornata elettorale: **«tanto i parlamentari li scelgono i partiti, non noi».**

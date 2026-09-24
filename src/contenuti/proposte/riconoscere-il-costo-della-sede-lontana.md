@@ -7,9 +7,9 @@ ambito: "Scuola"
 stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
-articoloCollegato: "gps-precedenze-quando-il-punteggio-decide-per-ultimo"
+articoloCollegato: "graduatorie-gps-scuola-punteggio-legge-104-riserve"
 dataPubblicazione: 2026-09-24
-bozza: true
+bozza: false
 ---
 
 Ogni anno decine di migliaia di supplenze vengono coperte da docenti che accettano una sede lontana da casa. Lo fanno per ragioni diverse: perché vicino non c'era posto, perché la graduatoria li ha collocati lì, o perché le cattedre più vicine erano già assegnate.

@@ -7,9 +7,9 @@ ambito: "Scuola"
 stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
-articoloCollegato: "gps-precedenze-quando-il-punteggio-decide-per-ultimo"
+articoloCollegato: "graduatorie-gps-scuola-punteggio-legge-104-riserve"
 dataPubblicazione: 2026-09-24
-bozza: true
+bozza: false
 ---
 
 Sulle conferme dei docenti di sostegno il numero esiste e viene comunicato: **55.814** per il 2026/27, contro 46.294 l'anno prima.

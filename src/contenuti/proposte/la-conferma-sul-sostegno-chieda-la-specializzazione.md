@@ -7,9 +7,9 @@ ambito: "Scuola"
 stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
-articoloCollegato: "gps-precedenze-quando-il-punteggio-decide-per-ultimo"
+articoloCollegato: "graduatorie-gps-scuola-punteggio-legge-104-riserve"
 dataPubblicazione: 2026-09-24
-bozza: true
+bozza: false
 ---
 
 La conferma del docente di sostegno su richiesta della famiglia — decreto legge 71/2024, convertito nella legge 106/2024, attuata dal decreto ministeriale 32 del 26 febbraio 2025 — è nata per una ragione che nessuno mette in discussione: per un bambino con disabilità cambiare insegnante ogni settembre significa ricominciare da capo.
