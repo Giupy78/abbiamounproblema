@@ -11,6 +11,7 @@ tag:
   - graduatorie
 illustrazione: catena
 bozza: true
+inEvidenza: true
 ---
 
 Ogni agosto, quando escono le nomine dalle graduatorie provinciali per le supplenze, succede una cosa che chi insegna conosce bene: un docente con un punteggio alto resta senza la cattedra che si aspettava, o finisce in una scuola a sessanta chilometri da casa, mentre un altro con la metà dei suoi punti ottiene il posto sotto casa.
