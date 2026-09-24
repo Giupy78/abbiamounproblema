@@ -12,6 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "immagine-social": "node scripts/genera-immagine-social.mjs",
+    "immagine-profilo": "node scripts/immagine-profilo.mjs",
     "controlla": "astro check",
     "astro": "astro"
   },
