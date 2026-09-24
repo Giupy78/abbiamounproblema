@@ -182,6 +182,7 @@ export const SLUG_RISERVATI = [
 	'anteprima',
 	'meccanismi',
 	'tassi',
+	'social',
 	'chi-sono',
 	'contatti',
 	'privacy',

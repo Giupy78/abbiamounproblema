@@ -1,0 +1,219 @@
+---
+/**
+ * I testi pronti per i social.
+ *
+ * Serve a chi scrive il sito, non a chi lo legge: per questo la pagina è
+ * esclusa dai motori di ricerca e non sta nel menu. Ci si arriva solo
+ * digitando l'indirizzo.
+ *
+ * Il motivo per cui esiste: su Facebook e Instagram non è possibile che
+ * un sito prepari il testo del post: le regole delle piattaforme lo
+ * vietano. Quindi il testo va scritto e incollato a mano, e l'unica
+ * automazione utile è averlo già pronto nel punto giusto.
+ *
+ * Il testo di ogni articolo si scrive nel pannello, nel campo "Testo per
+ * i social". Se è vuoto, qui ne compare uno costruito con titolo e
+ * descrizione: funziona, ma è sempre meglio scriverne uno che parta dal
+ * numero più forte del pezzo.
+ */
+import Base from '../layouts/Base.astro';
+import { articoliPubblicati, dataEstesa } from '../utils/articoli';
+
+const articoli = await articoliPubblicati();
+const radice = (Astro.site?.href ?? 'https://abbiamounproblema.it/').replace(/\/$/, '');
+
+const posti = articoli.map((articolo: any) => {
+	const url = `${radice}/${articolo.id}`;
+	const scritto: string | undefined = articolo.data.social;
+
+	return {
+		id: articolo.id,
+		titolo: articolo.data.titolo,
+		data: articolo.data.dataPubblicazione,
+		url,
+		suMisura: Boolean(scritto && scritto.trim()),
+		testo: scritto?.trim() || `${articolo.data.titolo}\n\n${articolo.data.descrizione}\n\n${url}`,
+	};
+});
+
+const suMisura = posti.filter((p) => p.suMisura).length;
+---
+
+<Base
+	titolo="Testi pronti per i social"
+	descrizione="Pagina di servizio: per ogni articolo pubblicato, il testo già scritto da copiare e incollare sui social."
+	noindex
+>
+	<div class="contenitore">
+		<div class="testata-pagina">
+			<h1>Testi pronti per i social</h1>
+			<p class="testata-pagina__sommario">
+				Pagina di servizio, esclusa dai motori di ricerca. Per ogni articolo trovi il
+				testo da copiare e incollare. Su Facebook e Instagram il testo non può essere
+				preparato dal sito — lo vietano le piattaforme — quindi si incolla a mano.
+			</p>
+			<p class="conteggio">
+				{suMisura} di {posti.length} articoli hanno un testo scritto apposta. Per gli
+				altri ne trovi uno costruito con titolo e descrizione: si può usare, ma
+				scriverne uno che parta dal numero più forte funziona molto meglio. Si cambia
+				dal pannello, nel campo <strong>Testo per i social</strong>.
+			</p>
+		</div>
+
+		<ul class="elenco-post">
+			{
+				posti.map((p) => (
+					<li class="post">
+						<div class="post__intestazione">
+							<h2 class="post__titolo">
+								<a href={`/${p.id}`}>{p.titolo}</a>
+							</h2>
+							<span class="post__data">
+								{dataEstesa(p.data)}
+								{!p.suMisura && <span class="post__avviso">testo automatico</span>}
+							</span>
+						</div>
+
+						<pre class="post__testo">{p.testo}</pre>
+
+						<div class="post__azioni">
+							<button class="azione" type="button" data-testo={p.testo}>
+								Copia il testo
+							</button>
+							<a
+								class="azione"
+								href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(p.url)}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Apri Facebook
+							</a>
+							<a
+								class="azione"
+								href={`https://wa.me/?text=${encodeURIComponent(p.testo)}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								WhatsApp
+							</a>
+							<a
+								class="azione"
+								href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(p.testo)}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								X
+							</a>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</Base>
+
+<script>
+	document.querySelectorAll('[data-testo]').forEach((pulsante) => {
+		pulsante.addEventListener('click', async () => {
+			const testo = pulsante.getAttribute('data-testo');
+			if (!testo) return;
+
+			const iniziale = pulsante.textContent;
+			try {
+				await navigator.clipboard.writeText(testo);
+				pulsante.textContent = 'Copiato';
+			} catch {
+				pulsante.textContent = 'Copia non riuscita';
+			}
+			setTimeout(() => {
+				pulsante.textContent = iniziale;
+			}, 1800);
+		});
+	});
+</script>
+
+<style>
+	.conteggio {
+		max-width: 62ch;
+		font-size: 0.92rem;
+		opacity: 0.8;
+	}
+
+	.elenco-post {
+		list-style: none;
+		margin: 2.5rem 0 4rem;
+		padding: 0;
+		display: grid;
+		gap: 2rem;
+	}
+
+	.post {
+		border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+		border-radius: 4px;
+		padding: 1.3rem 1.4rem;
+	}
+
+	.post__intestazione {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 1rem;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	.post__titolo {
+		font-size: 1.05rem;
+		margin: 0;
+	}
+
+	.post__data {
+		font-size: 0.85rem;
+		opacity: 0.65;
+		white-space: nowrap;
+	}
+
+	.post__avviso {
+		margin-left: 0.5rem;
+		padding: 0.1rem 0.5rem;
+		border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+		border-radius: 999px;
+		font-size: 0.78rem;
+	}
+
+	.post__testo {
+		margin: 1rem 0 0;
+		padding: 0.9rem 1rem;
+		background: color-mix(in srgb, currentColor 5%, transparent);
+		border-radius: 3px;
+		font-family: inherit;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		white-space: pre-wrap;
+		overflow-wrap: anywhere;
+	}
+
+	.post__azioni {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 0.9rem;
+	}
+
+	.azione {
+		display: inline-block;
+		padding: 0.4rem 0.85rem;
+		border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+		border-radius: 999px;
+		font-size: 0.88rem;
+		font-family: inherit;
+		color: inherit;
+		background: none;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.azione:hover {
+		border-color: var(--accento);
+		color: var(--accento);
+	}
+</style>

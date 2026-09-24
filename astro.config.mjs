@@ -28,8 +28,13 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		sitemap({
-			// Fuori dalla sitemap: la 404 e le anteprime delle bozze.
-			filter: (page) => !page.includes('/404') && !page.includes('/anteprima/'),
+			// Fuori dalla sitemap: la 404, le anteprime delle bozze e /social,
+			// che è una pagina di servizio per chi scrive e non per chi legge
+			// (è anche marcata noindex: lasciarla qui sarebbe contraddirsi).
+			filter: (page) =>
+				!page.includes('/404') &&
+				!page.includes('/anteprima/') &&
+				!page.endsWith('/social'),
 			// La data vera di ogni pagina: vedi src/utils/lastmod.ts
 			serialize(voce) {
 				const quando = LASTMOD.get(new URL(voce.url).pathname);

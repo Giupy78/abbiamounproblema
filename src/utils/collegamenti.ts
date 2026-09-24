@@ -28,6 +28,7 @@ const PAGINE_FISSE = new Set([
 	'/contatti',
 	'/privacy',
 	'/tassi',
+	'/social',
 ]);
 
 export async function verificaCollegamenti() {

@@ -281,6 +281,16 @@ collections:
         widget: boolean
         default: true
 
+      - name: social
+        label: 'Testo per i social'
+        hint: >-
+          Il post gia pronto da incollare su Facebook o Instagram, che ritrovi
+          nella pagina /social. Comincia dal numero piu forte dell articolo, non
+          dal titolo. Se lo lasci vuoto viene usato titolo piu descrizione, che
+          funziona ma rende molto meno.
+        widget: text
+        required: false
+
       - name: inEvidenza
         label: 'Tienilo in apertura anche quando non e il piu recente'
         hint: >-

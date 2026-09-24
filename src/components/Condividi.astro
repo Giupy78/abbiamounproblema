@@ -1,0 +1,127 @@
+---
+/**
+ * I pulsanti per condividere un articolo.
+ *
+ * Sono link normali, non i widget ufficiali dei social. I widget portano
+ * dentro il sito gli script di Meta e degli altri, che riconoscono chi
+ * legge anche se non clicca niente: con questi no, e la pagina privacy
+ * può continuare a dire che il sito non traccia nessuno.
+ *
+ * Una cosa da sapere, perché sembra un difetto e non lo è: Facebook
+ * accetta soltanto l'indirizzo. Il parametro per scrivere in anticipo il
+ * testo del post esisteva ed è stato tolto da Meta, che vieta ai siti di
+ * preparare il testo al posto di chi pubblica. Su Facebook il testo va
+ * scritto nella finestra che si apre — e per questo esiste la pagina
+ * /social, dove il testo è già pronto da copiare.
+ */
+interface Props {
+	titolo: string;
+	percorso: string;
+}
+
+const { titolo, percorso } = Astro.props;
+
+const url = new URL(percorso, Astro.site ?? 'https://abbiamounproblema.it').href;
+const testo = `${titolo} — ${url}`;
+
+const canali = [
+	{ nome: 'WhatsApp', href: `https://wa.me/?text=${encodeURIComponent(testo)}` },
+	{
+		nome: 'Facebook',
+		href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+	},
+	{
+		nome: 'Telegram',
+		href: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(titolo)}`,
+	},
+	{
+		nome: 'X',
+		href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(titolo)}&url=${encodeURIComponent(url)}`,
+	},
+];
+---
+
+<section class="condividi">
+	<h2 class="condividi__titolo">Falla girare</h2>
+	<ul class="condividi__elenco">
+		{
+			canali.map((c) => (
+				<li>
+					<a class="condividi__voce" href={c.href} target="_blank" rel="noopener noreferrer">
+						{c.nome}
+					</a>
+				</li>
+			))
+		}
+		<li>
+			<button class="condividi__voce condividi__voce--copia" type="button" data-copia={url}>
+				Copia il link
+			</button>
+		</li>
+	</ul>
+</section>
+
+<script>
+	document.querySelectorAll('[data-copia]').forEach((pulsante) => {
+		pulsante.addEventListener('click', async () => {
+			const indirizzo = pulsante.getAttribute('data-copia');
+			if (!indirizzo) return;
+
+			const testoIniziale = pulsante.textContent;
+			try {
+				await navigator.clipboard.writeText(indirizzo);
+				pulsante.textContent = 'Copiato';
+			} catch {
+				// Senza permesso agli appunti non resta molto da fare: dirlo è
+				// meglio che lasciare il pulsante muto come se avesse funzionato.
+				pulsante.textContent = 'Copia non riuscita';
+			}
+			setTimeout(() => {
+				pulsante.textContent = testoIniziale;
+			}, 1800);
+		});
+	});
+</script>
+
+<style>
+	.condividi {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+	}
+
+	.condividi__titolo {
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		opacity: 0.6;
+		margin: 0 0 0.9rem;
+	}
+
+	.condividi__elenco {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.condividi__voce {
+		display: inline-block;
+		padding: 0.45rem 0.9rem;
+		border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+		border-radius: 999px;
+		font-size: 0.9rem;
+		font-family: inherit;
+		color: inherit;
+		background: none;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.condividi__voce:hover {
+		border-color: var(--accento);
+		color: var(--accento);
+	}
+</style>

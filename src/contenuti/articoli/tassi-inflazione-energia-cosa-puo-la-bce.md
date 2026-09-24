@@ -11,6 +11,13 @@ tag:
   - tassi di interesse
   - mutui
 illustrazione: bilancia
+social: |
+  L'inflazione dell'area euro è al 3,3%. Ma l'energia corre al 14,3% e i servizi stanno rallentando.
+
+  La BCE ha alzato i tassi. Il punto è che i tassi agiscono sulla domanda, mentre il rincaro dell'energia è uno shock di offerta: alzarli non produce un chilowattora in più.
+
+  Cosa può e cosa non può il costo del denaro:
+  https://abbiamounproblema.it/tassi-inflazione-energia-cosa-puo-la-bce
 bozza: false
 ---
 

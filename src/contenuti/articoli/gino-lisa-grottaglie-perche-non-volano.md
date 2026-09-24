@@ -10,6 +10,13 @@ tag:
   - infrastrutture
   - Piano nazionale aeroporti
 illustrazione: pista
+social: |
+  Per anni si è parlato dei duemila metri di pista del Gino Lisa. Era l'obiettivo scritto nel decreto che ha autorizzato l'opera.
+
+  La pista realizzata ne misura 1.735. Lo dice lo studio depositato al Ministero dal gestore stesso.
+
+  Sotto quella soglia un aereo di linea non decolla a pieno carico. Ecco perché le compagnie non arrivano:
+  https://abbiamounproblema.it/gino-lisa-grottaglie-perche-non-volano
 bozza: false
 ---
 

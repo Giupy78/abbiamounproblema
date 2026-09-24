@@ -81,6 +81,19 @@ const articoli = defineCollection({
 			/** Se true l'articolo è visibile solo in locale, non viene pubblicato. */
 			bozza: z.boolean().default(false),
 
+			/**
+			 * Il testo già pronto da incollare sui social, che si legge in /social.
+			 *
+			 * Serve perché Facebook e Instagram non permettono a un sito di
+			 * preparare il testo di un post: va scritto e incollato a mano. Se
+			 * resta vuoto, /social ne mostra uno costruito con titolo e
+			 * descrizione.
+			 */
+			social: z
+				.string()
+				.max(600, 'Testo social troppo lungo: oltre i 600 caratteri diventa illeggibile.')
+				.optional(),
+
 			/** Se true l'articolo viene messo in evidenza in cima alla homepage. */
 			inEvidenza: z.boolean().default(false),
 		})
