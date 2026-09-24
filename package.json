@@ -14,6 +14,7 @@
     "immagine-social": "node scripts/genera-immagine-social.mjs",
     "immagine-profilo": "node scripts/immagine-profilo.mjs",
     "favicon": "node scripts/favicon.mjs",
+    "facebook": "node scripts/pubblica-su-facebook.mjs",
     "controlla": "astro check",
     "astro": "astro"
   },

@@ -1,0 +1,40 @@
+name: Pubblica su Facebook
+
+# Quando un articolo passa da bozza a pubblicato, manda il post sulla pagina
+# Facebook con il testo per intero e il link in fondo.
+#
+# Gira solo se i due segreti esistono: finche non li imposti, questo file non
+# fa niente e non da errore. I segreti si creano in
+# Settings > Secrets and variables > Actions e si chiamano
+# FACEBOOK_PAGINA e FACEBOOK_TOKEN.
+#
+# I commit fatti dall automazione delle date non la riattivano.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/contenuti/articoli/**'
+
+jobs:
+  pubblica:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica il progetto con la storia
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepara Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Manda il post
+        if: ${{ secrets.FACEBOOK_TOKEN != '' && secrets.FACEBOOK_PAGINA != '' }}
+        env:
+          FACEBOOK_PAGINA: ${{ secrets.FACEBOOK_PAGINA }}
+          FACEBOOK_TOKEN: ${{ secrets.FACEBOOK_TOKEN }}
+        run: node scripts/pubblica-su-facebook.mjs ${{ github.event.before }} ${{ github.sha }} --invia
