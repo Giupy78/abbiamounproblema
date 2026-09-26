@@ -55,7 +55,10 @@ function disegno(variante) {
 	const giro = 2 * Math.PI * raggio;
 	const terzo = giro / 3;
 
-	const anello = [VERDE, CREMA, ROSSO]
+	// Rosso, crema, verde e non il contrario: gli archi partono dalle ore
+	// dodici e proseguono in senso orario, quindi il primo colore finisce a
+	// destra. Così chi guarda vede verde a sinistra e rosso a destra.
+	const anello = [ROSSO, CREMA, VERDE]
 		.map(
 			(colore, i) =>
 				`<circle cx="256" cy="256" r="${raggio}" fill="none" stroke="${colore}" stroke-width="${spessore}" stroke-dasharray="${terzo} ${giro - terzo}" stroke-dashoffset="${-terzo * i}" transform="rotate(-90 256 256)"/>`,

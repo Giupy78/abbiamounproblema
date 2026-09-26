@@ -49,8 +49,16 @@ const RAGGIO = 474;
 const GIRO = 2 * Math.PI * RAGGIO;
 const TERZO = GIRO / 3;
 
+/**
+ * L'ordine dei colori qui sotto è rosso, crema, verde, e sembra sbagliato.
+ * Non lo è: gli archi vengono disegnati in senso orario a partire dalle ore
+ * dodici, quindi il primo finisce a destra e l'ultimo a sinistra. Scritto
+ * così, chi guarda vede il verde a sinistra e il rosso a destra — cioè la
+ * bandiera nel verso giusto. Con i colori in ordine di bandiera il risultato
+ * era speculare.
+ */
 function anelloTricolore() {
-	return [VERDE, CREMA, ROSSO]
+	return [ROSSO, CREMA, VERDE]
 		.map(
 			(colore, i) =>
 				`<circle cx="512" cy="512" r="${RAGGIO}" fill="none" stroke="${colore}" stroke-width="36" stroke-dasharray="${TERZO} ${GIRO - TERZO}" stroke-dashoffset="${-TERZO * i}" transform="rotate(-90 512 512)"/>`,
