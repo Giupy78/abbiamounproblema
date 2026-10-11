@@ -244,15 +244,14 @@ function daPubblicare() {
  * Invio
  * ------------------------------------------------------------------ */
 
+/** Ci sono le credenziali per pubblicare? */
+function credenzialiPresenti() {
+	return Boolean(process.env.FACEBOOK_PAGINA && process.env.FACEBOOK_TOKEN);
+}
+
 async function mandaAFacebook(messaggio) {
 	const pagina = process.env.FACEBOOK_PAGINA;
 	const token = process.env.FACEBOOK_TOKEN;
-
-	if (!pagina || !token) {
-		throw new Error(
-			'Mancano FACEBOOK_PAGINA o FACEBOOK_TOKEN: senza quelli non posso pubblicare.',
-		);
-	}
 
 	const risposta = await fetch(`https://graph.facebook.com/${VERSIONE}/${pagina}/feed`, {
 		method: 'POST',
@@ -270,6 +269,14 @@ async function mandaAFacebook(messaggio) {
 }
 
 /* ------------------------------------------------------------------ */
+
+// Se mancano le credenziali non è un errore: è il caso normale finché i
+// segreti non vengono impostati. Dirlo e uscire bene evita che
+// l'automazione risulti rotta quando semplicemente non è ancora accesa.
+if (invia && !credenzialiPresenti()) {
+	console.log('FACEBOOK_PAGINA o FACEBOOK_TOKEN non impostati: nessun post inviato.');
+	process.exit(0);
+}
 
 const articoli = daPubblicare();
 
