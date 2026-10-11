@@ -21,6 +21,14 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
+    # I segreti vanno portati qui, in variabili d ambiente, prima di poterli
+    # usare: GitHub non consente di leggerli dentro una condizione "if", e
+    # provarci rende il file invalido - il workflow fallisce in zero secondi
+    # senza nemmeno partire, che e' esattamente quello che succedeva prima.
+    env:
+      FACEBOOK_PAGINA: ${{ secrets.FACEBOOK_PAGINA }}
+      FACEBOOK_TOKEN: ${{ secrets.FACEBOOK_TOKEN }}
+
     steps:
       - name: Scarica il progetto con la storia
         uses: actions/checkout@v4
@@ -33,8 +41,9 @@ jobs:
           node-version: '22'
 
       - name: Manda il post
-        if: ${{ secrets.FACEBOOK_TOKEN != '' && secrets.FACEBOOK_PAGINA != '' }}
-        env:
-          FACEBOOK_PAGINA: ${{ secrets.FACEBOOK_PAGINA }}
-          FACEBOOK_TOKEN: ${{ secrets.FACEBOOK_TOKEN }}
+        if: env.FACEBOOK_TOKEN != '' && env.FACEBOOK_PAGINA != ''
         run: node scripts/pubblica-su-facebook.mjs ${{ github.event.before }} ${{ github.sha }} --invia
+
+      - name: Avvisa che i segreti non ci sono
+        if: env.FACEBOOK_TOKEN == '' || env.FACEBOOK_PAGINA == ''
+        run: echo "FACEBOOK_PAGINA o FACEBOOK_TOKEN non impostati: nessun post inviato."
