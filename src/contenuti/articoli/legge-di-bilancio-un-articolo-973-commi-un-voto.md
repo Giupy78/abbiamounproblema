@@ -2,7 +2,7 @@
 titolo: "La legge di bilancio è un articolo solo, con 973 commi"
 titoloSeo: "La manovra in un voto solo"
 descrizione: "La manovra 2026 è un articolo con 973 commi, approvato con un voto di fiducia. Non è un'invenzione di questo governo: è la regola da trent'anni."
-dataPubblicazione: 2026-10-03
+dataPubblicazione: 2026-10-15
 categoria: Istituzioni
 tag:
   - legge di bilancio
@@ -10,10 +10,12 @@ tag:
   - questione di fiducia
   - procedure
 illustrazione: pila
-bozza: true
+bozza: false
 ---
 
-In queste settimane di ottobre si sta scrivendo la legge di bilancio. A dicembre verrà approvata, e succederà quello che succede ogni anno: il Parlamento voterà **una volta sola**, su **un testo solo**, che nessuno avrà letto per intero.
+Il disegno di legge di bilancio va presentato alle Camere entro il **20 ottobre**: lo stabilisce la legge di contabilità pubblica. Quest'anno non succederà. Il 13 ottobre il Consiglio dei ministri ha approvato il Documento programmatico di bilancio, ma non la manovra, e il ministro dell'Economia ha detto in Parlamento che il testo arriverà con «diverse settimane di ritardo».
+
+A dicembre, comunque, la legge di bilancio verrà approvata. E succederà quello che succede ogni anno: il Parlamento voterà **una volta sola**, su **un testo solo**, che nessuno avrà letto per intero.
 
 Non è un'esagerazione polemica. È la descrizione della procedura, e i numeri la rendono difficile da discutere.
 
@@ -64,11 +66,23 @@ L'altra metà del problema sono i giorni.
 
 La sessione di bilancio deve chiudersi entro il 31 dicembre, altrimenti scatta l'esercizio provvisorio. Se il testo arriva in ritardo alla prima camera, quella che lo riceve per seconda si trova con pochi giorni — talvolta poche ore — per esaminare un testo che nel frattempo è cambiato.
 
-Nell'ultima sessione l'esame nelle commissioni bilancio è durato complessivamente **45 ore** fra Senato e Camera. Per 973 commi.
+Quanto può diventare stretto quel tempo lo mostra un caso documentato. Per la manovra approvata a fine 2018, il testo è rimasto all'esame delle due commissioni bilancio [per circa **45 ore** in tutto](https://www.ilsole24ore.com/art/manovra-tempi-compressi-dell-esame-commissione-45-ore-senato-e-camera--AErnpE6G): circa ventotto al Senato, meno di diciassette alla Camera. Per l'intera legge di bilancio dello Stato.
 
 Il Comitato per la legislazione della Camera ha un nome per questa situazione: **monocameralismo di fatto**. Formalmente le camere sono due e devono approvare lo stesso testo; nella pratica la seconda ratifica quello che ha deciso la prima, perché modificarlo significherebbe rimandare tutto indietro e sforare la scadenza.
 
 Il Presidente della Repubblica Mattarella lo ha detto con parole misurate ma nette: **«la compressione dei tempi parlamentari rappresenta un rischio non meno grave delle ingiustificate dilatazioni dei tempi»**.
+
+## Quest'anno, in diretta
+
+Quello che sta succedendo in queste settimane è il meccanismo che si vede mentre accade, e vale la pena raccontarlo con equilibrio, perché il ritardo di quest'anno ha una ragione.
+
+Il governo ha chiesto all'Unione europea di poter usare una clausola che consente più spesa in deficit, vincolata a energia e difesa. Finché quella richiesta non è approvata, non si sa quante risorse ci saranno, e quindi non si può scrivere la manovra. La risposta [non è attesa prima dell'inizio di novembre](https://www.ilpost.it/2026/10/14/documento-programmatico-di-bilancio-legge-di-bilancio-2027-scostamento/): l'Eurogruppo che dovrebbe chiudere la procedura è fissato per il 9 novembre.
+
+È una ragione seria, non un pretesto. Ma l'effetto sul Parlamento è identico a quello di un ritardo senza ragioni: se il testo arriva a metà novembre, alle due camere restano sei o sette settimane — vacanze di Natale comprese — per esaminare, modificare e approvare la legge che decide tasse, spese e servizi dell'anno dopo.
+
+E non è il primo anno. Secondo Il Post, è **il secondo anno di fila** che a metà ottobre il disegno di legge non è ancora stato approvato.
+
+Il termine del 20 ottobre esiste. Superarlo non comporta nessuna conseguenza per chi lo supera. Comporta solo meno tempo per chi deve esaminare.
 
 ## Dove finisce il costo
 
@@ -102,7 +116,7 @@ Nessuna riguarda il contenuto delle manovre, che è e resta una scelta di maggio
 
 ## La cosa che resta
 
-Novecentosettantatré commi, un articolo, un voto, quarantacinque ore di esame.
+Novecentosettantatré commi, un articolo, un voto. E un termine, il 20 ottobre, che quest'anno è già saltato prima ancora di arrivare.
 
 Il punto non è che il Governo di turno sia più prepotente dei precedenti: i numeri dicono che si somigliano tutti. Il punto è che la sessione di bilancio è diventata una procedura che **nessuno ha progettato in questo modo** e che tutti, arrivati al Governo, trovano comoda — perché l'alternativa costerebbe tempo e produrrebbe sconfitte parlamentari.
 

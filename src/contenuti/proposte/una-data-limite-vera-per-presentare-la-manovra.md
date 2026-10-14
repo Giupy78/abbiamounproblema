@@ -8,13 +8,15 @@ stato: "Proposta"
 difficolta: "Alta"
 origine: "Analisi della redazione"
 articoloCollegato: "legge-di-bilancio-un-articolo-973-commi-un-voto"
-dataPubblicazione: 2026-10-03
-bozza: true
+dataPubblicazione: 2026-10-15
+bozza: false
 ---
 
 La compressione della sessione di bilancio non nasce a dicembre: nasce a ottobre, quando il testo arriva in Parlamento più tardi del previsto. Da lì in poi tutto il resto è obbligato — l'esame si accorcia, la seconda camera ratifica, il maxiemendamento diventa l'unico modo per chiudere entro il 31 dicembre.
 
-Un termine per la presentazione esiste. Quello che non esiste è una conseguenza se non viene rispettato, e un termine senza conseguenze non è un termine: è un auspicio scritto in un calendario.
+Un termine per la presentazione esiste: il **20 ottobre**. Quello che non esiste è una conseguenza se non viene rispettato, e un termine senza conseguenze non è un termine: è un auspicio scritto in un calendario.
+
+L'anno in corso lo mostra bene. A metà ottobre 2026 il Consiglio dei ministri ha approvato il Documento programmatico di bilancio ma non la manovra, e il ministro dell'Economia ha annunciato che il disegno di legge arriverà con «diverse settimane di ritardo», in attesa del via libera europeo su una clausola di flessibilità. È il secondo anno di fila che il testo non è pronto a metà ottobre.
 
 ## Cosa cambierebbe
 

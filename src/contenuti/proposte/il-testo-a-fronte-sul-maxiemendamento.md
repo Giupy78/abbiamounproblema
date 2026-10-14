@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "legge-di-bilancio-un-articolo-973-commi-un-voto"
-dataPubblicazione: 2026-10-03
-bozza: true
+dataPubblicazione: 2026-10-15
+bozza: false
 ---
 
 Un maxiemendamento non modifica alcuni punti del testo in discussione: lo **sostituisce per intero** con un testo nuovo, che incorpora le modifiche concordate e magari qualcosa che prima non c'era.

@@ -1,18 +1,18 @@
 ---
 titolo: "Un tempo minimo di lettura prima del voto di fiducia"
 titoloSeo: "Il tempo per leggere"
-descrizione: "Nell'ultima sessione di bilancio l'esame in commissione è durato 45 ore per 973 commi. Un intervallo minimo fra deposito e voto renderebbe la lettura possibile."
+descrizione: "Per la manovra di fine 2018 l'esame nelle commissioni bilancio durò circa 45 ore in tutto. Un intervallo minimo fra deposito e voto renderebbe la lettura possibile."
 problema: "Un testo può essere depositato e votato con la fiducia nell'arco di poche ore, un tempo in cui leggerlo per intero è materialmente impossibile."
 ambito: "Istituzioni"
 stato: "Proposta"
 difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "legge-di-bilancio-un-articolo-973-commi-un-voto"
-dataPubblicazione: 2026-10-03
-bozza: true
+dataPubblicazione: 2026-10-15
+bozza: false
 ---
 
-Nell'ultima sessione di bilancio l'esame nelle commissioni bilancio è durato complessivamente **45 ore** fra Senato e Camera, per un testo di 973 commi.
+Per la manovra approvata a fine 2018, il testo rimase all'esame delle due commissioni bilancio per **circa 45 ore** in tutto: ventotto al Senato, meno di diciassette alla Camera. Per l'intera legge di bilancio dello Stato.
 
 Il problema non è la buona volontà di chi partecipa: è l'aritmetica. In quel tempo, un testo di quelle dimensioni non si legge, e infatti non viene letto.
 
