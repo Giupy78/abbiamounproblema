@@ -3,6 +3,7 @@ titolo: "La legge di bilancio è un articolo solo, con 973 commi"
 titoloSeo: "La manovra in un voto solo"
 descrizione: "La manovra 2026 è un articolo con 973 commi, approvato con un voto di fiducia. Non è un'invenzione di questo governo: è la regola da trent'anni."
 dataPubblicazione: 2026-10-15
+dataAggiornamento: 2026-10-15
 categoria: Istituzioni
 tag:
   - legge di bilancio
@@ -25,7 +26,7 @@ La legge di bilancio per il 2026 — legge 199 del 2025 — è composta da **un 
 
 Un comma può valere una riga o una pagina. Dentro quei 973 ci sono le aliquote fiscali, i fondi per la sanità, le assunzioni nella pubblica amministrazione, gli incentivi alle imprese, le pensioni, i contributi ai comuni. Materie che in qualunque altro momento dell'anno occuperebbero decine di leggi distinte, ciascuna con la sua discussione.
 
-Per far capire la dimensione: il servizio studi della Camera, per spiegare quel testo ai deputati che dovevano votarlo, ha dovuto produrre un dossier in **quattro volumi**.
+Per far capire la dimensione: il dossier che i servizi studi di Camera e Senato hanno dedicato alla legge approvata è [articolato in **cinque volumi**](https://documenti.camera.it/leg19/dossier/pdf/ID0014evol1.pdf), quattro solo per spiegare i commi.
 
 ## Perché un articolo solo
 
@@ -43,20 +44,16 @@ Qui arriva il punto che rende questa storia diversa da come viene raccontata ogn
 
 La pratica dei maxiemendamenti risale, nelle prime applicazioni, agli anni Cinquanta; è stata ripresa alla fine degli anni Ottanta e si è diffusa negli anni Novanta **a prescindere dal colore politico del Governo**. Per l'approvazione delle manovre di bilancio è prassi consolidata **dalla metà degli anni Novanta**, utilizzata da esecutivi di ogni composizione.
 
-I numeri sulle questioni di fiducia, raccolti da Openpolis, dicono la stessa cosa. Totale delle fiducie poste da ciascun governo:
+I numeri sulle questioni di fiducia, [raccolti da Openpolis](https://www.openpolis.it/numeri/con-meloni-piu-questioni-di-fiducia-rispetto-ai-governi-draghi-e-conte-ii/) sulle ultime quattro legislature con dati aggiornati a giugno 2025, dicono la stessa cosa. Il confronto corretto è la media mensile, perché i governi durano in modo diverso:
 
-| Governo | Fiducie |
+| Governo | Fiducie al mese, in media |
 |---|---|
-| Renzi | 66 |
-| Monti | 51 |
-| Berlusconi | 45 |
-| Conte II | 36 |
-| Gentiloni | 32 |
-| Draghi | 28 |
-| Conte I | 15 |
-| Letta | 10 |
+| Monti | 2,85 |
+| Meloni | 2,85 |
+| Draghi | 2,68 |
+| Conte II | 2,22 |
 
-E guardando la media mensile — che è il confronto corretto, perché i governi durano in modo diverso — ai primi posti si trovano Monti e Meloni appaiati a 2,85, poi Draghi a 2,68, Conte II a 2,22, Renzi a 2.
+In valore assoluto, che premia i governi più lunghi, il primo posto è del governo Meloni, con 91 fiducie fra ottobre 2022 e giugno 2025; seguono Renzi con 68 e Draghi con 55.
 
 Tecnici e politici, di destra, di centro e di sinistra, di larghe intese e di coalizione stretta. Chi oggi protesta in aula lo ha fatto quando governava, e chi oggi lo fa protestava quando stava all'opposizione. **Questo è l'elemento che rende la cosa interessante**: quando una pratica attraversa indenne trent'anni e dieci governi, non è una scelta politica. È una caratteristica della macchina.
 
@@ -121,3 +118,7 @@ Novecentosettantatré commi, un articolo, un voto. E un termine, il 20 ottobre, 
 Il punto non è che il Governo di turno sia più prepotente dei precedenti: i numeri dicono che si somigliano tutti. Il punto è che la sessione di bilancio è diventata una procedura che **nessuno ha progettato in questo modo** e che tutti, arrivati al Governo, trovano comoda — perché l'alternativa costerebbe tempo e produrrebbe sconfitte parlamentari.
 
 Per questo non la cambierà chi governa. Potrebbe cambiarla solo chi scrive i regolamenti delle camere, in un momento in cui nessuno sa chi governerà l'anno dopo.
+
+---
+
+*Correzione del 15 ottobre 2026: nella prima versione di questo articolo la tabella sulle questioni di fiducia mescolava rilevazioni di anni diversi — fra l'altro riportava per il governo Draghi un totale riferito ai soli primi dieci mesi — e ometteva il totale del governo Meloni. Ora riporta i dati Openpolis aggiornati a giugno 2025. Corretto anche il numero dei volumi del dossier parlamentare, che sono cinque e non quattro.*
