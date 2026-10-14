@@ -3,6 +3,7 @@ titolo: "Nelle graduatorie della scuola il punteggio decide per ultimo"
 titoloSeo: "GPS: quando il punteggio non decide"
 descrizione: "Nelle nomine GPS il punteggio passa in secondo piano. Come Legge 104, riserve e continuità sul sostegno cambiano l'assegnazione delle cattedre."
 dataPubblicazione: 2026-09-24
+dataAggiornamento: 2026-10-15
 categoria: Società
 tag:
   - scuola
@@ -44,11 +45,9 @@ Qui non c'è nessuno scavalco in graduatoria, per una ragione semplice: **quel p
 
 Le prime due norme riguardano quote ristrette. La terza no, ed è quella di cui si parla di meno.
 
-Il 16 settembre 2026, rispondendo in Parlamento, il Ministero dell'Istruzione e del Merito ha fornito i dati: per l'anno scolastico 2026/27 le conferme sui posti di sostegno su richiesta delle famiglie sono state **55.814**, contro le 46.294 dell'anno precedente. **Novemilacinquecentoventi in più in un anno.**
+Secondo il [comunicato del Ministero dell'Istruzione e del Merito del 3 settembre 2026](https://www.mim.gov.it/web/guest/-/scuola-al-via-l-anno-scolastico-2026-2027-immessi-in-ruolo-oltre-37-mila-nuovi-docenti-confermati-56-mila-supplenti-di-sostegno-valditara-il-nuovo-ann), per l'anno scolastico 2026/27 i supplenti di sostegno confermati su richiesta delle famiglie sono stati **55.814**. Nello stesso comunicato le supplenze conferite sono indicate in **circa 118 mila**.
 
-Nello stesso intervento il numero degli incarichi conferiti su posti interi è indicato in **99.258**.
-
-Messi accanto, i due numeri dicono una cosa che nessuno dei due direbbe da solo: una quota molto grande degli incarichi sul sostegno **non passa dallo scorrimento della graduatoria**, perché è già assegnata prima che l'algoritmo cominci a girare. E cresce ogni anno.
+Messi accanto, i due numeri danno una proporzione che nessuno dei due darebbe da solo: una quota molto grande dei posti sul sostegno **non passa dallo scorrimento della graduatoria**, perché è già assegnata prima che l'algoritmo cominci a girare.
 
 ## L'effetto combinato che nessuno ha deciso
 
@@ -66,7 +65,7 @@ Il costo più raccontato è quello del docente con punteggio alto che resta fuor
 
 Ma ce n'è un altro, e riguarda gli studenti.
 
-I docenti di sostegno in servizio superano quota 261.000, e circa **57.000 di loro non hanno il titolo di specializzazione**: sono docenti curricolari assegnati al sostegno per coprire posti che altrimenti resterebbero vuoti.
+Secondo [l'Istat](https://www.istat.it/comunicato-stampa/linclusione-scolastica-degli-alunni-con-disabilita-anno-scolastico-2024-2025/), nell'anno scolastico 2024/2025 gli insegnanti per il sostegno sono oltre 261 mila, e il **22% — circa 57 mila — non ha il titolo di specializzazione**: sono docenti curricolari assegnati al sostegno per coprire posti che altrimenti resterebbero vuoti.
 
 La conferma per continuità didattica, così com'è scritta, si applica anche ai docenti non specializzati. Significa che una norma nata per tutelare l'alunno finisce per garantirgli la continuità di un insegnante senza la formazione per quel ruolo. Non per colpa dell'insegnante: perché il sistema non specializza abbastanza docenti.
 
@@ -103,3 +102,7 @@ Senza intaccare i diritti dei più fragili, tre correttivi renderebbero il siste
 Il punteggio conta ancora: decide come vengono distribuite le cattedre che restano. Il vero problema è quante ne restano — e quella quantità non la decidono le precedenze, la decide il numero di posti che ogni anno si sceglie di lasciare provvisori.
 
 Finché la discussione rimarrà confinata a un conflitto fra colleghi, i posti stabili non aumenteranno di una singola unità.
+
+---
+
+*Correzione del 15 ottobre 2026: nella prima versione l'articolo attribuiva i dati sulle conferme del sostegno a un intervento in Parlamento del 16 settembre e riportava un confronto con l'anno precedente e un totale di 99.258 incarichi su posti interi, che non abbiamo potuto verificare su una fonte ufficiale. Ora l'articolo cita il comunicato del Ministero del 3 settembre 2026. Aggiunte anche la fonte e l'anno scolastico dei dati Istat sui docenti di sostegno.*

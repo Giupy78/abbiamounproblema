@@ -9,12 +9,13 @@ difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "graduatorie-gps-scuola-punteggio-legge-104-riserve"
 dataPubblicazione: 2026-09-24
+dataAggiornamento: 2026-10-15
 bozza: false
 ---
 
 La conferma del docente di sostegno su richiesta della famiglia — decreto legge 71/2024, convertito nella legge 106/2024, attuata dal decreto ministeriale 32 del 26 febbraio 2025 — è nata per una ragione che nessuno mette in discussione: per un bambino con disabilità cambiare insegnante ogni settembre significa ricominciare da capo.
 
-C'è però un dato che rende la misura meno lineare di come viene raccontata. I docenti di sostegno in servizio superano i 261.000, e circa **57.000 non hanno il titolo di specializzazione**: sono docenti curricolari assegnati al sostegno per coprire posti che altrimenti resterebbero scoperti.
+C'è però un dato che rende la misura meno lineare di come viene raccontata. Secondo l'Istat, nell'anno scolastico 2024/2025 i docenti di sostegno sono oltre 261 mila, e il 22% — circa **57 mila — non ha il titolo di specializzazione**: sono docenti curricolari assegnati al sostegno per coprire posti che altrimenti resterebbero scoperti.
 
 La conferma può riguardare anche loro. In quel caso la continuità è garantita rispetto alla **persona**, non rispetto alla **competenza** — e per una parte degli alunni significa proseguire per anni con un insegnante che non ha ricevuto la formazione per quel ruolo.
 

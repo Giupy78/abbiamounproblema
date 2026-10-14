@@ -9,10 +9,11 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "graduatorie-gps-scuola-punteggio-legge-104-riserve"
 dataPubblicazione: 2026-09-24
+dataAggiornamento: 2026-10-15
 bozza: false
 ---
 
-Sulle conferme dei docenti di sostegno il numero esiste e viene comunicato: **55.814** per il 2026/27, contro 46.294 l'anno prima.
+Sulle conferme dei docenti di sostegno il numero esiste e viene comunicato: **55.814** per il 2026/27, secondo il comunicato del Ministero dell'Istruzione e del Merito del 3 settembre 2026.
 
 Sulla riserva dei posti della legge 68/1999 e sulla scelta prioritaria della sede della legge 104/1992, invece, non risulta pubblicato quante cattedre vengano assegnate per quella via.
 
