@@ -9,13 +9,13 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "graduatorie-gps-scuola-punteggio-legge-104-riserve"
 dataPubblicazione: 2026-09-24
-dataAggiornamento: 2026-10-15
+dataAggiornamento: 2026-10-20
 bozza: false
 ---
 
 Sulle conferme dei docenti di sostegno il numero esiste e viene comunicato: **55.814** per il 2026/27, secondo il comunicato del Ministero dell'Istruzione e del Merito del 3 settembre 2026.
 
-Sulla riserva dei posti della legge 68/1999 e sulla scelta prioritaria della sede della legge 104/1992, invece, non risulta pubblicato quante cattedre vengano assegnate per quella via.
+Sulle riserve dei posti, invece, non risulta pubblicato quante cattedre vengano assegnate per quella via. Nelle supplenze ne valgono tre: quella della legge 68/1999 per i disabili e le categorie protette, quella per i militari volontari congedati e quella del 15% per chi ha concluso il [servizio civile](/servizio-civile-riserva-15-per-cento-concorsi). Lo stesso vale per la scelta prioritaria della sede della legge 104/1992.
 
 È il motivo per cui la discussione su questo tema non si sposta mai: chi denuncia il fenomeno porta la propria esperienza, chi lo ridimensiona porta la propria, e nessuno dei due può dimostrare niente.
 
@@ -23,7 +23,7 @@ Sulla riserva dei posti della legge 68/1999 e sulla scelta prioritaria della sed
 
 Ogni anno, alla chiusura delle nomine, il Ministero pubblica un prospetto che per ciascuna provincia e per ciascun tipo di posto indica:
 
-- gli incarichi conferiti **per riserva** ai sensi della legge 68/1999, distinti fra le due quote;
+- gli incarichi conferiti **per riserva**, distinti per categoria: legge 68/1999 (separando le due quote), militari volontari congedati, servizio civile;
 - gli incarichi in cui è stata esercitata la **scelta prioritaria della sede**;
 - le **conferme sul sostegno**, già disponibili, disaggregate per provincia;
 - il totale degli incarichi conferiti, come termine di paragone.

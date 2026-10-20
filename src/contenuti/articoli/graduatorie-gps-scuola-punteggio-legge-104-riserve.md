@@ -3,7 +3,7 @@ titolo: "Nelle graduatorie della scuola il punteggio decide per ultimo"
 titoloSeo: "GPS: quando il punteggio non decide"
 descrizione: "Nelle nomine GPS il punteggio passa in secondo piano. Come Legge 104, riserve e continuità sul sostegno cambiano l'assegnazione delle cattedre."
 dataPubblicazione: 2026-09-24
-dataAggiornamento: 2026-10-15
+dataAggiornamento: 2026-10-20
 categoria: Società
 tag:
   - scuola
@@ -19,15 +19,19 @@ Ogni agosto, quando escono le nomine dalle Graduatorie Provinciali per le Supple
 
 La reazione, comprensibilmente, è che il punteggio non conti niente. È vero solo in parte, e la parte che manca è quella che spiega il meccanismo ministeriale.
 
-Perché le norme in gioco sono tre, fanno cose diverse, e vengono quasi sempre confuse fra loro. Quando si confondono, si finisce per prendersela con quella sbagliata.
+Perché le regole in gioco sono di tre tipi, fanno cose diverse, e vengono quasi sempre confuse fra loro. Quando si confondono, si finisce per prendersela con quella sbagliata.
 
-## Cosa prevedono davvero Legge 68, Legge 104 e continuità sul sostegno
+## Cosa prevedono davvero riserve, Legge 104 e continuità sul sostegno
 
-### La riserva della Legge 68/1999 dà il posto
+### Le riserve danno il posto
 
-È la norma sulle categorie protette: riserva una quota degli incarichi ai lavoratori disabili (7%) e alle altre categorie protette (1%). Finché quelle quote in provincia non sono coperte, chi ha la riserva ottiene l'incarico **a prescindere dalla propria posizione in graduatoria**, entro un tetto massimo del 50% degli incarichi conferiti.
+La più nota è quella della Legge 68/1999, la norma sulle categorie protette: riserva una quota degli incarichi ai lavoratori disabili (7%) e alle altre categorie protette (1%). Finché quelle quote in provincia non sono coperte, chi ha la riserva ottiene l'incarico **a prescindere dalla propria posizione in graduatoria**.
 
 Qui lo scavalco c'è, ed è esattamente lo scopo della norma: garantire il diritto al lavoro a chi, sul mercato, parte svantaggiato.
+
+Ma la Legge 68 non è l'unica. L'[ordinanza ministeriale 27 del 2026](https://www.mim.gov.it/web/guest/-/ordinanza-ministeriale-n-27-del-16-febbraio-2026), che regola le GPS per il 2026/27 e il 2027/28, applica alle supplenze anche la riserva per i **militari volontari congedati** senza demerito (articoli 1014 e 678 del codice dell'ordinamento militare) e quella del **15% per chi ha concluso il servizio civile**, universale o nazionale (articolo 18 del decreto legislativo 40/2017). Funzionano allo stesso modo: entro la quota, chi ha il titolo passa davanti a chi ha più punti. Tutte insieme non possono superare il 50% degli incarichi conferiti.
+
+Come si sommano fra loro, e perché il totale non l'ha deciso nessuno, lo abbiamo raccontato in [un articolo dedicato alla riserva del servizio civile](/servizio-civile-riserva-15-per-cento-concorsi).
 
 ### La Legge 104/1992 non dà il posto
 
@@ -43,7 +47,7 @@ Qui non c'è nessuno scavalco in graduatoria, per una ragione semplice: **quel p
 
 ## I numeri delle cattedre sottratte allo scorrimento
 
-Le prime due norme riguardano quote ristrette. La terza no, ed è quella di cui si parla di meno.
+Quanti incarichi passino per le riserve e per la scelta della sede non è pubblicato: ci torniamo più sotto. Per la conferma sul sostegno, invece, il numero c'è, ed è grande. Ed è la norma di cui si parla di meno.
 
 Secondo il [comunicato del Ministero dell'Istruzione e del Merito del 3 settembre 2026](https://www.mim.gov.it/web/guest/-/scuola-al-via-l-anno-scolastico-2026-2027-immessi-in-ruolo-oltre-37-mila-nuovi-docenti-confermati-56-mila-supplenti-di-sostegno-valditara-il-nuovo-ann), per l'anno scolastico 2026/27 i supplenti di sostegno confermati su richiesta delle famiglie sono stati **55.814**. Nello stesso comunicato le supplenze conferite sono indicate in **circa 118 mila**.
 
@@ -51,11 +55,11 @@ Messi accanto, i due numeri danno una proporzione che nessuno dei due darebbe da
 
 ## L'effetto combinato che nessuno ha deciso
 
-Prese una per una, le tre norme sono difendibili, e non da un punto di vista ideologico.
+Prese una per una, queste norme sono difendibili, e non da un punto di vista ideologico.
 
-La riserva esiste perché una persona con disabilità, senza una quota garantita, nel mercato del lavoro perde quasi sempre. La scelta della sede esiste perché assistere un familiare non autosufficiente a ottanta chilometri di distanza non è materialmente possibile. La continuità sul sostegno esiste perché per un bambino con disabilità cambiare insegnante ogni settembre significa ricominciare da zero.
+La riserva per i disabili esiste perché una persona con disabilità, senza una quota garantita, nel mercato del lavoro perde quasi sempre; quelle per i militari congedati e per il servizio civile riconoscono un periodo passato al servizio della collettività. La scelta della sede esiste perché assistere un familiare non autosufficiente a ottanta chilometri di distanza non è materialmente possibile. La continuità sul sostegno esiste perché per un bambino con disabilità cambiare insegnante ogni settembre significa ricominciare da zero.
 
-Nessuna delle tre è stata scritta per svuotare le graduatorie. **L'effetto combinato, però, non l'ha deciso nessuno**: le tre norme nascono in momenti diversi, da ministeri e maggioranze diverse, e nessuno ha mai avuto il compito di valutarne il peso complessivo.
+Nessuna è stata scritta per svuotare le graduatorie. **L'effetto combinato, però, non l'ha deciso nessuno**: queste norme nascono in momenti diversi, da ministeri e maggioranze diverse, e nessuno ha mai avuto il compito di valutarne il peso complessivo.
 
 È lo schema che su questo sito ritorna quasi sempre: [nessuno decide, e il costo si scarica su chi non ha voce in quel passaggio](/meccanismi).
 
@@ -83,7 +87,7 @@ Le precedenze decidono chi entra per primo in una stanza troppo piccola. La stab
 
 ## I dati che mancano, e tre proposte
 
-Sulle conferme del sostegno il numero c'è: 55.814. Sulla riserva della Legge 68 e sulla scelta prioritaria della sede ex Legge 104, invece, non risulta pubblicato quante cattedre vengano assegnate per quella via, provincia per provincia.
+Sulle conferme del sostegno il numero c'è: 55.814. Sulle riserve (Legge 68, militari congedati, servizio civile) e sulla scelta prioritaria della sede ex Legge 104, invece, non risulta pubblicato quante cattedre vengano assegnate per quella via, provincia per provincia.
 
 Senza quel numero nessuno può dire se il fenomeno sia marginale o enorme: né chi lo denuncia, né chi lo ridimensiona. Ed è un dato che il Ministero possiede, perché le nomine sono elaborate dal suo stesso algoritmo.
 
@@ -106,3 +110,5 @@ Finché la discussione rimarrà confinata a un conflitto fra colleghi, i posti s
 ---
 
 *Correzione del 15 ottobre 2026: nella prima versione l'articolo attribuiva i dati sulle conferme del sostegno a un intervento in Parlamento del 16 settembre e riportava un confronto con l'anno precedente e un totale di 99.258 incarichi su posti interi, che non abbiamo potuto verificare su una fonte ufficiale. Ora l'articolo cita il comunicato del Ministero del 3 settembre 2026. Aggiunte anche la fonte e l'anno scolastico dei dati Istat sui docenti di sostegno.*
+
+*Aggiornamento del 20 ottobre 2026: fra le riserve applicate alle supplenze, la prima versione citava solo quella della Legge 68/1999. L'ordinanza ministeriale 27/2026 prevede anche la riserva per i militari volontari congedati e quella del 15% per chi ha concluso il servizio civile: le abbiamo aggiunte, e alla seconda abbiamo dedicato un articolo.*
