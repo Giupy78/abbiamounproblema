@@ -7,7 +7,7 @@ ambito: "Burocrazia"
 stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
-articoloCollegato: "immigrazione-il-canale-legale-e-una-lotteria"
+articoloCollegato: "immigrazione-sbarchi-dimezzati-permessi-record"
 dataPubblicazione: 2026-09-11
 bozza: true
 ---
