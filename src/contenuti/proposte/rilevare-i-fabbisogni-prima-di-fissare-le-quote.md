@@ -7,7 +7,7 @@ ambito: "Lavoro"
 stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
-articoloCollegato: "immigrazione-sbarchi-dimezzati-permessi-record"
+articoloCollegato: "immigrazione-meno-sbarchi-piu-permessi"
 dataPubblicazione: 2026-10-22
 bozza: true
 ---

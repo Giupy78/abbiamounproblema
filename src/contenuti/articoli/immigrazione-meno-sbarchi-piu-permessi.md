@@ -1,7 +1,7 @@
 ---
-titolo: "Sbarchi dimezzati, permessi record: dove passa l'immigrazione"
+titolo: "Meno sbarchi, più permessi: dove passa davvero l'immigrazione"
 titoloSeo: "Immigrazione: sbarchi e permessi"
-descrizione: "Nel 2026 gli sbarchi sono meno della metà del 2025. Ma i nuovi permessi di soggiorno del 2025 sono 427mila, un record: per lavoro 59mila, su 165mila previsti."
+descrizione: "Nel 2026 gli sbarchi sono meno della metà del 2025. Ma nel 2025 i nuovi permessi di soggiorno sono saliti a 427mila: per lavoro 59mila, su 165mila previsti."
 dataPubblicazione: 2026-10-22
 categoria: Società
 tag:
@@ -20,11 +20,11 @@ social: |
   Il dibattito misura il numero più piccolo. Il Paese cambia con quello più grande.
 ---
 
-Ieri il Ministero dell'Interno ha aggiornato i dati sugli arrivi via mare: dal 1° gennaio al 21 ottobre 2026 sono sbarcate **25.660 persone**. Nello stesso periodo del 2025 erano state **57.021**. Meno della metà.
+Il 21 ottobre il Ministero dell'Interno ha aggiornato i dati sugli arrivi via mare: dal 1° gennaio a quel giorno erano sbarcate **25.660 persone**. Nello stesso periodo del 2025 erano state **57.021**. Meno della metà.
 
 Lo stesso giorno, al Parlamento europeo, il presidente del Consiglio europeo António Costa ha detto che l'approccio comune dell'Unione «sta dando i suoi frutti», [secondo il resoconto dell'agenzia SIR](https://www.agensir.it/quotidiano/2026/10/21/ue-costa-consiglio-europeo-sulle-migrazioni-solo-frontiere-e-rimpatri/).
 
-Oggi l'Istat ha pubblicato i dati sui permessi di soggiorno del 2025: **426.956 nuovi permessi**, il 47,2% in più dell'anno prima. È il valore più alto degli ultimi quindici anni dopo il 2022, l'anno dei profughi dall'Ucraina.
+Il giorno dopo, il 22 ottobre, l'Istat ha pubblicato i dati sui permessi di soggiorno del 2025: **426.956 nuovi permessi**, il 47,2% in più dell'anno prima. È il valore più alto degli ultimi quindici anni dopo il 2022, l'anno dei profughi dall'Ucraina.
 
 Due numeri nella stessa settimana, che raccontano due storie diverse. Il dibattito pubblico si misura quasi sempre sul primo. Il Paese, invece, cambia soprattutto con il secondo.
 
@@ -57,7 +57,7 @@ E chi c'è già? A fine 2025 i cittadini non comunitari con un permesso valido e
 
 Chi vuole entrare in Italia per lavorare passa dal **decreto flussi**. Il Governo fissa quante persone possono entrare per lavoro e i datori di lavoro presentano le domande dalle 9 del mattino di alcuni giorni stabiliti: i cosiddetti click day.
 
-Il [decreto in vigore](https://www.gazzettaufficiale.it/eli/id/2025/10/15/25A05656/sg) programma **497.550 ingressi** nel triennio 2026-2028: 164.850 nel 2026, 165.850 nel 2027, 166.850 nel 2028. Per il 2027 [il Viminale ha annunciato](https://www.interno.gov.it/it/notizie/decreto-flussi-2027-dal-23-ottobre-precompilazione-domande) che la precompilazione delle domande si apre **domani, 23 ottobre**, e che il primo click day sarà il 12 gennaio 2027.
+Il [decreto in vigore](https://www.gazzettaufficiale.it/eli/id/2025/10/15/25A05656/sg) programma **497.550 ingressi** nel triennio 2026-2028: 164.850 nel 2026, 165.850 nel 2027, 166.850 nel 2028. Per il 2027 [il Viminale ha annunciato](https://www.interno.gov.it/it/notizie/decreto-flussi-2027-dal-23-ottobre-precompilazione-domande) che la precompilazione delle domande è aperta dal **23 ottobre al 7 dicembre** e che il primo click day sarà il 12 gennaio 2027.
 
 Ed ecco il punto. Nel 2025 i nuovi permessi per lavoro sono stati circa 59mila. L'Istat stessa li confronta con la programmazione: un numero «molto al di sotto della quota di 165mila ingressi programmati per il 2025».
 
