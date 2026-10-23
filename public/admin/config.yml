@@ -378,6 +378,7 @@ collections:
           - 'Conti pubblici'
           - 'Credito e risparmio'
           - 'Welfare'
+          - 'Agricoltura'
 
       - name: stato
         label: 'A che punto è'

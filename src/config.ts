@@ -121,6 +121,7 @@ export const AMBITI = [
 	'Conti pubblici',
 	'Credito e risparmio',
 	'Welfare',
+	'Agricoltura',
 ] as const;
 
 /**
