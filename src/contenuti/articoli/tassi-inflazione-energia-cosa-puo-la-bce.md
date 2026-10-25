@@ -10,7 +10,7 @@ tag:
   - inflazione
   - tassi di interesse
   - mutui
-illustrazione: bilancia
+illustrazione: fulmine
 social: |
   L'inflazione dell'area euro è al 3,3%. Ma l'energia corre al 14,3% e i servizi stanno rallentando.
 

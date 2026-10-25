@@ -168,6 +168,10 @@ export const ILLUSTRAZIONI = [
 	'piazza',
 	'porte',
 	'istituti',
+	'commi',
+	'disavanzo',
+	'fulmine',
+	'graduatoria',
 ] as const;
 
 /**

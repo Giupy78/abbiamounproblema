@@ -10,7 +10,7 @@ tag:
   - GPS
   - sostegno
   - graduatorie
-illustrazione: catena
+illustrazione: graduatoria
 bozza: false
 inEvidenza: true
 ---

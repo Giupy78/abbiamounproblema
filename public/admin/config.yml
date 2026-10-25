@@ -263,6 +263,10 @@ collections:
           - { label: 'Piazza — i cartelli da una parte, la vetrina rotta dall altra', value: 'piazza' }
           - { label: 'Porte — la porta piccola degli sbarchi e quella grande dei permessi', value: 'porte' }
           - { label: 'Istituti — i ragazzi negli istituti minorili e i reati senza misura', value: 'istituti' }
+          - { label: 'Commi — un articolo fitto di commi e un voto solo', value: 'commi' }
+          - { label: 'Disavanzo — la croce della sanità e la perdita che quadruplica', value: 'disavanzo' }
+          - { label: 'Fulmine — i tassi colpiscono la domanda, non l energia', value: 'fulmine' }
+          - { label: 'Graduatoria — il punteggio arriva quando le cattedre sono già in parte assegnate', value: 'graduatoria' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'

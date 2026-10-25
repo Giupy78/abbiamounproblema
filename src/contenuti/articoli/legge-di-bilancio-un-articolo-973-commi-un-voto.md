@@ -10,7 +10,7 @@ tag:
   - Parlamento
   - questione di fiducia
   - procedure
-illustrazione: pila
+illustrazione: commi
 bozza: false
 ---
 

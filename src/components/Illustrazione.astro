@@ -141,6 +141,26 @@ const ISTITUTI = [
 	{ anno: '2024', valore: 556, dopo: true },
 	{ anno: '2025', valore: 588, dopo: true },
 ];
+
+/**
+ * Perdita della sanità pugliese secondo la parifica della Corte dei conti,
+ * in milioni: 84,38 nel 2024, 349,10 nel 2025. Stessa scala per tutte e due.
+ */
+const DISAVANZO = [
+	{ anno: '2024', milioni: 84.38, classe: 'tratto riempito' },
+	{ anno: '2025', milioni: 349.1, classe: 'pieno rosso-pieno' },
+];
+
+/**
+ * Le cattedre di un anno: una parte è assegnata prima che la graduatoria
+ * cominci a scorrere (conferme sul sostegno), una passa dalle precedenze,
+ * il resto va per punteggio.
+ */
+const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
+	x: 290 + (i % 4) * 38,
+	y: 30 + Math.floor(i / 4) * 38,
+	tipo: i < 5 ? 'confermata' : i < 6 ? 'precedenza' : 'libera',
+}));
 ---
 
 <div class:list={['illustrazione', classe]}>
@@ -912,6 +932,123 @@ const ISTITUTI = [
 				</g>
 			)
 		}
+
+		{
+			nome === 'commi' && (
+				<g>
+					{/* Un articolo solo, fitto di commi, e un voto solo per
+					    approvarlo tutto: sì o no, senza poter scegliere le righe. */}
+					<rect class="tratto riempito" x="64" y="14" width="150" height="134" rx="3" />
+					<text class="etichetta" x="78" y="36">Art. 1</text>
+					{Array.from({ length: 14 }, (_, r) =>
+						[78, 142].map((x) => (
+							<path class="tratto sottile tenue" d={`M${x} ${50 + r * 7}h${x === 78 ? 56 : 58}`} />
+						)),
+					)}
+					<text class="etichetta-anno" x="139" y="168">973 commi</text>
+
+					<path class="tratto" d="M232 81h66" />
+					<path class="tratto" d="M290 73l8 8-8 8" />
+
+					<circle class="pieno accento" cx="362" cy="81" r="36" />
+					<path class="tratto spunta" d="M346 82l11 11 21-24" />
+					<text class="etichetta-anno" x="362" y="168">1 voto</text>
+				</g>
+			)
+		}
+
+		{
+			nome === 'disavanzo' && (
+				<g>
+					{/* La croce della sanità e la perdita di due anni alla stessa
+					    scala: nel 2025, senza ripiani in corso d'anno, quadruplica. */}
+					<path
+						class="tratto"
+						d="M86 52h24v24h24v24h-24v24h-24v-24h-24v-24h24z"
+					/>
+
+					{DISAVANZO.map(({ anno, milioni, classe }, i) => {
+						const alto = (milioni / 349.1) * 110;
+						const x = 214 + i * 104;
+						return (
+							<g>
+								<rect class={classe} x={x} y={146 - alto} width="64" height={alto} rx="2" />
+								<text class="etichetta-anno" x={x + 32} y={146 - alto - 8}>
+									{Math.round(milioni)} mln
+								</text>
+								<text class="etichetta-anno" x={x + 32} y={166}>
+									{anno}
+								</text>
+							</g>
+						);
+					})}
+
+					<path class="tratto" d="M196 146h214" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'fulmine' && (
+				<g>
+					{/* I tassi salgono e colpiscono la domanda, il carrello. Ma il
+					    rincaro arriva dall'energia, il fulmine: lì i tassi non
+					    arrivano, e non producono un chilowattora in più. */}
+					<text class="simbolo accento" x="84" y="104">%</text>
+					<path class="tratto accento-tratto" d="M136 116V54" />
+					<path class="tratto accento-tratto" d="M126 64l10-10 10 10" />
+					<text class="etichetta-anno" x="112" y="168">tassi</text>
+
+					<path class="tratto tratteggiato" d="M156 92h34" />
+					<path class="tratto accento-tratto" d="M184 86l6 6-6 6" />
+
+					<path class="tratto" d="M200 70h14l12 44h46l10-32h-64" />
+					<circle class="tratto" cx="232" cy="128" r="6" />
+					<circle class="tratto" cx="264" cy="128" r="6" />
+					<text class="etichetta-anno" x="242" y="168">domanda</text>
+
+					<path class="tratto tenue tratto-diviso" d="M318 30v120" />
+
+					<path class="pieno rosso-pieno" d="M398 20l-42 76h28l-22 64 62-90h-30z" />
+					<text class="etichetta-anno" x="392" y="174">energia</text>
+				</g>
+			)
+		}
+
+		{
+			nome === 'graduatoria' && (
+				<g>
+					{/* A sinistra la graduatoria per punteggio, a destra le
+					    cattedre dell'anno. Quando la graduatoria arriva, una parte
+					    è già assegnata: confermata o presa per precedenza. */}
+					{[124, 110, 96, 82, 68, 54].map((larghezza, i) => (
+						<rect class="tratto" x="56" y={30 + i * 19} width={larghezza} height="11" rx="2" />
+					))}
+					<text class="etichetta-anno" x="118" y="168">punteggio</text>
+
+					<path class="tratto" d="M200 84h64" />
+					<path class="tratto" d="M256 76l8 8-8 8" />
+
+					{CATTEDRE.map(({ x, y, tipo }) => (
+						<rect
+							class={
+								tipo === 'confermata'
+									? 'pieno accento'
+									: tipo === 'precedenza'
+										? 'tratto tratteggiato'
+										: 'tratto'
+							}
+							x={x}
+							y={y}
+							width="28"
+							height="28"
+							rx="4"
+						/>
+					))}
+					<text class="etichetta-anno" x="351" y="168">cattedre</text>
+				</g>
+			)
+		}
 	</svg>
 </div>
 
@@ -999,6 +1136,25 @@ const ISTITUTI = [
 	/* La colonna che manca: contorno rosso tratteggiato, dentro niente. */
 	.vuoto {
 		stroke-dasharray: 7 6;
+	}
+
+	/* Il segno di spunta dentro il cerchio del voto: colore dello sfondo. */
+	.spunta {
+		stroke: var(--sfondo-alt);
+		stroke-width: 5;
+	}
+
+	/* Il simbolo dei tassi, grande come un'icona. */
+	.simbolo {
+		font-family: var(--serif);
+		font-size: 44px;
+		font-weight: 700;
+		text-anchor: middle;
+	}
+
+	/* Il confine fra quello che i tassi raggiungono e quello che no. */
+	.tratto-diviso {
+		stroke-dasharray: 5 6;
 	}
 
 	.punto-domanda {

@@ -9,7 +9,7 @@ tag:
   - Puglia
   - mobilità sanitaria
   - addizionale Irpef
-illustrazione: imbuto
+illustrazione: disavanzo
 social: |
   La Puglia paga 253 milioni l'anno per i pugliesi che vanno a curarsi in un'altra regione.
 
