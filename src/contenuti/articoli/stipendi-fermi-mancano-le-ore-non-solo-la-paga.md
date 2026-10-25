@@ -9,7 +9,7 @@ tag:
   - part-time
   - contratti collettivi
   - lavoro
-illustrazione: provvisorio
+illustrazione: ore
 bozza: true
 ---
 

@@ -267,6 +267,9 @@ collections:
           - { label: 'Disavanzo — la croce della sanità e la perdita che quadruplica', value: 'disavanzo' }
           - { label: 'Fulmine — i tassi colpiscono la domanda, non l energia', value: 'fulmine' }
           - { label: 'Graduatoria — il punteggio arriva quando le cattedre sono già in parte assegnate', value: 'graduatoria' }
+          - { label: 'Perdita — il barattolo dei risparmi che gocciola dal fondo', value: 'perdita' }
+          - { label: 'Magazzino — le scatole dei crediti, molte già irrecuperabili', value: 'magazzino' }
+          - { label: 'Ore — la settimana da 38 ore e quella da 20', value: 'ore' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'

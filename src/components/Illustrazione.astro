@@ -156,6 +156,27 @@ const DISAVANZO = [
  * cominci a scorrere (conferme sul sostegno), una passa dalle precedenze,
  * il resto va per punteggio.
  */
+/**
+ * Il magazzino della riscossione in 24 scatole: dieci (circa il 42%) sono
+ * crediti senza aspettative di recupero, tre (circa il 13%) hanno una
+ * riscuotibilità non determinabile, le altre restano da lavorare.
+ */
+const SCATOLE = Array.from({ length: 24 }, (_, i) => ({
+	x: 150 + (i % 6) * 30,
+	y: 64 + Math.floor(i / 6) * 22,
+	tipo: i < 10 ? 'perso' : i < 13 ? 'incerto' : 'aperto',
+}));
+
+/**
+ * Due settimane di lavoro, a blocchi di due ore: quella da 38 ore e quella
+ * da 20 di chi ne vorrebbe 38. I blocchi che mancano sono la parte della
+ * busta paga che non compare in nessuna tabella dei salari orari.
+ */
+const SETTIMANE = [
+	{ etichetta: '38 ore', y: 50, piene: 19 },
+	{ etichetta: '20 ore', y: 104, piene: 10 },
+];
+
 const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 	x: 290 + (i % 4) * 38,
 	y: 30 + Math.floor(i / 4) * 38,
@@ -1049,6 +1070,83 @@ const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 				</g>
 			)
 		}
+
+		{
+			nome === 'perdita' && (
+				<g>
+					{/* Il barattolo dei risparmi con una piccola perdita sul fondo:
+					    il costo che non si vede, goccia dopo goccia. */}
+					<rect class="tratto riempito" x="184" y="34" width="112" height="16" rx="4" />
+					<path class="tratto" d="M190 50v94q0 10 10 10h80q10 0 10-10V50" />
+					{[136, 122, 108, 94, 80].map((cy) => (
+						<ellipse class="tratto riempito" cx="240" cy={cy} rx="34" ry="8" />
+					))}
+					<text class="euro-piccolo" x="240" y="85">€</text>
+
+					<circle class="pieno rosso-pieno" cx="290" cy="140" r="3" />
+					{[
+						{ x: 300, y: 152, r: 4 },
+						{ x: 306, y: 164, r: 3 },
+						{ x: 310, y: 174, r: 2 },
+					].map(({ x, y, r }) => (
+						<circle class="pieno rosso-pieno" cx={x} cy={y} r={r} />
+					))}
+				</g>
+			)
+		}
+
+		{
+			nome === 'magazzino' && (
+				<g>
+					{/* Il magazzino che tutti citano, aperto: quasi metà delle
+					    scatole è segnata come irrecuperabile, altre come incerte. */}
+					<path class="tratto" d="M130 158V58l110-36 110 36v100" />
+					{SCATOLE.map(({ x, y, tipo }) => (
+						<rect
+							class={
+								tipo === 'perso'
+									? 'tratto rosso'
+									: tipo === 'incerto'
+										? 'tratto tenue'
+										: 'tratto'
+							}
+							x={x}
+							y={y}
+							width="24"
+							height="16"
+							rx="2"
+						/>
+					))}
+					<path class="tratto" d="M110 158h260" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'ore' && (
+				<g>
+					{/* La paga oraria può essere identica: quello che cambia sono
+					    le ore. I blocchi tratteggiati sono quelle che mancano. */}
+					{SETTIMANE.map(({ etichetta, y, piene }) => (
+						<g>
+							<text class="etichetta-anno" x="76" y={y + 17}>
+								{etichetta}
+							</text>
+							{Array.from({ length: 19 }, (_, i) => (
+								<rect
+									class={i < piene ? 'pieno accento' : 'tratto rosso vuoto-fine'}
+									x={118 + i * 16}
+									y={y}
+									width="12"
+									height="24"
+									rx="2"
+								/>
+							))}
+						</g>
+					))}
+				</g>
+			)
+		}
 	</svg>
 </div>
 
@@ -1155,6 +1253,12 @@ const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 	/* Il confine fra quello che i tassi raggiungono e quello che no. */
 	.tratto-diviso {
 		stroke-dasharray: 5 6;
+	}
+
+	/* Su blocchi piccoli il tratteggio normale si impasta: più fitto. */
+	.vuoto-fine {
+		stroke-width: 2;
+		stroke-dasharray: 3 3;
 	}
 
 	.punto-domanda {

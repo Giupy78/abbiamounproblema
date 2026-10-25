@@ -11,7 +11,7 @@ tag:
   - piano di accumulo
   - costi
   - inflazione
-illustrazione: imbuto
+illustrazione: perdita
 bozza: true
 social: "L'Italia accumula oltre 1.600 miliardi di euro fermi sui conti
   correnti. Ma la vera sfida per il risparmiatore non è indovinare il rendimento

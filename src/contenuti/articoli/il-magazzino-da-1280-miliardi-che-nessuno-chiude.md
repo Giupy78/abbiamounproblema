@@ -9,7 +9,7 @@ tag:
   - cartelle esattoriali
   - fisco
   - debito
-illustrazione: pila
+illustrazione: magazzino
 bozza: true
 ---
 

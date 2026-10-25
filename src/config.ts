@@ -172,6 +172,9 @@ export const ILLUSTRAZIONI = [
 	'disavanzo',
 	'fulmine',
 	'graduatoria',
+	'perdita',
+	'magazzino',
+	'ore',
 ] as const;
 
 /**
