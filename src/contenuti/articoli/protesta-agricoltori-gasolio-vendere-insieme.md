@@ -10,7 +10,7 @@ tag:
   - filiera
   - pratiche sleali
   - Foggia
-illustrazione: bilancia
+illustrazione: spiga
 bozza: false
 social: |
   Il decreto del 22 ottobre sul caro gasolio tratta in due modi diversi camionisti e agricoltori.

@@ -10,7 +10,7 @@ tag:
   - criminalità minorile
   - decreto sicurezza
   - minori
-illustrazione: crepa
+illustrazione: istituti
 bozza: true
 social: |
   Dopo gli scontri del 17 ottobre il governo ha deciso che dai 14 anni la capacità di intendere e di volere si presume.

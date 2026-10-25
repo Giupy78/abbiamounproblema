@@ -108,6 +108,39 @@ const BOLLETTE = [
 		],
 	},
 ];
+
+/**
+ * Un concorso da venti posti, come nell'esempio dell'articolo: sei vanno ai
+ * militari congedati (30%), tre al servizio civile (15%). La prima fila è la
+ * metà dei posti, il tetto di tutte le riserve: resta un solo posto libero.
+ */
+const POSTI = Array.from({ length: 20 }, (_, i) => ({
+	x: 84 + (i % 10) * 32,
+	y: i < 10 ? 30 : 72,
+	tipo: i < 6 ? 'militari' : i < 9 ? 'civile' : 'merito',
+}));
+
+/**
+ * Sbarchi e nuovi permessi di soggiorno nel 2025, alla stessa scala
+ * (Viminale e Istat): 66.316 contro 426.956. La porta degli sbarchi è
+ * quella su cui si discute, ed è la più bassa delle due.
+ */
+const PORTE = [
+	{ x: 128, alto: 18, valore: '66mila', nome: 'sbarchi', classe: 'tratto riempito' },
+	{ x: 272, alto: 118, valore: '427mila', nome: 'permessi', classe: 'pieno accento' },
+];
+
+/**
+ * Presenza media giornaliera negli istituti penali per i minorenni
+ * (Ministero della Giustizia; il 2025 fino al 15 dicembre). Il decreto
+ * Caivano è del settembre 2023: le barre dopo sono piene.
+ */
+const ISTITUTI = [
+	{ anno: '2022', valore: 382, dopo: false },
+	{ anno: '2023', valore: 425, dopo: false },
+	{ anno: '2024', valore: 556, dopo: true },
+	{ anno: '2025', valore: 588, dopo: true },
+];
 ---
 
 <div class:list={['illustrazione', classe]}>
@@ -701,6 +734,184 @@ const BOLLETTE = [
 				</g>
 			)
 		}
+
+		{
+			nome === 'riserva' && (
+				<g>
+					{/* Venti posti in due file. Pieni quelli riservati ai militari,
+					    tratteggiati quelli del servizio civile, vuoti quelli che
+					    restano al merito. La prima fila è la metà: quasi esaurita. */}
+					{POSTI.map(({ x, y, tipo }) => (
+						<rect
+							class={
+								tipo === 'militari'
+									? 'pieno accento'
+									: tipo === 'civile'
+										? 'tratto tratteggiato'
+										: 'tratto'
+							}
+							x={x}
+							y={y}
+							width="24"
+							height="24"
+							rx="4"
+						/>
+					))}
+
+					{/* Legenda: le tre strade per lo stesso concorso */}
+					<rect class="pieno accento" x="92" y="128" width="14" height="14" rx="2" />
+					<text class="etichetta" x="114" y="140">militari</text>
+					<rect class="tratto tratteggiato" x="196" y="128" width="14" height="14" rx="2" />
+					<text class="etichetta" x="218" y="140">servizio civile</text>
+					<rect class="tratto" x="336" y="128" width="14" height="14" rx="2" />
+					<text class="etichetta" x="358" y="140">merito</text>
+				</g>
+			)
+		}
+
+		{
+			nome === 'spiga' && (
+				<g>
+					{/* La spiga da cui parte tutto, e i cento euro spesi dal
+					    consumatore: all'agricoltore ne restano sette (Ismea). */}
+					{[-14, 0, 14].map((angolo) => (
+						<g transform={`rotate(${angolo} 74 160)`}>
+							<path class="tratto" d="M74 160V44" />
+							{[50, 64, 78, 92, 106].map((y) => (
+								<>
+									<ellipse
+										class="pieno accento"
+										cx="68"
+										cy={y}
+										rx="4.5"
+										ry="8"
+										transform={`rotate(-28 68 ${y})`}
+									/>
+									<ellipse
+										class="pieno accento"
+										cx="80"
+										cy={y}
+										rx="4.5"
+										ry="8"
+										transform={`rotate(28 80 ${y})`}
+									/>
+								</>
+							))}
+						</g>
+					))}
+
+					<path class="tratto" d="M118 100h22" />
+					<path class="tratto" d="M132 92l8 8-8 8" />
+
+					{/* La barra dei cento euro: il primo tratto verde è l'agricoltore */}
+					<rect class="tratto riempito" x="150" y="86" width="280" height="28" rx="3" />
+					<rect class="pieno verde-pieno" x="150" y="86" width="19.6" height="28" />
+					<text class="etichetta-anno" x="160" y="76">7 €</text>
+					<text class="etichetta-anno" x="410" y="76">100 €</text>
+				</g>
+			)
+		}
+
+		{
+			nome === 'piazza' && (
+				<g>
+					{/* A sinistra la piazza con i cartelli, a destra la vetrina
+					    spaccata: la stessa giornata, due cose diverse. */}
+					{[52, 90, 128, 166, 204].map((x) => (
+						<g>
+							<circle class="tratto" cx={x} cy="104" r="9" />
+							<path class="tratto" d={`M${x - 15} 152q15-36 30 0`} />
+						</g>
+					))}
+					{[
+						{ x: 71, y: 30 },
+						{ x: 147, y: 24 },
+						{ x: 223, y: 36 },
+					].map(({ x, y }) => (
+						<g>
+							<path class="tratto" d={`M${x} 118V${y + 26}`} />
+							<rect class="tratto riempito accento-tratto" x={x - 22} y={y} width="44" height="26" rx="2" />
+						</g>
+					))}
+
+					{/* Il negozio e la vetrina rotta */}
+					<rect class="tratto riempito" x="292" y="40" width="156" height="112" rx="2" />
+					<path class="tratto" d="M292 58h156" />
+					<rect class="tratto" x="308" y="70" width="124" height="70" rx="2" />
+					<path
+						class="tratto rosso"
+						d="M372 104l-30-26M372 104l34-30M372 104l50 14M372 104l-48 22M372 104l18 34M372 104l-10 34"
+					/>
+					<circle class="pieno rosso-pieno" cx="372" cy="104" r="4" />
+
+					<path class="tratto" d="M24 158h432" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'porte' && (
+				<g>
+					{/* Due porte alla stessa scala: quella degli sbarchi, su cui si
+					    concentra il dibattito, e quella dei permessi di soggiorno. */}
+					{PORTE.map(({ x, alto, valore, nome: etichetta, classe }) => (
+						<g>
+							<rect class={classe} x={x} y={150 - alto} width="80" height={alto} rx="3" />
+							<text class="etichetta-anno" x={x + 40} y={150 - alto - 10}>
+								{valore}
+							</text>
+							<text class="etichetta-anno" x={x + 40} y={172}>
+								{etichetta}
+							</text>
+						</g>
+					))}
+
+					{/* Una barca accanto alla porta piccola */}
+					<path class="tratto" d="M58 136h56l-10 12h-36z" />
+					<path class="tratto" d="M86 136V112l16 16h-16" />
+
+					<path class="tratto" d="M44 150h340" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'istituti' && (
+				<g>
+					{/* Quanti ragazzi negli istituti minorili, anno per anno: questo
+					    effetto si misura. Accanto, la colonna che nessuno ha
+					    riempito: l'effetto sui reati. */}
+					{ISTITUTI.map(({ anno, valore, dopo }, i) => {
+						const alto = (valore / 588) * 104;
+						const x = 92 + i * 66;
+						return (
+							<g>
+								<rect
+									class={dopo ? 'pieno accento' : 'tratto riempito'}
+									x={x}
+									y={146 - alto}
+									width="46"
+									height={alto}
+									rx="2"
+								/>
+								<text class="etichetta-anno" x={x + 23} y={146 - alto - 8}>
+									{valore}
+								</text>
+								<text class="etichetta-anno" x={x + 23} y={166}>
+									{anno}
+								</text>
+							</g>
+						);
+					})}
+
+					<rect class="tratto rosso vuoto" x="370" y="42" width="46" height="104" rx="2" />
+					<text class="punto-domanda rosso-pieno" x="393" y="108">?</text>
+					<text class="etichetta-anno" x="393" y="166">reati</text>
+
+					<path class="tratto" d="M80 146h348" />
+				</g>
+			)
+		}
 	</svg>
 </div>
 
@@ -775,6 +986,25 @@ const BOLLETTE = [
 		fill: currentColor;
 		font-family: var(--serif);
 		font-size: 14px;
+		text-anchor: middle;
+	}
+
+	/* Voci di legenda: allineate a sinistra, accanto al loro quadratino. */
+	.etichetta {
+		fill: currentColor;
+		font-family: var(--serif);
+		font-size: 14px;
+	}
+
+	/* La colonna che manca: contorno rosso tratteggiato, dentro niente. */
+	.vuoto {
+		stroke-dasharray: 7 6;
+	}
+
+	.punto-domanda {
+		font-family: var(--serif);
+		font-size: 34px;
+		font-weight: 700;
 		text-anchor: middle;
 	}
 

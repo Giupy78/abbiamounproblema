@@ -258,6 +258,11 @@ collections:
           - { label: 'Provvisorio — lo stesso posto tratteggiato ogni anno', value: 'provvisorio' }
           - { label: 'Scheda — lo spazio per il nome che si riduce', value: 'scheda' }
           - { label: 'Pista — i metri costruiti e quelli utilizzabili', value: 'pista' }
+          - { label: 'Riserva — venti posti, quelli riservati e quelli per merito', value: 'riserva' }
+          - { label: 'Spiga — su 100 euro, i 7 che restano all agricoltore', value: 'spiga' }
+          - { label: 'Piazza — i cartelli da una parte, la vetrina rotta dall altra', value: 'piazza' }
+          - { label: 'Porte — la porta piccola degli sbarchi e quella grande dei permessi', value: 'porte' }
+          - { label: 'Istituti — i ragazzi negli istituti minorili e i reati senza misura', value: 'istituti' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'

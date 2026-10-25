@@ -10,7 +10,7 @@ tag:
   - Bologna
   - Milano
   - maranza
-illustrazione: crepa
+illustrazione: piazza
 bozza: false
 social: |
   «I cittadini hanno diritto di riunirsi pacificamente e senz'armi.» Articolo 17 della Costituzione.

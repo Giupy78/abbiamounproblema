@@ -163,6 +163,11 @@ export const ILLUSTRAZIONI = [
 	'provvisorio',
 	'scheda',
 	'pista',
+	'riserva',
+	'spiga',
+	'piazza',
+	'porte',
+	'istituti',
 ] as const;
 
 /**

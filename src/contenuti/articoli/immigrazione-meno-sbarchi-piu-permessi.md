@@ -10,7 +10,7 @@ tag:
   - permessi di soggiorno
   - decreto flussi
   - cittadinanza
-illustrazione: imbuto
+illustrazione: porte
 bozza: true
 social: |
   Nel 2026 gli sbarchi sono meno della metà dell'anno scorso.

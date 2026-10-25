@@ -9,7 +9,7 @@ tag:
   - concorsi pubblici
   - riserva dei posti
   - GPS
-illustrazione: imbuto
+illustrazione: riserva
 bozza: false
 social: |
   Chi ha fatto il servizio civile ha diritto al 15% dei posti nei concorsi pubblici. Non è una lista protetta: il concorso va superato come tutti.
