@@ -1,0 +1,45 @@
+name: Verifica token Facebook
+
+# Da avviare a mano (Actions > Verifica token Facebook > Run workflow).
+# Chiede a Facebook chi e il proprietario di FACEBOOK_TOKEN e controlla che
+# sia proprio la pagina FACEBOOK_PAGINA. Legge soltanto: non pubblica niente.
+#
+# Se il token e quello dell'utente e non della pagina, Facebook risponde con
+# il nome della persona e il controllo fallisce: e l'errore piu comune.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Controlla il token
+        env:
+          FACEBOOK_PAGINA: ${{ secrets.FACEBOOK_PAGINA }}
+          FACEBOOK_TOKEN: ${{ secrets.FACEBOOK_TOKEN }}
+        run: |
+          if [ -z "$FACEBOOK_PAGINA" ] || [ -z "$FACEBOOK_TOKEN" ]; then
+            echo "::error::Manca FACEBOOK_PAGINA o FACEBOOK_TOKEN nei segreti."
+            exit 1
+          fi
+
+          risposta=$(curl -s -H "Authorization: Bearer $FACEBOOK_TOKEN" \
+            "https://graph.facebook.com/v26.0/me?fields=id,name")
+
+          errore=$(echo "$risposta" | jq -r '.error.message // empty')
+          if [ -n "$errore" ]; then
+            echo "::error::Facebook rifiuta il token: $errore"
+            exit 1
+          fi
+
+          id=$(echo "$risposta" | jq -r '.id')
+          nome=$(echo "$risposta" | jq -r '.name')
+
+          if [ "$id" != "$FACEBOOK_PAGINA" ]; then
+            echo "::error::Il token appartiene a \"$nome\" ($id), non alla pagina $FACEBOOK_PAGINA. Serve il token della pagina, quello preso da me/accounts."
+            exit 1
+          fi
+
+          echo "Token valido per la pagina \"$nome\" ($id). Nessun post inviato."
