@@ -50,7 +50,7 @@ export const SITO = {
 	/** Lascia la stringa vuota per nascondere il link. */
 	social: {
 		x: '',
-		facebook: 'https://www.facebook.com/profile.php?id=61594568768206',
+		facebook: 'https://www.facebook.com/abbiamounproblema',
 		linkedin: '',
 		instagram: '',
 	},
