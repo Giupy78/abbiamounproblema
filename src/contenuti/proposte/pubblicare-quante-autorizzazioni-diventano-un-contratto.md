@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "immigrazione-meno-sbarchi-piu-permessi"
-dataPubblicazione: 2026-10-22
-bozza: true
+dataPubblicazione: 2026-10-28
+bozza: false
 ---
 
 Per il 2025 il decreto flussi programmava **165mila ingressi** per lavoro. Secondo l'[Istat](https://www.istat.it/comunicato-stampa/cittadini-non-comunitari-in-italia-anno-2025/), i nuovi permessi di soggiorno per lavoro rilasciati nell'anno sono stati **circa 59mila**: poco più di un terzo.

@@ -177,6 +177,20 @@ const SETTIMANE = [
 	{ etichetta: '20 ore', y: 104, piene: 10 },
 ];
 
+/**
+ * Deficit in percentuale del PIL secondo il Documento programmatico di
+ * bilancio 2027: il 2025 è il consuntivo ISTAT, il 2026 la stima, dal 2027
+ * il quadro programmatico. La parte rossa è l'uso della clausola europea:
+ * senza, il deficit sarebbe al 2,8 e al 2,6 per cento.
+ */
+const SOGLIA = [
+	{ anno: '2025', base: 3.1, clausola: 0 },
+	{ anno: '2026', base: 2.9, clausola: 0 },
+	{ anno: '2027', base: 2.8, clausola: 0.6 },
+	{ anno: '2028', base: 2.6, clausola: 0.6 },
+	{ anno: '2029', base: 2.3, clausola: 0 },
+];
+
 const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 	x: 290 + (i % 4) * 38,
 	y: 30 + Math.floor(i / 4) * 38,
@@ -1005,6 +1019,39 @@ const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 					})}
 
 					<path class="tratto" d="M196 146h214" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'soglia' && (
+				<g>
+					{/* Il deficit anno per anno contro la linea del 3 per cento. Nel
+					    2026 scende sotto, nel 2027 e nel 2028 la parte finanziata con
+					    la clausola, in rosso, lo riporta sopra. */}
+					{SOGLIA.map(({ anno, base, clausola }, i) => {
+						const x = 112 + i * 68;
+						const alto = base * 32;
+						const extra = clausola * 32;
+						return (
+							<g>
+								<rect class="pieno" x={x} y={146 - alto} width="40" height={alto} rx="2" />
+								{clausola > 0 && (
+									<rect class="pieno rosso-pieno" x={x} y={146 - alto - extra} width="40" height={extra} rx="2" />
+								)}
+								<text class="etichetta-anno" x={x + 20} y={146 - alto - extra - 8}>
+									{(base + clausola).toFixed(1).replace('.', ',')}
+								</text>
+								<text class="etichetta-anno" x={x + 20} y={166}>
+									{anno}
+								</text>
+							</g>
+						);
+					})}
+
+					<path class="tratto tratteggiato" d="M98 50h340" />
+					<text class="etichetta-anno" x="76" y="55">3%</text>
+					<path class="tratto" d="M98 146h340" />
 				</g>
 			)
 		}

@@ -3,7 +3,7 @@ titolo: "La legge di bilancio è un articolo solo, con 973 commi"
 titoloSeo: "La manovra in un voto solo"
 descrizione: "La manovra 2026 è un articolo con 973 commi, approvato con un voto di fiducia. Non è un'invenzione di questo governo: è la regola da trent'anni."
 dataPubblicazione: 2026-10-15
-dataAggiornamento: 2026-10-15
+dataAggiornamento: 2026-10-28
 categoria: Istituzioni
 tag:
   - legge di bilancio
@@ -73,13 +73,15 @@ Il Presidente della Repubblica Mattarella lo ha detto con parole misurate ma net
 
 Quello che sta succedendo in queste settimane è il meccanismo che si vede mentre accade, e vale la pena raccontarlo con equilibrio, perché il ritardo di quest'anno ha una ragione.
 
-Il governo ha chiesto all'Unione europea di poter usare una clausola che consente più spesa in deficit, vincolata a energia e difesa. Finché quella richiesta non è approvata, non si sa quante risorse ci saranno, e quindi non si può scrivere la manovra. La risposta [non è attesa prima dell'inizio di novembre](https://www.ilpost.it/2026/10/14/documento-programmatico-di-bilancio-legge-di-bilancio-2027-scostamento/): l'Eurogruppo che dovrebbe chiudere la procedura è fissato per il 9 novembre.
+Il governo ha chiesto all'Unione europea di poter usare una clausola che consente più spesa in deficit, vincolata a energia e difesa. Finché quella richiesta non è approvata, non si sa quante risorse ci saranno, e quindi non si può scrivere la manovra. La risposta [non è attesa prima dell'inizio di novembre](https://www.ilpost.it/2026/10/14/documento-programmatico-di-bilancio-legge-di-bilancio-2027-scostamento/): a decidere è il Consiglio dell'Ue, che ha quattro settimane dalla [raccomandazione della Commissione dell'8 ottobre](https://data.consilium.europa.eu/doc/document/ST-14247-2026-INIT/en/pdf).
 
 È una ragione seria, non un pretesto. Ma l'effetto sul Parlamento è identico a quello di un ritardo senza ragioni: se il testo arriva a metà novembre, alle due camere restano sei o sette settimane — vacanze di Natale comprese — per esaminare, modificare e approvare la legge che decide tasse, spese e servizi dell'anno dopo.
 
 E non è il primo anno. Secondo Il Post, è **il secondo anno di fila** che a metà ottobre il disegno di legge non è ancora stato approvato.
 
 Il termine del 20 ottobre esiste. Superarlo non comporta nessuna conseguenza per chi lo supera. Comporta solo meno tempo per chi deve esaminare.
+
+*Aggiornamento del 28 ottobre: il governo ha approvato il disegno di legge il 28 ottobre. Cosa contiene e cosa cambia per il deficit lo abbiamo raccontato in [Manovra 2027: il deficit torna sopra il 3 per cento](/manovra-2027-deficit-sopra-il-3-per-cento).*
 
 ## Dove finisce il costo
 
@@ -122,3 +124,5 @@ Per questo non la cambierà chi governa. Potrebbe cambiarla solo chi scrive i re
 ---
 
 *Correzione del 15 ottobre 2026: nella prima versione di questo articolo la tabella sulle questioni di fiducia mescolava rilevazioni di anni diversi — fra l'altro riportava per il governo Draghi un totale riferito ai soli primi dieci mesi — e ometteva il totale del governo Meloni. Ora riporta i dati Openpolis aggiornati a giugno 2025. Corretto anche il numero dei volumi del dossier parlamentare, che sono cinque e non quattro.*
+
+*Correzione del 28 ottobre 2026: scrivevamo che sulla clausola europea avrebbe deciso l'Eurogruppo del 9 novembre. La fonte citata non lo dice, e la decisione spetta al Consiglio dell'Ue, che ha quattro settimane dalla raccomandazione della Commissione dell'8 ottobre. Abbiamo corretto la frase.*

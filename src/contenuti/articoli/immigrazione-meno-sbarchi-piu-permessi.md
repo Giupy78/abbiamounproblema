@@ -2,7 +2,7 @@
 titolo: "Meno sbarchi, più permessi: dove passa davvero l'immigrazione"
 titoloSeo: "Immigrazione: sbarchi e permessi"
 descrizione: "Nel 2026 gli sbarchi sono meno della metà del 2025. Ma nel 2025 i nuovi permessi di soggiorno sono saliti a 427mila: per lavoro 59mila, su 165mila previsti."
-dataPubblicazione: 2026-10-22
+dataPubblicazione: 2026-10-28
 categoria: Società
 tag:
   - immigrazione
@@ -11,11 +11,11 @@ tag:
   - decreto flussi
   - cittadinanza
 illustrazione: porte
-bozza: true
+bozza: false
 social: |
   Nel 2026 gli sbarchi sono meno della metà dell'anno scorso.
 
-  Ma nel 2025 i nuovi permessi di soggiorno sono stati 426.956, il dato più alto da quindici anni dopo il 2022. E quelli per lavoro sono stati circa 59mila, contro i 165mila ingressi programmati.
+  Ma nel 2025 i nuovi permessi di soggiorno sono stati 426.956, il valore più alto degli ultimi quindici anni, dopo quello del 2022. E quelli per lavoro sono stati circa 59mila, contro i 165mila ingressi programmati.
 
   Il dibattito misura il numero più piccolo. Il Paese cambia con quello più grande.
 ---
@@ -24,7 +24,7 @@ Il 21 ottobre il Ministero dell'Interno ha aggiornato i dati sugli arrivi via ma
 
 Lo stesso giorno, al Parlamento europeo, il presidente del Consiglio europeo António Costa ha detto che l'approccio comune dell'Unione «sta dando i suoi frutti», [secondo il resoconto dell'agenzia SIR](https://www.agensir.it/quotidiano/2026/10/21/ue-costa-consiglio-europeo-sulle-migrazioni-solo-frontiere-e-rimpatri/).
 
-Il giorno dopo, il 22 ottobre, l'Istat ha pubblicato i dati sui permessi di soggiorno del 2025: **426.956 nuovi permessi**, il 47,2% in più dell'anno prima. È il valore più alto degli ultimi quindici anni dopo il 2022, l'anno dei profughi dall'Ucraina.
+Il giorno dopo, il 22 ottobre, l'Istat ha pubblicato i dati sui permessi di soggiorno del 2025: **426.956 nuovi permessi**, il 47,2% in più dell'anno prima. È il valore più alto degli ultimi quindici anni, dopo quello del 2022, l'anno dei profughi dall'Ucraina.
 
 Due numeri nella stessa settimana, che raccontano due storie diverse. Il dibattito pubblico si misura quasi sempre sul primo. Il Paese, invece, cambia soprattutto con il secondo.
 

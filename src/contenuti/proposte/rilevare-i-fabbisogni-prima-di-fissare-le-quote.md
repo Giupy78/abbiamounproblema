@@ -8,8 +8,8 @@ stato: "Proposta"
 difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "immigrazione-meno-sbarchi-piu-permessi"
-dataPubblicazione: 2026-10-22
-bozza: true
+dataPubblicazione: 2026-10-28
+bozza: false
 ---
 
 Il [decreto flussi in vigore](https://www.gazzettaufficiale.it/eli/id/2025/10/15/25A05656/sg) programma 497.550 ingressi per lavoro nel triennio 2026-2028: 164.850 nel 2026, 165.850 nel 2027, 166.850 nel 2028.
