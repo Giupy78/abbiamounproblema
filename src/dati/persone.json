@@ -1,0 +1,125 @@
+{
+	"persone": {
+		"giorgia-meloni": {
+			"nome": "Giorgia Meloni",
+			"ruolo": "Presidente di Fratelli d'Italia",
+			"foto": "/domande/foto/giorgia-meloni.jpg",
+			"crediti": {
+				"autore": "Governo Italiano",
+				"licenza": "CC BY 3.0 it",
+				"licenzaUrl": "https://creativecommons.org/licenses/by/3.0/it/deed.en",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Giorgia_Meloni_Official_2024_(cropped).jpg"
+			}
+		},
+		"elly-schlein": {
+			"nome": "Elly Schlein",
+			"ruolo": "Segretaria del Partito Democratico",
+			"foto": "/domande/foto/elly-schlein.jpg",
+			"crediti": {
+				"autore": "European Commission (Jennifer Jacquemart)",
+				"licenza": "CC BY 4.0",
+				"licenzaUrl": "https://creativecommons.org/licenses/by/4.0",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Elly_Schlein_in_2023_(cropped).jpg"
+			}
+		},
+		"giuseppe-conte": {
+			"nome": "Giuseppe Conte",
+			"ruolo": "Presidente del Movimento 5 Stelle",
+			"foto": "/domande/foto/giuseppe-conte.jpg",
+			"crediti": {
+				"autore": "Etienne Ansotte",
+				"licenza": "CC BY 4.0",
+				"licenzaUrl": "https://creativecommons.org/licenses/by/4.0",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Giuseppe_Conte_2019_(cropped).jpg"
+			}
+		},
+		"matteo-salvini": {
+			"nome": "Matteo Salvini",
+			"ruolo": "Leader della Lega",
+			"foto": "/domande/foto/matteo-salvini.jpg",
+			"crediti": {
+				"autore": "European Union",
+				"licenza": "Attribution",
+				"licenzaUrl": null,
+				"fonte": "https://commons.wikimedia.org/wiki/File:Matteo_Salvini,_2025.12.04_(cropped).jpg"
+			}
+		},
+		"antonio-tajani": {
+			"nome": "Antonio Tajani",
+			"ruolo": "Segretario di Forza Italia",
+			"foto": "/domande/foto/antonio-tajani.jpg",
+			"crediti": {
+				"autore": "U.S. Department of State",
+				"licenza": "Public domain",
+				"licenzaUrl": null,
+				"fonte": "https://commons.wikimedia.org/wiki/File:Minister_Antonio_Tajani_2025.jpg"
+			}
+		},
+		"elsa-fornero": {
+			"nome": "Elsa Fornero",
+			"ruolo": "Ministro del Lavoro, governo Monti (2011-2013)",
+			"foto": "/domande/foto/elsa-fornero.jpg",
+			"crediti": {
+				"autore": "Niccolò Caranti",
+				"licenza": "CC BY-SA 3.0",
+				"licenzaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Elsa_Fornero_2012_(cropped).JPG"
+			}
+		},
+		"enrico-giovannini": {
+			"nome": "Enrico Giovannini",
+			"ruolo": "Ministro del Lavoro, governo Letta (2013-2014)",
+			"foto": "/domande/foto/enrico-giovannini.jpg",
+			"crediti": {
+				"autore": "Niccolò Caranti",
+				"licenza": "CC BY-SA 3.0",
+				"licenzaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Enrico_Giovannini_-_Festival_Economia_2014.JPG"
+			}
+		},
+		"giuliano-poletti": {
+			"nome": "Giuliano Poletti",
+			"ruolo": "Ministro del Lavoro, governi Renzi e Gentiloni (2014-2018)",
+			"foto": "/domande/foto/giuliano-poletti.jpg",
+			"crediti": {
+				"autore": "Governo.it",
+				"licenza": "CC BY 3.0 it",
+				"licenzaUrl": "https://creativecommons.org/licenses/by/3.0/it/deed.en",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Giuliano_Poletti_2017.jpg"
+			}
+		},
+		"luigi-di-maio": {
+			"nome": "Luigi Di Maio",
+			"ruolo": "Ministro del Lavoro, governo Conte I (2018-2019)",
+			"foto": "/domande/foto/luigi-di-maio.jpg",
+			"crediti": {
+				"autore": "European Commission (Christophe Licoppe)",
+				"licenza": "CC BY 4.0",
+				"licenzaUrl": "https://creativecommons.org/licenses/by/4.0",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Luigi_Di_Maio_2023_(cropped).jpg"
+			}
+		},
+		"nunzia-catalfo": {
+			"nome": "Nunzia Catalfo",
+			"ruolo": "Ministro del Lavoro, governo Conte II (2019-2021)",
+			"foto": "/domande/foto/nunzia-catalfo.jpg",
+			"crediti": {
+				"autore": "Governo Italiano",
+				"licenza": "CC BY-SA 3.0",
+				"licenzaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+				"fonte": "https://commons.wikimedia.org/wiki/File:Nunzia_Catalfo_2019.jpg"
+			}
+		},
+		"andrea-orlando": {
+			"nome": "Andrea Orlando",
+			"ruolo": "Ministro del Lavoro, governo Draghi (2021-2022)",
+			"foto": "/domande/foto/andrea-orlando.jpg",
+			"crediti": {
+				"autore": "Presidenza della Repubblica",
+				"licenza": "Attribution",
+				"licenzaUrl": null,
+				"fonte": "https://commons.wikimedia.org/wiki/File:Andrea_Orlando_2021_cropped.jpg"
+			}
+		}
+	}
+}

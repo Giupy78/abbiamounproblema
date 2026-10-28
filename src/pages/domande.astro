@@ -1,0 +1,277 @@
+---
+/**
+ * Le domande ai lettori.
+ *
+ * Una domanda alla volta va sulla pagina Facebook, con la sua immagine; qui
+ * stanno tutte insieme, con il criterio che le tiene neutrali e i crediti
+ * delle foto. Per ogni domanda: l'immagine da scaricare e il testo da
+ * incollare, perché su Facebook il post si pubblica a mano.
+ *
+ * Le immagini si rigenerano con:  npm run immagini-domande
+ */
+import Base from '../layouts/Base.astro';
+import { SERIE_DOMANDE, SITO, type SerieDomande } from '../config';
+import { domandePubblicate } from '../utils/domande';
+
+const domande = await domandePubblicate();
+
+const serie = (Object.keys(SERIE_DOMANDE) as SerieDomande[])
+	.map((chiave) => ({
+		chiave,
+		...SERIE_DOMANDE[chiave],
+		domande: domande.filter((d) => d.serie === chiave),
+	}))
+	.filter((s) => s.domande.length > 0);
+---
+
+<Base
+	titolo="Le domande ai lettori"
+	descrizione="Le domande che facciamo ai lettori sulla nostra pagina Facebook: la stessa domanda a tutti, con un criterio dichiarato. Si risponde nei commenti."
+>
+	<div class="contenitore">
+		<div class="testata-pagina">
+			<h1>Le domande ai lettori</h1>
+			<p class="testata-pagina__sommario">
+				Sulla nostra <a href={SITO.social.facebook} target="_blank" rel="noopener noreferrer"
+					>pagina Facebook</a
+				> facciamo una domanda alla volta. Le risposte si danno lì, nei commenti: un sì, un no,
+				un nome, e soprattutto il perché.
+			</p>
+		</div>
+
+		<section class="regole">
+			<h2>Le regole</h2>
+			<ul>
+				<li>
+					<strong>La stessa domanda a tutti.</strong> Una domanda su una persona non la facciamo mai
+					da sola: ogni serie ha un criterio, scritto qui sotto, e vale per tutti quelli che ci
+					rientrano.
+				</li>
+				<li>
+					<strong>Non sono sondaggi.</strong> Chi risponde non è un campione rappresentativo degli
+					italiani, quindi non pubblichiamo percentuali.
+				</li>
+				<li>
+					<strong>Le foto hanno una licenza libera</strong> e sotto ognuna trovi l'autore e la fonte.
+				</li>
+			</ul>
+		</section>
+
+		{
+			serie.map((s) => (
+				<section class="serie">
+					<h2 class="serie__titolo">{s.titolo}</h2>
+					<p class="serie__criterio">{s.criterio}</p>
+
+					<ul class="schede">
+						{s.domande.map((d) => (
+							<li class="scheda" id={d.id}>
+								<div class:list={['scheda__foto', d.persone.length === 2 && 'scheda__foto--doppia']}>
+									{d.persone.map((p) => (
+										<figure>
+											<img src={p.foto} alt={p.nome} width="300" height="400" loading="lazy" />
+											<figcaption>
+												<span class="scheda__nome">{p.nome}</span>
+												<span class="scheda__ruolo">{p.ruolo}</span>
+											</figcaption>
+										</figure>
+									))}
+								</div>
+
+								<p class="scheda__domanda">{d.domanda}</p>
+
+								<div class="scheda__azioni">
+									{d.immagine && (
+										<a class="azione" href={d.immagine} download>
+											Scarica l'immagine
+										</a>
+									)}
+									<button class="azione" type="button" data-testo={d.testo}>
+										Copia il testo
+									</button>
+									<a class="azione" href={SITO.social.facebook} target="_blank" rel="noopener noreferrer">
+										Rispondi su Facebook
+									</a>
+								</div>
+
+								<p class="scheda__crediti">
+									{d.persone.map((p, i) => (
+										<>
+											{i > 0 && ' · '}
+											Foto di {p.nome}: {p.crediti.autore},{' '}
+											{p.crediti.licenzaUrl ? (
+												<a href={p.crediti.licenzaUrl} target="_blank" rel="noopener noreferrer">
+													{p.crediti.licenza}
+												</a>
+											) : (
+												p.crediti.licenza
+											)}
+											, via{' '}
+											<a href={p.crediti.fonte} target="_blank" rel="noopener noreferrer">
+												Wikimedia Commons
+											</a>
+										</>
+									))}
+								</p>
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</div>
+</Base>
+
+<script>
+	document.querySelectorAll('[data-testo]').forEach((pulsante) => {
+		pulsante.addEventListener('click', async () => {
+			const testo = pulsante.getAttribute('data-testo');
+			if (!testo) return;
+
+			const iniziale = pulsante.textContent;
+			try {
+				await navigator.clipboard.writeText(testo);
+				pulsante.textContent = 'Copiato';
+			} catch {
+				pulsante.textContent = 'Copia non riuscita';
+			}
+			setTimeout(() => {
+				pulsante.textContent = iniziale;
+			}, 1800);
+		});
+	});
+</script>
+
+<style>
+	.regole {
+		max-width: var(--larghezza-testo);
+		margin: 2rem 0 1rem;
+		padding: 1.25rem 1.5rem;
+		background: var(--sfondo-alt);
+		border: 1px solid var(--bordo);
+		border-radius: 8px;
+	}
+
+	.regole h2 {
+		margin-top: 0;
+		font-size: 1.15rem;
+	}
+
+	.regole ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	.serie {
+		margin: 3rem 0;
+	}
+
+	.serie__titolo {
+		margin-bottom: 0.25rem;
+	}
+
+	.serie__criterio {
+		max-width: var(--larghezza-testo);
+		color: var(--testo-tenue);
+		font-size: 0.95rem;
+	}
+
+	.schede {
+		list-style: none;
+		margin: 1.5rem 0 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+		gap: 1.5rem;
+	}
+
+	.scheda {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 1rem;
+		background: var(--sfondo-alt);
+		border: 1px solid var(--bordo);
+		border-radius: 8px;
+	}
+
+	.scheda__foto {
+		display: grid;
+		gap: 0.6rem;
+	}
+
+	.scheda__foto--doppia {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.scheda__foto figure {
+		margin: 0;
+	}
+
+	.scheda__foto img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		border-radius: 6px;
+	}
+
+	.scheda__foto figcaption {
+		display: flex;
+		flex-direction: column;
+		margin-top: 0.4rem;
+	}
+
+	.scheda__nome {
+		font-family: var(--serif);
+		font-weight: 700;
+	}
+
+	.scheda__ruolo {
+		font-size: 0.85rem;
+		color: var(--testo-tenue);
+	}
+
+	.scheda__domanda {
+		margin: 0.25rem 0 0;
+		font-family: var(--serif);
+		font-size: 1.35rem;
+		font-weight: 700;
+		color: var(--accento);
+	}
+
+	.scheda__azioni {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.azione {
+		font: inherit;
+		font-size: 0.85rem;
+		padding: 0.4rem 0.75rem;
+		border: 1px solid var(--bordo);
+		border-radius: 6px;
+		background: var(--sfondo);
+		color: var(--testo);
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.azione:hover {
+		border-color: var(--accento);
+	}
+
+	.scheda__crediti {
+		margin: auto 0 0;
+		font-size: 0.75rem;
+		color: var(--testo-tenue);
+	}
+
+	.scheda__crediti a {
+		color: inherit;
+	}
+</style>

@@ -454,3 +454,28 @@ collections:
       - name: body
         label: 'La proposta, per esteso'
         widget: markdown
+
+  - name: domande
+    label: Domande ai lettori
+    label_singular: Domanda
+    description: "Le domande per Facebook, in /domande. Regola: la stessa domanda va fatta a tutte le persone del criterio della serie, mai a una sola. Le persone si indicano con il nome del file in src/dati/persone.json (es. giorgia-meloni). L'immagine per Facebook si genera a parte: finche non esiste, il pulsante per scaricarla non compare."
+    folder: src/contenuti/domande
+    create: true
+    extension: json
+    format: json
+    identifier_field: domanda
+    slug: '{{slug}}'
+    summary: "{{domanda}}  ·  {{serie}}  ·  {{bozza | ternary('BOZZA','pubblicata')}}"
+    fields:
+      - { name: domanda, label: 'Domanda', widget: string, hint: 'Breve: al massimo 60 caratteri, deve stare nell immagine.' }
+      - name: serie
+        label: 'Serie'
+        widget: select
+        options:
+          - { label: 'Lo voteresti? (leader dei 5 partiti piu votati nel 2022)', value: 'voteresti' }
+          - { label: 'Chi preferisci? (leader dei 2 partiti piu votati nel 2022)', value: 'preferisci' }
+          - { label: 'Lo rivorresti ministro del Lavoro? (ministri dal 2011 al 2022)', value: 'ministro-lavoro' }
+      - { name: persone, label: 'Persone', widget: list, field: { name: persona, label: 'Persona', widget: string }, hint: 'Una o due, con il nome del file in src/dati/persone.json.' }
+      - { name: ordine, label: 'Posizione nella serie', widget: number, value_type: int, min: 1 }
+      - { name: dataPubblicazione, label: 'Data', widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, format: 'YYYY-MM-DD' }
+      - { name: bozza, label: 'Bozza', widget: boolean, default: false }

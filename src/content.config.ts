@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { CATEGORIE, AMBITI, STATI_PROPOSTA, DIFFICOLTA, ILLUSTRAZIONI } from './config';
+import { CATEGORIE, AMBITI, STATI_PROPOSTA, DIFFICOLTA, ILLUSTRAZIONI, SERIE_DOMANDE } from './config';
 
 /**
  * Struttura di un articolo.
@@ -164,4 +164,34 @@ const proposte = defineCollection({
 	}),
 });
 
-export const collections = { articoli, proposte };
+/**
+ * Le domande ai lettori, in /domande.
+ *
+ * Un file JSON per domanda. Le persone si indicano con la loro chiave in
+ * src/dati/persone.json, dove stanno anche la foto e i crediti: così la
+ * stessa foto, con lo stesso autore e la stessa licenza, vale per tutte le
+ * domande in cui compare.
+ */
+const domande = defineCollection({
+	loader: glob({
+		pattern: '**/*.json',
+		base: './src/contenuti/domande',
+	}),
+	schema: z.object({
+		domanda: z
+			.string()
+			.min(8, 'La domanda è troppo corta.')
+			.max(60, "Oltre i 60 caratteri la domanda non sta nell'immagine per Facebook."),
+		serie: z.enum(Object.keys(SERIE_DOMANDE) as [string, ...string[]]),
+		persone: z
+			.array(z.string())
+			.min(1, 'Serve almeno una persona.')
+			.max(2, 'Al massimo due persone per domanda.'),
+		/** Posizione dentro la serie: 1 è la prima. */
+		ordine: z.number().int().min(1),
+		dataPubblicazione: z.coerce.date(),
+		bozza: z.boolean().default(false),
+	}),
+});
+
+export const collections = { articoli, proposte, domande };

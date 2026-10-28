@@ -196,6 +196,7 @@ export const SLUG_RISERVATI = [
 	'meccanismi',
 	'tassi',
 	'social',
+	'domande',
 	'chi-sono',
 	'contatti',
 	'privacy',
@@ -215,3 +216,31 @@ export function categoriaInUrl(categoria: string): string {
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '');
 }
+
+/**
+ * Le serie di domande ai lettori, in /domande.
+ *
+ * La regola che tiene il sito neutrale: una domanda su una persona non si
+ * fa mai da sola. Ogni serie ha un criterio dichiarato, e la stessa domanda
+ * va posta a tutte le persone che rientrano nel criterio, non solo a quelle
+ * su cui conviene farla. Il criterio compare sulla pagina, così chi legge
+ * può verificarlo.
+ */
+export const SERIE_DOMANDE = {
+	voteresti: {
+		titolo: 'Lo voteresti?',
+		criterio:
+			"La stessa domanda ai leader dei cinque partiti più votati alla Camera alle elezioni politiche del 2022: Fratelli d'Italia, Partito Democratico, Movimento 5 Stelle, Lega e Forza Italia.",
+	},
+	preferisci: {
+		titolo: 'Chi preferisci?',
+		criterio: 'Il confronto fra i leader dei due partiti più votati alla Camera alle elezioni politiche del 2022.',
+	},
+	'ministro-lavoro': {
+		titolo: 'Lo rivorresti come ministro del Lavoro?',
+		criterio:
+			'La stessa domanda a tutti i ministri del Lavoro dei governi dal 2011 al 2022: Monti, Letta, Renzi, Gentiloni, Conte I, Conte II e Draghi.',
+	},
+} as const;
+
+export type SerieDomande = keyof typeof SERIE_DOMANDE;
