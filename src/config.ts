@@ -176,6 +176,7 @@ export const ILLUSTRAZIONI = [
 	'magazzino',
 	'ore',
 	'soglia',
+	'quinti',
 ] as const;
 
 /**

@@ -191,6 +191,17 @@ const SOGLIA = [
 	{ anno: '2029', base: 2.3, clausola: 0 },
 ];
 
+/**
+ * Come si divide la spesa delle famiglie secondo l'ISTAT (terzo trimestre
+ * 2026): energia e alimentari valgono il 17,1% e il 31,2% per il quinto che
+ * spende meno, il 7,3% e il 14,8% per quello che spende di più. Barre lunghe
+ * 300, quindi un punto percentuale vale 3.
+ */
+const QUINTI = [
+	{ etichetta: 'spende meno', y: 34, energia: 17.1, alimentari: 31.2 },
+	{ etichetta: 'spende di più', y: 98, energia: 7.3, alimentari: 14.8 },
+];
+
 const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 	x: 290 + (i % 4) * 38,
 	y: 30 + Math.floor(i / 4) * 38,
@@ -1052,6 +1063,34 @@ const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 					<path class="tratto tratteggiato" d="M98 50h340" />
 					<text class="etichetta-anno" x="76" y="55">3%</text>
 					<path class="tratto" d="M98 146h340" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'quinti' && (
+				<g>
+					{/* Due bilanci familiari della stessa lunghezza: in rosso l'energia,
+					    pieni gli alimentari, vuoto il resto. Lo stesso rincaro pesa
+					    più del doppio sulla barra in alto. */}
+					{QUINTI.map(({ etichetta, y, energia, alimentari }) => (
+						<g>
+							<text class="etichetta-anno" x="82" y={y + 23}>
+								{etichetta}
+							</text>
+							<rect class="tratto" x="160" y={y} width="300" height="36" rx="2" />
+							<rect class="pieno rosso-pieno" x="160" y={y} width={energia * 3} height="36" />
+							<rect class="pieno" x={160 + energia * 3} y={y} width={alimentari * 3} height="36" />
+							<text class="etichetta-anno" x={160 + (energia * 3) / 2} y={y - 6}>
+								{energia.toString().replace('.', ',')}%
+							</text>
+						</g>
+					))}
+
+					<rect class="pieno rosso-pieno" x="160" y="152" width="12" height="12" />
+					<text class="etichetta" x="178" y="163">energia</text>
+					<rect class="pieno" x="262" y="152" width="12" height="12" />
+					<text class="etichetta" x="280" y="163">alimentari</text>
 				</g>
 			)
 		}

@@ -271,6 +271,7 @@ collections:
           - { label: 'Magazzino — le scatole dei crediti, molte già irrecuperabili', value: 'magazzino' }
           - { label: 'Ore — la settimana da 38 ore e quella da 20', value: 'ore' }
           - { label: 'Soglia — il deficit anno per anno contro la linea del 3%', value: 'soglia' }
+          - { label: 'Quinti — quanto pesano energia e cibo per chi spende meno e chi spende di più', value: 'quinti' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'
