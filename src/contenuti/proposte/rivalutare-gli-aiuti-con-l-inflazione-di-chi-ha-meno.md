@@ -9,7 +9,7 @@ difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "inflazione-ottobre-2026-energia-chi-spende-meno"
 dataPubblicazione: 2026-10-30
-bozza: true
+bozza: false
 ---
 
 Le pensioni, comprese quelle assistenziali come l'assegno sociale, si rivalutano ogni anno dal 1° gennaio. Secondo l'[articolo 11 del decreto legislativo 503 del 1992](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-12-30;503~art11), il calcolo usa l'indice ISTAT dei prezzi per le famiglie di operai e impiegati. È un indice medio.

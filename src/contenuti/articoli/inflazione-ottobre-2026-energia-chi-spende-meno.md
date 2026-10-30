@@ -12,7 +12,7 @@ tag:
   - clienti vulnerabili
   - pensioni
 illustrazione: quinti
-bozza: true
+bozza: false
 social: |
   A ottobre l'inflazione sale al 5,4%, il livello più alto da agosto 2023. Senza l'energia sarebbe al 2,5%.
 
