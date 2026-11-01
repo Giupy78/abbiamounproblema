@@ -202,6 +202,18 @@ const QUINTI = [
 	{ etichetta: 'spende di più', y: 98, energia: 7.3, alimentari: 14.8 },
 ];
 
+/**
+ * Settembre 2026 secondo l'ISTAT: prezzi (IPCA) +4,2% in un anno, retribuzioni
+ * contrattuali orarie +2,5%. Sotto, tratteggiato, il riferimento per i
+ * rinnovi: la previsione 2026 dell'IPCA senza energia importata, 2,4%.
+ * Un punto percentuale vale 60.
+ */
+const FORBICE = [
+	{ etichetta: 'prezzi', valore: 4.2, classe: 'pieno rosso-pieno', y: 26 },
+	{ etichetta: 'salari', valore: 2.5, classe: 'pieno', y: 74 },
+	{ etichetta: 'riferimento', valore: 2.4, classe: 'tratto tratteggiato', y: 122 },
+];
+
 const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 	x: 290 + (i % 4) * 38,
 	y: 30 + Math.floor(i / 4) * 38,
@@ -1091,6 +1103,28 @@ const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 					<text class="etichetta" x="178" y="163">energia</text>
 					<rect class="pieno" x="262" y="152" width="12" height="12" />
 					<text class="etichetta" x="280" y="163">alimentari</text>
+				</g>
+			)
+		}
+
+		{
+			nome === 'forbice' && (
+				<g>
+					{/* Tre barre dalla stessa linea: quanto salgono i prezzi, quanto
+					    i salari dei contratti, e il riferimento su cui i contratti si
+					    rinnovano, che l'energia importata non la conta. */}
+					{FORBICE.map(({ etichetta, valore, classe, y }) => (
+						<g>
+							<text class="etichetta-anno" x="82" y={y + 20}>
+								{etichetta}
+							</text>
+							<rect class={classe} x="150" y={y} width={valore * 60} height="30" rx="2" />
+							<text class="etichetta" x={158 + valore * 60} y={y + 20}>
+								{valore.toString().replace('.', ',')}%
+							</text>
+						</g>
+					))}
+					<path class="tratto" d="M150 18v142" />
 				</g>
 			)
 		}

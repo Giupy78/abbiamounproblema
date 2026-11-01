@@ -101,3 +101,13 @@ Il numero che manca è quello per tipo di famiglia. Esiste, l'ISTAT lo calcola, 
 Un'inflazione al 5,4% fatta quasi tutta di energia non è uguale per tutti, perché le famiglie non comprano tutte le stesse cose. Chi spende poco spende soprattutto in bollette e cibo, e lì i prezzi si muovono di più, in tutte e due le direzioni.
 
 I dati per vederlo ci sono già. Quello che manca è usarli dove si decide quanto adeguare un assegno o a chi destinare un aiuto.
+
+## Le fonti
+
+- ISTAT, [Prezzi al consumo – ottobre 2026, dati provvisori](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/), 30 ottobre 2026.
+- ISTAT, [Prezzi al consumo – settembre 2026, dati definitivi](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/), 16 ottobre 2026 (con l'inflazione per classi di spesa delle famiglie del terzo trimestre).
+- ISTAT, [Prezzi al consumo – dicembre 2025, dati definitivi](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dicembre-2025/), 16 gennaio 2026 (con l'inflazione per classi di spesa del 2024 e del 2025).
+- ARERA, [Elettricità: Maggior Tutela +37,3% nel IV trimestre 2026 per i clienti vulnerabili](https://www.arera.it/comunicati-stampa/dettaglio/elettricita-maggior-tutela-373-nel-iv-trimestre-2026-per-i-clienti-vulnerabili), 29 settembre 2026.
+- ARERA, [Gas: valore della materia prima del Servizio di tutela della vulnerabilità per settembre 2026](https://www.arera.it/comunicati-stampa/dettaglio/nota-stampa-gas-arera-comunica-valore-materia-prima-servizio-tutela-vulnerabilita-settembre-2026), 2 ottobre 2026.
+- [Decreto legislativo 210 del 2021, articolo 11](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2021-11-08;210~art11), clienti vulnerabili, testo vigente su Normattiva.
+- [Decreto legislativo 503 del 1992, articolo 11](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-12-30;503~art11), perequazione automatica delle pensioni, testo vigente su Normattiva.

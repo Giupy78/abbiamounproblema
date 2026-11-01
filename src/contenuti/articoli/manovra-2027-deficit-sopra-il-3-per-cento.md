@@ -104,3 +104,15 @@ Restano valide le proposte collegate all'articolo del 15 ottobre, a partire da [
 Il ritardo di quest'anno ha una ragione seria: la manovra dipende da una decisione europea che non era ancora arrivata. Ma la conseguenza è un ordine rovesciato. Il Parlamento ha autorizzato il deficit prima di vedere le misure. Il governo ha scritto le misure prima del via libera finale. E la Commissione dirà quali misure contano davvero solo strada facendo, nelle verifiche di ogni semestre.
 
 Nessuno dei passaggi è irregolare, e ognuno ha una spiegazione. Messi insieme, però, fanno sì che la domanda più importante, cioè quanto deficit fare e per cosa, sia stata decisa nel momento in cui se ne parlava meno.
+
+## Le fonti
+
+- Consiglio dei ministri, [comunicato stampa n. 195](https://www.governo.it/it/articolo/comunicato-stampa-del-consiglio-dei-ministri-n-195/32973), 28 ottobre 2026 (disegno di legge di bilancio 2027).
+- Consiglio dei ministri, [comunicato stampa n. 191](https://www.governo.it/it/articolo/comunicato-stampa-del-consiglio-dei-ministri-n-191/32740), 2 ottobre 2026 (Documento programmatico di finanza pubblica).
+- Ministero dell'Economia e delle Finanze, [Documento programmatico di bilancio 2027](https://www.mef.gov.it/export/sites/MEF/inevidenza/2026/article_00393/Italys-DBP-2027.pdf), deliberato il 13 ottobre 2026.
+- Commissione europea, [raccomandazione COM(2026) 553 sull'attivazione della clausola di salvaguardia nazionale per l'Italia](https://data.consilium.europa.eu/doc/document/ST-14247-2026-INIT/en/pdf), 8 ottobre 2026 (documento del Consiglio 14247/26).
+- Camera dei deputati, [resoconto stenografico della seduta n. 726](https://documenti.camera.it/leg19/resoconti/assemblea/html/sed0726/stenografico.htm), 13 ottobre 2026.
+- [Regolamento (UE) 2024/1263](https://eur-lex.europa.eu/eli/reg/2024/1263/oj), articolo 26, clausole di salvaguardia nazionali.
+- [Regolamento (CE) 1467/97](https://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX:01997R1467-20240430), articolo 2, testo consolidato al 30 aprile 2024.
+- [Legge 196 del 2009, articolo 7](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2009-12-31;196~art7), termine del 20 ottobre, testo vigente su Normattiva.
+- [Legge 243 del 2012, articolo 6](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2012-12-24;243~art6), scostamenti dagli obiettivi di bilancio, testo vigente su Normattiva.

@@ -35,3 +35,8 @@ Lo stesso vale per chi legge i conti dall'esterno. Una misura che la Commissione
 La proposta non cambia quanto deficit si fa, né per cosa: quelle restano scelte della maggioranza di turno. Rende soltanto pubblico un documento che esiste già e che oggi resta tra il governo e la Commissione.
 
 Il costo è quasi nullo, perché il modulo va compilato comunque. Proprio per questo la difficoltà è bassa: non serve una legge nuova, basta una norma di poche righe nella legge di bilancio o un atto di indirizzo delle Camere.
+
+## Le fonti
+
+- Commissione europea, [raccomandazione COM(2026) 553 sull'attivazione della clausola di salvaguardia nazionale per l'Italia](https://data.consilium.europa.eu/doc/document/ST-14247-2026-INIT/en/pdf), 8 ottobre 2026.
+- Ministero dell'Economia e delle Finanze, [Documento programmatico di bilancio 2027](https://www.mef.gov.it/export/sites/MEF/inevidenza/2026/article_00393/Italys-DBP-2027.pdf), deliberato il 13 ottobre 2026.

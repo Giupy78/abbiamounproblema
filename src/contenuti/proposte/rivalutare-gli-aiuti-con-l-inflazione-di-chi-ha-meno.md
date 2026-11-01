@@ -33,3 +33,9 @@ Quando l'energia sale, come nel 2026, l'indice del primo quinto è più alto del
 L'indice del primo quinto misura le famiglie che **spendono** meno, non quelle che guadagnano meno. Le due cose si sovrappongono molto, ma non del tutto. E chi riceve una prestazione assistenziale può avere abitudini di spesa diverse dalla media del suo gruppo, per esempio un anziano solo che riscalda la casa tutto il giorno.
 
 Per questo la difficoltà è indicata come media. Serve una norma, serve che l'ISTAT consolidi l'indice come serie ufficiale per questo uso, e serve decidere a quali prestazioni applicarlo.
+
+## Le fonti
+
+- [Decreto legislativo 503 del 1992, articolo 11](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-12-30;503~art11), perequazione automatica delle pensioni, testo vigente su Normattiva.
+- ISTAT, [Prezzi al consumo – settembre 2026, dati definitivi](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/), 16 ottobre 2026.
+- ISTAT, [Prezzi al consumo – dicembre 2025, dati definitivi](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dicembre-2025/), 16 gennaio 2026.
