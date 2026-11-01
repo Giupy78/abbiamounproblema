@@ -9,7 +9,7 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "pil-fermo-prezzi-in-salita-salari-indietro"
 dataPubblicazione: 2026-11-01
-bozza: true
+bozza: false
 ---
 
 L'[accordo quadro del 22 gennaio 2009](https://anmvioggi.it/media/files/ACCORDO%20QUADRO%20PER%20LA%20RIFORMA%20DEI%20CONTRATTI.pdf) stabilisce che gli aumenti dei contratti nazionali seguano una previsione dell'inflazione calcolata sull'indice armonizzato, senza l'energia importata. La previsione la fa l'ISTAT, una volta l'anno, a giugno.

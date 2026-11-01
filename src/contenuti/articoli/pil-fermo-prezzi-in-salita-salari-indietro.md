@@ -12,7 +12,7 @@ tag:
   - lavoro
   - ISTAT
 illustrazione: forbice
-bozza: true
+bozza: false
 social: |
   In due giorni l'ISTAT ha pubblicato quattro dati. Il PIL del terzo trimestre è fermo. L'inflazione di ottobre è al 5,4%. I salari dei contratti crescono del 2,5%. I disoccupati aumentano.
 
