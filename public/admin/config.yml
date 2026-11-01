@@ -273,6 +273,7 @@ collections:
           - { label: 'Soglia — il deficit anno per anno contro la linea del 3%', value: 'soglia' }
           - { label: 'Quinti — quanto pesano energia e cibo per chi spende meno e chi spende di più', value: 'quinti' }
           - { label: 'Forbice — prezzi, salari e il riferimento per i rinnovi dei contratti', value: 'forbice' }
+          - { label: 'Bivio — meno nascite: classi più piccole o risparmio per l erario', value: 'bivio' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'

@@ -214,6 +214,15 @@ const FORBICE = [
 	{ etichetta: 'riferimento', valore: 2.4, classe: 'tratto tratteggiato', y: 122 },
 ];
 
+/**
+ * Nati ogni mille abitanti secondo l'ISTAT: 9,5 nel 2005, 6,0 nel 2025.
+ * Dieci pixel per punto.
+ */
+const NASCITE = [
+	{ anno: '2005', valore: 9.5, x: 40 },
+	{ anno: '2025', valore: 6.0, x: 100 },
+];
+
 const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 	x: 290 + (i % 4) * 38,
 	y: 30 + Math.floor(i / 4) * 38,
@@ -1125,6 +1134,36 @@ const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 						</g>
 					))}
 					<path class="tratto" d="M150 18v142" />
+				</g>
+			)
+		}
+
+		{
+			nome === 'bivio' && (
+				<g>
+					{/* A sinistra le nascite che calano, a destra le due strade per
+					    lo stesso calo: classi più piccole, tratteggiata perché è
+					    quella non presa, o risparmio che va all'erario. */}
+					{NASCITE.map(({ anno, valore, x }) => (
+						<g>
+							<rect class="pieno" x={x} y={150 - valore * 10} width="40" height={valore * 10} rx="2" />
+							<text class="etichetta-anno" x={x + 20} y={150 - valore * 10 - 8}>
+								{valore.toFixed(1).replace('.', ',')}
+							</text>
+							<text class="etichetta-anno" x={x + 20} y="170">
+								{anno}
+							</text>
+						</g>
+					))}
+					<path class="tratto" d="M30 150h120" />
+
+					<path class="tratto" d="M170 98h60" />
+					<path class="tratto tratteggiato" d="M230 98l60-42" />
+					<path class="tratto tratteggiato" d="M280 52l10 4-4 10" />
+					<text class="etichetta" x="300" y="56">classi più piccole</text>
+					<path class="tratto rosso" d="M230 98l60 42" />
+					<path class="tratto rosso" d="M286 130l4 10-10 4" />
+					<text class="etichetta" x="300" y="146">erario</text>
 				</g>
 			)
 		}

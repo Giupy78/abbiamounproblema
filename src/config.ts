@@ -178,6 +178,7 @@ export const ILLUSTRAZIONI = [
 	'soglia',
 	'quinti',
 	'forbice',
+	'bivio',
 ] as const;
 
 /**
