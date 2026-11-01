@@ -12,7 +12,7 @@ tag:
   - organico
   - calo demografico
 illustrazione: bivio
-bozza: true
+bozza: false
 social: |
   Nella manovra 2027 c'è un taglio alla scuola: dall'anno scolastico 2027/2028, 4.925 posti di docenti e 2.049 di personale ATA in meno. Si aggiunge a quello di due anni fa: in tutto 10.585 docenti e 4.223 ATA.
 

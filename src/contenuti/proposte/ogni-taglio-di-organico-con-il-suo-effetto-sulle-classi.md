@@ -9,7 +9,7 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "manovra-2027-tagli-scuola-docenti-ata"
 dataPubblicazione: 2026-11-01
-bozza: true
+bozza: false
 ---
 
 Il disegno di legge di bilancio 2027 riduce l'organico della scuola di 4.925 posti di docenti e 2.049 di personale ATA dal 2027/2028. Sullo sfondo c'è il calo degli alunni. Lo stesso calo, però, potrebbe servire anche a fare classi più piccole: è l'impegno che il ministero richiama, citando il PNRR, nel [decreto sugli organici del 10 agosto 2026](https://www.mim.gov.it/documents/20182/10323380/Decreto+interministeriale+n.+170+del+10+agosto+2026.pdf/8481dcf2-ef69-e765-01bd-16539b424f94?version=1.0&t=1787661364219).
