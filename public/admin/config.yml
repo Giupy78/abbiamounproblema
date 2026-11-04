@@ -274,6 +274,7 @@ collections:
           - { label: 'Quinti — quanto pesano energia e cibo per chi spende meno e chi spende di più', value: 'quinti' }
           - { label: 'Forbice — prezzi, salari e il riferimento per i rinnovi dei contratti', value: 'forbice' }
           - { label: 'Bivio — meno nascite: classi più piccole o risparmio per l erario', value: 'bivio' }
+          - { label: 'Stanziato — i soldi per investimenti disponibili e quelli pagati davvero', value: 'stanziato' }
 
       - name: immagine
         label: 'Immagine di copertina (facoltativa)'

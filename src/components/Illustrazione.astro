@@ -223,6 +223,16 @@ const NASCITE = [
 	{ anno: '2025', valore: 6.0, x: 100 },
 ];
 
+/**
+ * Spese in conto capitale del bilancio dello Stato nel 2025, in miliardi:
+ * 290,4 si potevano spendere (stanziamenti più residui), 149,0 sono stati
+ * pagati. Fonte: relazione al rendiconto 2025. 0,95 pixel per miliardo.
+ */
+const STANZIATO = [
+	{ etichetta: 'disponibili', valore: 290.4, classe: 'tratto tratteggiato', y: 46 },
+	{ etichetta: 'pagati', valore: 149.0, classe: 'pieno', y: 104 },
+];
+
 const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 	x: 290 + (i % 4) * 38,
 	y: 30 + Math.floor(i / 4) * 38,
@@ -1164,6 +1174,28 @@ const CATTEDRE = Array.from({ length: 12 }, (_, i) => ({
 					<path class="tratto rosso" d="M230 98l60 42" />
 					<path class="tratto rosso" d="M286 130l4 10-10 4" />
 					<text class="etichetta" x="300" y="146">erario</text>
+				</g>
+			)
+		}
+
+		{
+			nome === 'stanziato' && (
+				<g>
+					{/* I soldi per gli investimenti che lo Stato poteva spendere nel
+					    2025, tratteggiati, e quelli pagati davvero, pieni: circa la
+					    metà. */}
+					{STANZIATO.map(({ etichetta, valore, classe, y }) => (
+						<g>
+							<text class="etichetta-anno" x="64" y={y + 22}>
+								{etichetta}
+							</text>
+							<rect class={classe} x="120" y={y} width={valore * 0.95} height="34" rx="2" />
+							<text class="etichetta" x={128 + valore * 0.95} y={y + 22}>
+								{Math.round(valore)} mld
+							</text>
+						</g>
+					))}
+					<path class="tratto" d="M120 34v120" />
 				</g>
 			)
 		}

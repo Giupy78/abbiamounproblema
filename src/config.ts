@@ -179,6 +179,7 @@ export const ILLUSTRAZIONI = [
 	'quinti',
 	'forbice',
 	'bivio',
+	'stanziato',
 ] as const;
 
 /**
