@@ -9,7 +9,7 @@ difficolta: "Bassa"
 origine: "Analisi della redazione"
 articoloCollegato: "dove-vanno-i-soldi-pubblici-stanziati-non-spesi"
 dataPubblicazione: 2026-11-04
-bozza: true
+bozza: false
 ---
 
 Quanto di ciò che si paga in tasse va alle pensioni, alla sanità, alla scuola o agli interessi sul debito? I dati esistono, e li pubblicano [ISTAT ed Eurostat](https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table): nel 2024, su 100 euro di spesa pubblica, 42,2 sono andati alla protezione sociale, 13,2 alla sanità, 8,0 all'istruzione e 7,9 agli interessi. Ma arrivano in tabelle che quasi nessun contribuente consulta, e il vuoto lo riempiono le stime approssimative.

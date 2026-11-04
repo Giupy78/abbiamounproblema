@@ -9,7 +9,7 @@ difficolta: "Media"
 origine: "Analisi della redazione"
 articoloCollegato: "dove-vanno-i-soldi-pubblici-stanziati-non-spesi"
 dataPubblicazione: 2026-11-04
-bozza: true
+bozza: false
 ---
 
 Il bilancio dello Stato registra tre momenti per ogni spesa: lo stanziamento, l'impegno e il pagamento. La distanza fra il primo e l'ultimo non è piccola. Secondo i [dati del rendiconto 2025](https://documenti.camera.it/leg19/dossier/testi/BI0295.htm), per le spese in conto capitale lo Stato aveva a disposizione 290,4 miliardi fra stanziamenti e residui degli anni prima, e ne ha pagati 149,0.

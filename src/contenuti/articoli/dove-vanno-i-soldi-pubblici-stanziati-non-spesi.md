@@ -11,7 +11,7 @@ tag:
   - bilancio dello Stato
   - trasparenza
 illustrazione: stanziato
-bozza: true
+bozza: false
 social: |
   Ogni manovra si racconta in miliardi «stanziati». Ma stanziato non vuol dire speso.
 
