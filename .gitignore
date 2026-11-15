@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# File temporanei di Python (scripts/congiuntura.py)
+__pycache__/
