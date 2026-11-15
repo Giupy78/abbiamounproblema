@@ -200,6 +200,7 @@ export const SLUG_RISERVATI = [
 	'anteprima',
 	'meccanismi',
 	'tassi',
+	'congiuntura',
 	'social',
 	'domande',
 	'chi-sono',

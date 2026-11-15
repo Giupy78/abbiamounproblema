@@ -1,0 +1,313 @@
+---
+/**
+ * La congiuntura, aggiornata.
+ *
+ * I numeri arrivano dai comunicati stampa dell'ISTAT e stanno in
+ * src/dati/congiuntura.json. Li aggiorna da solo il workflow
+ * .github/workflows/congiuntura.yml, che ogni giorno feriale cerca i
+ * comunicati nuovi e ne legge la prima pagina (scripts/congiuntura.py).
+ *
+ * Qui non c'è commento né interpretazione: solo il dato, il periodo a cui
+ * si riferisce e il link al comunicato, così chiunque può controllare.
+ */
+import Base from '../layouts/Base.astro';
+import dati from '../dati/congiuntura.json';
+
+const { inflazione, pil, lavoro, retribuzioni } = dati as Record<string, any>;
+
+/** +5,4% con il segno, come lo scrive l'ISTAT. */
+function variazione(valore: number | null | undefined) {
+	if (valore === null || valore === undefined) return null;
+	const segno = valore > 0 ? '+' : '';
+	return `${segno}${valore.toFixed(1).replace('.', ',')}%`;
+}
+
+/** 6,3% senza segno: per i tassi, che non sono variazioni. */
+function tasso(valore: number | null | undefined) {
+	if (valore === null || valore === undefined) return null;
+	return `${valore.toFixed(1).replace('.', ',')}%`;
+}
+
+function data(iso: string) {
+	return new Date(iso).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+const serie = [inflazione, pil, lavoro, retribuzioni].filter(Boolean);
+const ultimoComunicato = serie.map((s) => s.fonte.data).sort().at(-1);
+---
+
+<Base
+	titolo="La congiuntura, aggiornata"
+	descrizione="Inflazione, PIL, occupazione e salari in Italia: gli ultimi dati dell'ISTAT, aggiornati a ogni comunicato, con il periodo e il link alla fonte originale."
+>
+	<div class="contenitore">
+		<div class="testata-pagina">
+			<h1>La congiuntura, aggiornata</h1>
+			<p class="testata-pagina__sommario">
+				L'economia italiana in quattro gruppi di numeri: prezzi, crescita, lavoro e salari.
+				Sono gli ultimi dati pubblicati dall'ISTAT, ognuno con il periodo a cui si riferisce
+				e il link al comunicato. Si aggiornano da soli quando esce un dato nuovo.
+			</p>
+			{ultimoComunicato && <p class="aggiornato">Ultimo comunicato letto: {data(ultimoComunicato)}</p>}
+		</div>
+
+		{
+			inflazione && (
+				<section class="blocco">
+					<h2>Prezzi</h2>
+					<p class="blocco__intro">
+						Quanto costano beni e servizi rispetto a un anno prima. Dato di {inflazione.periodo}
+						{inflazione.provvisorio ? ', provvisorio: la stima definitiva arriva a metà del mese successivo.' : '.'}
+					</p>
+					<div class="griglia">
+						<div class="cifra">
+							<span class="cifra__valore">{variazione(inflazione.annua)}</span>
+							<span class="cifra__nome">Inflazione su un anno</span>
+							<span class="cifra__nota">Il mese prima: {variazione(inflazione.precedente)}</span>
+						</div>
+						{inflazione.fondo !== null && (
+							<div class="cifra">
+								<span class="cifra__valore">{variazione(inflazione.fondo)}</span>
+								<span class="cifra__nome">Inflazione di fondo</span>
+								<span class="cifra__nota">Senza energia e alimentari freschi, le voci più instabili</span>
+							</div>
+						)}
+						{inflazione.energia !== null && (
+							<div class="cifra">
+								<span class="cifra__valore">{variazione(inflazione.energia)}</span>
+								<span class="cifra__nome">Prezzi dell'energia</span>
+								<span class="cifra__nota">Su un anno: luce, gas, carburanti</span>
+							</div>
+						)}
+						{inflazione.ipca !== null && (
+							<div class="cifra">
+								<span class="cifra__valore">{variazione(inflazione.ipca)}</span>
+								<span class="cifra__nome">Indice armonizzato europeo</span>
+								<span class="cifra__nota">Quello usato per confrontare i paesi dell'Unione</span>
+							</div>
+						)}
+					</div>
+					<p class="fonte">
+						Fonte: ISTAT, <a href={inflazione.fonte.url} target="_blank" rel="noopener">{inflazione.fonte.titolo}</a>, {data(inflazione.fonte.data)}.
+					</p>
+					<p class="approfondisci">
+						Approfondisci: <a href="/inflazione-ottobre-2026-energia-chi-spende-meno">perché l'energia pesa il doppio su chi spende meno</a>.
+					</p>
+				</section>
+			)
+		}
+
+		{
+			pil && (
+				<section class="blocco">
+					<h2>Crescita</h2>
+					<p class="blocco__intro">
+						Il prodotto interno lordo, cioè il valore di tutto ciò che l'economia produce.
+						Dato del {pil.periodo}, stima preliminare.
+					</p>
+					<div class="griglia">
+						<div class="cifra">
+							<span class="cifra__valore">{variazione(pil.congiunturale)}</span>
+							<span class="cifra__nome">PIL sul trimestre prima</span>
+							<span class="cifra__nota">Corretto per stagioni e giorni lavorativi</span>
+						</div>
+						<div class="cifra">
+							<span class="cifra__valore">{variazione(pil.tendenziale)}</span>
+							<span class="cifra__nome">PIL su un anno prima</span>
+							<span class="cifra__nota">Stesso trimestre dell'anno precedente</span>
+						</div>
+						{pil.acquisita !== null && (
+							<div class="cifra">
+								<span class="cifra__valore">{variazione(pil.acquisita)}</span>
+								<span class="cifra__nome">Crescita già acquisita nell'anno</span>
+								<span class="cifra__nota">Quella dell'anno se i trimestri che mancano restassero fermi</span>
+							</div>
+						)}
+					</div>
+					<p class="fonte">
+						Fonte: ISTAT, <a href={pil.fonte.url} target="_blank" rel="noopener">{pil.fonte.titolo}</a>, {data(pil.fonte.data)}.
+					</p>
+					<p class="approfondisci">
+						Approfondisci: <a href="/pil-fermo-prezzi-in-salita-salari-indietro">PIL fermo e prezzi in salita, perché i salari restano indietro</a>.
+					</p>
+				</section>
+			)
+		}
+
+		{
+			lavoro && (
+				<section class="blocco">
+					<h2>Lavoro</h2>
+					<p class="blocco__intro">Occupati e disoccupati a {lavoro.periodo}, dati mensili provvisori.</p>
+					<div class="griglia">
+						<div class="cifra">
+							<span class="cifra__valore">{tasso(lavoro.disoccupazione)}</span>
+							<span class="cifra__nome">Tasso di disoccupazione</span>
+							<span class="cifra__nota">Chi cerca lavoro, su chi lavora o lo cerca</span>
+						</div>
+						{lavoro.giovanile !== null && (
+							<div class="cifra">
+								<span class="cifra__valore">{tasso(lavoro.giovanile)}</span>
+								<span class="cifra__nome">Disoccupazione giovanile</span>
+								<span class="cifra__nota">Fra i 15 e i 24 anni</span>
+							</div>
+						)}
+						<div class="cifra">
+							<span class="cifra__valore">{tasso(lavoro.occupazione)}</span>
+							<span class="cifra__nome">Tasso di occupazione</span>
+							<span class="cifra__nota">Chi lavora, fra i 15 e i 64 anni</span>
+						</div>
+						{lavoro.occupati && (
+							<div class="cifra">
+								<span class="cifra__valore cifra__valore--testo">{lavoro.occupati}</span>
+								<span class="cifra__nome">Occupati</span>
+								<span class="cifra__nota">Numero totale delle persone che lavorano</span>
+							</div>
+						)}
+					</div>
+					<p class="fonte">
+						Fonte: ISTAT, <a href={lavoro.fonte.url} target="_blank" rel="noopener">{lavoro.fonte.titolo}</a>, {data(lavoro.fonte.data)}.
+					</p>
+				</section>
+			)
+		}
+
+		{
+			retribuzioni && (
+				<section class="blocco">
+					<h2>Salari</h2>
+					<p class="blocco__intro">
+						Le retribuzioni orarie fissate dai contratti collettivi, a {retribuzioni.periodo},
+						rispetto a un anno prima. Non comprendono straordinari, premi e accordi aziendali.
+					</p>
+					<div class="griglia">
+						<div class="cifra">
+							<span class="cifra__valore">{variazione(retribuzioni.annua)}</span>
+							<span class="cifra__nome">Retribuzioni contrattuali</span>
+							<span class="cifra__nota">Tutti i settori</span>
+						</div>
+						{retribuzioni.privato !== null && (
+							<div class="cifra">
+								<span class="cifra__valore">{variazione(retribuzioni.privato)}</span>
+								<span class="cifra__nome">Settore privato</span>
+								<span class="cifra__nota">Agricoltura, industria e servizi</span>
+							</div>
+						)}
+						{retribuzioni.pubblico !== null && (
+							<div class="cifra">
+								<span class="cifra__valore">{variazione(retribuzioni.pubblico)}</span>
+								<span class="cifra__nome">Pubblica amministrazione</span>
+								<span class="cifra__nota">Scuola, sanità, ministeri, enti locali</span>
+							</div>
+						)}
+					</div>
+					<p class="fonte">
+						Fonte: ISTAT, <a href={retribuzioni.fonte.url} target="_blank" rel="noopener">{retribuzioni.fonte.titolo}</a>, {data(retribuzioni.fonte.data)}.
+					</p>
+				</section>
+			)
+		}
+
+		<section class="blocco metodo">
+			<h2>Come funziona questa pagina</h2>
+			<p>
+				Ogni giorno feriale un programma controlla se l'ISTAT ha pubblicato un comunicato nuovo
+				su prezzi, PIL, lavoro o salari. Se lo trova, legge i numeri dalla prima pagina del
+				documento originale e aggiorna questa pagina. Se un numero non si riesce a leggere con
+				certezza, resta quello precedente con la sua data: meglio un dato vecchio dichiarato
+				che un dato sbagliato.
+			</p>
+			<p>
+				Qui ci sono solo i numeri. Per capire cosa c'è dietro, ci sono gli articoli. Per il costo
+				del denaro, mutui e BCE, c'è la pagina dei <a href="/tassi">tassi</a>.
+			</p>
+		</section>
+
+		<section class="blocco">
+			<h2>Le fonti</h2>
+			<ul class="fonti">
+				{serie.map((s) => (
+					<li>
+						ISTAT, <a href={s.fonte.url} target="_blank" rel="noopener">{s.fonte.titolo}</a>, {data(s.fonte.data)}{' '}
+						(<a href={s.fonte.pdf} target="_blank" rel="noopener">PDF</a>).
+					</li>
+				))}
+			</ul>
+		</section>
+	</div>
+</Base>
+
+<style>
+	.aggiornato {
+		font-size: 0.9rem;
+		opacity: 0.72;
+	}
+
+	.blocco {
+		margin-block: 3rem;
+	}
+
+	.blocco h2 {
+		margin-bottom: 0.5rem;
+	}
+
+	.blocco__intro,
+	.metodo p {
+		max-width: 62ch;
+		opacity: 0.85;
+	}
+
+	.griglia {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.cifra {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		padding: 1.2rem 1.3rem;
+		border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+		border-radius: 4px;
+	}
+
+	.cifra__valore {
+		font-size: 2.1rem;
+		font-weight: 600;
+		line-height: 1.1;
+		color: var(--accento);
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* «24 milioni 328mila» non sta nello spazio di un numero breve. */
+	.cifra__valore--testo {
+		font-size: 1.5rem;
+	}
+
+	.cifra__nome {
+		font-weight: 600;
+	}
+
+	.cifra__nota {
+		font-size: 0.88rem;
+		opacity: 0.72;
+	}
+
+	.fonte,
+	.approfondisci {
+		font-size: 0.9rem;
+		margin-top: 1rem;
+	}
+
+	.fonte {
+		opacity: 0.8;
+	}
+
+	.fonti {
+		padding-left: 1.1rem;
+		display: grid;
+		gap: 0.4rem;
+	}
+</style>

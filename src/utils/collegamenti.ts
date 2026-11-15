@@ -28,6 +28,7 @@ const PAGINE_FISSE = new Set([
 	'/contatti',
 	'/privacy',
 	'/tassi',
+	'/congiuntura',
 	'/social',
 	'/domande',
 ]);

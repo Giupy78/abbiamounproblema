@@ -1,0 +1,56 @@
+{
+	"inflazione": {
+		"periodo": "ottobre 2026",
+		"provvisorio": true,
+		"mensile": 0.9,
+		"annua": 5.4,
+		"precedente": 4.2,
+		"fondo": 2.0,
+		"ipca": 5.6,
+		"energia": 31.4,
+		"fonte": {
+			"titolo": "Prezzi al consumo (dati provvisori) – Ottobre 2026",
+			"data": "2026-10-30",
+			"url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/",
+			"pdf": "https://www.istat.it/wp-content/uploads/2026/10/CS_Prezzi-al-consumo_Prov_Ottobre2026.pdf"
+		}
+	},
+	"pil": {
+		"periodo": "III trimestre 2026",
+		"congiunturale": 0.0,
+		"tendenziale": 0.8,
+		"acquisita": 0.8,
+		"fonte": {
+			"titolo": "Stima preliminare del Pil – III trimestre 2026",
+			"data": "2026-10-30",
+			"url": "https://www.istat.it/comunicato-stampa/stima-preliminare-del-pil-iii-trimestre-2026/",
+			"pdf": "https://www.istat.it/wp-content/uploads/2026/10/FLASH_2026q3.pdf"
+		}
+	},
+	"lavoro": {
+		"periodo": "settembre 2026",
+		"occupazione": 63.0,
+		"disoccupazione": 6.3,
+		"giovanile": 19.9,
+		"inattivita": 32.7,
+		"occupati": "24 milioni 328mila",
+		"fonte": {
+			"titolo": "Occupati e disoccupati (dati provvisori)- Settembre 2026",
+			"data": "2026-10-29",
+			"url": "https://www.istat.it/comunicato-stampa/occupati-e-disoccupati-dati-provvisori-settembre-2026/",
+			"pdf": "https://www.istat.it/wp-content/uploads/2026/10/CS_Occupati-e-disoccupati_SETTEMBRE_2026.pdf"
+		}
+	},
+	"retribuzioni": {
+		"periodo": "settembre 2026",
+		"annua": 2.5,
+		"privato": 2.3,
+		"pubblico": 3.2,
+		"fonte": {
+			"titolo": "Retribuzioni contrattuali – Luglio-settembre 2026",
+			"data": "2026-10-30",
+			"url": "https://www.istat.it/comunicato-stampa/retribuzioni-contrattuali-luglio-settembre-2026/",
+			"pdf": "https://www.istat.it/wp-content/uploads/2026/10/Comunicato-LUGLIO_SETTEMBRE-2026-retribuzioni.pdf"
+		}
+	}
+}

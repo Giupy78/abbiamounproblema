@@ -102,6 +102,8 @@ Un'inflazione al 5,4% fatta quasi tutta di energia non è uguale per tutti, perc
 
 I dati per vederlo ci sono già. Quello che manca è usarli dove si decide quanto adeguare un assegno o a chi destinare un aiuto.
 
+*I dati più recenti su prezzi, PIL, lavoro e salari sono nella pagina [La congiuntura, aggiornata](/congiuntura), che si aggiorna a ogni comunicato ISTAT.*
+
 ## Le fonti
 
 - ISTAT, [Prezzi al consumo – ottobre 2026, dati provvisori](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/), 30 ottobre 2026.

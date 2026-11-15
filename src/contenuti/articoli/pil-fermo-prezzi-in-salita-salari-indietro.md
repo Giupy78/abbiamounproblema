@@ -93,6 +93,8 @@ Un'economia ferma con i prezzi in salita mette i salari davanti a una scelta: in
 
 Si può essere d'accordo o no. Ma conviene saperlo, perché è quella scelta, più di qualunque aliquota, a stabilire chi paga il conto quando l'energia rincara.
 
+*I dati più recenti su prezzi, PIL, lavoro e salari sono nella pagina [La congiuntura, aggiornata](/congiuntura), che si aggiorna a ogni comunicato ISTAT.*
+
 ## Le fonti
 
 - ISTAT, [Stima preliminare del Pil – III trimestre 2026](https://www.istat.it/comunicato-stampa/stima-preliminare-del-pil-iii-trimestre-2026/), 30 ottobre 2026.

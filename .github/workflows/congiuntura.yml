@@ -1,0 +1,50 @@
+name: Congiuntura
+
+# Aggiorna i numeri della pagina /congiuntura dai comunicati ISTAT su
+# prezzi, PIL, lavoro e salari. L'ISTAT pubblica alle 10 o alle 11, ora
+# italiana: i tre passaggi (in UTC) coprono sia l'ora solare sia quella
+# legale, più uno nel pomeriggio se un comunicato esce in ritardo.
+#
+# Se non c'è niente di nuovo lo script non tocca il file e qui non si salva
+# nulla, quindi il sito non si ricompila per niente.
+
+on:
+  schedule:
+    - cron: '30 9 * * 1-5'
+    - cron: '30 11 * * 1-5'
+    - cron: '0 15 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica il progetto
+        uses: actions/checkout@v4
+
+      - name: Prepara Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installa il lettore di PDF
+        run: pip install pypdf==6.16.0
+
+      - name: Leggi i comunicati ISTAT
+        run: python scripts/congiuntura.py
+
+      - name: Salva i dati nuovi
+        run: |
+          if git diff --quiet -- src/dati/congiuntura.json; then
+            echo "Nessun dato nuovo."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/dati/congiuntura.json
+          git commit -m 'Congiuntura: dati ISTAT aggiornati'
+          git push
