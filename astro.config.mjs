@@ -31,9 +31,16 @@ export default defineConfig({
 			// Fuori dalla sitemap: la 404, le anteprime delle bozze e /social,
 			// che è una pagina di servizio per chi scrive e non per chi legge
 			// (è anche marcata noindex: lasciarla qui sarebbe contraddirsi).
+			//
+			// Fuori anche le singole proposte, ma non l'elenco /proposte: a
+			// novembre 2026 Google leggeva circa una pagina al giorno e ne
+			// spendeva la gran parte su 62 proposte brevi, lasciando fuori gli
+			// articoli. Le proposte restano raggiungibili dai link negli
+			// articoli; quando il sito avrà più fiducia si possono rimettere.
 			filter: (page) =>
 				!page.includes('/404') &&
 				!page.includes('/anteprima/') &&
+				!page.includes('/proposte/') &&
 				!page.endsWith('/social'),
 			// La data vera di ogni pagina: vedi src/utils/lastmod.ts
 			serialize(voce) {
