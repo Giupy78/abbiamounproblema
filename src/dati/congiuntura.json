@@ -1,18 +1,18 @@
 {
 	"inflazione": {
 		"periodo": "ottobre 2026",
-		"provvisorio": true,
-		"mensile": 0.9,
-		"annua": 5.4,
+		"provvisorio": false,
+		"mensile": 1.0,
+		"annua": 5.5,
 		"precedente": 4.2,
 		"fondo": 2.0,
 		"ipca": 5.6,
-		"energia": 31.4,
+		"energia": 31.9,
 		"fonte": {
-			"titolo": "Prezzi al consumo (dati provvisori) – Ottobre 2026",
-			"data": "2026-10-30",
-			"url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/",
-			"pdf": "https://www.istat.it/wp-content/uploads/2026/10/CS_Prezzi-al-consumo_Prov_Ottobre2026.pdf"
+			"titolo": "Prezzi al consumo – Ottobre 2026",
+			"data": "2026-11-17",
+			"url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-ottobre-2026/",
+			"pdf": "https://www.istat.it/wp-content/uploads/2026/11/CS_Prezzi-al-consumo_Def_Ottobre2026.pdf"
 		}
 	},
 	"pil": {

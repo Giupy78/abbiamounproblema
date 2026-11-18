@@ -2,17 +2,23 @@ name: Congiuntura
 
 # Aggiorna i numeri della pagina /congiuntura dai comunicati ISTAT su
 # prezzi, PIL, lavoro e salari. L'ISTAT pubblica alle 10 o alle 11, ora
-# italiana: i tre passaggi (in UTC) coprono sia l'ora solare sia quella
-# legale, più uno nel pomeriggio se un comunicato esce in ritardo.
+# italiana: i passaggi (in UTC) coprono sia l'ora solare sia quella
+# legale, più due nel pomeriggio se un comunicato esce in ritardo.
+#
+# I minuti sono volutamente «strani»: GitHub fa partire le esecuzioni
+# programmate con ritardo, e a novembre 2026 quelle all'ora piena o alla
+# mezz'ora sono partite anche nove ore dopo. Fuori dagli orari affollati
+# il ritardo è minore.
 #
 # Se non c'è niente di nuovo lo script non tocca il file e qui non si salva
 # nulla, quindi il sito non si ricompila per niente.
 
 on:
   schedule:
-    - cron: '30 9 * * 1-5'
-    - cron: '30 11 * * 1-5'
-    - cron: '0 15 * * 1-5'
+    - cron: '17 9 * * 1-5'
+    - cron: '43 10 * * 1-5'
+    - cron: '23 13 * * 1-5'
+    - cron: '47 16 * * 1-5'
   workflow_dispatch:
 
 permissions:

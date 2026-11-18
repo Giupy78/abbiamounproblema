@@ -129,16 +129,17 @@ def inflazione(oggi):
 			if not pagina:
 				continue
 			fonte, t = comunicato(slug, pagina)
-			if provvisorio:
-				m = cerca(t, rf'variazione pari a {NUM}% su base mensile e a {NUM}% su base annua \(da {NUM}%')
-			else:
-				m = cerca(t, rf'variazione congiunturale pari a {NUM}% e una tendenziale (?:pari )?a {NUM}% \(da {NUM}%')
+			# L'ISTAT usa due frasi, e non sempre la stessa per lo stesso tipo di
+			# comunicato: il definitivo di ottobre 2026 ha usato quella dei
+			# provvisori. Si provano tutte e due, su ogni comunicato.
+			m = (cerca(t, rf'variazione pari a {NUM}% su base mensile e a {NUM}% su base annua \(da {NUM}%', obbligatorio=False)
+			     or cerca(t, rf'variazione congiunturale pari a {NUM}% e una tendenziale (?:pari )?a {NUM}% \(da {NUM}%'))
 			fondo = cerca(t, rf'inflazione di fondo.{{0,200}}?\(da {NUM}% a {NUM}%\)', obbligatorio=False)
 			ipca = cerca(t, rf'\(IPCA\).{{0,250}}?{NUM}% su base annua', obbligatorio=False)
 			# Attenzione: la stessa pagina parla anche dell'inflazione «al netto dei soli
 			# beni energetici». Qui serve la variazione dei prezzi dell'energia, che
-			# l'ISTAT introduce sempre con «prezzi dei beni energetici».
-			energia = cerca(t, rf'prezzi dei beni energetici \(da {NUM}% a {NUM}%\)', obbligatorio=False)
+			# l'ISTAT introduce con «prezzi dei beni energetici», a volte con la maiuscola.
+			energia = cerca(t, rf'prezzi dei [Bb]eni energetici \(da {NUM}% a {NUM}%\)', obbligatorio=False)
 			return {
 				'periodo': f'{mese} {anno}',
 				'provvisorio': provvisorio,
