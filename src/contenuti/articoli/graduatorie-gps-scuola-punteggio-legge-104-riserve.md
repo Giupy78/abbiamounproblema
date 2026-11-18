@@ -12,7 +12,7 @@ tag:
   - graduatorie
 illustrazione: graduatoria
 bozza: false
-inEvidenza: true
+inEvidenza: false
 ---
 
 Ogni agosto, quando escono le nomine dalle Graduatorie Provinciali per le Supplenze (GPS), succede una cosa che chi insegna conosce bene: un docente con un punteggio alto resta senza la cattedra che si aspettava, o finisce in una scuola a sessanta chilometri da casa, mentre un altro con la metà dei suoi punti ottiene il posto sotto casa.

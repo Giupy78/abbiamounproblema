@@ -16,7 +16,7 @@ bozza: true
 social: "L'Italia accumula oltre 1.600 miliardi di euro fermi sui conti
   correnti. Ma la vera sfida per il risparmiatore non è indovinare il rendimento
   futuro, bensì gestire ciò che può controllare: costi e costanza."
-inEvidenza: true
+inEvidenza: false
 ---
 ## 1. La ricchezza degli italiani e il paradosso dei conti correnti
 

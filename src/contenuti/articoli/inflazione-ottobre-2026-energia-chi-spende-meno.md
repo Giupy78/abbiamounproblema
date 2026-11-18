@@ -1,8 +1,9 @@
 ---
-titolo: "Inflazione al 5,4%: l'energia pesa il doppio su chi spende meno"
-titoloSeo: "Inflazione ottobre 2026: 5,4%"
-descrizione: "L'ISTAT stima l'inflazione di ottobre al 5,4%, spinta dall'energia. Sulle famiglie che spendono meno pesa più del doppio: perché succede e cosa si potrebbe cambiare."
+titolo: "Inflazione al 5,5%: l'energia pesa il doppio su chi spende meno"
+titoloSeo: "Inflazione ottobre 2026: 5,5%"
+descrizione: "Con i dati definitivi l'ISTAT porta l'inflazione di ottobre al 5,5%, spinta dall'energia. Sulle famiglie che spendono meno pesa più del doppio: ecco perché."
 dataPubblicazione: 2026-10-30
+dataAggiornamento: 2026-11-18
 categoria: Economia
 tag:
   - inflazione
@@ -13,17 +14,18 @@ tag:
   - pensioni
 illustrazione: quinti
 bozza: false
+inEvidenza: true
 social: |
-  A ottobre l'inflazione sale al 5,4%, il livello più alto da agosto 2023. Senza l'energia sarebbe al 2,5%.
+  Con i dati definitivi dell'ISTAT l'inflazione di ottobre sale al 5,5%, appena sopra il livello di agosto 2023. Senza l'energia sarebbe al 2,5%.
 
   Ma la media inganna. Per il 20% delle famiglie che spendono meno l'energia vale il 17% della spesa, per il 20% che spende di più il 7%. Stesso rincaro, peso più che doppio.
 
   E l'elettricità dei clienti vulnerabili, anziani compresi, è salita del 34% in un mese solo.
 ---
 
-Il 30 ottobre l'ISTAT ha pubblicato la [stima preliminare dei prezzi di ottobre](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/): l'inflazione sale al **5,4%**, dal 4,2% di settembre. È il livello più alto da agosto 2023.
+Il 17 novembre l'ISTAT ha pubblicato i [dati definitivi dei prezzi di ottobre](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-ottobre-2026/): l'inflazione sale al **5,5%**, dal 4,2% di settembre. La [stima preliminare](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/) di fine ottobre diceva 5,4%. È un livello appena superiore a quello di agosto 2023, quando l'inflazione era al 5,4%.
 
-Il motore è uno solo. I beni energetici sono più cari del **31,4%** rispetto a un anno fa. Senza di loro l'inflazione sarebbe al 2,5%.
+Il motore è uno solo. I beni energetici sono più cari del **31,9%** rispetto a un anno fa. Senza di loro l'inflazione sarebbe al 2,5%.
 
 Detto così sembra un problema uguale per tutti. Non lo è, e i dati per capire perché li pubblica la stessa ISTAT.
 
@@ -33,14 +35,14 @@ Ecco le voci che contano, a settembre e a ottobre, rispetto allo stesso mese del
 
 | Voce | Settembre | Ottobre |
 |---|---|---|
-| **Indice generale** | **+4,2%** | **+5,4%** |
-| Beni energetici | +22,6% | +31,4% |
-| di cui a prezzo regolato | +25,8% | +59,5% |
+| **Indice generale** | **+4,2%** | **+5,5%** |
+| Beni energetici | +22,6% | +31,9% |
+| di cui a prezzo regolato | +25,8% | +61,6% |
 | Alimentari non lavorati | +5,5% | +7,5% |
-| Carrello della spesa | +1,5% | +2,5% |
+| Carrello della spesa | +1,5% | +2,3% |
 | Inflazione di fondo | +1,6% | +2,0% |
 
-Dentro l'energia, il gasolio per il riscaldamento è più caro del 45,6% in un anno, il gas del mercato libero del 35,7%, l'elettricità del mercato libero del 32,0%. La benzina, al 19,4%, è l'unica voce dell'energia che rallenta. Fra gli alimentari corrono soprattutto gli ortaggi, al 12,7%.
+Dentro l'energia, il gasolio per il riscaldamento è più caro del 45,6% in un anno, il gas del mercato libero del 35,7%, l'elettricità del mercato libero del 33,6%. La benzina, al 19,4%, è l'unica voce dell'energia che rallenta. Fra gli alimentari corrono soprattutto gli ortaggi, al 12,7%.
 
 L'inflazione di fondo, quella che esclude energia e alimentari freschi, sale anche lei, dall'1,6% al 2,0%, ma resta lontana dall'indice generale. È un quadro simile a quello dell'area euro che avevamo descritto [a settembre, parlando dei tassi della BCE](/tassi-inflazione-energia-cosa-puo-la-bce): un'inflazione fatta soprattutto di energia.
 
@@ -72,7 +74,7 @@ Sono i **clienti vulnerabili** dell'elettricità e del gas. La [legge](https://w
 
 La tutela riguarda le condizioni del servizio, non il livello del prezzo, che non ha un tetto e segue i costi di acquisto all'ingrosso. È la legge stessa a chiedere, per il servizio dei vulnerabili, un prezzo che **«riflette il costo dell'energia elettrica nel mercato all'ingrosso»**. Per la luce viene aggiornato ogni trimestre.
 
-Il 29 settembre [ARERA ha comunicato](https://www.arera.it/comunicati-stampa/dettaglio/elettricita-maggior-tutela-373-nel-iv-trimestre-2026-per-i-clienti-vulnerabili) l'aggiornamento per ottobre-dicembre: **+37,3%** per il cliente tipo, con un prezzo di 43,43 centesimi al kilowattora tasse comprese. Il motivo è il costo di acquisto dell'energia all'ingrosso, salito del 63,4%. Nell'indice ISTAT l'elettricità del mercato tutelato è salita del **34,1% nel solo mese di ottobre**, contro il 5,5% di quella del mercato libero.
+Il 29 settembre [ARERA ha comunicato](https://www.arera.it/comunicati-stampa/dettaglio/elettricita-maggior-tutela-373-nel-iv-trimestre-2026-per-i-clienti-vulnerabili) l'aggiornamento per ottobre-dicembre: **+37,3%** per il cliente tipo, con un prezzo di 43,43 centesimi al kilowattora tasse comprese. Il motivo è il costo di acquisto dell'energia all'ingrosso, salito del 63,4%. Nell'indice ISTAT l'elettricità del mercato tutelato è salita del **34,1% nel solo mese di ottobre**, contro il 6,8% di quella del mercato libero.
 
 Per il gas l'aggiornamento è mensile e arriva a mese concluso: per settembre ARERA ha calcolato una spesa più alta del 12,7% rispetto ad agosto. Una parte di questi clienti, quelli in difficoltà economica, riceve anche il bonus sociale, uno sconto in bolletta. Gli altri, per esempio chi è vulnerabile soltanto per età, pagano il prezzo pieno.
 
@@ -86,7 +88,7 @@ Funziona bene quando l'inflazione è uguale per tutti. Quando non lo è, chi ric
 
 ## Si discute della cosa sbagliata
 
-Ogni mese il dibattito si ferma su due numeri: l'inflazione generale e il «carrello della spesa». A ottobre il carrello è al 2,5% e sembra rassicurare. Ma il carrello comprende cibo, prodotti per la casa e per l'igiene: **la bolletta non c'è.**
+Ogni mese il dibattito si ferma su due numeri: l'inflazione generale e il «carrello della spesa». A ottobre il carrello è al 2,3% e sembra rassicurare. Ma il carrello comprende cibo, prodotti per la casa e per l'igiene: **la bolletta non c'è.**
 
 Il numero che manca è quello per tipo di famiglia. Esiste, l'ISTAT lo calcola, ma esce una volta ogni tre mesi in fondo a un comunicato. E non è quello che si usa per rivalutare le pensioni, nemmeno quelle assistenziali.
 
@@ -98,14 +100,17 @@ Il numero che manca è quello per tipo di famiglia. Esiste, l'ISTAT lo calcola, 
 
 ## La cosa che resta
 
-Un'inflazione al 5,4% fatta quasi tutta di energia non è uguale per tutti, perché le famiglie non comprano tutte le stesse cose. Chi spende poco spende soprattutto in bollette e cibo, e lì i prezzi si muovono di più, in tutte e due le direzioni.
+Un'inflazione al 5,5% fatta quasi tutta di energia non è uguale per tutti, perché le famiglie non comprano tutte le stesse cose. Chi spende poco spende soprattutto in bollette e cibo, e lì i prezzi si muovono di più, in tutte e due le direzioni.
 
 I dati per vederlo ci sono già. Quello che manca è usarli dove si decide quanto adeguare un assegno o a chi destinare un aiuto.
 
 *I dati più recenti su prezzi, PIL, lavoro e salari sono nella pagina [La congiuntura, aggiornata](/congiuntura), che si aggiorna a ogni comunicato ISTAT.*
 
+*Aggiornamento del 18 novembre 2026: la prima versione dell'articolo usava la stima preliminare dell'ISTAT del 30 ottobre. Il 17 novembre sono usciti i dati definitivi, che rivedono l'inflazione di ottobre dal 5,4% al 5,5%, i beni energetici dal 31,4% al 31,9%, l'energia a prezzo regolato dal 59,5% al 61,6%, l'elettricità del mercato libero dal 32,0% al 33,6% e il carrello della spesa dal 2,5% al 2,3%. Abbiamo aggiornato titolo, tabella e testo.*
+
 ## Le fonti
 
+- ISTAT, [Prezzi al consumo – ottobre 2026, dati definitivi](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-ottobre-2026/), 17 novembre 2026.
 - ISTAT, [Prezzi al consumo – ottobre 2026, dati provvisori](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/), 30 ottobre 2026.
 - ISTAT, [Prezzi al consumo – settembre 2026, dati definitivi](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-settembre-2026/), 16 ottobre 2026 (con l'inflazione per classi di spesa delle famiglie del terzo trimestre).
 - ISTAT, [Prezzi al consumo – dicembre 2025, dati definitivi](https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dicembre-2025/), 16 gennaio 2026 (con l'inflazione per classi di spesa del 2024 e del 2025).

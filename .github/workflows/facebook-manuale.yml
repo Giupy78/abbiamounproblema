@@ -1,0 +1,41 @@
+name: Post Facebook a mano
+
+# Pubblica sulla pagina Facebook un testo scritto apposta, con il link a un
+# articolo già uscito. Serve per gli aggiornamenti: quando un articolo
+# cambia (per esempio un dato provvisorio diventa definitivo) non ha senso
+# ripubblicarlo per intero, basta un post breve che dica cosa è cambiato.
+#
+# Da avviare a mano: Actions > Post Facebook a mano > Run workflow, oppure
+#   gh workflow run facebook-manuale.yml -f slug=nome-articolo -f messaggio="..."
+#
+# Il messaggio passa allo script come variabile d'ambiente e non dentro il
+# comando, così nessun carattere del testo può essere eseguito come codice.
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Nome dell'articolo (la parte finale dell'indirizzo)"
+        required: true
+      messaggio:
+        description: 'Testo del post (il link all articolo viene aggiunto in fondo)'
+        required: true
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Manda il post
+        env:
+          FACEBOOK_PAGINA: ${{ secrets.FACEBOOK_PAGINA }}
+          FACEBOOK_TOKEN: ${{ secrets.FACEBOOK_TOKEN }}
+          FACEBOOK_MESSAGGIO: ${{ inputs.messaggio }}
+          SLUG: ${{ inputs.slug }}
+        run: node scripts/pubblica-su-facebook.mjs "--slug=$SLUG" --messaggio --invia

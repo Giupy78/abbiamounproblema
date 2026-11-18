@@ -9,6 +9,13 @@
  * Senza --invia non parte niente: stampa solo quello che manderebbe. È la
  * modalità giusta per guardare come viene prima di mandarlo a qualcuno.
  *
+ * Per un aggiornamento non serve ripubblicare l'articolo intero: con
+ * --messaggio il post è il testo della variabile FACEBOOK_MESSAGGIO, con il
+ * link all'articolo in fondo. Lo usa il workflow manuale
+ * .github/workflows/facebook-manuale.yml:
+ *
+ *   FACEBOOK_MESSAGGIO="..." node scripts/pubblica-su-facebook.mjs --slug=nome-articolo --messaggio --invia
+ *
  * L'automatismo lo usa con due commit al posto dello slug, per trovare da
  * solo gli articoli passati da bozza a pubblicato:
  *
@@ -34,6 +41,7 @@ const VERSIONE = process.env.FACEBOOK_VERSIONE ?? 'v26.0';
 const argomenti = process.argv.slice(2);
 const invia = argomenti.includes('--invia');
 const slugChiesto = argomenti.find((a) => a.startsWith('--slug='))?.slice(7);
+const conMessaggio = argomenti.includes('--messaggio');
 const commit = argomenti.filter((a) => !a.startsWith('--'));
 
 /* ------------------------------------------------------------------ *
@@ -175,6 +183,9 @@ function leggiArticolo(slug) {
 /** Il post: titolo, articolo per intero, link in fondo. */
 function componiPost(articolo) {
 	const url = `${SITO}/${articolo.slug}`;
+	if (conMessaggio) {
+		return `${process.env.FACEBOOK_MESSAGGIO.trim()}\n\nL'articolo con tutte le fonti e i link: ${url}`;
+	}
 	return `${articolo.titolo}\n\n${inTestoSemplice(articolo.corpo)}\n\nL'articolo con tutte le fonti e i link: ${url}`;
 }
 
@@ -276,6 +287,11 @@ async function mandaAFacebook(messaggio) {
 if (invia && !credenzialiPresenti()) {
 	console.log('FACEBOOK_PAGINA o FACEBOOK_TOKEN non impostati: nessun post inviato.');
 	process.exit(0);
+}
+
+if (conMessaggio && !(slugChiesto && process.env.FACEBOOK_MESSAGGIO?.trim())) {
+	console.error('Con --messaggio servono --slug=<nome-articolo> e un testo in FACEBOOK_MESSAGGIO.');
+	process.exit(1);
 }
 
 const articoli = daPubblicare();
